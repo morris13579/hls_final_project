@@ -1,0 +1,333 @@
+
+
+================================================================
+== Vitis HLS Report for 'AddRoundKey388'
+================================================================
+* Date:           Wed Dec 29 21:49:54 2021
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        aes
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg400-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  3.312 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       16|       16|  0.160 us|  0.160 us|   16|   16|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 17
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 15 
+15 --> 16 
+16 --> 17 
+17 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 2.32>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%w_0_addr = getelementptr i8 %w_0, i64 0, i64 0" [AES.cpp:76]   --->   Operation 18 'getelementptr' 'w_0_addr' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [2/2] (2.32ns)   --->   "%w_0_load = load i4 %w_0_addr" [AES.cpp:76]   --->   Operation 19 'load' 'w_0_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 20 [1/2] (2.32ns)   --->   "%w_0_load = load i4 %w_0_addr" [AES.cpp:76]   --->   Operation 20 'load' 'w_0_load' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 21 [1/1] (0.00ns)   --->   "%w_0_addr_121 = getelementptr i8 %w_0, i64 0, i64 4" [AES.cpp:76]   --->   Operation 21 'getelementptr' 'w_0_addr_121' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 22 [2/2] (2.32ns)   --->   "%w_0_load_121 = load i4 %w_0_addr_121" [AES.cpp:76]   --->   Operation 22 'load' 'w_0_load_121' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 3 <SV = 2> <Delay = 2.32>
+ST_3 : Operation 23 [1/2] (2.32ns)   --->   "%w_0_load_121 = load i4 %w_0_addr_121" [AES.cpp:76]   --->   Operation 23 'load' 'w_0_load_121' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 24 [1/1] (0.00ns)   --->   "%w_0_addr_122 = getelementptr i8 %w_0, i64 0, i64 8" [AES.cpp:76]   --->   Operation 24 'getelementptr' 'w_0_addr_122' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 25 [2/2] (2.32ns)   --->   "%w_0_load_122 = load i4 %w_0_addr_122" [AES.cpp:76]   --->   Operation 25 'load' 'w_0_load_122' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 4 <SV = 3> <Delay = 2.32>
+ST_4 : Operation 26 [1/2] (2.32ns)   --->   "%w_0_load_122 = load i4 %w_0_addr_122" [AES.cpp:76]   --->   Operation 26 'load' 'w_0_load_122' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%w_0_addr_123 = getelementptr i8 %w_0, i64 0, i64 12" [AES.cpp:76]   --->   Operation 27 'getelementptr' 'w_0_addr_123' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 28 [2/2] (2.32ns)   --->   "%w_0_load_123 = load i4 %w_0_addr_123" [AES.cpp:76]   --->   Operation 28 'load' 'w_0_load_123' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 5 <SV = 4> <Delay = 2.32>
+ST_5 : Operation 29 [1/2] (2.32ns)   --->   "%w_0_load_123 = load i4 %w_0_addr_123" [AES.cpp:76]   --->   Operation 29 'load' 'w_0_load_123' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_5 : Operation 30 [1/1] (0.00ns)   --->   "%w_0_addr_124 = getelementptr i8 %w_0, i64 0, i64 1" [AES.cpp:76]   --->   Operation 30 'getelementptr' 'w_0_addr_124' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 31 [2/2] (2.32ns)   --->   "%w_0_load_124 = load i4 %w_0_addr_124" [AES.cpp:76]   --->   Operation 31 'load' 'w_0_load_124' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 6 <SV = 5> <Delay = 2.32>
+ST_6 : Operation 32 [1/2] (2.32ns)   --->   "%w_0_load_124 = load i4 %w_0_addr_124" [AES.cpp:76]   --->   Operation 32 'load' 'w_0_load_124' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_6 : Operation 33 [1/1] (0.00ns)   --->   "%w_0_addr_125 = getelementptr i8 %w_0, i64 0, i64 5" [AES.cpp:76]   --->   Operation 33 'getelementptr' 'w_0_addr_125' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 34 [2/2] (2.32ns)   --->   "%w_0_load_125 = load i4 %w_0_addr_125" [AES.cpp:76]   --->   Operation 34 'load' 'w_0_load_125' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 7 <SV = 6> <Delay = 2.32>
+ST_7 : Operation 35 [1/2] (2.32ns)   --->   "%w_0_load_125 = load i4 %w_0_addr_125" [AES.cpp:76]   --->   Operation 35 'load' 'w_0_load_125' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_7 : Operation 36 [1/1] (0.00ns)   --->   "%w_0_addr_126 = getelementptr i8 %w_0, i64 0, i64 9" [AES.cpp:76]   --->   Operation 36 'getelementptr' 'w_0_addr_126' <Predicate = true> <Delay = 0.00>
+ST_7 : Operation 37 [2/2] (2.32ns)   --->   "%w_0_load_126 = load i4 %w_0_addr_126" [AES.cpp:76]   --->   Operation 37 'load' 'w_0_load_126' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 8 <SV = 7> <Delay = 2.32>
+ST_8 : Operation 38 [1/2] (2.32ns)   --->   "%w_0_load_126 = load i4 %w_0_addr_126" [AES.cpp:76]   --->   Operation 38 'load' 'w_0_load_126' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_8 : Operation 39 [1/1] (0.00ns)   --->   "%w_0_addr_127 = getelementptr i8 %w_0, i64 0, i64 13" [AES.cpp:76]   --->   Operation 39 'getelementptr' 'w_0_addr_127' <Predicate = true> <Delay = 0.00>
+ST_8 : Operation 40 [2/2] (2.32ns)   --->   "%w_0_load_127 = load i4 %w_0_addr_127" [AES.cpp:76]   --->   Operation 40 'load' 'w_0_load_127' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 9 <SV = 8> <Delay = 2.32>
+ST_9 : Operation 41 [1/2] (2.32ns)   --->   "%w_0_load_127 = load i4 %w_0_addr_127" [AES.cpp:76]   --->   Operation 41 'load' 'w_0_load_127' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_9 : Operation 42 [1/1] (0.00ns)   --->   "%w_0_addr_128 = getelementptr i8 %w_0, i64 0, i64 2" [AES.cpp:76]   --->   Operation 42 'getelementptr' 'w_0_addr_128' <Predicate = true> <Delay = 0.00>
+ST_9 : Operation 43 [2/2] (2.32ns)   --->   "%w_0_load_128 = load i4 %w_0_addr_128" [AES.cpp:76]   --->   Operation 43 'load' 'w_0_load_128' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 10 <SV = 9> <Delay = 2.32>
+ST_10 : Operation 44 [1/2] (2.32ns)   --->   "%w_0_load_128 = load i4 %w_0_addr_128" [AES.cpp:76]   --->   Operation 44 'load' 'w_0_load_128' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_10 : Operation 45 [1/1] (0.00ns)   --->   "%w_0_addr_129 = getelementptr i8 %w_0, i64 0, i64 6" [AES.cpp:76]   --->   Operation 45 'getelementptr' 'w_0_addr_129' <Predicate = true> <Delay = 0.00>
+ST_10 : Operation 46 [2/2] (2.32ns)   --->   "%w_0_load_129 = load i4 %w_0_addr_129" [AES.cpp:76]   --->   Operation 46 'load' 'w_0_load_129' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 11 <SV = 10> <Delay = 2.32>
+ST_11 : Operation 47 [1/2] (2.32ns)   --->   "%w_0_load_129 = load i4 %w_0_addr_129" [AES.cpp:76]   --->   Operation 47 'load' 'w_0_load_129' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_11 : Operation 48 [1/1] (0.00ns)   --->   "%w_0_addr_130 = getelementptr i8 %w_0, i64 0, i64 10" [AES.cpp:76]   --->   Operation 48 'getelementptr' 'w_0_addr_130' <Predicate = true> <Delay = 0.00>
+ST_11 : Operation 49 [2/2] (2.32ns)   --->   "%w_0_load_130 = load i4 %w_0_addr_130" [AES.cpp:76]   --->   Operation 49 'load' 'w_0_load_130' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 12 <SV = 11> <Delay = 2.32>
+ST_12 : Operation 50 [1/2] (2.32ns)   --->   "%w_0_load_130 = load i4 %w_0_addr_130" [AES.cpp:76]   --->   Operation 50 'load' 'w_0_load_130' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_12 : Operation 51 [1/1] (0.00ns)   --->   "%w_0_addr_131 = getelementptr i8 %w_0, i64 0, i64 14" [AES.cpp:76]   --->   Operation 51 'getelementptr' 'w_0_addr_131' <Predicate = true> <Delay = 0.00>
+ST_12 : Operation 52 [2/2] (2.32ns)   --->   "%w_0_load_131 = load i4 %w_0_addr_131" [AES.cpp:76]   --->   Operation 52 'load' 'w_0_load_131' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 13 <SV = 12> <Delay = 2.32>
+ST_13 : Operation 53 [1/2] (2.32ns)   --->   "%w_0_load_131 = load i4 %w_0_addr_131" [AES.cpp:76]   --->   Operation 53 'load' 'w_0_load_131' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_13 : Operation 54 [1/1] (0.00ns)   --->   "%w_0_addr_132 = getelementptr i8 %w_0, i64 0, i64 3" [AES.cpp:76]   --->   Operation 54 'getelementptr' 'w_0_addr_132' <Predicate = true> <Delay = 0.00>
+ST_13 : Operation 55 [2/2] (2.32ns)   --->   "%w_0_load_132 = load i4 %w_0_addr_132" [AES.cpp:76]   --->   Operation 55 'load' 'w_0_load_132' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 14 <SV = 13> <Delay = 2.32>
+ST_14 : Operation 56 [1/2] (2.32ns)   --->   "%w_0_load_132 = load i4 %w_0_addr_132" [AES.cpp:76]   --->   Operation 56 'load' 'w_0_load_132' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_14 : Operation 57 [1/1] (0.00ns)   --->   "%w_0_addr_133 = getelementptr i8 %w_0, i64 0, i64 7" [AES.cpp:76]   --->   Operation 57 'getelementptr' 'w_0_addr_133' <Predicate = true> <Delay = 0.00>
+ST_14 : Operation 58 [2/2] (2.32ns)   --->   "%w_0_load_133 = load i4 %w_0_addr_133" [AES.cpp:76]   --->   Operation 58 'load' 'w_0_load_133' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 15 <SV = 14> <Delay = 2.32>
+ST_15 : Operation 59 [1/2] (2.32ns)   --->   "%w_0_load_133 = load i4 %w_0_addr_133" [AES.cpp:76]   --->   Operation 59 'load' 'w_0_load_133' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_15 : Operation 60 [1/1] (0.00ns)   --->   "%w_0_addr_134 = getelementptr i8 %w_0, i64 0, i64 11" [AES.cpp:76]   --->   Operation 60 'getelementptr' 'w_0_addr_134' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 61 [2/2] (2.32ns)   --->   "%w_0_load_134 = load i4 %w_0_addr_134" [AES.cpp:76]   --->   Operation 61 'load' 'w_0_load_134' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 16 <SV = 15> <Delay = 2.32>
+ST_16 : Operation 62 [1/2] (2.32ns)   --->   "%w_0_load_134 = load i4 %w_0_addr_134" [AES.cpp:76]   --->   Operation 62 'load' 'w_0_load_134' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_16 : Operation 63 [1/1] (0.00ns)   --->   "%w_0_addr_135 = getelementptr i8 %w_0, i64 0, i64 15" [AES.cpp:76]   --->   Operation 63 'getelementptr' 'w_0_addr_135' <Predicate = true> <Delay = 0.00>
+ST_16 : Operation 64 [2/2] (2.32ns)   --->   "%w_0_load_135 = load i4 %w_0_addr_135" [AES.cpp:76]   --->   Operation 64 'load' 'w_0_load_135' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+
+State 17 <SV = 16> <Delay = 3.31>
+ST_17 : Operation 65 [1/1] (0.00ns)   --->   "%empty = specmemcore i32 @_ssdm_op_SpecMemCore, i8 %w_0, i32 666, i32 17, i32 1"   --->   Operation 65 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 66 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %w_0, void @empty_14, i32 0, i32 0, void @empty_10, i32 4294967295, i32 0, void @empty_10, void @empty_10, void @empty_10, i32 0, i32 0, i32 0, i32 0, void @empty_10, void @empty_10"   --->   Operation 66 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 67 [1/1] (0.00ns)   --->   "%p_read_249 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read15" [AES.cpp:76]   --->   Operation 67 'read' 'p_read_249' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 68 [1/1] (0.00ns)   --->   "%p_read_250 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read14" [AES.cpp:76]   --->   Operation 68 'read' 'p_read_250' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 69 [1/1] (0.00ns)   --->   "%p_read_251 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read13" [AES.cpp:76]   --->   Operation 69 'read' 'p_read_251' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 70 [1/1] (0.00ns)   --->   "%p_read_252 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read12" [AES.cpp:76]   --->   Operation 70 'read' 'p_read_252' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 71 [1/1] (0.00ns)   --->   "%p_read_253 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read11" [AES.cpp:76]   --->   Operation 71 'read' 'p_read_253' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 72 [1/1] (0.00ns)   --->   "%p_read10103 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read10" [AES.cpp:76]   --->   Operation 72 'read' 'p_read10103' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 73 [1/1] (0.00ns)   --->   "%p_read9102 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read9" [AES.cpp:76]   --->   Operation 73 'read' 'p_read9102' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 74 [1/1] (0.00ns)   --->   "%p_read8101 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read8" [AES.cpp:76]   --->   Operation 74 'read' 'p_read8101' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 75 [1/1] (0.00ns)   --->   "%p_read7100 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read7" [AES.cpp:76]   --->   Operation 75 'read' 'p_read7100' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 76 [1/1] (0.00ns)   --->   "%p_read699 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read6" [AES.cpp:76]   --->   Operation 76 'read' 'p_read699' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 77 [1/1] (0.00ns)   --->   "%p_read598 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read5" [AES.cpp:76]   --->   Operation 77 'read' 'p_read598' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 78 [1/1] (0.00ns)   --->   "%p_read497 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read4" [AES.cpp:76]   --->   Operation 78 'read' 'p_read497' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 79 [1/1] (0.00ns)   --->   "%p_read396 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read3" [AES.cpp:76]   --->   Operation 79 'read' 'p_read396' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 80 [1/1] (0.00ns)   --->   "%p_read295 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read2" [AES.cpp:76]   --->   Operation 80 'read' 'p_read295' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 81 [1/1] (0.00ns)   --->   "%p_read194 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read1" [AES.cpp:76]   --->   Operation 81 'read' 'p_read194' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 82 [1/1] (0.00ns)   --->   "%p_read93 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read" [AES.cpp:76]   --->   Operation 82 'read' 'p_read93' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 83 [1/1] (0.99ns)   --->   "%xor_ln76 = xor i8 %w_0_load, i8 %p_read93" [AES.cpp:76]   --->   Operation 83 'xor' 'xor_ln76' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 84 [1/1] (0.99ns)   --->   "%xor_ln76_121 = xor i8 %w_0_load_121, i8 %p_read194" [AES.cpp:76]   --->   Operation 84 'xor' 'xor_ln76_121' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 85 [1/1] (0.99ns)   --->   "%xor_ln76_122 = xor i8 %w_0_load_122, i8 %p_read295" [AES.cpp:76]   --->   Operation 85 'xor' 'xor_ln76_122' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 86 [1/1] (0.99ns)   --->   "%xor_ln76_123 = xor i8 %w_0_load_123, i8 %p_read396" [AES.cpp:76]   --->   Operation 86 'xor' 'xor_ln76_123' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 87 [1/1] (0.99ns)   --->   "%xor_ln76_124 = xor i8 %w_0_load_124, i8 %p_read497" [AES.cpp:76]   --->   Operation 87 'xor' 'xor_ln76_124' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 88 [1/1] (0.99ns)   --->   "%xor_ln76_125 = xor i8 %w_0_load_125, i8 %p_read598" [AES.cpp:76]   --->   Operation 88 'xor' 'xor_ln76_125' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 89 [1/1] (0.99ns)   --->   "%xor_ln76_126 = xor i8 %w_0_load_126, i8 %p_read699" [AES.cpp:76]   --->   Operation 89 'xor' 'xor_ln76_126' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 90 [1/1] (0.99ns)   --->   "%xor_ln76_127 = xor i8 %w_0_load_127, i8 %p_read7100" [AES.cpp:76]   --->   Operation 90 'xor' 'xor_ln76_127' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 91 [1/1] (0.99ns)   --->   "%xor_ln76_128 = xor i8 %w_0_load_128, i8 %p_read8101" [AES.cpp:76]   --->   Operation 91 'xor' 'xor_ln76_128' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 92 [1/1] (0.99ns)   --->   "%xor_ln76_129 = xor i8 %w_0_load_129, i8 %p_read9102" [AES.cpp:76]   --->   Operation 92 'xor' 'xor_ln76_129' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 93 [1/1] (0.99ns)   --->   "%xor_ln76_130 = xor i8 %w_0_load_130, i8 %p_read10103" [AES.cpp:76]   --->   Operation 93 'xor' 'xor_ln76_130' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 94 [1/1] (0.99ns)   --->   "%xor_ln76_131 = xor i8 %w_0_load_131, i8 %p_read_253" [AES.cpp:76]   --->   Operation 94 'xor' 'xor_ln76_131' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 95 [1/1] (0.99ns)   --->   "%xor_ln76_132 = xor i8 %w_0_load_132, i8 %p_read_252" [AES.cpp:76]   --->   Operation 95 'xor' 'xor_ln76_132' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 96 [1/1] (0.99ns)   --->   "%xor_ln76_133 = xor i8 %w_0_load_133, i8 %p_read_251" [AES.cpp:76]   --->   Operation 96 'xor' 'xor_ln76_133' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 97 [1/1] (0.99ns)   --->   "%xor_ln76_134 = xor i8 %w_0_load_134, i8 %p_read_250" [AES.cpp:76]   --->   Operation 97 'xor' 'xor_ln76_134' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 98 [1/2] (2.32ns)   --->   "%w_0_load_135 = load i4 %w_0_addr_135" [AES.cpp:76]   --->   Operation 98 'load' 'w_0_load_135' <Predicate = true> <Delay = 2.32> <CoreInst = "RAM_1P">   --->   Core 86 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_17 : Operation 99 [1/1] (0.99ns)   --->   "%xor_ln76_135 = xor i8 %w_0_load_135, i8 %p_read_249" [AES.cpp:76]   --->   Operation 99 'xor' 'xor_ln76_135' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_17 : Operation 100 [1/1] (0.00ns)   --->   "%mrv = insertvalue i128 <undef>, i8 %xor_ln76" [AES.cpp:77]   --->   Operation 100 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 101 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i128 %mrv, i8 %xor_ln76_121" [AES.cpp:77]   --->   Operation 101 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 102 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i128 %mrv_1, i8 %xor_ln76_122" [AES.cpp:77]   --->   Operation 102 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 103 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i128 %mrv_2, i8 %xor_ln76_123" [AES.cpp:77]   --->   Operation 103 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 104 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i128 %mrv_3, i8 %xor_ln76_124" [AES.cpp:77]   --->   Operation 104 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 105 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i128 %mrv_4, i8 %xor_ln76_125" [AES.cpp:77]   --->   Operation 105 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 106 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i128 %mrv_5, i8 %xor_ln76_126" [AES.cpp:77]   --->   Operation 106 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 107 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i128 %mrv_6, i8 %xor_ln76_127" [AES.cpp:77]   --->   Operation 107 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 108 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i128 %mrv_7, i8 %xor_ln76_128" [AES.cpp:77]   --->   Operation 108 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 109 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i128 %mrv_8, i8 %xor_ln76_129" [AES.cpp:77]   --->   Operation 109 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 110 [1/1] (0.00ns)   --->   "%mrv_10 = insertvalue i128 %mrv_9, i8 %xor_ln76_130" [AES.cpp:77]   --->   Operation 110 'insertvalue' 'mrv_10' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 111 [1/1] (0.00ns)   --->   "%mrv_11 = insertvalue i128 %mrv_10, i8 %xor_ln76_131" [AES.cpp:77]   --->   Operation 111 'insertvalue' 'mrv_11' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 112 [1/1] (0.00ns)   --->   "%mrv_12 = insertvalue i128 %mrv_11, i8 %xor_ln76_132" [AES.cpp:77]   --->   Operation 112 'insertvalue' 'mrv_12' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 113 [1/1] (0.00ns)   --->   "%mrv_13 = insertvalue i128 %mrv_12, i8 %xor_ln76_133" [AES.cpp:77]   --->   Operation 113 'insertvalue' 'mrv_13' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 114 [1/1] (0.00ns)   --->   "%mrv_14 = insertvalue i128 %mrv_13, i8 %xor_ln76_134" [AES.cpp:77]   --->   Operation 114 'insertvalue' 'mrv_14' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 115 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue i128 %mrv_14, i8 %xor_ln76_135" [AES.cpp:77]   --->   Operation 115 'insertvalue' 'mrv_s' <Predicate = true> <Delay = 0.00>
+ST_17 : Operation 116 [1/1] (0.00ns)   --->   "%ret_ln77 = ret i128 %mrv_s" [AES.cpp:77]   --->   Operation 116 'ret' 'ret_ln77' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 2.32ns
+The critical path consists of the following:
+	'getelementptr' operation ('w_0_addr', AES.cpp:76) [36]  (0 ns)
+	'load' operation ('w_0_load', AES.cpp:76) on array 'w_0' [37]  (2.32 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load', AES.cpp:76) on array 'w_0' [37]  (2.32 ns)
+
+ <State 3>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_121', AES.cpp:76) on array 'w_0' [40]  (2.32 ns)
+
+ <State 4>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_122', AES.cpp:76) on array 'w_0' [43]  (2.32 ns)
+
+ <State 5>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_123', AES.cpp:76) on array 'w_0' [46]  (2.32 ns)
+
+ <State 6>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_124', AES.cpp:76) on array 'w_0' [49]  (2.32 ns)
+
+ <State 7>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_125', AES.cpp:76) on array 'w_0' [52]  (2.32 ns)
+
+ <State 8>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_126', AES.cpp:76) on array 'w_0' [55]  (2.32 ns)
+
+ <State 9>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_127', AES.cpp:76) on array 'w_0' [58]  (2.32 ns)
+
+ <State 10>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_128', AES.cpp:76) on array 'w_0' [61]  (2.32 ns)
+
+ <State 11>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_129', AES.cpp:76) on array 'w_0' [64]  (2.32 ns)
+
+ <State 12>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_130', AES.cpp:76) on array 'w_0' [67]  (2.32 ns)
+
+ <State 13>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_131', AES.cpp:76) on array 'w_0' [70]  (2.32 ns)
+
+ <State 14>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_132', AES.cpp:76) on array 'w_0' [73]  (2.32 ns)
+
+ <State 15>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_133', AES.cpp:76) on array 'w_0' [76]  (2.32 ns)
+
+ <State 16>: 2.32ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_134', AES.cpp:76) on array 'w_0' [79]  (2.32 ns)
+
+ <State 17>: 3.31ns
+The critical path consists of the following:
+	'load' operation ('w_0_load_135', AES.cpp:76) on array 'w_0' [82]  (2.32 ns)
+	'xor' operation ('xor_ln76_135', AES.cpp:76) [83]  (0.99 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
