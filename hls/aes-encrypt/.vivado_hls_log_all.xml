@@ -48,7 +48,9 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog/>
+      <csimLog>
+        <logs message="WARNING: Hls::stream 'hls::stream&lt;ap_axiu&lt;8, 1, 1, 1> >.3' contains leftover data, which may result in RTL simulation hanging." projectName="aes-encrypt" solutionName="solution1" date="2021-12-30T10:52:18.668+0800" type="Warning"/>
+      </csimLog>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

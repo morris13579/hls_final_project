@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running 'D:/Xilinx/Vivado/2018.3/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'Morris' on host 'morris' (Windows NT_amd64 version 6.2) on Thu Dec 30 10:29:17 +0800 2021
+INFO: [HLS 200-10] For user 'Morris' on host 'morris' (Windows NT_amd64 version 6.2) on Thu Dec 30 10:55:32 +0800 2021
 INFO: [HLS 200-10] In directory 'C:/Users/Morris/Desktop/hls_final_project-master/hls'
 INFO: [HLS 200-10] Opening project 'C:/Users/Morris/Desktop/hls_final_project-master/hls/aes-decrypt'.
 INFO: [HLS 200-10] Opening solution 'C:/Users/Morris/Desktop/hls_final_project-master/hls/aes-decrypt/solution1'.
@@ -23,4 +23,4 @@ source run_ippack.tcl -notrace
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Xilinx/Vivado/2018.3/data/ip'.
-INFO: [Common 17-206] Exiting Vivado at Thu Dec 30 10:29:30 2021...
+INFO: [Common 17-206] Exiting Vivado at Thu Dec 30 10:55:42 2021...

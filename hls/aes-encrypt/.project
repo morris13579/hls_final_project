@@ -52,6 +52,11 @@
 			<location>C:/Users/Morris/Desktop/hls_final_project-master/src/AES_common.cpp</location>
 		</link>
 		<link>
+			<name>source/AES_decrypt.cpp</name>
+			<type>1</type>
+			<location>C:/Users/Morris/Desktop/hls_final_project-master/src/AES_decrypt.cpp</location>
+		</link>
+		<link>
 			<name>source/AES_encrypt.cpp</name>
 			<type>1</type>
 			<location>C:/Users/Morris/Desktop/hls_final_project-master/src/AES_encrypt.cpp</location>

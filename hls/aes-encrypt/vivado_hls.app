@@ -2,6 +2,7 @@
     <files>
         <file name="../../../src/AEW_test.cpp" sc="0" tb="1" cflags=" -Wno-unknown-pragmas"/>
         <file name="../src/AES_common.cpp" sc="0" tb="false" cflags=""/>
+        <file name="../src/AES_decrypt.cpp" sc="0" tb="false" cflags=""/>
         <file name="../src/AES_encrypt.cpp" sc="0" tb="false" cflags=""/>
     </files>
     <includePaths/>

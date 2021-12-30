@@ -46,7 +46,7 @@ void KeyExpansion(BYTE RoundKey[AES_keyExpSize], BYTE Key[16]);
 void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]);
 //void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[16] , unsigned long length);
 void AES_ECB_encrypt(hls::stream<STREAM_BYTE>* plain ,hls::stream<STREAM_BYTE>* encrypt ,  BYTE key[11][16] , unsigned long len);
-void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[11][16] , unsigned long length);
+void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[11][16] , unsigned long len);
 BYTE xtime(BYTE x);
 
 

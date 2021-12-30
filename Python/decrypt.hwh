@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
-<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec 30 10:30:31 2021" VIVADOVERSION="2018.3">
+<EDKSYSTEM EDWVERSION="1.2" TIMESTAMP="Thu Dec 30 10:56:35 2021" VIVADOVERSION="2018.3">
 
   <SYSTEMINFO ARCH="zynq" DEVICE="7z020" NAME="design_1" PACKAGE="clg484" SPEEDGRADE="-1"/>
 
@@ -159,7 +159,7 @@
   </EXTERNALINTERFACES>
 
   <MODULES>
-    <MODULE COREREVISION="2112301029" FULLNAME="/AES_ECB_decrypt" HWVERSION="1.0" INSTANCE="AES_ECB_decrypt" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AES_ECB_decrypt" VLNV="xilinx.com:hls:AES_ECB_decrypt:1.0">
+    <MODULE COREREVISION="2112301055" FULLNAME="/AES_ECB_decrypt" HWVERSION="1.0" INSTANCE="AES_ECB_decrypt" IPTYPE="PERIPHERAL" IS_ENABLE="1" MODCLASS="PERIPHERAL" MODTYPE="AES_ECB_decrypt" VLNV="xilinx.com:hls:AES_ECB_decrypt:1.0">
       <DOCUMENTS/>
       <ADDRESSBLOCKS>
         <ADDRESSBLOCK ACCESS="read-write" INTERFACE="s_axi_AXILiteS" NAME="Reg" RANGE="65536" USAGE="register">
@@ -354,16 +354,16 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
-            <REGISTER NAME="length_r">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of length_r"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="512"/>
+            <REGISTER NAME="len">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Data signal of len"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="192"/>
               <PROPERTY NAME="SIZE" VALUE="32"/>
               <PROPERTY NAME="ACCESS" VALUE="write-only"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
               <FIELDS>
-                <FIELD NAME="length_r">
-                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of length_r"/>
+                <FIELD NAME="len">
+                  <PROPERTY NAME="DESCRIPTION" VALUE="Bit 31 to 0 Data signal of len"/>
                   <PROPERTY NAME="ADDRESS_OFFSET" VALUE="0"/>
                   <PROPERTY NAME="ACCESS" VALUE="write-only"/>
                   <PROPERTY NAME="MODIFIED_READ_VALUES" VALUE=""/>
@@ -374,10 +374,90 @@
                 </FIELD>
               </FIELDS>
             </REGISTER>
-            <REGISTER NAME="Memory_key_V">
-              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_V"/>
-              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="256"/>
-              <PROPERTY NAME="SIZE" VALUE="256"/>
+            <REGISTER NAME="Memory_key_0_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_0_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="16"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_1_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_1_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="32"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_2_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_2_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="48"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_3_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_3_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="64"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_4_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_4_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="80"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_5_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_5_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="96"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_6_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_6_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="112"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_7_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_7_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="128"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_8_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_8_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="144"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_9_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_9_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="160"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
+              <PROPERTY NAME="ACCESS" VALUE="read-write"/>
+              <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
+              <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
+            </REGISTER>
+            <REGISTER NAME="Memory_key_10_V">
+              <PROPERTY NAME="DESCRIPTION" VALUE="Memory key_10_V"/>
+              <PROPERTY NAME="ADDRESS_OFFSET" VALUE="176"/>
+              <PROPERTY NAME="SIZE" VALUE="16"/>
               <PROPERTY NAME="ACCESS" VALUE="read-write"/>
               <PROPERTY NAME="IS_ENABLED" VALUE="true"/>
               <PROPERTY NAME="RESET_VALUE" VALUE="0"/>
@@ -386,7 +466,7 @@
         </ADDRESSBLOCK>
       </ADDRESSBLOCKS>
       <PARAMETERS>
-        <PARAMETER NAME="C_S_AXI_AXILITES_ADDR_WIDTH" VALUE="10"/>
+        <PARAMETER NAME="C_S_AXI_AXILITES_ADDR_WIDTH" VALUE="8"/>
         <PARAMETER NAME="C_S_AXI_AXILITES_DATA_WIDTH" VALUE="32"/>
         <PARAMETER NAME="Component_Name" VALUE="design_1_AES_ECB_decrypt_0_0"/>
         <PARAMETER NAME="clk_period" VALUE="5"/>
@@ -399,7 +479,7 @@
         <PARAMETER NAME="C_S_AXI_AXILITES_HIGHADDR" VALUE="0x43C0FFFF"/>
       </PARAMETERS>
       <PORTS>
-        <PORT DIR="I" LEFT="9" NAME="s_axi_AXILiteS_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="AES_ECB_decrypt_s_axi_AXILiteS_AWADDR">
+        <PORT DIR="I" LEFT="7" NAME="s_axi_AXILiteS_AWADDR" RIGHT="0" SIGIS="undef" SIGNAME="AES_ECB_decrypt_s_axi_AXILiteS_AWADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_awaddr"/>
           </CONNECTIONS>
@@ -449,7 +529,7 @@
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_bready"/>
           </CONNECTIONS>
         </PORT>
-        <PORT DIR="I" LEFT="9" NAME="s_axi_AXILiteS_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="AES_ECB_decrypt_s_axi_AXILiteS_ARADDR">
+        <PORT DIR="I" LEFT="7" NAME="s_axi_AXILiteS_ARADDR" RIGHT="0" SIGIS="undef" SIGNAME="AES_ECB_decrypt_s_axi_AXILiteS_ARADDR">
           <CONNECTIONS>
             <CONNECTION INSTANCE="ps7_0_axi_periph" PORT="M01_AXI_araddr"/>
           </CONNECTIONS>
@@ -556,7 +636,7 @@
       </PORTS>
       <BUSINTERFACES>
         <BUSINTERFACE BUSNAME="ps7_0_axi_periph_M01_AXI" DATAWIDTH="32" NAME="s_axi_AXILiteS" TYPE="SLAVE" VLNV="xilinx.com:interface:aximm:1.0">
-          <PARAMETER NAME="ADDR_WIDTH" VALUE="10"/>
+          <PARAMETER NAME="ADDR_WIDTH" VALUE="8"/>
           <PARAMETER NAME="DATA_WIDTH" VALUE="32"/>
           <PARAMETER NAME="PROTOCOL" VALUE="AXI4LITE"/>
           <PARAMETER NAME="READ_WRITE_MODE" VALUE="READ_WRITE"/>

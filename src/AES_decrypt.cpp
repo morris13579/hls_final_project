@@ -67,6 +67,7 @@ void InvShiftRows(BYTE in[16],BYTE out[16])
 
 void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[11][16])
 {
+#pragma HLS ARRAY_PARTITION variable=key complete dim=1
 	BYTE state_0[16];
 	BYTE state_1[16];
 	BYTE state_2[16];
@@ -160,16 +161,16 @@ void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[11][16])
 }
 
 
-void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[11][16] , unsigned long length){
+void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[11][16] , unsigned long len){
 #pragma HLS INTERFACE s_axilite port=key
-#pragma HLS INTERFACE s_axilite port=length
+#pragma HLS INTERFACE s_axilite port=len
 #pragma HLS INTERFACE axis register both port=plain
 #pragma HLS INTERFACE axis register both port=encrypt
 #pragma HLS INTERFACE s_axilite port=return
 	//BYTE RoundKey[AES_keyExpSize];
 	//KeyExpansion(RoundKey, key);
 	STREAM_BYTE value[16];
-	for(int i = 0 ;i<length;i+=16){
+	for(int i = 0 ;i<len;i+=16){
 #pragma HLS loop_tripcount min=1 max=1 avg=1
 		BYTE in[16],out[16];
 		for(int j =0;j<16;j++){

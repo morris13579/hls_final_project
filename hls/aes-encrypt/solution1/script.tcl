@@ -6,6 +6,7 @@
 open_project aes-encrypt
 set_top AES_ECB_encrypt
 add_files ../src/AES_common.cpp
+add_files ../src/AES_decrypt.cpp
 add_files ../src/AES_encrypt.cpp
 add_files -tb ../src/AEW_test.cpp -cflags "-Wno-unknown-pragmas"
 open_solution "solution1"
