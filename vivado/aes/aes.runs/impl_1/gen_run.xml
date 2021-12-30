@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_1" LaunchPart="xc7z020iclg400-1L" LaunchTime="1640789969">
+<GenRun Id="impl_1" LaunchPart="xc7z020iclg400-1L" LaunchTime="1640826762">
   <File Type="BITSTR-BMM" Name="design_1_wrapper_bd.bmm"/>
   <File Type="OPT-METHODOLOGY-DRC" Name="design_1_wrapper_methodology_drc_opted.rpt"/>
   <File Type="INIT-TIMING" Name="design_1_wrapper_timing_summary_init.rpt"/>
@@ -123,13 +123,9 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="design_1_processing_system7_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_1"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_dma_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_rst_ps7_0_50M_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_axi_dma_1_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_Cipher_Stream_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_us_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_us_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="design_1_auto_pc_0"/>
   <BlockFileSet Type="BlockSrcs" Name="design_1_xbar_1"/>
 </GenRun>

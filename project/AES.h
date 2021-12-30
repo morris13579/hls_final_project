@@ -28,7 +28,7 @@
 #define BYTE unsigned char
 #define WORD unsigned int
 
-void Cipher(BYTE in[4*Nb],BYTE out[4*Nb],BYTE w[Nr+1][4*Nb]);
+void Cipher(BYTE in[4*Nb],BYTE out[4*Nb],BYTE w[(Nr+1)*4*Nb]);
 void DispArray(char *Arrayname,BYTE *array,int height,int width);
 
 #endif
