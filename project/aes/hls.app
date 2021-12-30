@@ -1,4 +1,4 @@
-<project xmlns="com.autoesl.autopilot.project" top="Cipher_Stream" name="aes">
+<project xmlns="com.autoesl.autopilot.project" top="AES_ECB_encrypt" name="aes">
     <includePaths/>
     <libraryPaths/>
     <Simulation>

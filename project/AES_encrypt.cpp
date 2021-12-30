@@ -16,6 +16,8 @@ void SubBytes(BYTE* in,BYTE* out)
 // Offset = Row number. So the first row is not shifted.
 void ShiftRows(BYTE* in,BYTE* out)
 {
+#pragma HLS dependence variable=in inter false
+#pragma HLS dependence variable=out inter false
 	// Rotate first row 1 columns to left
 	out[13] = in[1];
 	out[1] = in[5];
@@ -68,8 +70,9 @@ void MixColumns(BYTE* in,BYTE* out){
 
 
 
-void Cipher(BYTE* plain, BYTE *encrypt,const BYTE* RoundKey)
+void Cipher(BYTE* plain, BYTE *encrypt,const BYTE RoundKey[AES_keyExpSize])
 {
+#pragma HLS ARRAY_PARTITION variable=RoundKey factor=16
 	BYTE state_0[16];
 	BYTE state_1[16];
 	BYTE state_2[16];
@@ -174,21 +177,24 @@ void Cipher(BYTE* plain, BYTE *encrypt,const BYTE* RoundKey)
 }
 
 
-void AES_ECB_encrypt(BYTE* plain ,BYTE* encrypt ,  BYTE* key)
-{
+void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE* key , unsigned long length) {
+#pragma HLS INTERFACE s_axilite port=key
+#pragma HLS INTERFACE s_axilite port=length
+#pragma HLS INTERFACE axis register both port=plain
+#pragma HLS INTERFACE axis register both port=encrypt
+#pragma HLS INTERFACE s_axilite port=return
 	BYTE RoundKey[AES_keyExpSize];
 	KeyExpansion(RoundKey, key);
-	/*
-	printf("\n---------------------");
-	for(int i =0;i<AES_keyExpSize;i++){
-		if((i % 16) == 0){
-			printf("\n");
+	for(int i = 0 ;i<length;i+=16){
+		BYTE in[16],out[16];
+		for(int j =0;j<16;j++){
+			in[j] = plain->read();
 		}
-		printf("0x%x ", RoundKey[i]);
+		Cipher(in , out , RoundKey);
+		for(int j =0;j<16;j++){
+			encrypt->write(out[j]);
+		}
 	}
-	printf("\n---------------------\n");
-	*/
-	Cipher(plain , encrypt , RoundKey);
 }
 
 

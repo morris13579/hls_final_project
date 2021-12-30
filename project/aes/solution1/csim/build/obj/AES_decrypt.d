@@ -19,4 +19,6 @@ obj/AES_decrypt.o: ../../../../AES_decrypt.cpp ../../../../aes.h \
  D:/Xilinx/Vitis_HLS/2020.2/include/ap_fixed.h \
  D:/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_base.h \
  D:/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_ref.h \
- D:/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_special.h
+ D:/Xilinx/Vitis_HLS/2020.2/include/ap_fixed_special.h \
+ D:/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h \
+ D:/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h

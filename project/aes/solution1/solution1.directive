@@ -1,8 +1,18 @@
 <AutoPilot:ProjectResources xmlns:AutoPilot="com.autoesl.autopilot.ui.directiveView">
     <sourceFile name="">
-        <directive functionName="Cipher_Stream" label="" functionLabel="">
+        <directive functionName="AES_ECB_encrypt" label="" functionLabel="">
             <pragma name="TOP">
-                <option name="name" value="Cipher_Stream"/>
+                <option name="name" value="AES_ECB_encrypt"/>
+            </pragma>
+        </directive>
+        <directive functionName="AES_ECB_encrypt" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="AES_ECB_encrypt"/>
+            </pragma>
+        </directive>
+        <directive functionName="AES_ECB_encrypt" label="" functionLabel="">
+            <pragma name="TOP">
+                <option name="name" value="AES_ECB_encrypt"/>
             </pragma>
         </directive>
     </sourceFile>

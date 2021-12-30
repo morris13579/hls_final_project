@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <hls_stream.h>
 #include "AES.h"
-
 
 
 int main(){
@@ -9,7 +9,15 @@ int main(){
 	BYTE plain[16] = {0x48,0x65,0x6c,0x6c,0x6f,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb};
 	BYTE encrypt[16];
 	BYTE recovery[16];
-	AES_ECB_encrypt(plain,encrypt,key);
+	int length = 16;
+	hls::stream<BYTE> plain_stream;
+	hls::stream<BYTE> encrypt_stream;
+	hls::stream<BYTE> recovery_stream;
+	for(int i = 0;i<length;i++){
+		plain_stream.write(plain[i]);
+	}
+
+	AES_ECB_encrypt(&plain_stream,&encrypt_stream,key,length);
 
 	for(int i=0;i<16;i++){
 		printf("0x%x ",key[i]);
@@ -24,8 +32,10 @@ int main(){
 	}
 	printf("\n");
 
-	AES_ECB_decrypt(encrypt,recovery,key);
-
+	AES_ECB_decrypt(&encrypt_stream,&recovery_stream,key,length);
+	for(int i = 0;i<length;i++){
+		recovery[i] = recovery_stream.read();
+	}
 
 	for(int i=0;i<16;i++){
 		printf("0x%x ",recovery[i]);

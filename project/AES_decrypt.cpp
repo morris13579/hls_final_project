@@ -111,6 +111,7 @@ void InvCipher(BYTE* encrypt ,BYTE* plain, BYTE* RoundKey)
 	for(BYTE i = 0 ;i<16;i++){
 		state_0[i] = encrypt[i];
 	}
+#pragma HLS DATAFLOW
 	AddRoundKey(state_0,state_1,&RoundKey[Nr * Nb * 4]);
 
 	InvShiftRows(state_1,state_2);
@@ -159,11 +160,24 @@ void InvCipher(BYTE* encrypt ,BYTE* plain, BYTE* RoundKey)
 }
 
 
-void AES_ECB_decrypt(BYTE* encrypt ,BYTE* plain ,  BYTE* key)
-{
+void AES_ECB_decrypt(hls::stream<BYTE>* encrypt ,hls::stream<BYTE>* plain ,  BYTE* key , unsigned long length){
+#pragma HLS INTERFACE s_axilite port=key
+#pragma HLS INTERFACE s_axilite port=length
+#pragma HLS INTERFACE axis register both port=plain
+#pragma HLS INTERFACE axis register both port=encrypt
+#pragma HLS INTERFACE s_axilite port=return
 	BYTE RoundKey[AES_keyExpSize];
 	KeyExpansion(RoundKey, key);
-	InvCipher(encrypt , plain, RoundKey);
+	for(int i = 0 ;i<length;i+=16){
+		BYTE in[16],out[16];
+		for(int j =0;j<16;j++){
+			in[j] = encrypt->read();
+		}
+		InvCipher(in , out, RoundKey);
+		for(int j =0;j<16;j++){
+			plain->write(out[j]);
+		}
+	}
 }
 
 

@@ -4,7 +4,7 @@
 ## Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ############################################################
 open_project aes
-set_top Cipher_Stream
+set_top AES_ECB_encrypt
 add_files AES_common.cpp
 add_files AES_decrypt.cpp
 add_files AES_encrypt.cpp

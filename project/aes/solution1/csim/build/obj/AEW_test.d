@@ -1,5 +1,7 @@
-obj/AEW_test.o: ../../../../AEW_test.cpp ../../../../AES.h \
- D:/Xilinx/Vitis_HLS/2020.2/include/ap_int.h \
+obj/AEW_test.o: ../../../../AEW_test.cpp \
+ D:/Xilinx/Vitis_HLS/2020.2/include/hls_stream.h \
+ D:/Xilinx/Vitis_HLS/2020.2/include/hls_stream_thread_unsafe.h \
+ ../../../../AES.h D:/Xilinx/Vitis_HLS/2020.2/include/ap_int.h \
  D:/Xilinx/Vitis_HLS/2020.2/include/ap_common.h \
  D:/Xilinx/Vitis_HLS/2020.2/include/ap_decl.h \
  D:/Xilinx/Vitis_HLS/2020.2/include/etc/ap_private.h \

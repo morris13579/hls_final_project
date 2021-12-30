@@ -4,6 +4,7 @@
 #include <stdint.h>
 #include <stddef.h>
 #include <ap_int.h>
+#include <hls_stream.h>
 
 typedef unsigned char BYTE;
 
@@ -41,8 +42,8 @@ typedef unsigned char BYTE;
 
 void KeyExpansion(BYTE* RoundKey, const BYTE* Key);
 void AddRoundKey(BYTE* in,BYTE* out , const BYTE* RoundKey);
-void AES_ECB_encrypt(BYTE* plain ,BYTE* encrypt ,  BYTE* key);
-void AES_ECB_decrypt(BYTE* encrypt ,BYTE* plain ,  BYTE* key);
+void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE* key , unsigned long length);
+void AES_ECB_decrypt(hls::stream<BYTE>* encrypt ,hls::stream<BYTE>* plain ,  BYTE* key , unsigned long length);
 BYTE xtime(BYTE x);
 
 
