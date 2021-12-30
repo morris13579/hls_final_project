@@ -1,0 +1,10 @@
+.apc/*
+.reference/*
+.settings/*
+*/.autopilot/*
+*/.tcl/*
+*/csim/*
+*/syn/*
+*/impl/*
+*.log
+

@@ -1,0 +1,13 @@
+.apc/*
+.reference/*
+.settings/*
+*/.autopilot/*
+*/.tcl/*
+*/csim/*
+*/impl/*
+*/syn/*
+!solution1/impl/ip/*.xml
+!solution1/impl/ip/*.zip
+
+*.log
+

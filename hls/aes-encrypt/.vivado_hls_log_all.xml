@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
+  <errorLogs>
+    <logs>
+      <synLog/>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </errorLogs>
+  <warningLogs>
+    <logs>
+      <synLog>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V' (../src/AES_encrypt.cpp:17)." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:19.547+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V' (../src/AES_encrypt.cpp:17)." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.510+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.505+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.442+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.431+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.426+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.422+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.418+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.159+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.154+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.150+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.145+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.139+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.133+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.127+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.123+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.118+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.105+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.094+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:18.088+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_39.V' should be updated in process function 'ShiftRows', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.507+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_35.V' should be updated in process function 'ShiftRows82', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.485+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_31.V' should be updated in process function 'ShiftRows78', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.476+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_27.V' should be updated in process function 'ShiftRows74', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.469+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_23.V' should be updated in process function 'ShiftRows70', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.464+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_19.V' should be updated in process function 'ShiftRows66', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.460+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_15.V' should be updated in process function 'ShiftRows62', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.456+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_11.V' should be updated in process function 'ShiftRows58', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.453+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_7.V' should be updated in process function 'ShiftRows54', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.449+0800" type="Warning"/>
+        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_3.V' should be updated in process function 'ShiftRows50', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2022-01-03T08:51:16.447+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file ../src/AES_encrypt.cpp" projectName="aes" solutionName="solution1" date="2022-01-03T08:51:15.319+0800" type="Warning"/>
+        <logs message="WARNING: [HLS 214-114] Only function calls and local variable declarations are allowed in a dataflow region: ../src/AES_encrypt.cpp:119:2" projectName="aes" solutionName="solution1" date="2022-01-03T08:51:11.504+0800" type="Warning"/>
+      </synLog>
+      <simLog/>
+      <mgLog/>
+      <packageLog/>
+      <csimLog/>
+    </logs>
+  </warningLogs>
+</vivadoHLSLog:LogRoot>
