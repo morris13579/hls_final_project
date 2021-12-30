@@ -1,0 +1,36 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include "AES.h"
+
+
+
+int main(){
+	BYTE key[16] = {0x97,0xc6,0x17,0x85,0xe7,0x28,0xa6,0x1,0xb8,0xd7,0x1d,0xa4,0x4c,0xb3,0xb,0x1c};
+	BYTE plain[16] = {0x48,0x65,0x6c,0x6c,0x6f,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb,0xb};
+	BYTE encrypt[16];
+	BYTE recovery[16];
+	AES_ECB_encrypt(plain,encrypt,key);
+
+	for(int i=0;i<16;i++){
+		printf("0x%x ",key[i]);
+	}
+	printf("\n");
+	for(int i=0;i<16;i++){
+		printf("0x%x ",plain[i]);
+	}
+	printf("\n");
+	for(int i=0;i<16;i++){
+		printf("0x%x ",encrypt[i]);
+	}
+	printf("\n");
+
+	AES_ECB_decrypt(encrypt,recovery,key);
+
+
+	for(int i=0;i<16;i++){
+		printf("0x%x ",recovery[i]);
+	}
+	printf("\n");
+
+	return 0;
+}

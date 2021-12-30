@@ -1,0 +1,61 @@
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Morris' on host 'morris' (Windows NT_amd64 version 6.2) on Thu Dec 30 15:21:19 +0800 2021
+INFO: [HLS 200-10] In directory 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/project'
+Sourcing Tcl script 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/project/aes/solution1/csim.tcl'
+INFO: [HLS 200-1510] Running: open_project aes 
+INFO: [HLS 200-10] Opening project 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/project/aes'.
+INFO: [HLS 200-1510] Running: set_top Cipher_Stream 
+INFO: [HLS 200-1510] Running: add_files AES_common.cpp 
+INFO: [HLS 200-10] Adding design file 'AES_common.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files AES_decrypt.cpp 
+INFO: [HLS 200-10] Adding design file 'AES_decrypt.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files AES_encrypt.cpp 
+INFO: [HLS 200-10] Adding design file 'AES_encrypt.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb AEW_test.cpp 
+INFO: [HLS 200-10] Adding test bench file 'AEW_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/project/aes/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg400-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020clg400-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: csim_design -quiet 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../AEW_test.cpp in debug mode
+   Generating csim.exe
+In file included from D:/Xilinx/Vitis_HLS/2020.2/include/floating_point_v7_0_bitacc_cmodel.h:144:0,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/hls_fpo.h:189,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/hls_half_fpo.h:64,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/hls_half.h:71,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/etc/ap_private.h:91,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/ap_common.h:646,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/ap_int.h:55,
+                 from ../../../../AES.h:6,
+                 from ../../../../AEW_test.cpp:3:
+D:/Xilinx/Vitis_HLS/2020.2/include/gmp.h:63:0: warning: "__GMP_LIBGMP_DLL" redefined
+ #define __GMP_LIBGMP_DLL  0
+ 
+In file included from D:/Xilinx/Vitis_HLS/2020.2/include/hls_fpo.h:189:0,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/hls_half_fpo.h:64,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/hls_half.h:71,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/etc/ap_private.h:91,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/ap_common.h:646,
+                 from D:/Xilinx/Vitis_HLS/2020.2/include/ap_int.h:55,
+                 from ../../../../AES.h:6,
+                 from ../../../../AEW_test.cpp:3:
+D:/Xilinx/Vitis_HLS/2020.2/include/floating_point_v7_0_bitacc_cmodel.h:136:0: note: this is the location of the previous definition
+ #define __GMP_LIBGMP_DLL 1
+ 
+0x97 0xc6 0x17 0x85 0xe7 0x28 0xa6 0x1 0xb8 0xd7 0x1d 0xa4 0x4c 0xb3 0xb 0x1c 
+0x48 0x65 0x6c 0x6c 0x6f 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 
+0xcd 0xf1 0x78 0x6c 0x76 0x7 0xf 0xcf 0x59 0xfc 0x7b 0x42 0xb 0x2 0xbc 0x4a 
+0x48 0x65 0x6c 0x6c 0x6f 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 0xb 
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+INFO: [HLS 200-111] Finished Command csim_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.132 seconds; current allocated memory: 92.010 MB.
