@@ -1,15 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Messages>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.053 seconds; current allocated memory: 871.519 MB." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.056 seconds; current allocated memory: 871.519 MB." resolution=""/>
 	<Message severity="INFO" prefix="[HLS 200-10]" key="HLS_10_1312" tag="" content="Analyzing design file &apos;AES.cpp&apos; ..." resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;ap_axiu&apos;: AES.cpp:79" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;w&apos;: AES.cpp:80" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;length&apos;: AES.cpp:81" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;in&apos;: AES.cpp:82" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;out&apos;: AES.cpp:83" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;length&apos;: AES.cpp:85" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;in&apos;: AES.cpp:88" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;w&apos;: AES.cpp:90" resolution=""/>
-	<Message severity="ERROR" prefix="[HLS 214-124]" key="HLS 214-124" tag="" content="use of undeclared identifier &apos;out&apos;: AES.cpp:92" resolution=""/>
-	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 2.778 seconds; current allocated memory: 93.340 MB." resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 207-949]" key="HLS 207-949" tag="" content="non-portable path to file &apos;&quot;AES.h&quot;&apos;; specified path differs in case from file name on disk: AES.cpp:2:10" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: ./aes.h:9:9" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3750]" key="HLS 207-3750" tag="" content="typedef name must be an identifier: ./aes.h:9:14" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: ./aes.h:28:22" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: ./aes.h:28:32" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: ./aes.h:28:44" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: ./aes.h:29:22" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: ./aes.h:29:32" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: ./aes.h:29:44" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:19:14" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:41:26" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:41:48" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:101:25" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:101:34" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:101:52" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:103:6" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:110:22" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:110:31" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:112:7" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-3796]" key="HLS 207-3796" tag="" content="unknown type name &apos;BYTE&apos;: AES.cpp:120:23" resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 207-59]" key="HLS 207-59" tag="" content="too many errors emitted, stopping now" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Command csynth_design CPU user time: 1 seconds. CPU system time: 0 seconds. Elapsed time: 3.601 seconds; current allocated memory: 93.813 MB." resolution=""/>
 </Messages>

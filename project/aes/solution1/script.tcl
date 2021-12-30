@@ -5,7 +5,9 @@
 ############################################################
 open_project aes
 set_top Cipher_Stream
-add_files AES.cpp
+add_files AES_common.cpp
+add_files AES_decrypt.cpp
+add_files AES_encrypt.cpp
 add_files -tb AEW_test.cpp
 open_solution "solution1" -flow_target vivado
 set_part {xc7z020clg400-1}
