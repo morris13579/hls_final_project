@@ -1,11 +1,11 @@
-Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -----------------------------------------------------------------------------------------------------------------------------------
-| Tool Version : Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
-| Date         : Wed Dec 29 22:56:22 2021
+| Tool Version : Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
+| Date         : Thu Dec 30 22:11:55 2021
 | Host         : Morris running 64-bit major release  (build 9200)
 | Command      : report_utilization -file design_1_axi_dma_0_0_utilization_synth.rpt -pb design_1_axi_dma_0_0_utilization_synth.pb
 | Design       : design_1_axi_dma_0_0
-| Device       : 7z020iclg400-1L
+| Device       : 7z020clg484-1
 | Design State : Synthesized
 -----------------------------------------------------------------------------------------------------------------------------------
 
@@ -30,13 +30,13 @@ Table of Contents
 +----------------------------+------+-------+-----------+-------+
 |          Site Type         | Used | Fixed | Available | Util% |
 +----------------------------+------+-------+-----------+-------+
-| Slice LUTs*                |  808 |     0 |     53200 |  1.52 |
-|   LUT as Logic             |  721 |     0 |     53200 |  1.36 |
+| Slice LUTs*                |  885 |     0 |     53200 |  1.66 |
+|   LUT as Logic             |  798 |     0 |     53200 |  1.50 |
 |   LUT as Memory            |   87 |     0 |     17400 |  0.50 |
 |     LUT as Distributed RAM |    8 |     0 |           |       |
 |     LUT as Shift Register  |   79 |     0 |           |       |
-| Slice Registers            | 1088 |     0 |    106400 |  1.02 |
-|   Register as Flip Flop    | 1088 |     0 |    106400 |  1.02 |
+| Slice Registers            | 1165 |     0 |    106400 |  1.09 |
+|   Register as Flip Flop    | 1165 |     0 |    106400 |  1.09 |
 |   Register as Latch        |    0 |     0 |    106400 |  0.00 |
 | F7 Muxes                   |    0 |     0 |     26600 |  0.00 |
 | F8 Muxes                   |    0 |     0 |     13300 |  0.00 |
@@ -58,8 +58,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 51    |          Yes |         Set |            - |
-| 1037  |          Yes |       Reset |            - |
+| 59    |          Yes |         Set |            - |
+| 1106  |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -93,7 +93,7 @@ Table of Contents
 +-----------------------------+------+-------+-----------+-------+
 |          Site Type          | Used | Fixed | Available | Util% |
 +-----------------------------+------+-------+-----------+-------+
-| Bonded IOB                  |    0 |     0 |       125 |  0.00 |
+| Bonded IOB                  |    0 |     0 |       200 |  0.00 |
 | Bonded IPADs                |    0 |     0 |         2 |  0.00 |
 | Bonded IOPADs               |    0 |     0 |       130 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |         4 |  0.00 |
@@ -101,12 +101,12 @@ Table of Contents
 | OUT_FIFO                    |    0 |     0 |        16 |  0.00 |
 | IN_FIFO                     |    0 |     0 |        16 |  0.00 |
 | IDELAYCTRL                  |    0 |     0 |         4 |  0.00 |
-| IBUFDS                      |    0 |     0 |       121 |  0.00 |
+| IBUFDS                      |    0 |     0 |       192 |  0.00 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |        16 |  0.00 |
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |        16 |  0.00 |
 | IDELAYE2/IDELAYE2_FINEDELAY |    0 |     0 |       200 |  0.00 |
-| ILOGIC                      |    0 |     0 |       125 |  0.00 |
-| OLOGIC                      |    0 |     0 |       125 |  0.00 |
+| ILOGIC                      |    0 |     0 |       200 |  0.00 |
+| OLOGIC                      |    0 |     0 |       200 |  0.00 |
 +-----------------------------+------+-------+-----------+-------+
 
 
@@ -149,16 +149,16 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     | 1037 |        Flop & Latch |
-| LUT3     |  235 |                 LUT |
-| LUT6     |  164 |                 LUT |
-| LUT4     |  151 |                 LUT |
-| LUT2     |  129 |                 LUT |
-| LUT5     |  115 |                 LUT |
+| FDRE     | 1106 |        Flop & Latch |
+| LUT3     |  222 |                 LUT |
+| LUT4     |  195 |                 LUT |
+| LUT6     |  188 |                 LUT |
+| LUT2     |  142 |                 LUT |
+| LUT5     |  141 |                 LUT |
 | SRL16E   |   79 |  Distributed Memory |
-| LUT1     |   53 |                 LUT |
-| FDSE     |   51 |        Flop & Latch |
-| CARRY4   |   22 |          CarryLogic |
+| LUT1     |   60 |                 LUT |
+| FDSE     |   59 |        Flop & Latch |
+| CARRY4   |   26 |          CarryLogic |
 | RAMD32   |   12 |  Distributed Memory |
 | RAMS32   |    4 |  Distributed Memory |
 | RAMB36E1 |    1 |        Block Memory |

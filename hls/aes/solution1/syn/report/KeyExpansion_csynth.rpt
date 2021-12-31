@@ -1,0 +1,1125 @@
+
+
+================================================================
+== Vivado HLS Report for 'KeyExpansion'
+================================================================
+* Date:           Fri Dec 31 12:15:46 2021
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        aes
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.028|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  182|  182|  182|  182|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   20|   20|         5|          -|          -|     4|    no    |
+        |- Loop 2  |  160|  160|         4|          -|          -|    40|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     109|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |        -|      -|       0|  187590|
+|Memory           |        2|      -|       8|       2|
+|Multiplexer      |        -|      -|       -|    2036|
+|Register         |        -|      -|    3100|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |        2|      0|    3108|  189737|
++-----------------+---------+-------+--------+--------+
+|Available        |      280|    220|  106400|   53200|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |    ~0   |      0|       2|     356|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +---------------------------+----------------------+---------+-------+---+------+
+    |          Instance         |        Module        | BRAM_18K| DSP48E| FF|  LUT |
+    +---------------------------+----------------------+---------+-------+---+------+
+    |AES_ECB_encrypt_mbkb_U1    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U2    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U3    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U4    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U5    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U6    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U7    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U8    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U9    |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U10   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U11   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U12   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U64   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U65   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U66   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U67   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U68   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U69   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U70   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U71   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U72   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U73   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U74   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U75   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U76   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U77   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U78   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U79   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U80   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U81   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U82   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U83   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U84   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U85   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U86   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U87   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U88   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U89   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U90   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U91   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U92   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U93   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U94   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U95   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U96   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U97   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U98   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U99   |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U100  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U101  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U102  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U103  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U104  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U105  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U106  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U107  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U108  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U109  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U110  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U111  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U112  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U113  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U114  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U115  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U116  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U117  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U118  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U119  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U120  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U121  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U122  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U123  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U124  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U125  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U126  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U127  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U128  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U129  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U130  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U131  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U132  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U133  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U134  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U135  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U136  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U137  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U138  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U139  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U140  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U141  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U142  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U143  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U144  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U145  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U146  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U147  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U148  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U149  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U150  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U151  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U152  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U153  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U154  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U155  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U156  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U157  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U158  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U159  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U160  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U161  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U162  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U163  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U164  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U165  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U166  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U167  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U168  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U169  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U170  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U171  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U172  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U173  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U174  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U175  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U176  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U177  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U178  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U179  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U180  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U181  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U182  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U183  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U184  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U185  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U186  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U187  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U188  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U189  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U190  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U191  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U192  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U193  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U194  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mbkb_U195  |AES_ECB_encrypt_mbkb  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U13   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U14   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U15   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U16   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U18   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U20   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U22   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U24   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U25   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U26   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U27   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U28   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U29   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U30   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U31   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U32   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U33   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U34   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U35   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U36   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U37   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U38   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U39   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U40   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U41   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U42   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U43   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U44   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U45   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U46   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U47   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U48   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U49   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U50   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U51   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U52   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U53   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U54   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U55   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U56   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U57   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U58   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U59   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U60   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U61   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U62   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mcud_U63   |AES_ECB_encrypt_mcud  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_mdEe_U17   |AES_ECB_encrypt_mdEe  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_meOg_U19   |AES_ECB_encrypt_meOg  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_meOg_U21   |AES_ECB_encrypt_meOg  |        0|      0|  0|   962|
+    |AES_ECB_encrypt_meOg_U23   |AES_ECB_encrypt_meOg  |        0|      0|  0|   962|
+    +---------------------------+----------------------+---------+-------+---+------+
+    |Total                      |                      |        0|      0|  0|187590|
+    +---------------------------+----------------------+---------+-------+---+------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +----------+---------------------+---------+---+----+------+-----+------+-------------+
+    |  Memory  |        Module       | BRAM_18K| FF| LUT| Words| Bits| Banks| W*Bits*Banks|
+    +----------+---------------------+---------+---+----+------+-----+------+-------------+
+    |Rcon_U    |KeyExpansion_Rcon    |        0|  8|   2|    11|    8|     1|           88|
+    |sbox_1_U  |KeyExpansion_sbox_1  |        2|  0|   0|   256|    8|     1|         2048|
+    +----------+---------------------+---------+---+----+------+-----+------+-------------+
+    |Total     |                     |        2|  8|   2|   267|   16|     2|         2136|
+    +----------+---------------------+---------+---+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |      Variable Name      | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |i_2_fu_2713_p2           |     +    |      0|  0|  12|           3|           1|
+    |i_3_fu_48435_p2          |     +    |      0|  0|  15|           6|           1|
+    |ap_condition_86301       |    and   |      0|  0|   2|           1|           1|
+    |exitcond_fu_4390_p2      |   icmp   |      0|  0|  11|           6|           6|
+    |tmp_25_fu_7014_p2        |   icmp   |      0|  0|   8|           2|           1|
+    |tmp_fu_2707_p2           |   icmp   |      0|  0|   9|           3|           4|
+    |tmp_18_fu_2756_p2        |    or    |      0|  0|   4|           4|           1|
+    |tmp_20_fu_3306_p2        |    or    |      0|  0|   4|           4|           2|
+    |tmp_22_fu_3848_p2        |    or    |      0|  0|   4|           4|           2|
+    |RoundKey172_fu_10047_p2  |    xor   |      0|  0|   8|           8|           8|
+    |RoundKey173_fu_30732_p2  |    xor   |      0|  0|   8|           8|           8|
+    |RoundKey174_fu_36633_p2  |    xor   |      0|  0|   8|           8|           8|
+    |RoundKey175_fu_42534_p2  |    xor   |      0|  0|   8|           8|           8|
+    |tempa_0_fu_7055_p2       |    xor   |      0|  0|   8|           8|           8|
+    +-------------------------+----------+-------+---+----+------------+------------+
+    |Total                    |          |      0|  0| 109|          73|          59|
+    +-------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +------------------------+-----+-----------+-----+-----------+
+    |          Name          | LUT | Input Size| Bits| Total Bits|
+    +------------------------+-----+-----------+-----+-----------+
+    |Key_address0            |   27|          5|    4|         20|
+    |RoundKey10_2_reg_498    |    9|          2|    8|         16|
+    |RoundKey11_2_reg_509    |    9|          2|    8|         16|
+    |RoundKey12_2_reg_421    |    9|          2|    8|         16|
+    |RoundKey1316_2_reg_520  |    9|          2|    8|         16|
+    |RoundKey14_2_reg_531    |    9|          2|    8|         16|
+    |RoundKey15_2_reg_542    |    9|          2|    8|         16|
+    |RoundKey2_2_reg_432     |    9|          2|    8|         16|
+    |RoundKey3_2_reg_443     |    9|          2|    8|         16|
+    |RoundKey5_2_reg_454     |    9|          2|    8|         16|
+    |RoundKey6_2_reg_465     |    9|          2|    8|         16|
+    |RoundKey7_2_reg_476     |    9|          2|    8|         16|
+    |RoundKey9_2_reg_487     |    9|          2|    8|         16|
+    |ap_NS_fsm               |   50|         11|    1|         11|
+    |ap_return_0             |    9|          2|    8|         16|
+    |ap_return_1             |    9|          2|    8|         16|
+    |ap_return_10            |    9|          2|    8|         16|
+    |ap_return_100           |    9|          2|    8|         16|
+    |ap_return_101           |    9|          2|    8|         16|
+    |ap_return_102           |    9|          2|    8|         16|
+    |ap_return_103           |    9|          2|    8|         16|
+    |ap_return_104           |    9|          2|    8|         16|
+    |ap_return_105           |    9|          2|    8|         16|
+    |ap_return_106           |    9|          2|    8|         16|
+    |ap_return_107           |    9|          2|    8|         16|
+    |ap_return_108           |    9|          2|    8|         16|
+    |ap_return_109           |    9|          2|    8|         16|
+    |ap_return_11            |    9|          2|    8|         16|
+    |ap_return_110           |    9|          2|    8|         16|
+    |ap_return_111           |    9|          2|    8|         16|
+    |ap_return_112           |    9|          2|    8|         16|
+    |ap_return_113           |    9|          2|    8|         16|
+    |ap_return_114           |    9|          2|    8|         16|
+    |ap_return_115           |    9|          2|    8|         16|
+    |ap_return_116           |    9|          2|    8|         16|
+    |ap_return_117           |    9|          2|    8|         16|
+    |ap_return_118           |    9|          2|    8|         16|
+    |ap_return_119           |    9|          2|    8|         16|
+    |ap_return_12            |    9|          2|    8|         16|
+    |ap_return_120           |    9|          2|    8|         16|
+    |ap_return_121           |    9|          2|    8|         16|
+    |ap_return_122           |    9|          2|    8|         16|
+    |ap_return_123           |    9|          2|    8|         16|
+    |ap_return_124           |    9|          2|    8|         16|
+    |ap_return_125           |    9|          2|    8|         16|
+    |ap_return_126           |    9|          2|    8|         16|
+    |ap_return_127           |    9|          2|    8|         16|
+    |ap_return_128           |    9|          2|    8|         16|
+    |ap_return_129           |    9|          2|    8|         16|
+    |ap_return_13            |    9|          2|    8|         16|
+    |ap_return_130           |    9|          2|    8|         16|
+    |ap_return_131           |    9|          2|    8|         16|
+    |ap_return_132           |    9|          2|    8|         16|
+    |ap_return_133           |    9|          2|    8|         16|
+    |ap_return_134           |    9|          2|    8|         16|
+    |ap_return_135           |    9|          2|    8|         16|
+    |ap_return_136           |    9|          2|    8|         16|
+    |ap_return_137           |    9|          2|    8|         16|
+    |ap_return_138           |    9|          2|    8|         16|
+    |ap_return_139           |    9|          2|    8|         16|
+    |ap_return_14            |    9|          2|    8|         16|
+    |ap_return_140           |    9|          2|    8|         16|
+    |ap_return_141           |    9|          2|    8|         16|
+    |ap_return_142           |    9|          2|    8|         16|
+    |ap_return_143           |    9|          2|    8|         16|
+    |ap_return_144           |    9|          2|    8|         16|
+    |ap_return_145           |    9|          2|    8|         16|
+    |ap_return_146           |    9|          2|    8|         16|
+    |ap_return_147           |    9|          2|    8|         16|
+    |ap_return_148           |    9|          2|    8|         16|
+    |ap_return_149           |    9|          2|    8|         16|
+    |ap_return_15            |    9|          2|    8|         16|
+    |ap_return_150           |    9|          2|    8|         16|
+    |ap_return_151           |    9|          2|    8|         16|
+    |ap_return_152           |    9|          2|    8|         16|
+    |ap_return_153           |    9|          2|    8|         16|
+    |ap_return_154           |    9|          2|    8|         16|
+    |ap_return_155           |    9|          2|    8|         16|
+    |ap_return_156           |    9|          2|    8|         16|
+    |ap_return_157           |    9|          2|    8|         16|
+    |ap_return_158           |    9|          2|    8|         16|
+    |ap_return_159           |    9|          2|    8|         16|
+    |ap_return_16            |    9|          2|    8|         16|
+    |ap_return_160           |    9|          2|    8|         16|
+    |ap_return_161           |    9|          2|    8|         16|
+    |ap_return_162           |    9|          2|    8|         16|
+    |ap_return_163           |    9|          2|    8|         16|
+    |ap_return_164           |    9|          2|    8|         16|
+    |ap_return_165           |    9|          2|    8|         16|
+    |ap_return_166           |    9|          2|    8|         16|
+    |ap_return_167           |    9|          2|    8|         16|
+    |ap_return_168           |    9|          2|    8|         16|
+    |ap_return_169           |    9|          2|    8|         16|
+    |ap_return_17            |    9|          2|    8|         16|
+    |ap_return_170           |    9|          2|    8|         16|
+    |ap_return_171           |    9|          2|    8|         16|
+    |ap_return_172           |    9|          2|    8|         16|
+    |ap_return_173           |    9|          2|    8|         16|
+    |ap_return_174           |    9|          2|    8|         16|
+    |ap_return_175           |    9|          2|    8|         16|
+    |ap_return_18            |    9|          2|    8|         16|
+    |ap_return_19            |    9|          2|    8|         16|
+    |ap_return_2             |    9|          2|    8|         16|
+    |ap_return_20            |    9|          2|    8|         16|
+    |ap_return_21            |    9|          2|    8|         16|
+    |ap_return_22            |    9|          2|    8|         16|
+    |ap_return_23            |    9|          2|    8|         16|
+    |ap_return_24            |    9|          2|    8|         16|
+    |ap_return_25            |    9|          2|    8|         16|
+    |ap_return_26            |    9|          2|    8|         16|
+    |ap_return_27            |    9|          2|    8|         16|
+    |ap_return_28            |    9|          2|    8|         16|
+    |ap_return_29            |    9|          2|    8|         16|
+    |ap_return_3             |    9|          2|    8|         16|
+    |ap_return_30            |    9|          2|    8|         16|
+    |ap_return_31            |    9|          2|    8|         16|
+    |ap_return_32            |    9|          2|    8|         16|
+    |ap_return_33            |    9|          2|    8|         16|
+    |ap_return_34            |    9|          2|    8|         16|
+    |ap_return_35            |    9|          2|    8|         16|
+    |ap_return_36            |    9|          2|    8|         16|
+    |ap_return_37            |    9|          2|    8|         16|
+    |ap_return_38            |    9|          2|    8|         16|
+    |ap_return_39            |    9|          2|    8|         16|
+    |ap_return_4             |    9|          2|    8|         16|
+    |ap_return_40            |    9|          2|    8|         16|
+    |ap_return_41            |    9|          2|    8|         16|
+    |ap_return_42            |    9|          2|    8|         16|
+    |ap_return_43            |    9|          2|    8|         16|
+    |ap_return_44            |    9|          2|    8|         16|
+    |ap_return_45            |    9|          2|    8|         16|
+    |ap_return_46            |    9|          2|    8|         16|
+    |ap_return_47            |    9|          2|    8|         16|
+    |ap_return_48            |    9|          2|    8|         16|
+    |ap_return_49            |    9|          2|    8|         16|
+    |ap_return_5             |    9|          2|    8|         16|
+    |ap_return_50            |    9|          2|    8|         16|
+    |ap_return_51            |    9|          2|    8|         16|
+    |ap_return_52            |    9|          2|    8|         16|
+    |ap_return_53            |    9|          2|    8|         16|
+    |ap_return_54            |    9|          2|    8|         16|
+    |ap_return_55            |    9|          2|    8|         16|
+    |ap_return_56            |    9|          2|    8|         16|
+    |ap_return_57            |    9|          2|    8|         16|
+    |ap_return_58            |    9|          2|    8|         16|
+    |ap_return_59            |    9|          2|    8|         16|
+    |ap_return_6             |    9|          2|    8|         16|
+    |ap_return_60            |    9|          2|    8|         16|
+    |ap_return_61            |    9|          2|    8|         16|
+    |ap_return_62            |    9|          2|    8|         16|
+    |ap_return_63            |    9|          2|    8|         16|
+    |ap_return_64            |    9|          2|    8|         16|
+    |ap_return_65            |    9|          2|    8|         16|
+    |ap_return_66            |    9|          2|    8|         16|
+    |ap_return_67            |    9|          2|    8|         16|
+    |ap_return_68            |    9|          2|    8|         16|
+    |ap_return_69            |    9|          2|    8|         16|
+    |ap_return_7             |    9|          2|    8|         16|
+    |ap_return_70            |    9|          2|    8|         16|
+    |ap_return_71            |    9|          2|    8|         16|
+    |ap_return_72            |    9|          2|    8|         16|
+    |ap_return_73            |    9|          2|    8|         16|
+    |ap_return_74            |    9|          2|    8|         16|
+    |ap_return_75            |    9|          2|    8|         16|
+    |ap_return_76            |    9|          2|    8|         16|
+    |ap_return_77            |    9|          2|    8|         16|
+    |ap_return_78            |    9|          2|    8|         16|
+    |ap_return_79            |    9|          2|    8|         16|
+    |ap_return_8             |    9|          2|    8|         16|
+    |ap_return_80            |    9|          2|    8|         16|
+    |ap_return_81            |    9|          2|    8|         16|
+    |ap_return_82            |    9|          2|    8|         16|
+    |ap_return_83            |    9|          2|    8|         16|
+    |ap_return_84            |    9|          2|    8|         16|
+    |ap_return_85            |    9|          2|    8|         16|
+    |ap_return_86            |    9|          2|    8|         16|
+    |ap_return_87            |    9|          2|    8|         16|
+    |ap_return_88            |    9|          2|    8|         16|
+    |ap_return_89            |    9|          2|    8|         16|
+    |ap_return_9             |    9|          2|    8|         16|
+    |ap_return_90            |    9|          2|    8|         16|
+    |ap_return_91            |    9|          2|    8|         16|
+    |ap_return_92            |    9|          2|    8|         16|
+    |ap_return_93            |    9|          2|    8|         16|
+    |ap_return_94            |    9|          2|    8|         16|
+    |ap_return_95            |    9|          2|    8|         16|
+    |ap_return_96            |    9|          2|    8|         16|
+    |ap_return_97            |    9|          2|    8|         16|
+    |ap_return_98            |    9|          2|    8|         16|
+    |ap_return_99            |    9|          2|    8|         16|
+    |i_1_reg_2521            |    9|          2|    6|         12|
+    |i_reg_409               |    9|          2|    3|          6|
+    |tempa_0_2_reg_2533      |  177|         40|    8|        320|
+    |tempa_1_32_reg_2676     |    9|          2|    8|         16|
+    |tempa_2_31_reg_2667     |    9|          2|    8|         16|
+    |tempa_3_30_reg_2658     |    9|          2|    8|         16|
+    |tempa_reg_2685          |    9|          2|    8|         16|
+    |write_flag1_reg_2413    |    9|          2|    1|          2|
+    |write_flag2_reg_2449    |    9|          2|    1|          2|
+    |write_flag3_reg_2485    |    9|          2|    1|          2|
+    |write_flag_reg_2377     |    9|          2|    1|          2|
+    +------------------------+-----+-----------+-----+-----------+
+    |Total                   | 2036|        452| 1562|       3449|
+    +------------------------+-----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------------------+----+----+-----+-----------+
+    |              Name             | FF | LUT| Bits| Const Bits|
+    +-------------------------------+----+----+-----+-----------+
+    |RoundKey100_reg_1513           |   8|   0|    8|          0|
+    |RoundKey101_reg_1525           |   8|   0|    8|          0|
+    |RoundKey102_reg_1537           |   8|   0|    8|          0|
+    |RoundKey103_reg_1549           |   8|   0|    8|          0|
+    |RoundKey104_reg_1561           |   8|   0|    8|          0|
+    |RoundKey105_reg_1573           |   8|   0|    8|          0|
+    |RoundKey106_reg_1585           |   8|   0|    8|          0|
+    |RoundKey107_reg_1597           |   8|   0|    8|          0|
+    |RoundKey108_reg_1609           |   8|   0|    8|          0|
+    |RoundKey109_reg_1621           |   8|   0|    8|          0|
+    |RoundKey10_1_reg_48543         |   8|   0|    8|          0|
+    |RoundKey10_2_reg_498           |   8|   0|    8|          0|
+    |RoundKey10_reg_349             |   8|   0|    8|          0|
+    |RoundKey110_reg_1633           |   8|   0|    8|          0|
+    |RoundKey111_reg_1645           |   8|   0|    8|          0|
+    |RoundKey112_reg_1657           |   8|   0|    8|          0|
+    |RoundKey113_reg_1669           |   8|   0|    8|          0|
+    |RoundKey114_reg_1681           |   8|   0|    8|          0|
+    |RoundKey115_reg_1693           |   8|   0|    8|          0|
+    |RoundKey116_reg_1705           |   8|   0|    8|          0|
+    |RoundKey117_reg_1717           |   8|   0|    8|          0|
+    |RoundKey118_reg_1729           |   8|   0|    8|          0|
+    |RoundKey119_reg_1741           |   8|   0|    8|          0|
+    |RoundKey11_2_reg_509           |   8|   0|    8|          0|
+    |RoundKey11_reg_361             |   8|   0|    8|          0|
+    |RoundKey120_reg_1753           |   8|   0|    8|          0|
+    |RoundKey121_reg_1765           |   8|   0|    8|          0|
+    |RoundKey122_reg_1777           |   8|   0|    8|          0|
+    |RoundKey123_reg_1789           |   8|   0|    8|          0|
+    |RoundKey124_reg_1801           |   8|   0|    8|          0|
+    |RoundKey125_reg_1813           |   8|   0|    8|          0|
+    |RoundKey126_reg_1825           |   8|   0|    8|          0|
+    |RoundKey127_reg_1837           |   8|   0|    8|          0|
+    |RoundKey128_reg_1849           |   8|   0|    8|          0|
+    |RoundKey129_reg_1861           |   8|   0|    8|          0|
+    |RoundKey12_1_reg_48528         |   8|   0|    8|          0|
+    |RoundKey12_2_reg_421           |   8|   0|    8|          0|
+    |RoundKey12_fu_150              |   8|   0|    8|          0|
+    |RoundKey12_load_reg_48465      |   8|   0|    8|          0|
+    |RoundKey130_reg_1873           |   8|   0|    8|          0|
+    |RoundKey1316_1_reg_48513       |   8|   0|    8|          0|
+    |RoundKey1316_2_reg_520         |   8|   0|    8|          0|
+    |RoundKey131_reg_1885           |   8|   0|    8|          0|
+    |RoundKey132_reg_1897           |   8|   0|    8|          0|
+    |RoundKey133_reg_1909           |   8|   0|    8|          0|
+    |RoundKey134_reg_1921           |   8|   0|    8|          0|
+    |RoundKey135_reg_1933           |   8|   0|    8|          0|
+    |RoundKey136_reg_1945           |   8|   0|    8|          0|
+    |RoundKey137_reg_1957           |   8|   0|    8|          0|
+    |RoundKey138_reg_1969           |   8|   0|    8|          0|
+    |RoundKey139_reg_1981           |   8|   0|    8|          0|
+    |RoundKey13_reg_373             |   8|   0|    8|          0|
+    |RoundKey140_reg_1993           |   8|   0|    8|          0|
+    |RoundKey141_reg_2005           |   8|   0|    8|          0|
+    |RoundKey142_reg_2017           |   8|   0|    8|          0|
+    |RoundKey143_reg_2029           |   8|   0|    8|          0|
+    |RoundKey144_reg_2041           |   8|   0|    8|          0|
+    |RoundKey145_reg_2053           |   8|   0|    8|          0|
+    |RoundKey146_reg_2065           |   8|   0|    8|          0|
+    |RoundKey147_reg_2077           |   8|   0|    8|          0|
+    |RoundKey148_reg_2089           |   8|   0|    8|          0|
+    |RoundKey149_reg_2101           |   8|   0|    8|          0|
+    |RoundKey14_1_reg_48538         |   8|   0|    8|          0|
+    |RoundKey14_2_reg_531           |   8|   0|    8|          0|
+    |RoundKey14_reg_385             |   8|   0|    8|          0|
+    |RoundKey150_reg_2113           |   8|   0|    8|          0|
+    |RoundKey151_reg_2125           |   8|   0|    8|          0|
+    |RoundKey152_reg_2137           |   8|   0|    8|          0|
+    |RoundKey153_reg_2149           |   8|   0|    8|          0|
+    |RoundKey154_reg_2161           |   8|   0|    8|          0|
+    |RoundKey155_reg_2173           |   8|   0|    8|          0|
+    |RoundKey156_reg_2185           |   8|   0|    8|          0|
+    |RoundKey157_reg_2197           |   8|   0|    8|          0|
+    |RoundKey158_reg_2209           |   8|   0|    8|          0|
+    |RoundKey159_reg_2221           |   8|   0|    8|          0|
+    |RoundKey15_2_reg_542           |   8|   0|    8|          0|
+    |RoundKey15_reg_397             |   8|   0|    8|          0|
+    |RoundKey160_reg_2233           |   8|   0|    8|          0|
+    |RoundKey161_reg_2245           |   8|   0|    8|          0|
+    |RoundKey162_reg_2257           |   8|   0|    8|          0|
+    |RoundKey163_reg_2269           |   8|   0|    8|          0|
+    |RoundKey164_reg_2281           |   8|   0|    8|          0|
+    |RoundKey165_reg_2293           |   8|   0|    8|          0|
+    |RoundKey166_reg_2305           |   8|   0|    8|          0|
+    |RoundKey167_reg_2317           |   8|   0|    8|          0|
+    |RoundKey168_reg_2329           |   8|   0|    8|          0|
+    |RoundKey169_reg_2341           |   8|   0|    8|          0|
+    |RoundKey16_reg_553             |   8|   0|    8|          0|
+    |RoundKey170_reg_2353           |   8|   0|    8|          0|
+    |RoundKey171_reg_2365           |   8|   0|    8|          0|
+    |RoundKey17_reg_565             |   8|   0|    8|          0|
+    |RoundKey18_reg_577             |   8|   0|    8|          0|
+    |RoundKey19_reg_589             |   8|   0|    8|          0|
+    |RoundKey1_reg_265              |   8|   0|    8|          0|
+    |RoundKey20_reg_601             |   8|   0|    8|          0|
+    |RoundKey21_reg_613             |   8|   0|    8|          0|
+    |RoundKey22_reg_625             |   8|   0|    8|          0|
+    |RoundKey23_reg_637             |   8|   0|    8|          0|
+    |RoundKey24_reg_649             |   8|   0|    8|          0|
+    |RoundKey25_reg_661             |   8|   0|    8|          0|
+    |RoundKey26_reg_673             |   8|   0|    8|          0|
+    |RoundKey27_reg_685             |   8|   0|    8|          0|
+    |RoundKey28_reg_697             |   8|   0|    8|          0|
+    |RoundKey29_reg_709             |   8|   0|    8|          0|
+    |RoundKey2_1_reg_48553          |   8|   0|    8|          0|
+    |RoundKey2_2_reg_432            |   8|   0|    8|          0|
+    |RoundKey2_reg_277              |   8|   0|    8|          0|
+    |RoundKey30_reg_721             |   8|   0|    8|          0|
+    |RoundKey31_reg_733             |   8|   0|    8|          0|
+    |RoundKey32_reg_745             |   8|   0|    8|          0|
+    |RoundKey33_reg_757             |   8|   0|    8|          0|
+    |RoundKey34_reg_769             |   8|   0|    8|          0|
+    |RoundKey35_reg_781             |   8|   0|    8|          0|
+    |RoundKey36_reg_793             |   8|   0|    8|          0|
+    |RoundKey37_reg_805             |   8|   0|    8|          0|
+    |RoundKey38_reg_817             |   8|   0|    8|          0|
+    |RoundKey39_reg_829             |   8|   0|    8|          0|
+    |RoundKey3_2_reg_443            |   8|   0|    8|          0|
+    |RoundKey3_reg_289              |   8|   0|    8|          0|
+    |RoundKey40_reg_841             |   8|   0|    8|          0|
+    |RoundKey41_reg_853             |   8|   0|    8|          0|
+    |RoundKey42_reg_865             |   8|   0|    8|          0|
+    |RoundKey43_reg_877             |   8|   0|    8|          0|
+    |RoundKey44_reg_889             |   8|   0|    8|          0|
+    |RoundKey45_reg_901             |   8|   0|    8|          0|
+    |RoundKey46_reg_913             |   8|   0|    8|          0|
+    |RoundKey47_reg_925             |   8|   0|    8|          0|
+    |RoundKey48_reg_937             |   8|   0|    8|          0|
+    |RoundKey49_reg_949             |   8|   0|    8|          0|
+    |RoundKey4_fu_158               |   8|   0|    8|          0|
+    |RoundKey50_reg_961             |   8|   0|    8|          0|
+    |RoundKey51_reg_973             |   8|   0|    8|          0|
+    |RoundKey52_reg_985             |   8|   0|    8|          0|
+    |RoundKey53_reg_997             |   8|   0|    8|          0|
+    |RoundKey54_reg_1009            |   8|   0|    8|          0|
+    |RoundKey55_reg_1021            |   8|   0|    8|          0|
+    |RoundKey56_reg_1033            |   8|   0|    8|          0|
+    |RoundKey57_reg_1045            |   8|   0|    8|          0|
+    |RoundKey58_reg_1057            |   8|   0|    8|          0|
+    |RoundKey59_reg_1069            |   8|   0|    8|          0|
+    |RoundKey5_1_reg_48523          |   8|   0|    8|          0|
+    |RoundKey5_2_reg_454            |   8|   0|    8|          0|
+    |RoundKey5_reg_301              |   8|   0|    8|          0|
+    |RoundKey60_reg_1081            |   8|   0|    8|          0|
+    |RoundKey61_reg_1093            |   8|   0|    8|          0|
+    |RoundKey62_reg_1105            |   8|   0|    8|          0|
+    |RoundKey63_reg_1117            |   8|   0|    8|          0|
+    |RoundKey64_reg_1129            |   8|   0|    8|          0|
+    |RoundKey65_reg_1141            |   8|   0|    8|          0|
+    |RoundKey66_reg_1153            |   8|   0|    8|          0|
+    |RoundKey67_reg_1165            |   8|   0|    8|          0|
+    |RoundKey68_reg_1177            |   8|   0|    8|          0|
+    |RoundKey69_reg_1189            |   8|   0|    8|          0|
+    |RoundKey6_1_reg_48548          |   8|   0|    8|          0|
+    |RoundKey6_2_reg_465            |   8|   0|    8|          0|
+    |RoundKey6_reg_313              |   8|   0|    8|          0|
+    |RoundKey70_reg_1201            |   8|   0|    8|          0|
+    |RoundKey71_reg_1213            |   8|   0|    8|          0|
+    |RoundKey72_reg_1225            |   8|   0|    8|          0|
+    |RoundKey73_reg_1237            |   8|   0|    8|          0|
+    |RoundKey74_reg_1249            |   8|   0|    8|          0|
+    |RoundKey75_reg_1261            |   8|   0|    8|          0|
+    |RoundKey76_reg_1273            |   8|   0|    8|          0|
+    |RoundKey77_reg_1285            |   8|   0|    8|          0|
+    |RoundKey78_reg_1297            |   8|   0|    8|          0|
+    |RoundKey79_reg_1309            |   8|   0|    8|          0|
+    |RoundKey7_2_reg_476            |   8|   0|    8|          0|
+    |RoundKey7_reg_325              |   8|   0|    8|          0|
+    |RoundKey80_reg_1321            |   8|   0|    8|          0|
+    |RoundKey81_reg_1333            |   8|   0|    8|          0|
+    |RoundKey82_reg_1345            |   8|   0|    8|          0|
+    |RoundKey83_reg_2497            |   8|   0|    8|          0|
+    |RoundKey84_reg_2461            |   8|   0|    8|          0|
+    |RoundKey85_reg_2425            |   8|   0|    8|          0|
+    |RoundKey86_reg_2389            |   8|   0|    8|          0|
+    |RoundKey87_reg_1357            |   8|   0|    8|          0|
+    |RoundKey88_reg_1369            |   8|   0|    8|          0|
+    |RoundKey89_reg_1381            |   8|   0|    8|          0|
+    |RoundKey8_fu_154               |   8|   0|    8|          0|
+    |RoundKey90_reg_1393            |   8|   0|    8|          0|
+    |RoundKey91_reg_1405            |   8|   0|    8|          0|
+    |RoundKey92_reg_1417            |   8|   0|    8|          0|
+    |RoundKey93_reg_1429            |   8|   0|    8|          0|
+    |RoundKey94_reg_1441            |   8|   0|    8|          0|
+    |RoundKey95_reg_1453            |   8|   0|    8|          0|
+    |RoundKey96_reg_1465            |   8|   0|    8|          0|
+    |RoundKey97_reg_1477            |   8|   0|    8|          0|
+    |RoundKey98_reg_1489            |   8|   0|    8|          0|
+    |RoundKey99_reg_1501            |   8|   0|    8|          0|
+    |RoundKey9_1_reg_48518          |   8|   0|    8|          0|
+    |RoundKey9_2_reg_487            |   8|   0|    8|          0|
+    |RoundKey9_reg_337              |   8|   0|    8|          0|
+    |RoundKey_172_write_s_reg_2401  |   8|   0|    8|          0|
+    |RoundKey_173_write_s_reg_2437  |   8|   0|    8|          0|
+    |RoundKey_174_write_s_reg_2473  |   8|   0|    8|          0|
+    |RoundKey_175_write_s_reg_2509  |   8|   0|    8|          0|
+    |RoundKey_fu_162                |   8|   0|    8|          0|
+    |RoundKey_load_4_phi_reg_48712  |   8|   0|    8|          0|
+    |RoundKey_load_5_phi_reg_48722  |   8|   0|    8|          0|
+    |RoundKey_load_6_phi_reg_48732  |   8|   0|    8|          0|
+    |RoundKey_load_phi_reg_48702    |   8|   0|    8|          0|
+    |ap_CS_fsm                      |  10|   0|   10|          0|
+    |ap_return_0_preg               |   8|   0|    8|          0|
+    |ap_return_100_preg             |   8|   0|    8|          0|
+    |ap_return_101_preg             |   8|   0|    8|          0|
+    |ap_return_102_preg             |   8|   0|    8|          0|
+    |ap_return_103_preg             |   8|   0|    8|          0|
+    |ap_return_104_preg             |   8|   0|    8|          0|
+    |ap_return_105_preg             |   8|   0|    8|          0|
+    |ap_return_106_preg             |   8|   0|    8|          0|
+    |ap_return_107_preg             |   8|   0|    8|          0|
+    |ap_return_108_preg             |   8|   0|    8|          0|
+    |ap_return_109_preg             |   8|   0|    8|          0|
+    |ap_return_10_preg              |   8|   0|    8|          0|
+    |ap_return_110_preg             |   8|   0|    8|          0|
+    |ap_return_111_preg             |   8|   0|    8|          0|
+    |ap_return_112_preg             |   8|   0|    8|          0|
+    |ap_return_113_preg             |   8|   0|    8|          0|
+    |ap_return_114_preg             |   8|   0|    8|          0|
+    |ap_return_115_preg             |   8|   0|    8|          0|
+    |ap_return_116_preg             |   8|   0|    8|          0|
+    |ap_return_117_preg             |   8|   0|    8|          0|
+    |ap_return_118_preg             |   8|   0|    8|          0|
+    |ap_return_119_preg             |   8|   0|    8|          0|
+    |ap_return_11_preg              |   8|   0|    8|          0|
+    |ap_return_120_preg             |   8|   0|    8|          0|
+    |ap_return_121_preg             |   8|   0|    8|          0|
+    |ap_return_122_preg             |   8|   0|    8|          0|
+    |ap_return_123_preg             |   8|   0|    8|          0|
+    |ap_return_124_preg             |   8|   0|    8|          0|
+    |ap_return_125_preg             |   8|   0|    8|          0|
+    |ap_return_126_preg             |   8|   0|    8|          0|
+    |ap_return_127_preg             |   8|   0|    8|          0|
+    |ap_return_128_preg             |   8|   0|    8|          0|
+    |ap_return_129_preg             |   8|   0|    8|          0|
+    |ap_return_12_preg              |   8|   0|    8|          0|
+    |ap_return_130_preg             |   8|   0|    8|          0|
+    |ap_return_131_preg             |   8|   0|    8|          0|
+    |ap_return_132_preg             |   8|   0|    8|          0|
+    |ap_return_133_preg             |   8|   0|    8|          0|
+    |ap_return_134_preg             |   8|   0|    8|          0|
+    |ap_return_135_preg             |   8|   0|    8|          0|
+    |ap_return_136_preg             |   8|   0|    8|          0|
+    |ap_return_137_preg             |   8|   0|    8|          0|
+    |ap_return_138_preg             |   8|   0|    8|          0|
+    |ap_return_139_preg             |   8|   0|    8|          0|
+    |ap_return_13_preg              |   8|   0|    8|          0|
+    |ap_return_140_preg             |   8|   0|    8|          0|
+    |ap_return_141_preg             |   8|   0|    8|          0|
+    |ap_return_142_preg             |   8|   0|    8|          0|
+    |ap_return_143_preg             |   8|   0|    8|          0|
+    |ap_return_144_preg             |   8|   0|    8|          0|
+    |ap_return_145_preg             |   8|   0|    8|          0|
+    |ap_return_146_preg             |   8|   0|    8|          0|
+    |ap_return_147_preg             |   8|   0|    8|          0|
+    |ap_return_148_preg             |   8|   0|    8|          0|
+    |ap_return_149_preg             |   8|   0|    8|          0|
+    |ap_return_14_preg              |   8|   0|    8|          0|
+    |ap_return_150_preg             |   8|   0|    8|          0|
+    |ap_return_151_preg             |   8|   0|    8|          0|
+    |ap_return_152_preg             |   8|   0|    8|          0|
+    |ap_return_153_preg             |   8|   0|    8|          0|
+    |ap_return_154_preg             |   8|   0|    8|          0|
+    |ap_return_155_preg             |   8|   0|    8|          0|
+    |ap_return_156_preg             |   8|   0|    8|          0|
+    |ap_return_157_preg             |   8|   0|    8|          0|
+    |ap_return_158_preg             |   8|   0|    8|          0|
+    |ap_return_159_preg             |   8|   0|    8|          0|
+    |ap_return_15_preg              |   8|   0|    8|          0|
+    |ap_return_160_preg             |   8|   0|    8|          0|
+    |ap_return_161_preg             |   8|   0|    8|          0|
+    |ap_return_162_preg             |   8|   0|    8|          0|
+    |ap_return_163_preg             |   8|   0|    8|          0|
+    |ap_return_164_preg             |   8|   0|    8|          0|
+    |ap_return_165_preg             |   8|   0|    8|          0|
+    |ap_return_166_preg             |   8|   0|    8|          0|
+    |ap_return_167_preg             |   8|   0|    8|          0|
+    |ap_return_168_preg             |   8|   0|    8|          0|
+    |ap_return_169_preg             |   8|   0|    8|          0|
+    |ap_return_16_preg              |   8|   0|    8|          0|
+    |ap_return_170_preg             |   8|   0|    8|          0|
+    |ap_return_171_preg             |   8|   0|    8|          0|
+    |ap_return_172_preg             |   8|   0|    8|          0|
+    |ap_return_173_preg             |   8|   0|    8|          0|
+    |ap_return_174_preg             |   8|   0|    8|          0|
+    |ap_return_175_preg             |   8|   0|    8|          0|
+    |ap_return_17_preg              |   8|   0|    8|          0|
+    |ap_return_18_preg              |   8|   0|    8|          0|
+    |ap_return_19_preg              |   8|   0|    8|          0|
+    |ap_return_1_preg               |   8|   0|    8|          0|
+    |ap_return_20_preg              |   8|   0|    8|          0|
+    |ap_return_21_preg              |   8|   0|    8|          0|
+    |ap_return_22_preg              |   8|   0|    8|          0|
+    |ap_return_23_preg              |   8|   0|    8|          0|
+    |ap_return_24_preg              |   8|   0|    8|          0|
+    |ap_return_25_preg              |   8|   0|    8|          0|
+    |ap_return_26_preg              |   8|   0|    8|          0|
+    |ap_return_27_preg              |   8|   0|    8|          0|
+    |ap_return_28_preg              |   8|   0|    8|          0|
+    |ap_return_29_preg              |   8|   0|    8|          0|
+    |ap_return_2_preg               |   8|   0|    8|          0|
+    |ap_return_30_preg              |   8|   0|    8|          0|
+    |ap_return_31_preg              |   8|   0|    8|          0|
+    |ap_return_32_preg              |   8|   0|    8|          0|
+    |ap_return_33_preg              |   8|   0|    8|          0|
+    |ap_return_34_preg              |   8|   0|    8|          0|
+    |ap_return_35_preg              |   8|   0|    8|          0|
+    |ap_return_36_preg              |   8|   0|    8|          0|
+    |ap_return_37_preg              |   8|   0|    8|          0|
+    |ap_return_38_preg              |   8|   0|    8|          0|
+    |ap_return_39_preg              |   8|   0|    8|          0|
+    |ap_return_3_preg               |   8|   0|    8|          0|
+    |ap_return_40_preg              |   8|   0|    8|          0|
+    |ap_return_41_preg              |   8|   0|    8|          0|
+    |ap_return_42_preg              |   8|   0|    8|          0|
+    |ap_return_43_preg              |   8|   0|    8|          0|
+    |ap_return_44_preg              |   8|   0|    8|          0|
+    |ap_return_45_preg              |   8|   0|    8|          0|
+    |ap_return_46_preg              |   8|   0|    8|          0|
+    |ap_return_47_preg              |   8|   0|    8|          0|
+    |ap_return_48_preg              |   8|   0|    8|          0|
+    |ap_return_49_preg              |   8|   0|    8|          0|
+    |ap_return_4_preg               |   8|   0|    8|          0|
+    |ap_return_50_preg              |   8|   0|    8|          0|
+    |ap_return_51_preg              |   8|   0|    8|          0|
+    |ap_return_52_preg              |   8|   0|    8|          0|
+    |ap_return_53_preg              |   8|   0|    8|          0|
+    |ap_return_54_preg              |   8|   0|    8|          0|
+    |ap_return_55_preg              |   8|   0|    8|          0|
+    |ap_return_56_preg              |   8|   0|    8|          0|
+    |ap_return_57_preg              |   8|   0|    8|          0|
+    |ap_return_58_preg              |   8|   0|    8|          0|
+    |ap_return_59_preg              |   8|   0|    8|          0|
+    |ap_return_5_preg               |   8|   0|    8|          0|
+    |ap_return_60_preg              |   8|   0|    8|          0|
+    |ap_return_61_preg              |   8|   0|    8|          0|
+    |ap_return_62_preg              |   8|   0|    8|          0|
+    |ap_return_63_preg              |   8|   0|    8|          0|
+    |ap_return_64_preg              |   8|   0|    8|          0|
+    |ap_return_65_preg              |   8|   0|    8|          0|
+    |ap_return_66_preg              |   8|   0|    8|          0|
+    |ap_return_67_preg              |   8|   0|    8|          0|
+    |ap_return_68_preg              |   8|   0|    8|          0|
+    |ap_return_69_preg              |   8|   0|    8|          0|
+    |ap_return_6_preg               |   8|   0|    8|          0|
+    |ap_return_70_preg              |   8|   0|    8|          0|
+    |ap_return_71_preg              |   8|   0|    8|          0|
+    |ap_return_72_preg              |   8|   0|    8|          0|
+    |ap_return_73_preg              |   8|   0|    8|          0|
+    |ap_return_74_preg              |   8|   0|    8|          0|
+    |ap_return_75_preg              |   8|   0|    8|          0|
+    |ap_return_76_preg              |   8|   0|    8|          0|
+    |ap_return_77_preg              |   8|   0|    8|          0|
+    |ap_return_78_preg              |   8|   0|    8|          0|
+    |ap_return_79_preg              |   8|   0|    8|          0|
+    |ap_return_7_preg               |   8|   0|    8|          0|
+    |ap_return_80_preg              |   8|   0|    8|          0|
+    |ap_return_81_preg              |   8|   0|    8|          0|
+    |ap_return_82_preg              |   8|   0|    8|          0|
+    |ap_return_83_preg              |   8|   0|    8|          0|
+    |ap_return_84_preg              |   8|   0|    8|          0|
+    |ap_return_85_preg              |   8|   0|    8|          0|
+    |ap_return_86_preg              |   8|   0|    8|          0|
+    |ap_return_87_preg              |   8|   0|    8|          0|
+    |ap_return_88_preg              |   8|   0|    8|          0|
+    |ap_return_89_preg              |   8|   0|    8|          0|
+    |ap_return_8_preg               |   8|   0|    8|          0|
+    |ap_return_90_preg              |   8|   0|    8|          0|
+    |ap_return_91_preg              |   8|   0|    8|          0|
+    |ap_return_92_preg              |   8|   0|    8|          0|
+    |ap_return_93_preg              |   8|   0|    8|          0|
+    |ap_return_94_preg              |   8|   0|    8|          0|
+    |ap_return_95_preg              |   8|   0|    8|          0|
+    |ap_return_96_preg              |   8|   0|    8|          0|
+    |ap_return_97_preg              |   8|   0|    8|          0|
+    |ap_return_98_preg              |   8|   0|    8|          0|
+    |ap_return_99_preg              |   8|   0|    8|          0|
+    |ap_return_9_preg               |   8|   0|    8|          0|
+    |i_1_reg_2521                   |   6|   0|    6|          0|
+    |i_2_reg_48475                  |   3|   0|    3|          0|
+    |i_reg_409                      |   3|   0|    3|          0|
+    |tempa_0_2_reg_2533             |   8|   0|    8|          0|
+    |tempa_1_32_reg_2676            |   8|   0|    8|          0|
+    |tempa_2_31_reg_2667            |   8|   0|    8|          0|
+    |tempa_3_30_reg_2658            |   8|   0|    8|          0|
+    |tempa_reg_2685                 |   8|   0|    8|          0|
+    |tmp_24_reg_48501               |   3|   0|    6|          3|
+    |tmp_25_reg_48653               |   1|   0|    1|          0|
+    |tmp_5_reg_48586                |   6|   0|    8|          2|
+    |tmp_93_reg_48480               |   2|   0|    2|          0|
+    |tmp_s_reg_48484                |   2|   0|    4|          2|
+    |write_flag184_1_reg_48717      |   1|   0|    1|          0|
+    |write_flag187_1_reg_48727      |   1|   0|    1|          0|
+    |write_flag190_1_reg_48737      |   1|   0|    1|          0|
+    |write_flag1_reg_2413           |   1|   0|    1|          0|
+    |write_flag2_reg_2449           |   1|   0|    1|          0|
+    |write_flag3_reg_2485           |   1|   0|    1|          0|
+    |write_flag_1_reg_48707         |   1|   0|    1|          0|
+    |write_flag_reg_2377            |   1|   0|    1|          0|
+    +-------------------------------+----+----+-----+-----------+
+    |Total                          |3100|   0| 3107|          7|
+    +-------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------+-----+-----+------------+--------------+--------------+
+|ap_clk         |  in |    1| ap_ctrl_hs | KeyExpansion | return value |
+|ap_rst         |  in |    1| ap_ctrl_hs | KeyExpansion | return value |
+|ap_start       |  in |    1| ap_ctrl_hs | KeyExpansion | return value |
+|ap_done        | out |    1| ap_ctrl_hs | KeyExpansion | return value |
+|ap_idle        | out |    1| ap_ctrl_hs | KeyExpansion | return value |
+|ap_ready       | out |    1| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_0    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_1    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_2    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_3    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_4    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_5    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_6    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_7    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_8    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_9    | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_10   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_11   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_12   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_13   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_14   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_15   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_16   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_17   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_18   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_19   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_20   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_21   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_22   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_23   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_24   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_25   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_26   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_27   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_28   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_29   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_30   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_31   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_32   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_33   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_34   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_35   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_36   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_37   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_38   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_39   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_40   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_41   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_42   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_43   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_44   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_45   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_46   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_47   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_48   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_49   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_50   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_51   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_52   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_53   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_54   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_55   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_56   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_57   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_58   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_59   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_60   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_61   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_62   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_63   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_64   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_65   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_66   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_67   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_68   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_69   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_70   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_71   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_72   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_73   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_74   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_75   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_76   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_77   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_78   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_79   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_80   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_81   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_82   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_83   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_84   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_85   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_86   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_87   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_88   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_89   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_90   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_91   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_92   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_93   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_94   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_95   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_96   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_97   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_98   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_99   | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_100  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_101  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_102  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_103  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_104  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_105  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_106  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_107  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_108  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_109  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_110  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_111  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_112  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_113  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_114  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_115  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_116  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_117  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_118  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_119  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_120  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_121  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_122  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_123  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_124  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_125  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_126  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_127  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_128  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_129  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_130  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_131  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_132  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_133  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_134  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_135  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_136  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_137  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_138  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_139  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_140  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_141  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_142  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_143  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_144  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_145  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_146  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_147  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_148  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_149  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_150  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_151  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_152  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_153  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_154  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_155  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_156  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_157  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_158  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_159  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_160  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_161  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_162  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_163  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_164  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_165  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_166  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_167  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_168  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_169  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_170  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_171  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_172  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_173  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_174  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|ap_return_175  | out |    8| ap_ctrl_hs | KeyExpansion | return value |
+|Key_address0   | out |    4|  ap_memory |      Key     |     array    |
+|Key_ce0        | out |    1|  ap_memory |      Key     |     array    |
+|Key_q0         |  in |    8|  ap_memory |      Key     |     array    |
++---------------+-----+-----+------------+--------------+--------------+
+

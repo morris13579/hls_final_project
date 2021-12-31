@@ -1,0 +1,393 @@
+
+
+================================================================
+== Vivado HLS Report for 'AES_ECB_encrypt'
+================================================================
+* Date:           Fri Dec 31 12:19:07 2021
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        aes
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.028|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |    ?|    ?|    ?|    ?|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +-------------------------+--------------+------+------+-----+-----+----------+
+        |                         |              |   Latency   |  Interval | Pipeline |
+        |         Instance        |    Module    |  min |  max | min | max |   Type   |
+        +-------------------------+--------------+------+------+-----+-----+----------+
+        |grp_KeyExpansion_fu_173  |KeyExpansion  |   182|   182|  182|  182|   none   |
+        |grp_Cipher_fu_183        |Cipher        |  1193|  1193|   50|   50| dataflow |
+        +-------------------------+--------------+------+------+-----+-----+----------+
+
+        * Loop: 
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |             |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |  Loop Name  | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1     |    ?|    ?|      1261|          -|          -|     ?|    no    |
+        | + Loop 1.1  |   16|   16|         1|          -|          -|    16|    no    |
+        | + Loop 1.2  |   48|   48|         3|          -|          -|    16|    no    |
+        +-------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  |
++-----------------+---------+-------+--------+--------+
+|DSP              |        -|      -|       -|       -|
+|Expression       |        -|      -|       0|     139|
+|FIFO             |        -|      -|       -|       -|
+|Instance         |       33|      -|   30002|  281118|
+|Memory           |        0|      -|      32|       4|
+|Multiplexer      |        -|      -|       -|     206|
+|Register         |        -|      -|    1539|       -|
++-----------------+---------+-------+--------+--------+
+|Total            |       33|      0|   31573|  281467|
++-----------------+---------+-------+--------+--------+
+|Available        |      280|    220|  106400|   53200|
++-----------------+---------+-------+--------+--------+
+|Utilization (%)  |       11|      0|      29|     529|
++-----------------+---------+-------+--------+--------+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------+--------------------------------+---------+-------+-------+--------+
+    |             Instance             |             Module             | BRAM_18K| DSP48E|   FF  |   LUT  |
+    +----------------------------------+--------------------------------+---------+-------+-------+--------+
+    |AES_ECB_encrypt_AXILiteS_s_axi_U  |AES_ECB_encrypt_AXILiteS_s_axi  |        2|      0|    154|     174|
+    |grp_Cipher_fu_183                 |Cipher                          |       29|      0|  26740|   91207|
+    |grp_KeyExpansion_fu_173           |KeyExpansion                    |        2|      0|   3108|  189737|
+    +----------------------------------+--------------------------------+---------+-------+-------+--------+
+    |Total                             |                                |       33|      0|  30002|  281118|
+    +----------------------------------+--------------------------------+---------+-------+-------+--------+
+
+    * DSP48: 
+    N/A
+
+    * Memory: 
+    +-------+--------------------+---------+----+----+------+-----+------+-------------+
+    | Memory|       Module       | BRAM_18K| FF | LUT| Words| Bits| Banks| W*Bits*Banks|
+    +-------+--------------------+---------+----+----+------+-----+------+-------------+
+    |in_U   |AES_ECB_encrypt_in  |        0|  16|   2|    16|    8|     1|          128|
+    |out_U  |AES_ECB_encrypt_in  |        0|  16|   2|    16|    8|     1|          128|
+    +-------+--------------------+---------+----+----+------+-----+------+-------------+
+    |Total  |                    |        0|  32|   4|    32|   16|     2|          256|
+    +-------+--------------------+---------+----+----+------+-----+------+-------------+
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +------------------------------------+----------+-------+---+----+------------+------------+
+    |            Variable Name           | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +------------------------------------+----------+-------+---+----+------------+------------+
+    |i_4_fu_1128_p2                      |     +    |      0|  0|  39|          32|           5|
+    |j_1_fu_1100_p2                      |     +    |      0|  0|  15|           5|           1|
+    |j_2_fu_1117_p2                      |     +    |      0|  0|  15|           5|           1|
+    |ap_block_state4                     |    and   |      0|  0|   2|           1|           1|
+    |encrypt_V_1_load_A                  |    and   |      0|  0|   2|           1|           1|
+    |encrypt_V_1_load_B                  |    and   |      0|  0|   2|           1|           1|
+    |plain_V_0_load_A                    |    and   |      0|  0|   2|           1|           1|
+    |plain_V_0_load_B                    |    and   |      0|  0|   2|           1|           1|
+    |encrypt_V_1_state_cmp_full          |   icmp   |      0|  0|   8|           2|           1|
+    |exitcond4_fu_1094_p2                |   icmp   |      0|  0|  11|           5|           6|
+    |exitcond_fu_1111_p2                 |   icmp   |      0|  0|  11|           5|           6|
+    |plain_V_0_state_cmp_full            |   icmp   |      0|  0|   8|           2|           1|
+    |tmp_fu_1089_p2                      |   icmp   |      0|  0|  18|          32|          32|
+    |ap_sync_grp_Cipher_fu_183_ap_done   |    or    |      0|  0|   2|           1|           1|
+    |ap_sync_grp_Cipher_fu_183_ap_ready  |    or    |      0|  0|   2|           1|           1|
+    +------------------------------------+----------+-------+---+----+------------+------------+
+    |Total                               |          |      0|  0| 139|          95|          60|
+    +------------------------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------------------+----+-----------+-----+-----------+
+    |          Name         | LUT| Input Size| Bits| Total Bits|
+    +-----------------------+----+-----------+-----+-----------+
+    |ap_NS_fsm              |  44|          9|    1|          9|
+    |encrypt_V_1_data_out   |   9|          2|    8|         16|
+    |encrypt_V_1_state      |  15|          3|    2|          6|
+    |encrypt_V_TDATA_blk_n  |   9|          2|    1|          2|
+    |i_reg_139              |   9|          2|   32|         64|
+    |in_address0            |  15|          3|    4|         12|
+    |in_ce0                 |  15|          3|    1|          3|
+    |j1_reg_162             |   9|          2|    5|         10|
+    |j_reg_151              |   9|          2|    5|         10|
+    |out_address0           |  15|          3|    4|         12|
+    |out_ce0                |  15|          3|    1|          3|
+    |out_we0                |   9|          2|    1|          2|
+    |plain_V_0_data_out     |   9|          2|    8|         16|
+    |plain_V_0_state        |  15|          3|    2|          6|
+    |plain_V_TDATA_blk_n    |   9|          2|    1|          2|
+    +-----------------------+----+-----------+-----+-----------+
+    |Total                  | 206|         43|   76|        173|
+    +-----------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------------------------+----+----+-----+-----------+
+    |                  Name                  | FF | LUT| Bits| Const Bits|
+    +----------------------------------------+----+----+-----+-----------+
+    |RoundKey_0_reg_1139                     |   8|   0|    8|          0|
+    |RoundKey_100_reg_1639                   |   8|   0|    8|          0|
+    |RoundKey_101_reg_1644                   |   8|   0|    8|          0|
+    |RoundKey_102_reg_1649                   |   8|   0|    8|          0|
+    |RoundKey_103_reg_1654                   |   8|   0|    8|          0|
+    |RoundKey_104_reg_1659                   |   8|   0|    8|          0|
+    |RoundKey_105_reg_1664                   |   8|   0|    8|          0|
+    |RoundKey_106_reg_1669                   |   8|   0|    8|          0|
+    |RoundKey_107_reg_1674                   |   8|   0|    8|          0|
+    |RoundKey_108_reg_1679                   |   8|   0|    8|          0|
+    |RoundKey_109_reg_1684                   |   8|   0|    8|          0|
+    |RoundKey_10_reg_1189                    |   8|   0|    8|          0|
+    |RoundKey_110_reg_1689                   |   8|   0|    8|          0|
+    |RoundKey_111_reg_1694                   |   8|   0|    8|          0|
+    |RoundKey_112_reg_1699                   |   8|   0|    8|          0|
+    |RoundKey_113_reg_1704                   |   8|   0|    8|          0|
+    |RoundKey_114_reg_1709                   |   8|   0|    8|          0|
+    |RoundKey_115_reg_1714                   |   8|   0|    8|          0|
+    |RoundKey_116_reg_1719                   |   8|   0|    8|          0|
+    |RoundKey_117_reg_1724                   |   8|   0|    8|          0|
+    |RoundKey_118_reg_1729                   |   8|   0|    8|          0|
+    |RoundKey_119_reg_1734                   |   8|   0|    8|          0|
+    |RoundKey_11_reg_1194                    |   8|   0|    8|          0|
+    |RoundKey_120_reg_1739                   |   8|   0|    8|          0|
+    |RoundKey_121_reg_1744                   |   8|   0|    8|          0|
+    |RoundKey_122_reg_1749                   |   8|   0|    8|          0|
+    |RoundKey_123_reg_1754                   |   8|   0|    8|          0|
+    |RoundKey_124_reg_1759                   |   8|   0|    8|          0|
+    |RoundKey_125_reg_1764                   |   8|   0|    8|          0|
+    |RoundKey_126_reg_1769                   |   8|   0|    8|          0|
+    |RoundKey_127_reg_1774                   |   8|   0|    8|          0|
+    |RoundKey_128_reg_1779                   |   8|   0|    8|          0|
+    |RoundKey_129_reg_1784                   |   8|   0|    8|          0|
+    |RoundKey_12_reg_1199                    |   8|   0|    8|          0|
+    |RoundKey_130_reg_1789                   |   8|   0|    8|          0|
+    |RoundKey_131_reg_1794                   |   8|   0|    8|          0|
+    |RoundKey_132_reg_1799                   |   8|   0|    8|          0|
+    |RoundKey_133_reg_1804                   |   8|   0|    8|          0|
+    |RoundKey_134_reg_1809                   |   8|   0|    8|          0|
+    |RoundKey_135_reg_1814                   |   8|   0|    8|          0|
+    |RoundKey_136_reg_1819                   |   8|   0|    8|          0|
+    |RoundKey_137_reg_1824                   |   8|   0|    8|          0|
+    |RoundKey_138_reg_1829                   |   8|   0|    8|          0|
+    |RoundKey_139_reg_1834                   |   8|   0|    8|          0|
+    |RoundKey_13_reg_1204                    |   8|   0|    8|          0|
+    |RoundKey_140_reg_1839                   |   8|   0|    8|          0|
+    |RoundKey_141_reg_1844                   |   8|   0|    8|          0|
+    |RoundKey_142_reg_1849                   |   8|   0|    8|          0|
+    |RoundKey_143_reg_1854                   |   8|   0|    8|          0|
+    |RoundKey_144_reg_1859                   |   8|   0|    8|          0|
+    |RoundKey_145_reg_1864                   |   8|   0|    8|          0|
+    |RoundKey_146_reg_1869                   |   8|   0|    8|          0|
+    |RoundKey_147_reg_1874                   |   8|   0|    8|          0|
+    |RoundKey_148_reg_1879                   |   8|   0|    8|          0|
+    |RoundKey_149_reg_1884                   |   8|   0|    8|          0|
+    |RoundKey_14_reg_1209                    |   8|   0|    8|          0|
+    |RoundKey_150_reg_1889                   |   8|   0|    8|          0|
+    |RoundKey_151_reg_1894                   |   8|   0|    8|          0|
+    |RoundKey_152_reg_1899                   |   8|   0|    8|          0|
+    |RoundKey_153_reg_1904                   |   8|   0|    8|          0|
+    |RoundKey_154_reg_1909                   |   8|   0|    8|          0|
+    |RoundKey_155_reg_1914                   |   8|   0|    8|          0|
+    |RoundKey_156_reg_1919                   |   8|   0|    8|          0|
+    |RoundKey_157_reg_1924                   |   8|   0|    8|          0|
+    |RoundKey_158_reg_1929                   |   8|   0|    8|          0|
+    |RoundKey_159_reg_1934                   |   8|   0|    8|          0|
+    |RoundKey_15_reg_1214                    |   8|   0|    8|          0|
+    |RoundKey_160_reg_1939                   |   8|   0|    8|          0|
+    |RoundKey_161_reg_1944                   |   8|   0|    8|          0|
+    |RoundKey_162_reg_1949                   |   8|   0|    8|          0|
+    |RoundKey_163_reg_1954                   |   8|   0|    8|          0|
+    |RoundKey_164_reg_1959                   |   8|   0|    8|          0|
+    |RoundKey_165_reg_1964                   |   8|   0|    8|          0|
+    |RoundKey_166_reg_1969                   |   8|   0|    8|          0|
+    |RoundKey_167_reg_1974                   |   8|   0|    8|          0|
+    |RoundKey_168_reg_1979                   |   8|   0|    8|          0|
+    |RoundKey_169_reg_1984                   |   8|   0|    8|          0|
+    |RoundKey_16_reg_1219                    |   8|   0|    8|          0|
+    |RoundKey_170_reg_1989                   |   8|   0|    8|          0|
+    |RoundKey_171_reg_1994                   |   8|   0|    8|          0|
+    |RoundKey_172_reg_1999                   |   8|   0|    8|          0|
+    |RoundKey_173_reg_2004                   |   8|   0|    8|          0|
+    |RoundKey_174_reg_2009                   |   8|   0|    8|          0|
+    |RoundKey_175_reg_2014                   |   8|   0|    8|          0|
+    |RoundKey_17_reg_1224                    |   8|   0|    8|          0|
+    |RoundKey_18_reg_1229                    |   8|   0|    8|          0|
+    |RoundKey_19_reg_1234                    |   8|   0|    8|          0|
+    |RoundKey_1_reg_1144                     |   8|   0|    8|          0|
+    |RoundKey_20_reg_1239                    |   8|   0|    8|          0|
+    |RoundKey_21_reg_1244                    |   8|   0|    8|          0|
+    |RoundKey_22_reg_1249                    |   8|   0|    8|          0|
+    |RoundKey_23_reg_1254                    |   8|   0|    8|          0|
+    |RoundKey_24_reg_1259                    |   8|   0|    8|          0|
+    |RoundKey_25_reg_1264                    |   8|   0|    8|          0|
+    |RoundKey_26_reg_1269                    |   8|   0|    8|          0|
+    |RoundKey_27_reg_1274                    |   8|   0|    8|          0|
+    |RoundKey_28_reg_1279                    |   8|   0|    8|          0|
+    |RoundKey_29_reg_1284                    |   8|   0|    8|          0|
+    |RoundKey_2_reg_1149                     |   8|   0|    8|          0|
+    |RoundKey_30_reg_1289                    |   8|   0|    8|          0|
+    |RoundKey_31_reg_1294                    |   8|   0|    8|          0|
+    |RoundKey_32_reg_1299                    |   8|   0|    8|          0|
+    |RoundKey_33_reg_1304                    |   8|   0|    8|          0|
+    |RoundKey_34_reg_1309                    |   8|   0|    8|          0|
+    |RoundKey_35_reg_1314                    |   8|   0|    8|          0|
+    |RoundKey_36_reg_1319                    |   8|   0|    8|          0|
+    |RoundKey_37_reg_1324                    |   8|   0|    8|          0|
+    |RoundKey_38_reg_1329                    |   8|   0|    8|          0|
+    |RoundKey_39_reg_1334                    |   8|   0|    8|          0|
+    |RoundKey_3_reg_1154                     |   8|   0|    8|          0|
+    |RoundKey_40_reg_1339                    |   8|   0|    8|          0|
+    |RoundKey_41_reg_1344                    |   8|   0|    8|          0|
+    |RoundKey_42_reg_1349                    |   8|   0|    8|          0|
+    |RoundKey_43_reg_1354                    |   8|   0|    8|          0|
+    |RoundKey_44_reg_1359                    |   8|   0|    8|          0|
+    |RoundKey_45_reg_1364                    |   8|   0|    8|          0|
+    |RoundKey_46_reg_1369                    |   8|   0|    8|          0|
+    |RoundKey_47_reg_1374                    |   8|   0|    8|          0|
+    |RoundKey_48_reg_1379                    |   8|   0|    8|          0|
+    |RoundKey_49_reg_1384                    |   8|   0|    8|          0|
+    |RoundKey_4_reg_1159                     |   8|   0|    8|          0|
+    |RoundKey_50_reg_1389                    |   8|   0|    8|          0|
+    |RoundKey_51_reg_1394                    |   8|   0|    8|          0|
+    |RoundKey_52_reg_1399                    |   8|   0|    8|          0|
+    |RoundKey_53_reg_1404                    |   8|   0|    8|          0|
+    |RoundKey_54_reg_1409                    |   8|   0|    8|          0|
+    |RoundKey_55_reg_1414                    |   8|   0|    8|          0|
+    |RoundKey_56_reg_1419                    |   8|   0|    8|          0|
+    |RoundKey_57_reg_1424                    |   8|   0|    8|          0|
+    |RoundKey_58_reg_1429                    |   8|   0|    8|          0|
+    |RoundKey_59_reg_1434                    |   8|   0|    8|          0|
+    |RoundKey_5_reg_1164                     |   8|   0|    8|          0|
+    |RoundKey_60_reg_1439                    |   8|   0|    8|          0|
+    |RoundKey_61_reg_1444                    |   8|   0|    8|          0|
+    |RoundKey_62_reg_1449                    |   8|   0|    8|          0|
+    |RoundKey_63_reg_1454                    |   8|   0|    8|          0|
+    |RoundKey_64_reg_1459                    |   8|   0|    8|          0|
+    |RoundKey_65_reg_1464                    |   8|   0|    8|          0|
+    |RoundKey_66_reg_1469                    |   8|   0|    8|          0|
+    |RoundKey_67_reg_1474                    |   8|   0|    8|          0|
+    |RoundKey_68_reg_1479                    |   8|   0|    8|          0|
+    |RoundKey_69_reg_1484                    |   8|   0|    8|          0|
+    |RoundKey_6_reg_1169                     |   8|   0|    8|          0|
+    |RoundKey_70_reg_1489                    |   8|   0|    8|          0|
+    |RoundKey_71_reg_1494                    |   8|   0|    8|          0|
+    |RoundKey_72_reg_1499                    |   8|   0|    8|          0|
+    |RoundKey_73_reg_1504                    |   8|   0|    8|          0|
+    |RoundKey_74_reg_1509                    |   8|   0|    8|          0|
+    |RoundKey_75_reg_1514                    |   8|   0|    8|          0|
+    |RoundKey_76_reg_1519                    |   8|   0|    8|          0|
+    |RoundKey_77_reg_1524                    |   8|   0|    8|          0|
+    |RoundKey_78_reg_1529                    |   8|   0|    8|          0|
+    |RoundKey_79_reg_1534                    |   8|   0|    8|          0|
+    |RoundKey_7_reg_1174                     |   8|   0|    8|          0|
+    |RoundKey_80_reg_1539                    |   8|   0|    8|          0|
+    |RoundKey_81_reg_1544                    |   8|   0|    8|          0|
+    |RoundKey_82_reg_1549                    |   8|   0|    8|          0|
+    |RoundKey_83_reg_1554                    |   8|   0|    8|          0|
+    |RoundKey_84_reg_1559                    |   8|   0|    8|          0|
+    |RoundKey_85_reg_1564                    |   8|   0|    8|          0|
+    |RoundKey_86_reg_1569                    |   8|   0|    8|          0|
+    |RoundKey_87_reg_1574                    |   8|   0|    8|          0|
+    |RoundKey_88_reg_1579                    |   8|   0|    8|          0|
+    |RoundKey_89_reg_1584                    |   8|   0|    8|          0|
+    |RoundKey_8_reg_1179                     |   8|   0|    8|          0|
+    |RoundKey_90_reg_1589                    |   8|   0|    8|          0|
+    |RoundKey_91_reg_1594                    |   8|   0|    8|          0|
+    |RoundKey_92_reg_1599                    |   8|   0|    8|          0|
+    |RoundKey_93_reg_1604                    |   8|   0|    8|          0|
+    |RoundKey_94_reg_1609                    |   8|   0|    8|          0|
+    |RoundKey_95_reg_1614                    |   8|   0|    8|          0|
+    |RoundKey_96_reg_1619                    |   8|   0|    8|          0|
+    |RoundKey_97_reg_1624                    |   8|   0|    8|          0|
+    |RoundKey_98_reg_1629                    |   8|   0|    8|          0|
+    |RoundKey_99_reg_1634                    |   8|   0|    8|          0|
+    |RoundKey_9_reg_1184                     |   8|   0|    8|          0|
+    |ap_CS_fsm                               |   8|   0|    8|          0|
+    |ap_sync_reg_grp_Cipher_fu_183_ap_done   |   1|   0|    1|          0|
+    |ap_sync_reg_grp_Cipher_fu_183_ap_ready  |   1|   0|    1|          0|
+    |encrypt_V_1_payload_A                   |   8|   0|    8|          0|
+    |encrypt_V_1_payload_B                   |   8|   0|    8|          0|
+    |encrypt_V_1_sel_rd                      |   1|   0|    1|          0|
+    |encrypt_V_1_sel_wr                      |   1|   0|    1|          0|
+    |encrypt_V_1_state                       |   2|   0|    2|          0|
+    |grp_Cipher_fu_183_ap_start_reg          |   1|   0|    1|          0|
+    |grp_KeyExpansion_fu_173_ap_start_reg    |   1|   0|    1|          0|
+    |i_reg_139                               |  32|   0|   32|          0|
+    |j1_reg_162                              |   5|   0|    5|          0|
+    |j_2_reg_2033                            |   5|   0|    5|          0|
+    |j_reg_151                               |   5|   0|    5|          0|
+    |length_read_reg_1134                    |  32|   0|   32|          0|
+    |plain_V_0_payload_A                     |   8|   0|    8|          0|
+    |plain_V_0_payload_B                     |   8|   0|    8|          0|
+    |plain_V_0_sel_rd                        |   1|   0|    1|          0|
+    |plain_V_0_sel_wr                        |   1|   0|    1|          0|
+    |plain_V_0_state                         |   2|   0|    2|          0|
+    +----------------------------------------+----+----+-----+-----------+
+    |Total                                   |1539|   0| 1539|          0|
+    +----------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++------------------------+-----+-----+------------+-----------------+--------------+
+|        RTL Ports       | Dir | Bits|  Protocol  |  Source Object  |    C Type    |
++------------------------+-----+-----+------------+-----------------+--------------+
+|s_axi_AXILiteS_AWVALID  |  in |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_AWREADY  | out |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_AWADDR   |  in |    6|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_WVALID   |  in |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_WREADY   | out |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_WDATA    |  in |   32|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_WSTRB    |  in |    4|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_ARVALID  |  in |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_ARREADY  | out |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_ARADDR   |  in |    6|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_RVALID   | out |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_RREADY   |  in |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_RDATA    | out |   32|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_RRESP    | out |    2|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_BVALID   | out |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_BREADY   |  in |    1|    s_axi   |     AXILiteS    |    scalar    |
+|s_axi_AXILiteS_BRESP    | out |    2|    s_axi   |     AXILiteS    |    scalar    |
+|ap_clk                  |  in |    1| ap_ctrl_hs | AES_ECB_encrypt | return value |
+|ap_rst_n                |  in |    1| ap_ctrl_hs | AES_ECB_encrypt | return value |
+|interrupt               | out |    1| ap_ctrl_hs | AES_ECB_encrypt | return value |
+|plain_V_TDATA           |  in |    8|    axis    |     plain_V     |    pointer   |
+|plain_V_TVALID          |  in |    1|    axis    |     plain_V     |    pointer   |
+|plain_V_TREADY          | out |    1|    axis    |     plain_V     |    pointer   |
+|encrypt_V_TDATA         | out |    8|    axis    |    encrypt_V    |    pointer   |
+|encrypt_V_TVALID        | out |    1|    axis    |    encrypt_V    |    pointer   |
+|encrypt_V_TREADY        |  in |    1|    axis    |    encrypt_V    |    pointer   |
++------------------------+-----+-----+------------+-----------------+--------------+
+

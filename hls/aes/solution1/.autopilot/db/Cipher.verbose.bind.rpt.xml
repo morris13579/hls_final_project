@@ -1,0 +1,87 @@
+<profile>
+
+<section name = "Vivado HLS Report for 'Cipher'" level="0">
+<item name = "Date">Fri Dec 31 12:15:26 2021
+</item>
+<item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
+<item name = "Project">aes</item>
+<item name = "Solution">solution1</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing (ns)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00, 7.812, 1.25</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency (clock cycles)">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">, min, max, min, max, Type</keys>
+<column name="">1193, 1193, 50, 50, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_AddRoundKey39_fu_13326">AddRoundKey39, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey54_fu_13684">AddRoundKey54, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey31_fu_14042">AddRoundKey31, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey47_fu_14400">AddRoundKey47, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey23_fu_14758">AddRoundKey23, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey27_fu_15116">AddRoundKey27, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey35_fu_15474">AddRoundKey35, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey43_fu_15832">AddRoundKey43, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey51_fu_16190">AddRoundKey51, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey19_fu_16548">AddRoundKey19, 33, 33, 33, 33, none</column>
+<column name="grp_AddRoundKey55_fu_16906">AddRoundKey55, 33, 33, 33, 33, none</column>
+<column name="grp_MixColumns22_fu_17088">MixColumns22, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns26_fu_17094">MixColumns26, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns30_fu_17100">MixColumns30, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns34_fu_17106">MixColumns34, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns38_fu_17112">MixColumns38, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns42_fu_17118">MixColumns42, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns46_fu_17124">MixColumns46, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns50_fu_17130">MixColumns50, 17, 17, 17, 17, none</column>
+<column name="grp_MixColumns_fu_17136">MixColumns, 17, 17, 17, 17, none</column>
+<column name="grp_ShiftRows21_fu_17142">ShiftRows21, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows25_fu_17148">ShiftRows25, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows29_fu_17154">ShiftRows29, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows33_fu_17160">ShiftRows33, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows37_fu_17166">ShiftRows37, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows41_fu_17172">ShiftRows41, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows45_fu_17178">ShiftRows45, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows49_fu_17184">ShiftRows49, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows53_fu_17190">ShiftRows53, 8, 8, 8, 8, none</column>
+<column name="grp_ShiftRows_fu_17196">ShiftRows, 8, 8, 8, 8, none</column>
+<column name="grp_Cipher_Loop_1_proc65_fu_17202">Cipher_Loop_1_proc65, 33, 33, 33, 33, none</column>
+<column name="grp_SubBytes20_fu_17738">SubBytes20, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes24_fu_17746">SubBytes24, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes28_fu_17754">SubBytes28, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes32_fu_17762">SubBytes32, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes36_fu_17770">SubBytes36, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes40_fu_17778">SubBytes40, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes44_fu_17786">SubBytes44, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes48_fu_17794">SubBytes48, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes52_fu_17802">SubBytes52, 49, 49, 49, 49, none</column>
+<column name="grp_SubBytes_fu_17810">SubBytes, 49, 49, 49, 49, none</column>
+<column name="grp_Cipher_Loop_2_proc_fu_17818">Cipher_Loop_2_proc, 33, 33, 33, 33, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

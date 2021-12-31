@@ -1,0 +1,160 @@
+
+
+================================================================
+== Vivado HLS Report for 'SubBytes32'
+================================================================
+* Date:           Fri Dec 31 12:13:33 2021
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        aes
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.576|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   49|   49|   49|   49|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   48|   48|         3|          -|          -|    16|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 4
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!tmp)
+3 --> 
+	4  / true
+4 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 5 [1/1] (1.76ns)   --->   "br label %1" [../src/AES_encrypt.cpp:9]   --->   Operation 5 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%i = phi i5 [ 0, %0 ], [ %i_1, %2 ]"   --->   Operation 6 'phi' 'i' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (1.36ns)   --->   "%tmp = icmp eq i5 %i, -16" [../src/AES_encrypt.cpp:9]   --->   Operation 7 'icmp' 'tmp' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 8 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.78ns)   --->   "%i_1 = add i5 %i, 1" [../src/AES_encrypt.cpp:9]   --->   Operation 9 'add' 'i_1' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "br i1 %tmp, label %3, label %2" [../src/AES_encrypt.cpp:9]   --->   Operation 10 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_4 = zext i5 %i to i64" [../src/AES_encrypt.cpp:10]   --->   Operation 11 'zext' 'tmp_4' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%in_addr = getelementptr [16 x i8]* %in_r, i64 0, i64 %tmp_4" [../src/AES_encrypt.cpp:10]   --->   Operation 12 'getelementptr' 'in_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 13 [2/2] (2.32ns)   --->   "%in_load = load i8* %in_addr, align 1" [../src/AES_encrypt.cpp:10]   --->   Operation 13 'load' 'in_load' <Predicate = (!tmp)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "ret void" [../src/AES_encrypt.cpp:12]   --->   Operation 14 'ret' <Predicate = (tmp)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.57>
+ST_3 : Operation 15 [1/2] (2.32ns)   --->   "%in_load = load i8* %in_addr, align 1" [../src/AES_encrypt.cpp:10]   --->   Operation 15 'load' 'in_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 16 [1/1] (0.00ns)   --->   "%tmp_5 = zext i8 %in_load to i64" [../src/AES_encrypt.cpp:10]   --->   Operation 16 'zext' 'tmp_5' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "%sbox60_addr = getelementptr inbounds [256 x i8]* @sbox60, i64 0, i64 %tmp_5" [../src/AES_encrypt.cpp:10]   --->   Operation 17 'getelementptr' 'sbox60_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 18 [2/2] (3.25ns)   --->   "%sbox60_load = load i8* %sbox60_addr, align 1" [../src/AES_encrypt.cpp:10]   --->   Operation 18 'load' 'sbox60_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+
+State 4 <SV = 3> <Delay = 5.57>
+ST_4 : Operation 19 [1/2] (3.25ns)   --->   "%sbox60_load = load i8* %sbox60_addr, align 1" [../src/AES_encrypt.cpp:10]   --->   Operation 19 'load' 'sbox60_load' <Predicate = true> <Delay = 3.25> <Core = "ROM_nP">   --->   Core 52 'ROM_nP' <Latency = 1> <II = 1> <Delay = 3.25> <Storage> <Opcode : 'load'> <Ports = 0> <Width = 8> <Depth = 256> <ROM>
+ST_4 : Operation 20 [1/1] (0.00ns)   --->   "%out_addr = getelementptr [16 x i8]* %out_r, i64 0, i64 %tmp_4" [../src/AES_encrypt.cpp:10]   --->   Operation 20 'getelementptr' 'out_addr' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 21 [1/1] (2.32ns)   --->   "store i8 %sbox60_load, i8* %out_addr, align 1" [../src/AES_encrypt.cpp:10]   --->   Operation 21 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "br label %1" [../src/AES_encrypt.cpp:9]   --->   Operation 22 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i') with incoming values : ('i', ../src/AES_encrypt.cpp:9) [6]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', ../src/AES_encrypt.cpp:9) [6]  (0 ns)
+	'getelementptr' operation ('in_addr', ../src/AES_encrypt.cpp:10) [13]  (0 ns)
+	'load' operation ('in_load', ../src/AES_encrypt.cpp:10) on array 'in_r' [14]  (2.32 ns)
+
+ <State 3>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('in_load', ../src/AES_encrypt.cpp:10) on array 'in_r' [14]  (2.32 ns)
+	'getelementptr' operation ('sbox60_addr', ../src/AES_encrypt.cpp:10) [16]  (0 ns)
+	'load' operation ('sbox60_load', ../src/AES_encrypt.cpp:10) on array 'sbox60' [17]  (3.25 ns)
+
+ <State 4>: 5.58ns
+The critical path consists of the following:
+	'load' operation ('sbox60_load', ../src/AES_encrypt.cpp:10) on array 'sbox60' [17]  (3.25 ns)
+	'store' operation (../src/AES_encrypt.cpp:10) of variable 'sbox60_load', ../src/AES_encrypt.cpp:10 on array 'out_r' [19]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A
