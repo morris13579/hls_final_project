@@ -1,0 +1,87 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'Cipher'" level="0">
+<item name = "Date">Sat Jan  1 23:29:15 2022
+</item>
+<item name = "Version">2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)</item>
+<item name = "Project">aes</item>
+<item name = "Solution">solution1 (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 5.148 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">6, 6, 60.000 ns, 60.000 ns, 2, 2, dataflow</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="call_ret3_MixColumns60_fu_4054">MixColumns60, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret5_MixColumns64_fu_4074">MixColumns64, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret7_MixColumns68_fu_4094">MixColumns68, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret9_MixColumns72_fu_4114">MixColumns72, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret11_MixColumns76_fu_4134">MixColumns76, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret13_MixColumns80_fu_4154">MixColumns80, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret15_MixColumns84_fu_4174">MixColumns84, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret_MixColumns88_fu_4194">MixColumns88, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret18_MixColumns_fu_4214">MixColumns, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="grp_SubBytes58_fu_4234">SubBytes58, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes62_fu_4272">SubBytes62, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes66_fu_4310">SubBytes66, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes70_fu_4348">SubBytes70, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes74_fu_4386">SubBytes74, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes78_fu_4424">SubBytes78, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes82_fu_4462">SubBytes82, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes86_fu_4500">SubBytes86, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes90_fu_4538">SubBytes90, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="grp_SubBytes_fu_4576">SubBytes, 1, 1, 10.000 ns, 10.000 ns, 1, 1, none</column>
+<column name="call_ret1_Cipher_Block_split196_proc115_fu_4614">Cipher_Block_split196_proc115, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret2_AddRoundKey57_fu_5178">AddRoundKey57, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret4_AddRoundKey61_fu_5214">AddRoundKey61, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret6_AddRoundKey65_fu_5250">AddRoundKey65, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret8_AddRoundKey69_fu_5286">AddRoundKey69, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret10_AddRoundKey73_fu_5322">AddRoundKey73, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret12_AddRoundKey77_fu_5358">AddRoundKey77, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret14_AddRoundKey81_fu_5394">AddRoundKey81, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret16_AddRoundKey85_fu_5430">AddRoundKey85, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret17_AddRoundKey89_fu_5466">AddRoundKey89, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret19_AddRoundKey92_fu_5502">AddRoundKey92, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ret20_AddRoundKey93_fu_5538">AddRoundKey93, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln124_ShiftRows59_fu_5574">ShiftRows59, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln128_ShiftRows63_fu_5610">ShiftRows63, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln132_ShiftRows67_fu_5646">ShiftRows67, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln136_ShiftRows71_fu_5682">ShiftRows71, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln140_ShiftRows75_fu_5718">ShiftRows75, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln144_ShiftRows79_fu_5754">ShiftRows79, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln148_ShiftRows83_fu_5790">ShiftRows83, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln152_ShiftRows87_fu_5826">ShiftRows87, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln156_ShiftRows91_fu_5862">ShiftRows91, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln161_ShiftRows_fu_5898">ShiftRows, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+<column name="call_ln162_Cipher_Block_split196237_proc_fu_5934">Cipher_Block_split196237_proc, 0, 0, 0 ns, 0 ns, 0, 0, none</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>

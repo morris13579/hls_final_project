@@ -40,8 +40,8 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:clg484:-1
-set SourceFiles {sc {} c {../../../src/AES_encrypt.cpp ../../../src/AES_decrypt.cpp ../../../src/AES_common.cpp}}
-set SourceFlags {sc {} c {{} {} {}}}
+set SourceFiles {sc {} c {../../../src/AES_encrypt.cpp ../../../src/AES_common.cpp}}
+set SourceFlags {sc {} c {{} {}}}
 set DirectiveFile C:/Users/Morris/Desktop/HighLevelSynthesis_AES/hls/aes/solution1/solution1.directive
 set TBFiles {verilog ../../../src/AEW_test.cpp bc ../../../src/AEW_test.cpp vhdl ../../../src/AEW_test.cpp sc ../../../src/AEW_test.cpp cas ../../../src/AEW_test.cpp c {}}
 set SpecLanguage C

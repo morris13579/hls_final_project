@@ -70,9 +70,11 @@ void MixColumns(BYTE in[16],BYTE out[16]){
 
 
 
-void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE RoundKey[AES_keyExpSize])
+void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[11][16])
 {
-#pragma HLS ARRAY_PARTITION variable=RoundKey factor=16
+//#pragma HLS ARRAY_PARTITION variable=RoundKey factor=16
+#pragma HLS ARRAY_PARTITION variable=key complete dim=1
+
 	BYTE state_0[16];
 	BYTE state_1[16];
 	BYTE state_2[16];
@@ -118,48 +120,48 @@ void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE RoundKey[AES_keyExpSize])
 		state_0[i] = plain[i];
 	}
 #pragma HLS DATAFLOW
-	AddRoundKey(state_0,state_1,&RoundKey[0]);
+	AddRoundKey(state_0,state_1,key[0]);
 
 	SubBytes(state_1,state_2);
 	ShiftRows(state_2,state_3);
 	MixColumns(state_3,state_4);
-	AddRoundKey(state_4,state_5,&RoundKey[1 << 4]);
+	AddRoundKey(state_4,state_5,key[1]);
 	SubBytes(state_5,state_6);
 	ShiftRows(state_6,state_7);
 	MixColumns(state_7,state_8);
-	AddRoundKey(state_8,state_9,&RoundKey[2 << 4]);
+	AddRoundKey(state_8,state_9,key[2]);
 	SubBytes(state_9,state_10);
 	ShiftRows(state_10,state_11);
 	MixColumns(state_11,state_12);
-	AddRoundKey(state_12,state_13,&RoundKey[3 << 4]);
+	AddRoundKey(state_12,state_13,key[3]);
 	SubBytes(state_13,state_14);
 	ShiftRows(state_14,state_15);
 	MixColumns(state_15,state_16);
-	AddRoundKey(state_16,state_17,&RoundKey[4 << 4]);
+	AddRoundKey(state_16,state_17,key[4]);
 	SubBytes(state_17,state_18);
 	ShiftRows(state_18,state_19);
 	MixColumns(state_19,state_20);
-	AddRoundKey(state_20,state_21,&RoundKey[5 << 4]);
+	AddRoundKey(state_20,state_21,key[5]);
 	SubBytes(state_21,state_22);
 	ShiftRows(state_22,state_23);
 	MixColumns(state_23,state_24);
-	AddRoundKey(state_24,state_25,&RoundKey[6 << 4]);
+	AddRoundKey(state_24,state_25,key[6]);
 	SubBytes(state_25,state_26);
 	ShiftRows(state_26,state_27);
 	MixColumns(state_27,state_28);
-	AddRoundKey(state_28,state_29,&RoundKey[7 << 4]);
+	AddRoundKey(state_28,state_29,key[7]);
 	SubBytes(state_29,state_30);
 	ShiftRows(state_30,state_31);
 	MixColumns(state_31,state_32);
-	AddRoundKey(state_32,state_33,&RoundKey[8 << 4]);
+	AddRoundKey(state_32,state_33,key[8]);
 	SubBytes(state_33,state_34);
 	ShiftRows(state_34,state_35);
 	MixColumns(state_35,state_36);
-	AddRoundKey(state_36,state_37,&RoundKey[9 << 4]);
+	AddRoundKey(state_36,state_37,key[9]);
 
 	SubBytes(state_37,state_38);
 	ShiftRows(state_38,state_39);
-	AddRoundKey(state_39,state_40,&RoundKey[10 << 4]);
+	AddRoundKey(state_39,state_40,key[10]);
 
 /*
 	for(int i = 0 ;i<16;i++){
@@ -177,24 +179,26 @@ void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE RoundKey[AES_keyExpSize])
 }
 
 
-void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[16] , unsigned long length) {
+//void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[16] , unsigned long len)
+void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[11][16] , unsigned long len){
 #pragma HLS INTERFACE s_axilite port=key
-#pragma HLS INTERFACE s_axilite port=length
+#pragma HLS INTERFACE s_axilite port=len
 #pragma HLS INTERFACE axis register both port=plain
 #pragma HLS INTERFACE axis register both port=encrypt
 #pragma HLS INTERFACE s_axilite port=return
-	BYTE RoundKey[AES_keyExpSize];
-	KeyExpansion(RoundKey, key);
-	for(int i = 0 ;i<length;i+=16){
+	//BYTE RoundKey[AES_keyExpSize];
+	//KeyExpansion(RoundKey, key);
+	for(int i = 0 ;i<len;i+=16){
 		BYTE in[16],out[16];
 		for(int j =0;j<16;j++){
 			in[j] = plain->read();
 		}
-		Cipher(in , out , RoundKey);
+		Cipher(in , out , key);
 		for(int j =0;j<16;j++){
 			encrypt->write(out[j]);
 		}
 	}
+	//return;
 }
 
 

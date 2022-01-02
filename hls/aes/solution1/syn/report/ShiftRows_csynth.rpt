@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'ShiftRows'
 ================================================================
-* Date:           Fri Dec 31 12:16:53 2021
+* Date:           Sun Jan  2 15:59:58 2022
 
 * Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
 * Project:        aes
@@ -91,10 +91,10 @@
     +----------------+----+-----------+-----+-----------+
     |ap_NS_fsm       |  47|         10|    1|         10|
     |ap_done         |   9|          2|    1|          2|
-    |in_r_address0   |  44|          9|    4|         36|
-    |in_r_address1   |  44|          9|    4|         36|
-    |out_r_address0  |  44|          9|    4|         36|
-    |out_r_address1  |  44|          9|    4|         36|
+    |in_V_address0   |  44|          9|    4|         36|
+    |in_V_address1   |  44|          9|    4|         36|
+    |out_V_address0  |  44|          9|    4|         36|
+    |out_V_address1  |  44|          9|    4|         36|
     +----------------+----+-----------+-----+-----------+
     |Total           | 232|         48|   18|        156|
     +----------------+----+-----------+-----+-----------+
@@ -125,19 +125,19 @@
 |ap_continue     |  in |    1| ap_ctrl_hs |   ShiftRows  | return value |
 |ap_idle         | out |    1| ap_ctrl_hs |   ShiftRows  | return value |
 |ap_ready        | out |    1| ap_ctrl_hs |   ShiftRows  | return value |
-|in_r_address0   | out |    4|  ap_memory |     in_r     |     array    |
-|in_r_ce0        | out |    1|  ap_memory |     in_r     |     array    |
-|in_r_q0         |  in |    8|  ap_memory |     in_r     |     array    |
-|in_r_address1   | out |    4|  ap_memory |     in_r     |     array    |
-|in_r_ce1        | out |    1|  ap_memory |     in_r     |     array    |
-|in_r_q1         |  in |    8|  ap_memory |     in_r     |     array    |
-|out_r_address0  | out |    4|  ap_memory |     out_r    |     array    |
-|out_r_ce0       | out |    1|  ap_memory |     out_r    |     array    |
-|out_r_we0       | out |    1|  ap_memory |     out_r    |     array    |
-|out_r_d0        | out |    8|  ap_memory |     out_r    |     array    |
-|out_r_address1  | out |    4|  ap_memory |     out_r    |     array    |
-|out_r_ce1       | out |    1|  ap_memory |     out_r    |     array    |
-|out_r_we1       | out |    1|  ap_memory |     out_r    |     array    |
-|out_r_d1        | out |    8|  ap_memory |     out_r    |     array    |
+|in_V_address0   | out |    4|  ap_memory |     in_V     |     array    |
+|in_V_ce0        | out |    1|  ap_memory |     in_V     |     array    |
+|in_V_q0         |  in |    8|  ap_memory |     in_V     |     array    |
+|in_V_address1   | out |    4|  ap_memory |     in_V     |     array    |
+|in_V_ce1        | out |    1|  ap_memory |     in_V     |     array    |
+|in_V_q1         |  in |    8|  ap_memory |     in_V     |     array    |
+|out_V_address0  | out |    4|  ap_memory |     out_V    |     array    |
+|out_V_ce0       | out |    1|  ap_memory |     out_V    |     array    |
+|out_V_we0       | out |    1|  ap_memory |     out_V    |     array    |
+|out_V_d0        | out |    8|  ap_memory |     out_V    |     array    |
+|out_V_address1  | out |    4|  ap_memory |     out_V    |     array    |
+|out_V_ce1       | out |    1|  ap_memory |     out_V    |     array    |
+|out_V_we1       | out |    1|  ap_memory |     out_V    |     array    |
+|out_V_d1        | out |    8|  ap_memory |     out_V    |     array    |
 +----------------+-----+-----+------------+--------------+--------------+
 

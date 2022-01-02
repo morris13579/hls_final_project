@@ -18,13 +18,13 @@ port (
     ap_continue : IN STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    in_r_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    in_r_ce0 : OUT STD_LOGIC;
-    in_r_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    out_r_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    out_r_ce0 : OUT STD_LOGIC;
-    out_r_we0 : OUT STD_LOGIC;
-    out_r_d0 : OUT STD_LOGIC_VECTOR (7 downto 0) );
+    in_V_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    in_V_ce0 : OUT STD_LOGIC;
+    in_V_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    out_V_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    out_V_ce0 : OUT STD_LOGIC;
+    out_V_we0 : OUT STD_LOGIC;
+    out_V_d0 : OUT STD_LOGIC_VECTOR (7 downto 0) );
 end;
 
 
@@ -52,26 +52,26 @@ architecture behav of SubBytes is
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal sbox64_address0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal sbox64_ce0 : STD_LOGIC;
-    signal sbox64_q0 : STD_LOGIC_VECTOR (7 downto 0);
-    signal i_1_fu_75_p2 : STD_LOGIC_VECTOR (4 downto 0);
-    signal i_1_reg_94 : STD_LOGIC_VECTOR (4 downto 0);
+    signal sbox_V89_address0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal sbox_V89_ce0 : STD_LOGIC;
+    signal sbox_V89_q0 : STD_LOGIC_VECTOR (7 downto 0);
+    signal i_V_fu_75_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal i_V_reg_94 : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal tmp_4_fu_81_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_4_reg_99 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_1_fu_81_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_1_reg_99 : STD_LOGIC_VECTOR (63 downto 0);
     signal tmp_fu_69_p2 : STD_LOGIC_VECTOR (0 downto 0);
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
-    signal i_reg_58 : STD_LOGIC_VECTOR (4 downto 0);
+    signal t_V_reg_58 : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_block_state1 : BOOLEAN;
     signal ap_CS_fsm_state4 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state4 : signal is "none";
-    signal tmp_5_fu_86_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_2_fu_86_p1 : STD_LOGIC_VECTOR (63 downto 0);
     signal ap_NS_fsm : STD_LOGIC_VECTOR (3 downto 0);
 
-    component SubBytes20_sbox63 IS
+    component SubBytes46_sbox_V88 IS
     generic (
         DataWidth : INTEGER;
         AddressRange : INTEGER;
@@ -87,7 +87,7 @@ architecture behav of SubBytes is
 
 
 begin
-    sbox64_U : component SubBytes20_sbox63
+    sbox_V89_U : component SubBytes46_sbox_V88
     generic map (
         DataWidth => 8,
         AddressRange => 256,
@@ -95,9 +95,9 @@ begin
     port map (
         clk => ap_clk,
         reset => ap_rst,
-        address0 => sbox64_address0,
-        ce0 => sbox64_ce0,
-        q0 => sbox64_q0);
+        address0 => sbox_V89_address0,
+        ce0 => sbox_V89_ce0,
+        q0 => sbox_V89_q0);
 
 
 
@@ -131,13 +131,13 @@ begin
     end process;
 
 
-    i_reg_58_assign_proc : process (ap_clk)
+    t_V_reg_58_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-                i_reg_58 <= i_1_reg_94;
+                t_V_reg_58 <= i_V_reg_94;
             elsif ((not(((ap_start = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                i_reg_58 <= ap_const_lv5_0;
+                t_V_reg_58 <= ap_const_lv5_0;
             end if; 
         end if;
     end process;
@@ -145,7 +145,7 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                i_1_reg_94 <= i_1_fu_75_p2;
+                i_V_reg_94 <= i_V_fu_75_p2;
             end if;
         end if;
     end process;
@@ -153,11 +153,11 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if (((tmp_fu_69_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
-                    tmp_4_reg_99(4 downto 0) <= tmp_4_fu_81_p1(4 downto 0);
+                    tmp_1_reg_99(4 downto 0) <= tmp_1_fu_81_p1(4 downto 0);
             end if;
         end if;
     end process;
-    tmp_4_reg_99(63 downto 5) <= "00000000000000000000000000000000000000000000000000000000000";
+    tmp_1_reg_99(63 downto 5) <= "00000000000000000000000000000000000000000000000000000000000";
 
     ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, tmp_fu_69_p2)
     begin
@@ -222,52 +222,52 @@ begin
         end if; 
     end process;
 
-    i_1_fu_75_p2 <= std_logic_vector(unsigned(i_reg_58) + unsigned(ap_const_lv5_1));
-    in_r_address0 <= tmp_4_fu_81_p1(4 - 1 downto 0);
+    i_V_fu_75_p2 <= std_logic_vector(unsigned(t_V_reg_58) + unsigned(ap_const_lv5_1));
+    in_V_address0 <= tmp_1_fu_81_p1(4 - 1 downto 0);
 
-    in_r_ce0_assign_proc : process(ap_CS_fsm_state2)
+    in_V_ce0_assign_proc : process(ap_CS_fsm_state2)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            in_r_ce0 <= ap_const_logic_1;
+            in_V_ce0 <= ap_const_logic_1;
         else 
-            in_r_ce0 <= ap_const_logic_0;
+            in_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    out_r_address0 <= tmp_4_reg_99(4 - 1 downto 0);
+    out_V_address0 <= tmp_1_reg_99(4 - 1 downto 0);
 
-    out_r_ce0_assign_proc : process(ap_CS_fsm_state4)
+    out_V_ce0_assign_proc : process(ap_CS_fsm_state4)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            out_r_ce0 <= ap_const_logic_1;
+            out_V_ce0 <= ap_const_logic_1;
         else 
-            out_r_ce0 <= ap_const_logic_0;
+            out_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    out_r_d0 <= sbox64_q0;
+    out_V_d0 <= sbox_V89_q0;
 
-    out_r_we0_assign_proc : process(ap_CS_fsm_state4)
+    out_V_we0_assign_proc : process(ap_CS_fsm_state4)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            out_r_we0 <= ap_const_logic_1;
+            out_V_we0 <= ap_const_logic_1;
         else 
-            out_r_we0 <= ap_const_logic_0;
+            out_V_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    sbox64_address0 <= tmp_5_fu_86_p1(8 - 1 downto 0);
+    sbox_V89_address0 <= tmp_2_fu_86_p1(8 - 1 downto 0);
 
-    sbox64_ce0_assign_proc : process(ap_CS_fsm_state3)
+    sbox_V89_ce0_assign_proc : process(ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            sbox64_ce0 <= ap_const_logic_1;
+            sbox_V89_ce0 <= ap_const_logic_1;
         else 
-            sbox64_ce0 <= ap_const_logic_0;
+            sbox_V89_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    tmp_4_fu_81_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(i_reg_58),64));
-    tmp_5_fu_86_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in_r_q0),64));
-    tmp_fu_69_p2 <= "1" when (i_reg_58 = ap_const_lv5_10) else "0";
+    tmp_1_fu_81_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(t_V_reg_58),64));
+    tmp_2_fu_86_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(in_V_q0),64));
+    tmp_fu_69_p2 <= "1" when (t_V_reg_58 = ap_const_lv5_10) else "0";
 end behav;

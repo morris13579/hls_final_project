@@ -15,7 +15,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>in_r</name>
+						<name>in_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -24,7 +24,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>in</originalName>
+						<originalName>in.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>out_r</name>
+						<name>out_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -52,7 +52,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>out</originalName>
+						<originalName>out.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -123,7 +123,7 @@
 					<Obj>
 						<type>0</type>
 						<id>5</id>
-						<name>i1</name>
+						<name>p_s</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -132,7 +132,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>i</originalName>
+						<originalName>i.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -260,7 +260,7 @@
 					<Obj>
 						<type>0</type>
 						<id>10</id>
-						<name>tmp_7</name>
+						<name>tmp_4</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>51</lineNumber>
@@ -308,7 +308,7 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>in_addr</name>
+						<name>in_V_addr</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>51</lineNumber>
@@ -358,7 +358,7 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>t</name>
+						<name>t_V</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>51</lineNumber>
@@ -381,7 +381,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>t</originalName>
+						<originalName>t.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -406,7 +406,7 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>tmp_84</name>
+						<name>tmp_76</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -454,7 +454,7 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>tmp_9</name>
+						<name>ret_V</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -477,7 +477,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -503,7 +503,7 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>tmp_s</name>
+						<name>tmp_7</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -551,7 +551,7 @@
 					<Obj>
 						<type>0</type>
 						<id>16</id>
-						<name>in_addr_16</name>
+						<name>in_V_addr_16</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -601,7 +601,7 @@
 					<Obj>
 						<type>0</type>
 						<id>17</id>
-						<name>in_load</name>
+						<name>rhs_V</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -624,7 +624,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>rhs.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -649,7 +649,7 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>tmp_1</name>
+						<name>ret_V_2</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -672,7 +672,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -698,7 +698,7 @@
 					<Obj>
 						<type>0</type>
 						<id>19</id>
-						<name>tmp_2</name>
+						<name>tmp_9</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -746,7 +746,7 @@
 					<Obj>
 						<type>0</type>
 						<id>20</id>
-						<name>in_addr_17</name>
+						<name>in_V_addr_17</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -796,7 +796,7 @@
 					<Obj>
 						<type>0</type>
 						<id>21</id>
-						<name>in_load_16</name>
+						<name>rhs_V_44</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -819,7 +819,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>rhs.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -844,7 +844,7 @@
 					<Obj>
 						<type>0</type>
 						<id>22</id>
-						<name>tmp_3</name>
+						<name>ret_V_4</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -867,7 +867,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -893,7 +893,7 @@
 					<Obj>
 						<type>0</type>
 						<id>23</id>
-						<name>tmp_4</name>
+						<name>tmp_s</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -941,7 +941,7 @@
 					<Obj>
 						<type>0</type>
 						<id>24</id>
-						<name>in_addr_18</name>
+						<name>in_V_addr_18</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -991,7 +991,7 @@
 					<Obj>
 						<type>0</type>
 						<id>25</id>
-						<name>in_load_17</name>
+						<name>rhs_V_45</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -1014,7 +1014,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>rhs.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1039,7 +1039,7 @@
 					<Obj>
 						<type>0</type>
 						<id>26</id>
-						<name>Tm</name>
+						<name>ret_V_77</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -1062,7 +1062,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>Tm</originalName>
+						<originalName>Tm.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1088,7 +1088,7 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>tmp_5</name>
+						<name>ret_V_78</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -1137,7 +1137,7 @@
 					<Obj>
 						<type>0</type>
 						<id>28</id>
-						<name>Tmp</name>
+						<name>ret_V_79</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>52</lineNumber>
@@ -1160,7 +1160,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>Tmp</originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1186,10 +1186,10 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>tmp_85</name>
+						<name>r_V</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1204,7 +1204,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1216,7 +1216,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>r.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1242,10 +1242,10 @@
 					<Obj>
 						<type>0</type>
 						<id>30</id>
-						<name>tmp_86</name>
+						<name>tmp_78</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1260,7 +1260,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1299,10 +1299,10 @@
 					<Obj>
 						<type>0</type>
 						<id>31</id>
-						<name>tmp_2_i_cast_cast_ca</name>
+						<name>p_i_cast_cast_cast</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1317,7 +1317,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1454,7 +1454,7 @@
 					<Obj>
 						<type>0</type>
 						<id>34</id>
-						<name>tmp_10</name>
+						<name>ret_V_7</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>55</lineNumber>
@@ -1477,7 +1477,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1503,7 +1503,7 @@
 					<Obj>
 						<type>0</type>
 						<id>35</id>
-						<name>out_addr</name>
+						<name>out_V_addr</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>55</lineNumber>
@@ -1602,7 +1602,7 @@
 					<Obj>
 						<type>0</type>
 						<id>37</id>
-						<name>Tm_25</name>
+						<name>ret_V_80</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>57</lineNumber>
@@ -1625,7 +1625,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>Tm</originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1651,10 +1651,10 @@
 					<Obj>
 						<type>0</type>
 						<id>38</id>
-						<name>tmp_87</name>
+						<name>r_V_25</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1669,7 +1669,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1681,7 +1681,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>r.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1707,10 +1707,10 @@
 					<Obj>
 						<type>0</type>
 						<id>39</id>
-						<name>tmp_88</name>
+						<name>tmp_80</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1725,7 +1725,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1764,10 +1764,10 @@
 					<Obj>
 						<type>0</type>
 						<id>40</id>
-						<name>tmp_2_i20_cast_cast_s</name>
+						<name>p_i23_cast_cast_cast</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -1782,7 +1782,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -1919,7 +1919,7 @@
 					<Obj>
 						<type>0</type>
 						<id>43</id>
-						<name>tmp_12</name>
+						<name>ret_V_10</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>59</lineNumber>
@@ -1942,7 +1942,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -1968,7 +1968,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>out_addr_16</name>
+						<name>out_V_addr_16</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>59</lineNumber>
@@ -2067,7 +2067,7 @@
 					<Obj>
 						<type>0</type>
 						<id>46</id>
-						<name>Tm_26</name>
+						<name>ret_V_81</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>61</lineNumber>
@@ -2090,7 +2090,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>Tm</originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -2116,10 +2116,10 @@
 					<Obj>
 						<type>0</type>
 						<id>47</id>
-						<name>tmp_89</name>
+						<name>r_V_26</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -2134,7 +2134,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2146,7 +2146,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>r.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -2172,10 +2172,10 @@
 					<Obj>
 						<type>0</type>
 						<id>48</id>
-						<name>tmp_90</name>
+						<name>tmp_82</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -2190,7 +2190,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2229,10 +2229,10 @@
 					<Obj>
 						<type>0</type>
 						<id>49</id>
-						<name>tmp_2_i25_cast_cast_s</name>
+						<name>p_i28_cast_cast_cast</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -2247,7 +2247,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2384,7 +2384,7 @@
 					<Obj>
 						<type>0</type>
 						<id>52</id>
-						<name>tmp_14</name>
+						<name>ret_V_13</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>63</lineNumber>
@@ -2407,7 +2407,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -2433,7 +2433,7 @@
 					<Obj>
 						<type>0</type>
 						<id>53</id>
-						<name>out_addr_17</name>
+						<name>out_V_addr_17</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>63</lineNumber>
@@ -2532,7 +2532,7 @@
 					<Obj>
 						<type>0</type>
 						<id>55</id>
-						<name>Tm_27</name>
+						<name>ret_V_82</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>65</lineNumber>
@@ -2555,7 +2555,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>Tm</originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -2581,10 +2581,10 @@
 					<Obj>
 						<type>0</type>
 						<id>56</id>
-						<name>tmp_91</name>
+						<name>r_V_27</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -2599,7 +2599,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2611,7 +2611,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>r.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -2637,10 +2637,10 @@
 					<Obj>
 						<type>0</type>
 						<id>57</id>
-						<name>tmp_92</name>
+						<name>tmp_84</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -2655,7 +2655,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2694,10 +2694,10 @@
 					<Obj>
 						<type>0</type>
 						<id>58</id>
-						<name>tmp_2_i30_cast_cast_s</name>
+						<name>p_i33_cast_cast_cast</name>
 						<fileName>../src/AES_common.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>74</lineNumber>
+						<lineNumber>68</lineNumber>
 						<contextFuncName>xtime</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -2712,7 +2712,7 @@
 											<first>../src/AES_common.cpp</first>
 											<second>xtime</second>
 										</first>
-										<second>74</second>
+										<second>68</second>
 									</item>
 									<item>
 										<first>
@@ -2800,7 +2800,7 @@
 					<Obj>
 						<type>0</type>
 						<id>60</id>
-						<name>tmp_16</name>
+						<name>ret_V_16</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>67</lineNumber>
@@ -2823,7 +2823,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName></originalName>
+						<originalName>ret.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -2849,7 +2849,7 @@
 					<Obj>
 						<type>0</type>
 						<id>61</id>
-						<name>out_addr_18</name>
+						<name>out_V_addr_18</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>67</lineNumber>
@@ -2948,7 +2948,7 @@
 					<Obj>
 						<type>0</type>
 						<id>63</id>
-						<name>i</name>
+						<name>i_V</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>50</lineNumber>
@@ -2971,7 +2971,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>i</originalName>
+						<originalName>i.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>

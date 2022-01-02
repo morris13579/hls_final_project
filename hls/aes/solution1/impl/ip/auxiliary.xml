@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="AES_ECB_encrypt" xd:componentRef="AES_ECB_encrypt" xd:initiationInterval="x" xd:clockPeriod="10.000" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:type="generic_axi_lite" xd:offset="0x0"/>
+  <xd:arg xd:name="*(plain)" xd:originalName="plain" xd:direction="in" xd:interfaceRef="plain_V_V" xd:busTypeRef="axis" xd:dataWidth="8"/>
+  <xd:arg xd:name="*(encrypt)" xd:originalName="encrypt" xd:direction="out" xd:interfaceRef="encrypt_V_V" xd:busTypeRef="axis" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[0][]" xd:originalName="key0" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x10" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[1][]" xd:originalName="key1" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x20" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[2][]" xd:originalName="key2" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x30" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[3][]" xd:originalName="key3" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x40" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[4][]" xd:originalName="key4" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x50" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[5][]" xd:originalName="key5" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x60" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[6][]" xd:originalName="key6" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x70" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[7][]" xd:originalName="key7" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x80" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[8][]" xd:originalName="key8" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0x90" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[9][]" xd:originalName="key9" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0xA0" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="key[10][]" xd:originalName="key10" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0xB0" xd:arraySize="16" xd:dataWidth="8"/>
+  <xd:arg xd:name="len" xd:originalName="len" xd:direction="in" xd:interfaceRef="s_axi_AXILiteS" xd:busTypeRef="axilite" xd:offset="0xC0" xd:handshakeRef="ap_none" xd:dataWidth="32"/>
+  <xd:latencyEstimates xd:best-case="undef" xd:worst-case="undef" xd:average-case="undef"/>
+  <xd:resourceEstimates xd:LUT="8615" xd:FF="2635" xd:BRAM="51" xd:DSP="0"/>
+</xd:acceleratorMap>

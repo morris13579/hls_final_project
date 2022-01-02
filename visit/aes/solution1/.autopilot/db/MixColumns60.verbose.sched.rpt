@@ -1,0 +1,258 @@
+
+
+================================================================
+== Vitis HLS Report for 'MixColumns60'
+================================================================
+* Date:           Sat Jan  1 23:28:51 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        aes
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.158 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.15>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%in_0_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_0" [../src/AES_encrypt.cpp:51]   --->   Operation 2 'read' 'in_0_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%in_1_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_1" [../src/AES_encrypt.cpp:52]   --->   Operation 3 'read' 'in_1_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.99ns)   --->   "%xor_ln52 = xor i8 %in_1_read, i8 %in_0_read" [../src/AES_encrypt.cpp:52]   --->   Operation 4 'xor' 'xor_ln52' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%in_2_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_2" [../src/AES_encrypt.cpp:52]   --->   Operation 5 'read' 'in_2_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.99ns)   --->   "%xor_ln52_78 = xor i8 %in_2_read, i8 %xor_ln52" [../src/AES_encrypt.cpp:52]   --->   Operation 6 'xor' 'xor_ln52_78' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%in_3_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_3" [../src/AES_encrypt.cpp:52]   --->   Operation 7 'read' 'in_3_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.99ns)   --->   "%xor_ln52_79 = xor i8 %in_3_read, i8 %xor_ln52_78" [../src/AES_encrypt.cpp:52]   --->   Operation 8 'xor' 'xor_ln52_79' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 9 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_79)   --->   "%shl_ln68 = shl i8 %xor_ln52, i8 1" [../src/AES_common.cpp:68]   --->   Operation 9 'shl' 'shl_ln68' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_79)   --->   "%tmp = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln52, i32 7" [../src/AES_common.cpp:68]   --->   Operation 10 'bitselect' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_79)   --->   "%select_ln55 = select i1 %tmp, i8 27, i8 0" [../src/AES_encrypt.cpp:55]   --->   Operation 11 'select' 'select_ln55' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 12 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_79)   --->   "%xor_ln55 = xor i8 %in_0_read, i8 %shl_ln68" [../src/AES_encrypt.cpp:55]   --->   Operation 12 'xor' 'xor_ln55' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_79)   --->   "%xor_ln55_78 = xor i8 %select_ln55, i8 %xor_ln52_79" [../src/AES_encrypt.cpp:55]   --->   Operation 13 'xor' 'xor_ln55_78' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 14 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln55_79 = xor i8 %xor_ln55_78, i8 %xor_ln55" [../src/AES_encrypt.cpp:55]   --->   Operation 14 'xor' 'xor_ln55_79' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 15 [1/1] (0.99ns)   --->   "%xor_ln57 = xor i8 %in_2_read, i8 %in_1_read" [../src/AES_encrypt.cpp:57]   --->   Operation 15 'xor' 'xor_ln57' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 16 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_79)   --->   "%shl_ln68_106 = shl i8 %xor_ln57, i8 1" [../src/AES_common.cpp:68]   --->   Operation 16 'shl' 'shl_ln68_106' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_79)   --->   "%tmp_106 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln57, i32 7" [../src/AES_common.cpp:68]   --->   Operation 17 'bitselect' 'tmp_106' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_79)   --->   "%select_ln59 = select i1 %tmp_106, i8 27, i8 0" [../src/AES_encrypt.cpp:59]   --->   Operation 18 'select' 'select_ln59' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 19 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_79)   --->   "%xor_ln59 = xor i8 %in_1_read, i8 %shl_ln68_106" [../src/AES_encrypt.cpp:59]   --->   Operation 19 'xor' 'xor_ln59' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 20 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_79)   --->   "%xor_ln59_78 = xor i8 %select_ln59, i8 %xor_ln52_79" [../src/AES_encrypt.cpp:59]   --->   Operation 20 'xor' 'xor_ln59_78' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 21 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln59_79 = xor i8 %xor_ln59_78, i8 %xor_ln59" [../src/AES_encrypt.cpp:59]   --->   Operation 21 'xor' 'xor_ln59_79' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 22 [1/1] (0.99ns)   --->   "%xor_ln61 = xor i8 %in_3_read, i8 %in_2_read" [../src/AES_encrypt.cpp:61]   --->   Operation 22 'xor' 'xor_ln61' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 23 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_79)   --->   "%shl_ln68_107 = shl i8 %xor_ln61, i8 1" [../src/AES_common.cpp:68]   --->   Operation 23 'shl' 'shl_ln68_107' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_79)   --->   "%tmp_107 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln61, i32 7" [../src/AES_common.cpp:68]   --->   Operation 24 'bitselect' 'tmp_107' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_79)   --->   "%select_ln63 = select i1 %tmp_107, i8 27, i8 0" [../src/AES_encrypt.cpp:63]   --->   Operation 25 'select' 'select_ln63' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 26 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_79)   --->   "%xor_ln63 = xor i8 %in_3_read, i8 %xor_ln52" [../src/AES_encrypt.cpp:63]   --->   Operation 26 'xor' 'xor_ln63' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 27 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_79)   --->   "%xor_ln63_78 = xor i8 %shl_ln68_107, i8 %select_ln63" [../src/AES_encrypt.cpp:63]   --->   Operation 27 'xor' 'xor_ln63_78' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 28 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln63_79 = xor i8 %xor_ln63_78, i8 %xor_ln63" [../src/AES_encrypt.cpp:63]   --->   Operation 28 'xor' 'xor_ln63_79' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 29 [1/1] (0.99ns)   --->   "%xor_ln65 = xor i8 %in_3_read, i8 %in_0_read" [../src/AES_encrypt.cpp:65]   --->   Operation 29 'xor' 'xor_ln65' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_50)   --->   "%shl_ln68_108 = shl i8 %xor_ln65, i8 1" [../src/AES_common.cpp:68]   --->   Operation 30 'shl' 'shl_ln68_108' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_50)   --->   "%tmp_108 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln65, i32 7" [../src/AES_common.cpp:68]   --->   Operation 31 'bitselect' 'tmp_108' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_50)   --->   "%select_ln67 = select i1 %tmp_108, i8 27, i8 0" [../src/AES_encrypt.cpp:67]   --->   Operation 32 'select' 'select_ln67' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_50)   --->   "%xor_ln67 = xor i8 %xor_ln52_78, i8 %select_ln67" [../src/AES_encrypt.cpp:67]   --->   Operation 33 'xor' 'xor_ln67' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 34 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln67_50 = xor i8 %xor_ln67, i8 %shl_ln68_108" [../src/AES_encrypt.cpp:67]   --->   Operation 34 'xor' 'xor_ln67_50' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%in_4_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_4" [../src/AES_encrypt.cpp:51]   --->   Operation 35 'read' 'in_4_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%in_5_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_5" [../src/AES_encrypt.cpp:52]   --->   Operation 36 'read' 'in_5_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 37 [1/1] (0.99ns)   --->   "%xor_ln52_80 = xor i8 %in_5_read, i8 %in_4_read" [../src/AES_encrypt.cpp:52]   --->   Operation 37 'xor' 'xor_ln52_80' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%in_6_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_6" [../src/AES_encrypt.cpp:52]   --->   Operation 38 'read' 'in_6_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 39 [1/1] (0.99ns)   --->   "%xor_ln52_81 = xor i8 %in_6_read, i8 %xor_ln52_80" [../src/AES_encrypt.cpp:52]   --->   Operation 39 'xor' 'xor_ln52_81' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [1/1] (0.00ns)   --->   "%in_7_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_7" [../src/AES_encrypt.cpp:52]   --->   Operation 40 'read' 'in_7_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 41 [1/1] (0.99ns)   --->   "%xor_ln52_82 = xor i8 %in_7_read, i8 %xor_ln52_81" [../src/AES_encrypt.cpp:52]   --->   Operation 41 'xor' 'xor_ln52_82' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 42 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_82)   --->   "%shl_ln68_109 = shl i8 %xor_ln52_80, i8 1" [../src/AES_common.cpp:68]   --->   Operation 42 'shl' 'shl_ln68_109' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 43 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_82)   --->   "%tmp_109 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln52_80, i32 7" [../src/AES_common.cpp:68]   --->   Operation 43 'bitselect' 'tmp_109' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 44 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_82)   --->   "%select_ln55_22 = select i1 %tmp_109, i8 27, i8 0" [../src/AES_encrypt.cpp:55]   --->   Operation 44 'select' 'select_ln55_22' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 45 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_82)   --->   "%xor_ln55_80 = xor i8 %in_4_read, i8 %shl_ln68_109" [../src/AES_encrypt.cpp:55]   --->   Operation 45 'xor' 'xor_ln55_80' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 46 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_82)   --->   "%xor_ln55_81 = xor i8 %select_ln55_22, i8 %xor_ln52_82" [../src/AES_encrypt.cpp:55]   --->   Operation 46 'xor' 'xor_ln55_81' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 47 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln55_82 = xor i8 %xor_ln55_81, i8 %xor_ln55_80" [../src/AES_encrypt.cpp:55]   --->   Operation 47 'xor' 'xor_ln55_82' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 48 [1/1] (0.99ns)   --->   "%xor_ln57_22 = xor i8 %in_6_read, i8 %in_5_read" [../src/AES_encrypt.cpp:57]   --->   Operation 48 'xor' 'xor_ln57_22' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 49 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_82)   --->   "%shl_ln68_110 = shl i8 %xor_ln57_22, i8 1" [../src/AES_common.cpp:68]   --->   Operation 49 'shl' 'shl_ln68_110' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 50 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_82)   --->   "%tmp_110 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln57_22, i32 7" [../src/AES_common.cpp:68]   --->   Operation 50 'bitselect' 'tmp_110' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 51 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_82)   --->   "%select_ln59_22 = select i1 %tmp_110, i8 27, i8 0" [../src/AES_encrypt.cpp:59]   --->   Operation 51 'select' 'select_ln59_22' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_82)   --->   "%xor_ln59_80 = xor i8 %in_5_read, i8 %shl_ln68_110" [../src/AES_encrypt.cpp:59]   --->   Operation 52 'xor' 'xor_ln59_80' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 53 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_82)   --->   "%xor_ln59_81 = xor i8 %select_ln59_22, i8 %xor_ln52_82" [../src/AES_encrypt.cpp:59]   --->   Operation 53 'xor' 'xor_ln59_81' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln59_82 = xor i8 %xor_ln59_81, i8 %xor_ln59_80" [../src/AES_encrypt.cpp:59]   --->   Operation 54 'xor' 'xor_ln59_82' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 55 [1/1] (0.99ns)   --->   "%xor_ln61_22 = xor i8 %in_7_read, i8 %in_6_read" [../src/AES_encrypt.cpp:61]   --->   Operation 55 'xor' 'xor_ln61_22' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_82)   --->   "%shl_ln68_111 = shl i8 %xor_ln61_22, i8 1" [../src/AES_common.cpp:68]   --->   Operation 56 'shl' 'shl_ln68_111' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 57 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_82)   --->   "%tmp_111 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln61_22, i32 7" [../src/AES_common.cpp:68]   --->   Operation 57 'bitselect' 'tmp_111' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 58 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_82)   --->   "%select_ln63_22 = select i1 %tmp_111, i8 27, i8 0" [../src/AES_encrypt.cpp:63]   --->   Operation 58 'select' 'select_ln63_22' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 59 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_82)   --->   "%xor_ln63_80 = xor i8 %in_7_read, i8 %xor_ln52_80" [../src/AES_encrypt.cpp:63]   --->   Operation 59 'xor' 'xor_ln63_80' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 60 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_82)   --->   "%xor_ln63_81 = xor i8 %shl_ln68_111, i8 %select_ln63_22" [../src/AES_encrypt.cpp:63]   --->   Operation 60 'xor' 'xor_ln63_81' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 61 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln63_82 = xor i8 %xor_ln63_81, i8 %xor_ln63_80" [../src/AES_encrypt.cpp:63]   --->   Operation 61 'xor' 'xor_ln63_82' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 62 [1/1] (0.99ns)   --->   "%xor_ln65_22 = xor i8 %in_7_read, i8 %in_4_read" [../src/AES_encrypt.cpp:65]   --->   Operation 62 'xor' 'xor_ln65_22' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 63 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_52)   --->   "%shl_ln68_112 = shl i8 %xor_ln65_22, i8 1" [../src/AES_common.cpp:68]   --->   Operation 63 'shl' 'shl_ln68_112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 64 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_52)   --->   "%tmp_112 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln65_22, i32 7" [../src/AES_common.cpp:68]   --->   Operation 64 'bitselect' 'tmp_112' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 65 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_52)   --->   "%select_ln67_22 = select i1 %tmp_112, i8 27, i8 0" [../src/AES_encrypt.cpp:67]   --->   Operation 65 'select' 'select_ln67_22' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 66 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_52)   --->   "%xor_ln67_51 = xor i8 %xor_ln52_81, i8 %select_ln67_22" [../src/AES_encrypt.cpp:67]   --->   Operation 66 'xor' 'xor_ln67_51' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 67 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln67_52 = xor i8 %xor_ln67_51, i8 %shl_ln68_112" [../src/AES_encrypt.cpp:67]   --->   Operation 67 'xor' 'xor_ln67_52' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%in_8_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_8" [../src/AES_encrypt.cpp:51]   --->   Operation 68 'read' 'in_8_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%in_9_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_9" [../src/AES_encrypt.cpp:52]   --->   Operation 69 'read' 'in_9_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.99ns)   --->   "%xor_ln52_83 = xor i8 %in_9_read, i8 %in_8_read" [../src/AES_encrypt.cpp:52]   --->   Operation 70 'xor' 'xor_ln52_83' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%in_10_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_10" [../src/AES_encrypt.cpp:52]   --->   Operation 71 'read' 'in_10_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.99ns)   --->   "%xor_ln52_84 = xor i8 %in_10_read, i8 %xor_ln52_83" [../src/AES_encrypt.cpp:52]   --->   Operation 72 'xor' 'xor_ln52_84' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%in_11_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_11" [../src/AES_encrypt.cpp:52]   --->   Operation 73 'read' 'in_11_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.99ns)   --->   "%xor_ln52_85 = xor i8 %in_11_read, i8 %xor_ln52_84" [../src/AES_encrypt.cpp:52]   --->   Operation 74 'xor' 'xor_ln52_85' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 75 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_85)   --->   "%shl_ln68_113 = shl i8 %xor_ln52_83, i8 1" [../src/AES_common.cpp:68]   --->   Operation 75 'shl' 'shl_ln68_113' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_85)   --->   "%tmp_113 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln52_83, i32 7" [../src/AES_common.cpp:68]   --->   Operation 76 'bitselect' 'tmp_113' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_85)   --->   "%select_ln55_23 = select i1 %tmp_113, i8 27, i8 0" [../src/AES_encrypt.cpp:55]   --->   Operation 77 'select' 'select_ln55_23' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 78 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_85)   --->   "%xor_ln55_83 = xor i8 %in_8_read, i8 %shl_ln68_113" [../src/AES_encrypt.cpp:55]   --->   Operation 78 'xor' 'xor_ln55_83' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 79 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_85)   --->   "%xor_ln55_84 = xor i8 %select_ln55_23, i8 %xor_ln52_85" [../src/AES_encrypt.cpp:55]   --->   Operation 79 'xor' 'xor_ln55_84' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 80 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln55_85 = xor i8 %xor_ln55_84, i8 %xor_ln55_83" [../src/AES_encrypt.cpp:55]   --->   Operation 80 'xor' 'xor_ln55_85' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 81 [1/1] (0.99ns)   --->   "%xor_ln57_23 = xor i8 %in_10_read, i8 %in_9_read" [../src/AES_encrypt.cpp:57]   --->   Operation 81 'xor' 'xor_ln57_23' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 82 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_85)   --->   "%shl_ln68_114 = shl i8 %xor_ln57_23, i8 1" [../src/AES_common.cpp:68]   --->   Operation 82 'shl' 'shl_ln68_114' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 83 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_85)   --->   "%tmp_114 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln57_23, i32 7" [../src/AES_common.cpp:68]   --->   Operation 83 'bitselect' 'tmp_114' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 84 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_85)   --->   "%select_ln59_23 = select i1 %tmp_114, i8 27, i8 0" [../src/AES_encrypt.cpp:59]   --->   Operation 84 'select' 'select_ln59_23' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 85 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_85)   --->   "%xor_ln59_83 = xor i8 %in_9_read, i8 %shl_ln68_114" [../src/AES_encrypt.cpp:59]   --->   Operation 85 'xor' 'xor_ln59_83' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 86 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_85)   --->   "%xor_ln59_84 = xor i8 %select_ln59_23, i8 %xor_ln52_85" [../src/AES_encrypt.cpp:59]   --->   Operation 86 'xor' 'xor_ln59_84' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 87 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln59_85 = xor i8 %xor_ln59_84, i8 %xor_ln59_83" [../src/AES_encrypt.cpp:59]   --->   Operation 87 'xor' 'xor_ln59_85' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 88 [1/1] (0.99ns)   --->   "%xor_ln61_23 = xor i8 %in_11_read, i8 %in_10_read" [../src/AES_encrypt.cpp:61]   --->   Operation 88 'xor' 'xor_ln61_23' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 89 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_85)   --->   "%shl_ln68_115 = shl i8 %xor_ln61_23, i8 1" [../src/AES_common.cpp:68]   --->   Operation 89 'shl' 'shl_ln68_115' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 90 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_85)   --->   "%tmp_115 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln61_23, i32 7" [../src/AES_common.cpp:68]   --->   Operation 90 'bitselect' 'tmp_115' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 91 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_85)   --->   "%select_ln63_23 = select i1 %tmp_115, i8 27, i8 0" [../src/AES_encrypt.cpp:63]   --->   Operation 91 'select' 'select_ln63_23' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 92 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_85)   --->   "%xor_ln63_83 = xor i8 %in_11_read, i8 %xor_ln52_83" [../src/AES_encrypt.cpp:63]   --->   Operation 92 'xor' 'xor_ln63_83' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 93 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_85)   --->   "%xor_ln63_84 = xor i8 %shl_ln68_115, i8 %select_ln63_23" [../src/AES_encrypt.cpp:63]   --->   Operation 93 'xor' 'xor_ln63_84' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 94 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln63_85 = xor i8 %xor_ln63_84, i8 %xor_ln63_83" [../src/AES_encrypt.cpp:63]   --->   Operation 94 'xor' 'xor_ln63_85' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 95 [1/1] (0.99ns)   --->   "%xor_ln65_23 = xor i8 %in_11_read, i8 %in_8_read" [../src/AES_encrypt.cpp:65]   --->   Operation 95 'xor' 'xor_ln65_23' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_54)   --->   "%shl_ln68_116 = shl i8 %xor_ln65_23, i8 1" [../src/AES_common.cpp:68]   --->   Operation 96 'shl' 'shl_ln68_116' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 97 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_54)   --->   "%tmp_116 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln65_23, i32 7" [../src/AES_common.cpp:68]   --->   Operation 97 'bitselect' 'tmp_116' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 98 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_54)   --->   "%select_ln67_23 = select i1 %tmp_116, i8 27, i8 0" [../src/AES_encrypt.cpp:67]   --->   Operation 98 'select' 'select_ln67_23' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_54)   --->   "%xor_ln67_53 = xor i8 %xor_ln52_84, i8 %select_ln67_23" [../src/AES_encrypt.cpp:67]   --->   Operation 99 'xor' 'xor_ln67_53' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 100 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln67_54 = xor i8 %xor_ln67_53, i8 %shl_ln68_116" [../src/AES_encrypt.cpp:67]   --->   Operation 100 'xor' 'xor_ln67_54' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 101 [1/1] (0.00ns)   --->   "%in_12_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_12" [../src/AES_encrypt.cpp:51]   --->   Operation 101 'read' 'in_12_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 102 [1/1] (0.00ns)   --->   "%in_13_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_13" [../src/AES_encrypt.cpp:52]   --->   Operation 102 'read' 'in_13_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 103 [1/1] (0.99ns)   --->   "%xor_ln52_86 = xor i8 %in_13_read, i8 %in_12_read" [../src/AES_encrypt.cpp:52]   --->   Operation 103 'xor' 'xor_ln52_86' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 104 [1/1] (0.00ns)   --->   "%in_14_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_14" [../src/AES_encrypt.cpp:52]   --->   Operation 104 'read' 'in_14_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 105 [1/1] (0.99ns)   --->   "%xor_ln52_87 = xor i8 %in_14_read, i8 %xor_ln52_86" [../src/AES_encrypt.cpp:52]   --->   Operation 105 'xor' 'xor_ln52_87' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 106 [1/1] (0.00ns)   --->   "%in_15_read = read i8 @_ssdm_op_Read.ap_auto.i8P0A, i8 %in_15" [../src/AES_encrypt.cpp:52]   --->   Operation 106 'read' 'in_15_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 107 [1/1] (0.99ns)   --->   "%xor_ln52_88 = xor i8 %in_15_read, i8 %xor_ln52_87" [../src/AES_encrypt.cpp:52]   --->   Operation 107 'xor' 'xor_ln52_88' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 108 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_88)   --->   "%shl_ln68_117 = shl i8 %xor_ln52_86, i8 1" [../src/AES_common.cpp:68]   --->   Operation 108 'shl' 'shl_ln68_117' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 109 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_88)   --->   "%tmp_117 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln52_86, i32 7" [../src/AES_common.cpp:68]   --->   Operation 109 'bitselect' 'tmp_117' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 110 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_88)   --->   "%select_ln55_24 = select i1 %tmp_117, i8 27, i8 0" [../src/AES_encrypt.cpp:55]   --->   Operation 110 'select' 'select_ln55_24' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 111 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_88)   --->   "%xor_ln55_86 = xor i8 %in_12_read, i8 %shl_ln68_117" [../src/AES_encrypt.cpp:55]   --->   Operation 111 'xor' 'xor_ln55_86' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 112 [1/1] (0.00ns) (grouped into LUT with out node xor_ln55_88)   --->   "%xor_ln55_87 = xor i8 %select_ln55_24, i8 %xor_ln52_88" [../src/AES_encrypt.cpp:55]   --->   Operation 112 'xor' 'xor_ln55_87' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 113 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln55_88 = xor i8 %xor_ln55_87, i8 %xor_ln55_86" [../src/AES_encrypt.cpp:55]   --->   Operation 113 'xor' 'xor_ln55_88' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 114 [1/1] (0.99ns)   --->   "%xor_ln57_24 = xor i8 %in_14_read, i8 %in_13_read" [../src/AES_encrypt.cpp:57]   --->   Operation 114 'xor' 'xor_ln57_24' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_88)   --->   "%shl_ln68_118 = shl i8 %xor_ln57_24, i8 1" [../src/AES_common.cpp:68]   --->   Operation 115 'shl' 'shl_ln68_118' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 116 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_88)   --->   "%tmp_118 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln57_24, i32 7" [../src/AES_common.cpp:68]   --->   Operation 116 'bitselect' 'tmp_118' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_88)   --->   "%select_ln59_24 = select i1 %tmp_118, i8 27, i8 0" [../src/AES_encrypt.cpp:59]   --->   Operation 117 'select' 'select_ln59_24' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_88)   --->   "%xor_ln59_86 = xor i8 %in_13_read, i8 %shl_ln68_118" [../src/AES_encrypt.cpp:59]   --->   Operation 118 'xor' 'xor_ln59_86' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node xor_ln59_88)   --->   "%xor_ln59_87 = xor i8 %select_ln59_24, i8 %xor_ln52_88" [../src/AES_encrypt.cpp:59]   --->   Operation 119 'xor' 'xor_ln59_87' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 120 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln59_88 = xor i8 %xor_ln59_87, i8 %xor_ln59_86" [../src/AES_encrypt.cpp:59]   --->   Operation 120 'xor' 'xor_ln59_88' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 121 [1/1] (0.99ns)   --->   "%xor_ln61_24 = xor i8 %in_15_read, i8 %in_14_read" [../src/AES_encrypt.cpp:61]   --->   Operation 121 'xor' 'xor_ln61_24' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_88)   --->   "%shl_ln68_119 = shl i8 %xor_ln61_24, i8 1" [../src/AES_common.cpp:68]   --->   Operation 122 'shl' 'shl_ln68_119' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 123 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_88)   --->   "%tmp_119 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln61_24, i32 7" [../src/AES_common.cpp:68]   --->   Operation 123 'bitselect' 'tmp_119' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_88)   --->   "%select_ln63_24 = select i1 %tmp_119, i8 27, i8 0" [../src/AES_encrypt.cpp:63]   --->   Operation 124 'select' 'select_ln63_24' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 125 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_88)   --->   "%xor_ln63_86 = xor i8 %in_15_read, i8 %xor_ln52_86" [../src/AES_encrypt.cpp:63]   --->   Operation 125 'xor' 'xor_ln63_86' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node xor_ln63_88)   --->   "%xor_ln63_87 = xor i8 %shl_ln68_119, i8 %select_ln63_24" [../src/AES_encrypt.cpp:63]   --->   Operation 126 'xor' 'xor_ln63_87' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 127 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln63_88 = xor i8 %xor_ln63_87, i8 %xor_ln63_86" [../src/AES_encrypt.cpp:63]   --->   Operation 127 'xor' 'xor_ln63_88' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 128 [1/1] (0.99ns)   --->   "%xor_ln65_24 = xor i8 %in_15_read, i8 %in_12_read" [../src/AES_encrypt.cpp:65]   --->   Operation 128 'xor' 'xor_ln65_24' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_56)   --->   "%shl_ln68_120 = shl i8 %xor_ln65_24, i8 1" [../src/AES_common.cpp:68]   --->   Operation 129 'shl' 'shl_ln68_120' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 130 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_56)   --->   "%tmp_120 = bitselect i1 @_ssdm_op_BitSelect.i1.i8.i32, i8 %xor_ln65_24, i32 7" [../src/AES_common.cpp:68]   --->   Operation 130 'bitselect' 'tmp_120' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 131 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_56)   --->   "%select_ln67_24 = select i1 %tmp_120, i8 27, i8 0" [../src/AES_encrypt.cpp:67]   --->   Operation 131 'select' 'select_ln67_24' <Predicate = true> <Delay = 0.00> <CoreInst = "Sel">   --->   Core 73 'Sel' <Latency = 0> <II = 1> <Delay = 1.18> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_1 : Operation 132 [1/1] (0.00ns) (grouped into LUT with out node xor_ln67_56)   --->   "%xor_ln67_55 = xor i8 %xor_ln52_87, i8 %select_ln67_24" [../src/AES_encrypt.cpp:67]   --->   Operation 132 'xor' 'xor_ln67_55' <Predicate = true> <Delay = 0.00> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 133 [1/1] (1.18ns) (out node of the LUT)   --->   "%xor_ln67_56 = xor i8 %xor_ln67_55, i8 %shl_ln68_120" [../src/AES_encrypt.cpp:67]   --->   Operation 133 'xor' 'xor_ln67_56' <Predicate = true> <Delay = 1.18> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 134 [1/1] (0.00ns)   --->   "%mrv = insertvalue i128 <undef>, i8 %xor_ln55_79" [../src/AES_encrypt.cpp:69]   --->   Operation 134 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 135 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i128 %mrv, i8 %xor_ln59_79" [../src/AES_encrypt.cpp:69]   --->   Operation 135 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 136 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i128 %mrv_1, i8 %xor_ln63_79" [../src/AES_encrypt.cpp:69]   --->   Operation 136 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 137 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i128 %mrv_2, i8 %xor_ln67_50" [../src/AES_encrypt.cpp:69]   --->   Operation 137 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 138 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i128 %mrv_3, i8 %xor_ln55_82" [../src/AES_encrypt.cpp:69]   --->   Operation 138 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 139 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i128 %mrv_4, i8 %xor_ln59_82" [../src/AES_encrypt.cpp:69]   --->   Operation 139 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 140 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i128 %mrv_5, i8 %xor_ln63_82" [../src/AES_encrypt.cpp:69]   --->   Operation 140 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 141 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i128 %mrv_6, i8 %xor_ln67_52" [../src/AES_encrypt.cpp:69]   --->   Operation 141 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 142 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i128 %mrv_7, i8 %xor_ln55_85" [../src/AES_encrypt.cpp:69]   --->   Operation 142 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 143 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i128 %mrv_8, i8 %xor_ln59_85" [../src/AES_encrypt.cpp:69]   --->   Operation 143 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 144 [1/1] (0.00ns)   --->   "%mrv_10 = insertvalue i128 %mrv_9, i8 %xor_ln63_85" [../src/AES_encrypt.cpp:69]   --->   Operation 144 'insertvalue' 'mrv_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 145 [1/1] (0.00ns)   --->   "%mrv_11 = insertvalue i128 %mrv_10, i8 %xor_ln67_54" [../src/AES_encrypt.cpp:69]   --->   Operation 145 'insertvalue' 'mrv_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 146 [1/1] (0.00ns)   --->   "%mrv_12 = insertvalue i128 %mrv_11, i8 %xor_ln55_88" [../src/AES_encrypt.cpp:69]   --->   Operation 146 'insertvalue' 'mrv_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 147 [1/1] (0.00ns)   --->   "%mrv_13 = insertvalue i128 %mrv_12, i8 %xor_ln59_88" [../src/AES_encrypt.cpp:69]   --->   Operation 147 'insertvalue' 'mrv_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 148 [1/1] (0.00ns)   --->   "%mrv_14 = insertvalue i128 %mrv_13, i8 %xor_ln63_88" [../src/AES_encrypt.cpp:69]   --->   Operation 148 'insertvalue' 'mrv_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 149 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue i128 %mrv_14, i8 %xor_ln67_56" [../src/AES_encrypt.cpp:69]   --->   Operation 149 'insertvalue' 'mrv_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 150 [1/1] (0.00ns)   --->   "%ret_ln69 = ret i128 %mrv_s" [../src/AES_encrypt.cpp:69]   --->   Operation 150 'ret' 'ret_ln69' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 4.16ns
+The critical path consists of the following:
+	wire read on port 'in_0' (../src/AES_encrypt.cpp:51) [17]  (0 ns)
+	'xor' operation ('xor_ln52', ../src/AES_encrypt.cpp:52) [19]  (0.99 ns)
+	'xor' operation ('xor_ln52_78', ../src/AES_encrypt.cpp:52) [21]  (0.99 ns)
+	'xor' operation ('xor_ln52_79', ../src/AES_encrypt.cpp:52) [23]  (0.99 ns)
+	'xor' operation ('xor_ln55_78', ../src/AES_encrypt.cpp:55) [28]  (0 ns)
+	'xor' operation ('out[0]', ../src/AES_encrypt.cpp:55) [29]  (1.19 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

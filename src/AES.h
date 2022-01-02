@@ -5,8 +5,10 @@
 #include <stddef.h>
 #include <ap_int.h>
 #include <hls_stream.h>
+#include <ap_axi_sdata.h>
 
-typedef unsigned char BYTE;
+typedef ap_uint<8> BYTE;
+typedef ap_axiu<8,1,1,1> STREAM_BYTE;
 
 #define AES128 1
 //#define AES192 1
@@ -42,8 +44,9 @@ typedef unsigned char BYTE;
 
 void KeyExpansion(BYTE RoundKey[AES_keyExpSize], BYTE Key[16]);
 void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]);
-void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[16] , unsigned long length);
-void AES_ECB_decrypt(hls::stream<BYTE>* encrypt ,hls::stream<BYTE>* plain ,  BYTE key[16] , unsigned long length);
+//void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[16] , unsigned long length);
+void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[11][16] , unsigned long len);
+//void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[16] , unsigned long length);
 BYTE xtime(BYTE x);
 
 

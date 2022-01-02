@@ -18,20 +18,20 @@ port (
     ap_continue : IN STD_LOGIC;
     ap_idle : OUT STD_LOGIC;
     ap_ready : OUT STD_LOGIC;
-    in_r_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    in_r_ce0 : OUT STD_LOGIC;
-    in_r_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    in_r_address1 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    in_r_ce1 : OUT STD_LOGIC;
-    in_r_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
-    out_r_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    out_r_ce0 : OUT STD_LOGIC;
-    out_r_we0 : OUT STD_LOGIC;
-    out_r_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
-    out_r_address1 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    out_r_ce1 : OUT STD_LOGIC;
-    out_r_we1 : OUT STD_LOGIC;
-    out_r_d1 : OUT STD_LOGIC_VECTOR (7 downto 0) );
+    in_V_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    in_V_ce0 : OUT STD_LOGIC;
+    in_V_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
+    in_V_address1 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    in_V_ce1 : OUT STD_LOGIC;
+    in_V_q1 : IN STD_LOGIC_VECTOR (7 downto 0);
+    out_V_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    out_V_ce0 : OUT STD_LOGIC;
+    out_V_we0 : OUT STD_LOGIC;
+    out_V_d0 : OUT STD_LOGIC_VECTOR (7 downto 0);
+    out_V_address1 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    out_V_ce1 : OUT STD_LOGIC;
+    out_V_we1 : OUT STD_LOGIC;
+    out_V_d1 : OUT STD_LOGIC_VECTOR (7 downto 0) );
 end;
 
 
@@ -208,160 +208,160 @@ begin
     end process;
 
 
-    in_r_address0_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
+    in_V_address0_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-            in_r_address0 <= ap_const_lv64_8(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_8(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state7)) then 
-            in_r_address0 <= ap_const_lv64_0(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_0(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            in_r_address0 <= ap_const_lv64_B(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_B(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            in_r_address0 <= ap_const_lv64_3(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_3(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            in_r_address0 <= ap_const_lv64_6(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_6(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            in_r_address0 <= ap_const_lv64_2(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_2(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            in_r_address0 <= ap_const_lv64_9(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_9(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state1)) then 
-            in_r_address0 <= ap_const_lv64_1(4 - 1 downto 0);
+            in_V_address0 <= ap_const_lv64_1(4 - 1 downto 0);
         else 
-            in_r_address0 <= "XXXX";
+            in_V_address0 <= "XXXX";
         end if; 
     end process;
 
 
-    in_r_address1_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
+    in_V_address1_assign_proc : process(ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-            in_r_address1 <= ap_const_lv64_C(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_C(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state7)) then 
-            in_r_address1 <= ap_const_lv64_4(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_4(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            in_r_address1 <= ap_const_lv64_7(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_7(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            in_r_address1 <= ap_const_lv64_F(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_F(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            in_r_address1 <= ap_const_lv64_E(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_E(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            in_r_address1 <= ap_const_lv64_A(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_A(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            in_r_address1 <= ap_const_lv64_D(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_D(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state1)) then 
-            in_r_address1 <= ap_const_lv64_5(4 - 1 downto 0);
+            in_V_address1 <= ap_const_lv64_5(4 - 1 downto 0);
         else 
-            in_r_address1 <= "XXXX";
+            in_V_address1 <= "XXXX";
         end if; 
     end process;
 
 
-    in_r_ce0_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
+    in_V_ce0_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state8) or (ap_const_logic_1 = ap_CS_fsm_state7) or (ap_const_logic_1 = ap_CS_fsm_state6) or (not(((ap_start = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
-            in_r_ce0 <= ap_const_logic_1;
+            in_V_ce0 <= ap_const_logic_1;
         else 
-            in_r_ce0 <= ap_const_logic_0;
+            in_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    in_r_ce1_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
+    in_V_ce1_assign_proc : process(ap_start, ap_done_reg, ap_CS_fsm_state1, ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state8) or (ap_const_logic_1 = ap_CS_fsm_state7) or (ap_const_logic_1 = ap_CS_fsm_state6) or (not(((ap_start = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1)))) then 
-            in_r_ce1 <= ap_const_logic_1;
+            in_V_ce1 <= ap_const_logic_1;
         else 
-            in_r_ce1 <= ap_const_logic_0;
+            in_V_ce1 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    out_r_address0_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
+    out_V_address0_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-            out_r_address0 <= ap_const_lv64_8(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_8(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-            out_r_address0 <= ap_const_lv64_0(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_0(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state7)) then 
-            out_r_address0 <= ap_const_lv64_F(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_F(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            out_r_address0 <= ap_const_lv64_7(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_7(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            out_r_address0 <= ap_const_lv64_E(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_E(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            out_r_address0 <= ap_const_lv64_A(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_A(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            out_r_address0 <= ap_const_lv64_5(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_5(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            out_r_address0 <= ap_const_lv64_D(4 - 1 downto 0);
+            out_V_address0 <= ap_const_lv64_D(4 - 1 downto 0);
         else 
-            out_r_address0 <= "XXXX";
+            out_V_address0 <= "XXXX";
         end if; 
     end process;
 
 
-    out_r_address1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
+    out_V_address1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state9)) then 
-            out_r_address1 <= ap_const_lv64_C(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_C(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state8)) then 
-            out_r_address1 <= ap_const_lv64_4(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_4(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state7)) then 
-            out_r_address1 <= ap_const_lv64_B(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_B(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state6)) then 
-            out_r_address1 <= ap_const_lv64_3(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_3(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state5)) then 
-            out_r_address1 <= ap_const_lv64_6(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_6(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state4)) then 
-            out_r_address1 <= ap_const_lv64_2(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_2(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            out_r_address1 <= ap_const_lv64_9(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_9(4 - 1 downto 0);
         elsif ((ap_const_logic_1 = ap_CS_fsm_state2)) then 
-            out_r_address1 <= ap_const_lv64_1(4 - 1 downto 0);
+            out_V_address1 <= ap_const_lv64_1(4 - 1 downto 0);
         else 
-            out_r_address1 <= "XXXX";
+            out_V_address1 <= "XXXX";
         end if; 
     end process;
 
 
-    out_r_ce0_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
+    out_V_ce0_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state9) or (ap_const_logic_1 = ap_CS_fsm_state8) or (ap_const_logic_1 = ap_CS_fsm_state7) or (ap_const_logic_1 = ap_CS_fsm_state6))) then 
-            out_r_ce0 <= ap_const_logic_1;
+            out_V_ce0 <= ap_const_logic_1;
         else 
-            out_r_ce0 <= ap_const_logic_0;
+            out_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    out_r_ce1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
+    out_V_ce1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state9) or (ap_const_logic_1 = ap_CS_fsm_state8) or (ap_const_logic_1 = ap_CS_fsm_state7) or (ap_const_logic_1 = ap_CS_fsm_state6))) then 
-            out_r_ce1 <= ap_const_logic_1;
+            out_V_ce1 <= ap_const_logic_1;
         else 
-            out_r_ce1 <= ap_const_logic_0;
+            out_V_ce1 <= ap_const_logic_0;
         end if; 
     end process;
 
-    out_r_d0 <= in_r_q0;
-    out_r_d1 <= in_r_q1;
+    out_V_d0 <= in_V_q0;
+    out_V_d1 <= in_V_q1;
 
-    out_r_we0_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
+    out_V_we0_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state9) or (ap_const_logic_1 = ap_CS_fsm_state8) or (ap_const_logic_1 = ap_CS_fsm_state7) or (ap_const_logic_1 = ap_CS_fsm_state6))) then 
-            out_r_we0 <= ap_const_logic_1;
+            out_V_we0 <= ap_const_logic_1;
         else 
-            out_r_we0 <= ap_const_logic_0;
+            out_V_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
 
-    out_r_we1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
+    out_V_we1_assign_proc : process(ap_CS_fsm_state2, ap_CS_fsm_state3, ap_CS_fsm_state4, ap_CS_fsm_state5, ap_CS_fsm_state6, ap_CS_fsm_state7, ap_CS_fsm_state8, ap_CS_fsm_state9)
     begin
         if (((ap_const_logic_1 = ap_CS_fsm_state5) or (ap_const_logic_1 = ap_CS_fsm_state4) or (ap_const_logic_1 = ap_CS_fsm_state3) or (ap_const_logic_1 = ap_CS_fsm_state2) or (ap_const_logic_1 = ap_CS_fsm_state9) or (ap_const_logic_1 = ap_CS_fsm_state8) or (ap_const_logic_1 = ap_CS_fsm_state7) or (ap_const_logic_1 = ap_CS_fsm_state6))) then 
-            out_r_we1 <= ap_const_logic_1;
+            out_V_we1 <= ap_const_logic_1;
         else 
-            out_r_we1 <= ap_const_logic_0;
+            out_V_we1 <= ap_const_logic_0;
         end if; 
     end process;
 

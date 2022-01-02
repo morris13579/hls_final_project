@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'Cipher_Loop_2_proc'" level="0">
-<item name = "Date">Fri Dec 31 12:16:56 2021
+<item name = "Date">Sun Jan  2 15:59:58 2022
 </item>
 <item name = "Version">2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)</item>
 <item name = "Project">aes</item>
@@ -78,8 +78,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="i_fu_60_p2">+, 0, 0, 15, 5, 1</column>
-<column name="tmp_s_fu_54_p2">icmp, 0, 0, 11, 5, 6</column>
+<column name="i_V_fu_60_p2">+, 0, 0, 15, 5, 1</column>
+<column name="tmp_1_fu_54_p2">icmp, 0, 0, 11, 5, 6</column>
 <column name="ap_block_state1">or, 0, 0, 2, 1, 1</column>
 </table>
 </item>
@@ -87,16 +87,16 @@
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
 <column name="ap_NS_fsm">21, 4, 1, 4</column>
 <column name="ap_done">9, 2, 1, 2</column>
-<column name="i1_reg_43">9, 2, 5, 10</column>
+<column name="t_V_reg_43">9, 2, 5, 10</column>
 </table>
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
 <column name="ap_CS_fsm">3, 0, 3, 0</column>
 <column name="ap_done_reg">1, 0, 1, 0</column>
-<column name="i1_reg_43">5, 0, 5, 0</column>
-<column name="i_reg_74">5, 0, 5, 0</column>
-<column name="tmp_32_reg_79">5, 0, 64, 59</column>
+<column name="i_V_reg_74">5, 0, 5, 0</column>
+<column name="t_V_reg_43">5, 0, 5, 0</column>
+<column name="tmp_2_reg_79">5, 0, 64, 59</column>
 </table>
 </item>
 </section>
@@ -116,10 +116,10 @@
 <column name="state_40_address0">out, 4, ap_memory, state_40, array</column>
 <column name="state_40_ce0">out, 1, ap_memory, state_40, array</column>
 <column name="state_40_q0">in, 8, ap_memory, state_40, array</column>
-<column name="encrypt_address0">out, 4, ap_memory, encrypt, array</column>
-<column name="encrypt_ce0">out, 1, ap_memory, encrypt, array</column>
-<column name="encrypt_we0">out, 1, ap_memory, encrypt, array</column>
-<column name="encrypt_d0">out, 8, ap_memory, encrypt, array</column>
+<column name="encrypt_V_address0">out, 4, ap_memory, encrypt_V, array</column>
+<column name="encrypt_V_ce0">out, 1, ap_memory, encrypt_V, array</column>
+<column name="encrypt_V_we0">out, 1, ap_memory, encrypt_V, array</column>
+<column name="encrypt_V_d0">out, 8, ap_memory, encrypt_V, array</column>
 </table>
 </item>
 </section>

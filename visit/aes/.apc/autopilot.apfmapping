@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="AES_common.cpp" path="C:\Users\Morris\Desktop\HighLevelSynthesis_AES\src\AES_common.cpp"/>
+    <originFiles name="AES_decrypt.cpp" path="C:\Users\Morris\Desktop\HighLevelSynthesis_AES\src\AES_decrypt.cpp"/>
+    <originFiles name="AES_encrypt.cpp" path="C:\Users\Morris\Desktop\HighLevelSynthesis_AES\src\AES_encrypt.cpp"/>
+  </source>
+  <testbench>
+    <originFiles name="AEW_test.cpp" path="C:\Users\Morris\Desktop\HighLevelSynthesis_AES\src\AEW_test.cpp"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

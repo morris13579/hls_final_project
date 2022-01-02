@@ -6956,13 +6956,84 @@ class stream
 
 }
 # 8 "../src/aes.h" 2
+# 1 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_axi_sdata.h" 1
+# 86 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_axi_sdata.h"
+# 1 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_int.h" 1
+# 87 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_axi_sdata.h" 2
 
-typedef unsigned char BYTE;
-# 43 "../src/aes.h"
+template<int D,int U,int TI,int TD>
+  struct ap_axis{
+    ap_int<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<U> user;
+    ap_uint<1> last;
+    ap_uint<TI> id;
+    ap_uint<TD> dest;
+  };
+
+template<int D>
+  struct ap_axis <D, 0, 0, 0>{
+    ap_int<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<1> last;
+  };
+
+template<int D,int U,int TI,int TD>
+  struct ap_axiu{
+    ap_uint<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<U> user;
+    ap_uint<1> last;
+    ap_uint<TI> id;
+    ap_uint<TD> dest;
+  };
+
+template<int D>
+  struct ap_axiu <D, 0, 0, 0>{
+    ap_uint<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<1> last;
+  };
+
+
+template<int D,int U,int TI,int TD> struct qdma_axis;
+
+template<int D>
+  struct qdma_axis <D, 0, 0, 0>{
+
+    ap_uint<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<1> last;
+
+    ap_uint<D> get_data() const { return data; }
+    ap_uint<(D+7)/8> get_keep() const { return keep; }
+    ap_uint<1> get_last() const { return last; }
+
+    void set_data(const ap_uint<D> &d) { data = d; }
+    void set_keep(const ap_uint<(D+7)/8> &k) { keep = k; }
+    void set_last(const ap_uint<1> &l) { last = l; }
+    void keep_all() {
+       ap_uint<(D+7)/8> k = 0;
+       keep = ~k;
+     }
+
+    qdma_axis(ap_uint<D> d = ap_uint<D>(), ap_uint<(D+7)/8> k = ap_uint<(D+7)/8>(), ap_uint<1> l = ap_uint<1>()) : data(d), keep(k), last(l) {}
+    qdma_axis(const qdma_axis<D, 0, 0, 0> &d) : data(d.data), keep(d.keep), last(d.last) {}
+  };
+# 9 "../src/aes.h" 2
+
+typedef ap_uint<8> BYTE;
+typedef ap_axiu<8,1,1,1> STREAM_BYTE;
+# 45 "../src/aes.h"
 void KeyExpansion(BYTE RoundKey[176], BYTE Key[16]);
 void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]);
-void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt , BYTE key[16] , unsigned long length);
-void AES_ECB_decrypt(hls::stream<BYTE>* encrypt ,hls::stream<BYTE>* plain , BYTE key[16] , unsigned long length);
+
+void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt , BYTE key[11][16] , unsigned long len);
+
 BYTE xtime(BYTE x);
 
 
@@ -7075,9 +7146,11 @@ void MixColumns(BYTE in[16],BYTE out[16]){_ssdm_SpecArrayDimSize(in, 16);_ssdm_S
 
 
 
-void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE RoundKey[176])
-{_ssdm_SpecArrayDimSize(plain, 16);_ssdm_SpecArrayDimSize(encrypt, 16);_ssdm_SpecArrayDimSize(RoundKey, 176);
-_ssdm_SpecArrayPartition( RoundKey, 1, "complete", 16, "");
+void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[11][16])
+{_ssdm_SpecArrayDimSize(plain, 16);_ssdm_SpecArrayDimSize(encrypt, 16);_ssdm_SpecArrayDimSize(key, 11);
+
+_ssdm_SpecArrayPartition( key, 1, "COMPLETE", 0, "");
+
  BYTE state_0[16];
  BYTE state_1[16];
  BYTE state_2[16];
@@ -7123,71 +7196,73 @@ _ssdm_SpecArrayPartition( RoundKey, 1, "complete", 16, "");
   state_0[i] = plain[i];
  }
 _ssdm_op_SpecDataflowPipeline(-1, 0, "");
- AddRoundKey(state_0,state_1,&RoundKey[0]);
+ AddRoundKey(state_0,state_1,key[0]);
 
  SubBytes(state_1,state_2);
  ShiftRows(state_2,state_3);
  MixColumns(state_3,state_4);
- AddRoundKey(state_4,state_5,&RoundKey[1 << 4]);
+ AddRoundKey(state_4,state_5,key[1]);
  SubBytes(state_5,state_6);
  ShiftRows(state_6,state_7);
  MixColumns(state_7,state_8);
- AddRoundKey(state_8,state_9,&RoundKey[2 << 4]);
+ AddRoundKey(state_8,state_9,key[2]);
  SubBytes(state_9,state_10);
  ShiftRows(state_10,state_11);
  MixColumns(state_11,state_12);
- AddRoundKey(state_12,state_13,&RoundKey[3 << 4]);
+ AddRoundKey(state_12,state_13,key[3]);
  SubBytes(state_13,state_14);
  ShiftRows(state_14,state_15);
  MixColumns(state_15,state_16);
- AddRoundKey(state_16,state_17,&RoundKey[4 << 4]);
+ AddRoundKey(state_16,state_17,key[4]);
  SubBytes(state_17,state_18);
  ShiftRows(state_18,state_19);
  MixColumns(state_19,state_20);
- AddRoundKey(state_20,state_21,&RoundKey[5 << 4]);
+ AddRoundKey(state_20,state_21,key[5]);
  SubBytes(state_21,state_22);
  ShiftRows(state_22,state_23);
  MixColumns(state_23,state_24);
- AddRoundKey(state_24,state_25,&RoundKey[6 << 4]);
+ AddRoundKey(state_24,state_25,key[6]);
  SubBytes(state_25,state_26);
  ShiftRows(state_26,state_27);
  MixColumns(state_27,state_28);
- AddRoundKey(state_28,state_29,&RoundKey[7 << 4]);
+ AddRoundKey(state_28,state_29,key[7]);
  SubBytes(state_29,state_30);
  ShiftRows(state_30,state_31);
  MixColumns(state_31,state_32);
- AddRoundKey(state_32,state_33,&RoundKey[8 << 4]);
+ AddRoundKey(state_32,state_33,key[8]);
  SubBytes(state_33,state_34);
  ShiftRows(state_34,state_35);
  MixColumns(state_35,state_36);
- AddRoundKey(state_36,state_37,&RoundKey[9 << 4]);
+ AddRoundKey(state_36,state_37,key[9]);
 
  SubBytes(state_37,state_38);
  ShiftRows(state_38,state_39);
- AddRoundKey(state_39,state_40,&RoundKey[10 << 4]);
-# 174 "../src/AES_encrypt.cpp"
+ AddRoundKey(state_39,state_40,key[10]);
+# 176 "../src/AES_encrypt.cpp"
  for(BYTE i = 0 ;i<16;i++){
   encrypt[i] = state_40[i];
  }
 }
 
 
-void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt , BYTE key[16] , unsigned long length) {_ssdm_SpecArrayDimSize(key, 16);
+
+void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt , BYTE key[11][16] , unsigned long len){_ssdm_SpecArrayDimSize(key, 11);
 _ssdm_op_SpecInterface(key, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
-_ssdm_op_SpecInterface(length, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(len, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(plain, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(encrypt, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
 _ssdm_op_SpecInterface(0, "s_axilite", 0, 0, "", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
- BYTE RoundKey[176];
- KeyExpansion(RoundKey, key);
- for(int i = 0 ;i<length;i+=16){
+
+
+ for(int i = 0 ;i<len;i+=16){
   BYTE in[16],out[16];
   for(int j =0;j<16;j++){
    in[j] = plain->read();
   }
-  Cipher(in , out , RoundKey);
+  Cipher(in , out , key);
   for(int j =0;j<16;j++){
    encrypt->write(out[j]);
   }
  }
+
 }

@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'Cipher_Loop_2_proc'
 ================================================================
-* Date:           Fri Dec 31 12:15:10 2021
+* Date:           Sun Jan  2 15:59:43 2022
 
 * Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
 * Project:        aes
@@ -78,31 +78,31 @@ IsGatedGlobalClock: 0
 1 --> 
 	2  / true
 2 --> 
-	3  / (!tmp_s)
+	3  / (!tmp_1)
 3 --> 
 	2  / true
 
 * FSM state operations: 
 
 State 1 <SV = 0> <Delay = 1.76>
-ST_1 : Operation 4 [1/1] (1.76ns)   --->   "br label %0" [../src/AES_encrypt.cpp:174]   --->   Operation 4 'br' <Predicate = true> <Delay = 1.76>
+ST_1 : Operation 4 [1/1] (1.76ns)   --->   "br label %0" [../src/AES_encrypt.cpp:176]   --->   Operation 4 'br' <Predicate = true> <Delay = 1.76>
 
 State 2 <SV = 1> <Delay = 2.32>
-ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%i1 = phi i5 [ 0, %newFuncRoot ], [ %i, %1 ]"   --->   Operation 5 'phi' 'i1' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 6 [1/1] (1.36ns)   --->   "%tmp_s = icmp eq i5 %i1, -16" [../src/AES_encrypt.cpp:174]   --->   Operation 6 'icmp' 'tmp_s' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 5 [1/1] (0.00ns)   --->   "%t_V = phi i5 [ 0, %newFuncRoot ], [ %i_V, %1 ]"   --->   Operation 5 'phi' 't_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 6 [1/1] (1.36ns)   --->   "%tmp_1 = icmp eq i5 %t_V, -16" [../src/AES_encrypt.cpp:176]   --->   Operation 6 'icmp' 'tmp_1' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
 ST_2 : Operation 7 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 7 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 8 [1/1] (1.78ns)   --->   "%i = add i5 %i1, 1" [../src/AES_encrypt.cpp:174]   --->   Operation 8 'add' 'i' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_2 : Operation 9 [1/1] (0.00ns)   --->   "br i1 %tmp_s, label %.exitStub, label %1" [../src/AES_encrypt.cpp:174]   --->   Operation 9 'br' <Predicate = true> <Delay = 0.00>
-ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_32 = zext i5 %i1 to i64" [../src/AES_encrypt.cpp:175]   --->   Operation 10 'zext' 'tmp_32' <Predicate = (!tmp_s)> <Delay = 0.00>
-ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%state_40_addr = getelementptr inbounds [16 x i8]* %state_40, i64 0, i64 %tmp_32" [../src/AES_encrypt.cpp:175]   --->   Operation 11 'getelementptr' 'state_40_addr' <Predicate = (!tmp_s)> <Delay = 0.00>
-ST_2 : Operation 12 [2/2] (2.32ns)   --->   "%state_40_load = load i8* %state_40_addr, align 1" [../src/AES_encrypt.cpp:175]   --->   Operation 12 'load' 'state_40_load' <Predicate = (!tmp_s)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
-ST_2 : Operation 13 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 13 'ret' <Predicate = (tmp_s)> <Delay = 0.00>
+ST_2 : Operation 8 [1/1] (1.78ns)   --->   "%i_V = add i5 %t_V, 1" [../src/AES_encrypt.cpp:176]   --->   Operation 8 'add' 'i_V' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 9 [1/1] (0.00ns)   --->   "br i1 %tmp_1, label %.exitStub, label %1" [../src/AES_encrypt.cpp:176]   --->   Operation 9 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_2 = zext i5 %t_V to i64" [../src/AES_encrypt.cpp:177]   --->   Operation 10 'zext' 'tmp_2' <Predicate = (!tmp_1)> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%state_40_addr = getelementptr [16 x i8]* %state_40, i64 0, i64 %tmp_2" [../src/AES_encrypt.cpp:177]   --->   Operation 11 'getelementptr' 'state_40_addr' <Predicate = (!tmp_1)> <Delay = 0.00>
+ST_2 : Operation 12 [2/2] (2.32ns)   --->   "%state_40_load = load i8* %state_40_addr, align 1" [../src/AES_encrypt.cpp:177]   --->   Operation 12 'load' 'state_40_load' <Predicate = (!tmp_1)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 13 [1/1] (0.00ns)   --->   "ret void"   --->   Operation 13 'ret' <Predicate = (tmp_1)> <Delay = 0.00>
 
 State 3 <SV = 2> <Delay = 4.64>
-ST_3 : Operation 14 [1/2] (2.32ns)   --->   "%state_40_load = load i8* %state_40_addr, align 1" [../src/AES_encrypt.cpp:175]   --->   Operation 14 'load' 'state_40_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
-ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%encrypt_addr = getelementptr [16 x i8]* %encrypt, i64 0, i64 %tmp_32" [../src/AES_encrypt.cpp:175]   --->   Operation 15 'getelementptr' 'encrypt_addr' <Predicate = true> <Delay = 0.00>
-ST_3 : Operation 16 [1/1] (2.32ns)   --->   "store i8 %state_40_load, i8* %encrypt_addr, align 1" [../src/AES_encrypt.cpp:175]   --->   Operation 16 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
-ST_3 : Operation 17 [1/1] (0.00ns)   --->   "br label %0" [../src/AES_encrypt.cpp:174]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 14 [1/2] (2.32ns)   --->   "%state_40_load = load i8* %state_40_addr, align 1" [../src/AES_encrypt.cpp:177]   --->   Operation 14 'load' 'state_40_load' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%encrypt_V_addr = getelementptr [16 x i8]* %encrypt_V, i64 0, i64 %tmp_2" [../src/AES_encrypt.cpp:177]   --->   Operation 15 'getelementptr' 'encrypt_V_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 16 [1/1] (2.32ns)   --->   "store i8 %state_40_load, i8* %encrypt_V_addr, align 1" [../src/AES_encrypt.cpp:177]   --->   Operation 16 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 17 [1/1] (0.00ns)   --->   "br label %0" [../src/AES_encrypt.cpp:176]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
@@ -117,26 +117,26 @@ STG Binding:
 - Is top level: 0
 Port [ Return ] is wired: 1; IO mode=ap_ctrl_hs:ce=0
 Port [ state_40]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=0; type=1; pingpong=1; private_global=0; MemPort=[13]; IO mode=ap_memory:ce=0
-Port [ encrypt]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
+Port [ encrypt_V]:  wired=1; compound=1; hidden=0; nouse=0; global=0; static=0; extern=0; dir=1; type=1; pingpong=0; private_global=0; MemPort=[03]; IO mode=ap_memory:ce=0
 ---------------- STG Properties END ------------------
 
 ---------------- Datapath Model BEGIN ----------------
 
 <LifeTime>
 <method=bitvector/>
-StgValue_4    (br               ) [ 0111]
-i1            (phi              ) [ 0010]
-tmp_s         (icmp             ) [ 0011]
-empty         (speclooptripcount) [ 0000]
-i             (add              ) [ 0111]
-StgValue_9    (br               ) [ 0000]
-tmp_32        (zext             ) [ 0001]
-state_40_addr (getelementptr    ) [ 0001]
-StgValue_13   (ret              ) [ 0000]
-state_40_load (load             ) [ 0000]
-encrypt_addr  (getelementptr    ) [ 0000]
-StgValue_16   (store            ) [ 0000]
-StgValue_17   (br               ) [ 0111]
+StgValue_4     (br               ) [ 0111]
+t_V            (phi              ) [ 0010]
+tmp_1          (icmp             ) [ 0011]
+empty          (speclooptripcount) [ 0000]
+i_V            (add              ) [ 0111]
+StgValue_9     (br               ) [ 0000]
+tmp_2          (zext             ) [ 0001]
+state_40_addr  (getelementptr    ) [ 0001]
+StgValue_13    (ret              ) [ 0000]
+state_40_load  (load             ) [ 0000]
+encrypt_V_addr (getelementptr    ) [ 0000]
+StgValue_16    (store            ) [ 0000]
+StgValue_17    (br               ) [ 0111]
 </LifeTime>
 
 <model>
@@ -152,12 +152,12 @@ StgValue_17   (br               ) [ 0111]
 </bind>
 </comp>
 
-<comp id="2" class="1000" name="encrypt">
+<comp id="2" class="1000" name="encrypt_V">
 <pin_list>
 <pin id="3" dir="1" index="0" bw="1" slack="0"/>
 </pin_list>
 <bind>
-<StgValue><ssdm name="encrypt"/><MemPortTyVec>0 3 </MemPortTyVec>
+<StgValue><ssdm name="encrypt_V"/><MemPortTyVec>0 3 </MemPortTyVec>
 </StgValue>
 </bind>
 </comp>
@@ -242,7 +242,7 @@ StgValue_17   (br               ) [ 0111]
 </bind>
 </comp>
 
-<comp id="29" class="1004" name="encrypt_addr_gep_fu_29">
+<comp id="29" class="1004" name="encrypt_V_addr_gep_fu_29">
 <pin_list>
 <pin id="30" dir="0" index="0" bw="8" slack="0"/>
 <pin id="31" dir="0" index="1" bw="1" slack="0"/>
@@ -251,7 +251,7 @@ StgValue_17   (br               ) [ 0111]
 </pin_list>
 <bind>
 <opcode="getelementptr(29) " fcode="getelementptr"/>
-<opset="encrypt_addr/3 "/>
+<opset="encrypt_V_addr/3 "/>
 </bind>
 </comp>
 
@@ -268,17 +268,17 @@ StgValue_17   (br               ) [ 0111]
 </bind>
 </comp>
 
-<comp id="43" class="1005" name="i1_reg_43">
+<comp id="43" class="1005" name="t_V_reg_43">
 <pin_list>
 <pin id="44" dir="0" index="0" bw="5" slack="1"/>
 <pin id="45" dir="1" index="1" bw="5" slack="1"/>
 </pin_list>
 <bind>
-<opset="i1 (phireg) "/>
+<opset="t_V (phireg) "/>
 </bind>
 </comp>
 
-<comp id="47" class="1004" name="i1_phi_fu_47">
+<comp id="47" class="1004" name="t_V_phi_fu_47">
 <pin_list>
 <pin id="48" dir="0" index="0" bw="1" slack="1"/>
 <pin id="49" dir="0" index="1" bw="0" slack="2147483647"/>
@@ -288,11 +288,11 @@ StgValue_17   (br               ) [ 0111]
 </pin_list>
 <bind>
 <opcode="phi(47) " fcode="phi"/>
-<opset="i1/2 "/>
+<opset="t_V/2 "/>
 </bind>
 </comp>
 
-<comp id="54" class="1004" name="tmp_s_fu_54">
+<comp id="54" class="1004" name="tmp_1_fu_54">
 <pin_list>
 <pin id="55" dir="0" index="0" bw="5" slack="0"/>
 <pin id="56" dir="0" index="1" bw="5" slack="0"/>
@@ -300,11 +300,11 @@ StgValue_17   (br               ) [ 0111]
 </pin_list>
 <bind>
 <opcode="icmp(45) " fcode="icmp"/>
-<opset="tmp_s/2 "/>
+<opset="tmp_1/2 "/>
 </bind>
 </comp>
 
-<comp id="60" class="1004" name="i_fu_60">
+<comp id="60" class="1004" name="i_V_fu_60">
 <pin_list>
 <pin id="61" dir="0" index="0" bw="5" slack="0"/>
 <pin id="62" dir="0" index="1" bw="1" slack="0"/>
@@ -312,38 +312,38 @@ StgValue_17   (br               ) [ 0111]
 </pin_list>
 <bind>
 <opcode="add(8) " fcode="add"/>
-<opset="i/2 "/>
+<opset="i_V/2 "/>
 </bind>
 </comp>
 
-<comp id="66" class="1004" name="tmp_32_fu_66">
+<comp id="66" class="1004" name="tmp_2_fu_66">
 <pin_list>
 <pin id="67" dir="0" index="0" bw="5" slack="0"/>
 <pin id="68" dir="1" index="1" bw="64" slack="0"/>
 </pin_list>
 <bind>
 <opcode="zext(34) " fcode="zext"/>
-<opset="tmp_32/2 "/>
+<opset="tmp_2/2 "/>
 </bind>
 </comp>
 
-<comp id="74" class="1005" name="i_reg_74">
+<comp id="74" class="1005" name="i_V_reg_74">
 <pin_list>
 <pin id="75" dir="0" index="0" bw="5" slack="0"/>
 <pin id="76" dir="1" index="1" bw="5" slack="0"/>
 </pin_list>
 <bind>
-<opset="i "/>
+<opset="i_V "/>
 </bind>
 </comp>
 
-<comp id="79" class="1005" name="tmp_32_reg_79">
+<comp id="79" class="1005" name="tmp_2_reg_79">
 <pin_list>
 <pin id="80" dir="0" index="0" bw="64" slack="1"/>
 <pin id="81" dir="1" index="1" bw="64" slack="1"/>
 </pin_list>
 <bind>
-<opset="tmp_32 "/>
+<opset="tmp_2 "/>
 </bind>
 </comp>
 
@@ -409,16 +409,16 @@ StgValue_17   (br               ) [ 0111]
 
 * FSMD analyzer results:
   - Output states:
-	Port: encrypt | {3 }
+	Port: encrypt_V | {3 }
  - Input state : 
 	Port: Cipher_Loop_2_proc : state_40 | {2 3 }
   - Chain level:
 	State 1
 	State 2
-		tmp_s : 1
-		i : 1
+		tmp_1 : 1
+		i_V : 1
 		StgValue_9 : 2
-		tmp_32 : 1
+		tmp_2 : 1
 		state_40_addr : 2
 		state_40_load : 3
 	State 3
@@ -433,11 +433,11 @@ StgValue_17   (br               ) [ 0111]
 |----------|----------------|---------|---------|
 | Operation| Functional Unit|    FF   |   LUT   |
 |----------|----------------|---------|---------|
-|    add   |     i_fu_60    |    0    |    15   |
+|    add   |    i_V_fu_60   |    0    |    15   |
 |----------|----------------|---------|---------|
-|   icmp   |   tmp_s_fu_54  |    0    |    11   |
+|   icmp   |   tmp_1_fu_54  |    0    |    11   |
 |----------|----------------|---------|---------|
-|   zext   |  tmp_32_fu_66  |    0    |    0    |
+|   zext   |   tmp_2_fu_66  |    0    |    0    |
 |----------|----------------|---------|---------|
 |   Total  |                |    0    |    26   |
 |----------|----------------|---------|---------|
@@ -449,10 +449,10 @@ N/A
 +--------------------+--------+
 |                    |   FF   |
 +--------------------+--------+
-|      i1_reg_43     |    5   |
-|      i_reg_74      |    5   |
+|     i_V_reg_74     |    5   |
 |state_40_addr_reg_84|    4   |
-|    tmp_32_reg_79   |   64   |
+|     t_V_reg_43     |    5   |
+|    tmp_2_reg_79    |   64   |
 +--------------------+--------+
 |        Total       |   78   |
 +--------------------+--------+

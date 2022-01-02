@@ -1,0 +1,186 @@
+
+
+================================================================
+== Vitis HLS Report for 'AddRoundKey89'
+================================================================
+* Date:           Sat Jan  1 23:29:02 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        aes
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.640 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 0
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 4.64>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey128, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 2 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey129, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 3 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey130, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 4 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey131, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 5 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey132, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 6 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey133, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 7 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey134, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 8 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey135, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 9 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey136, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 10 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey137, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 11 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey138, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 12 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey139, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 13 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey140, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 14 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey141, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 15 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey142, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 16 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%specinterface_ln0 = specinterface void @_ssdm_op_SpecInterface, i8 %RoundKey143, void @ap_fifo_str, i32 0, i32 0, void @p_str, i32 0, i32 0, void @p_str, void @p_str, void @p_str, i32 2, i32 2, i32 16, i32 16, void @p_str, void @ScalarProp_str"   --->   Operation 17 'specinterface' 'specinterface_ln0' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%p_read_276 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read15" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 18 'read' 'p_read_276' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%p_read_277 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read14" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 19 'read' 'p_read_277' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%p_read_278 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read13" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 20 'read' 'p_read_278' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%p_read1228 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read12" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 21 'read' 'p_read1228' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%p_read1127 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read11" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 22 'read' 'p_read1127' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%p_read1026 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read10" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 23 'read' 'p_read1026' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%p_read925 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read9" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 24 'read' 'p_read925' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%p_read824 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read8" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 25 'read' 'p_read824' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%p_read723 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read7" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 26 'read' 'p_read723' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%p_read622 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read6" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 27 'read' 'p_read622' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%p_read521 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read5" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 28 'read' 'p_read521' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%p_read420 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read4" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 29 'read' 'p_read420' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%p_read319 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read3" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 30 'read' 'p_read319' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%p_read218 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read2" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 31 'read' 'p_read218' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 32 [1/1] (0.00ns)   --->   "%p_read117 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read1" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 32 'read' 'p_read117' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%p_read16 = read i8 @_ssdm_op_Read.ap_auto.i8, i8 %p_read" [../src/AES_common.cpp:58->../src/AES_encrypt.cpp:73]   --->   Operation 33 'read' 'p_read16' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 34 [1/1] (3.65ns)   --->   "%RoundKey128_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey128" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 34 'read' 'RoundKey128_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 35 [1/1] (0.99ns)   --->   "%xor_ln62 = xor i8 %RoundKey128_read, i8 %p_read16" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 35 'xor' 'xor_ln62' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 36 [1/1] (3.65ns)   --->   "%RoundKey129_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey129" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 36 'read' 'RoundKey129_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 37 [1/1] (0.99ns)   --->   "%xor_ln62_31 = xor i8 %RoundKey129_read, i8 %p_read117" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 37 'xor' 'xor_ln62_31' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 38 [1/1] (3.65ns)   --->   "%RoundKey130_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey130" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 38 'read' 'RoundKey130_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 39 [1/1] (0.99ns)   --->   "%xor_ln62_32 = xor i8 %RoundKey130_read, i8 %p_read218" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 39 'xor' 'xor_ln62_32' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 40 [1/1] (3.65ns)   --->   "%RoundKey131_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey131" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 40 'read' 'RoundKey131_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 41 [1/1] (0.99ns)   --->   "%xor_ln62_33 = xor i8 %RoundKey131_read, i8 %p_read319" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 41 'xor' 'xor_ln62_33' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 42 [1/1] (3.65ns)   --->   "%RoundKey132_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey132" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 42 'read' 'RoundKey132_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 43 [1/1] (0.99ns)   --->   "%xor_ln62_34 = xor i8 %RoundKey132_read, i8 %p_read420" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 43 'xor' 'xor_ln62_34' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 44 [1/1] (3.65ns)   --->   "%RoundKey133_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey133" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 44 'read' 'RoundKey133_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 45 [1/1] (0.99ns)   --->   "%xor_ln62_35 = xor i8 %RoundKey133_read, i8 %p_read521" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 45 'xor' 'xor_ln62_35' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 46 [1/1] (3.65ns)   --->   "%RoundKey134_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey134" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 46 'read' 'RoundKey134_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 47 [1/1] (0.99ns)   --->   "%xor_ln62_36 = xor i8 %RoundKey134_read, i8 %p_read622" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 47 'xor' 'xor_ln62_36' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 48 [1/1] (3.65ns)   --->   "%RoundKey135_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey135" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 48 'read' 'RoundKey135_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 49 [1/1] (0.99ns)   --->   "%xor_ln62_37 = xor i8 %RoundKey135_read, i8 %p_read723" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 49 'xor' 'xor_ln62_37' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 50 [1/1] (3.65ns)   --->   "%RoundKey136_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey136" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 50 'read' 'RoundKey136_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 51 [1/1] (0.99ns)   --->   "%xor_ln62_38 = xor i8 %RoundKey136_read, i8 %p_read824" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 51 'xor' 'xor_ln62_38' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 52 [1/1] (3.65ns)   --->   "%RoundKey137_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey137" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 52 'read' 'RoundKey137_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 53 [1/1] (0.99ns)   --->   "%xor_ln62_39 = xor i8 %RoundKey137_read, i8 %p_read925" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 53 'xor' 'xor_ln62_39' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 54 [1/1] (3.65ns)   --->   "%RoundKey138_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey138" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 54 'read' 'RoundKey138_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 55 [1/1] (0.99ns)   --->   "%xor_ln62_40 = xor i8 %RoundKey138_read, i8 %p_read1026" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 55 'xor' 'xor_ln62_40' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 56 [1/1] (3.65ns)   --->   "%RoundKey139_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey139" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 56 'read' 'RoundKey139_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 57 [1/1] (0.99ns)   --->   "%xor_ln62_41 = xor i8 %RoundKey139_read, i8 %p_read1127" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 57 'xor' 'xor_ln62_41' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 58 [1/1] (3.65ns)   --->   "%RoundKey140_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey140" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 58 'read' 'RoundKey140_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 59 [1/1] (0.99ns)   --->   "%xor_ln62_42 = xor i8 %RoundKey140_read, i8 %p_read1228" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 59 'xor' 'xor_ln62_42' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 60 [1/1] (3.65ns)   --->   "%RoundKey141_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey141" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 60 'read' 'RoundKey141_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 61 [1/1] (0.99ns)   --->   "%xor_ln62_43 = xor i8 %RoundKey141_read, i8 %p_read_278" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 61 'xor' 'xor_ln62_43' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 62 [1/1] (3.65ns)   --->   "%RoundKey142_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey142" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 62 'read' 'RoundKey142_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 63 [1/1] (0.99ns)   --->   "%xor_ln62_44 = xor i8 %RoundKey142_read, i8 %p_read_277" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 63 'xor' 'xor_ln62_44' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 64 [1/1] (3.65ns)   --->   "%RoundKey143_read = read i8 @_ssdm_op_Read.ap_fifo.i8P0A, i8 %RoundKey143" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 64 'read' 'RoundKey143_read' <Predicate = true> <Delay = 3.65> <CoreInst = "FIFO_SRL">   --->   Core 81 'FIFO_SRL' <Latency = 0> <II = 1> <Delay = 3.72> <Storage> <Opcode : 'read' 'write' 'nbread' 'nbwrite'> <Ports = 0> <Width = 8> <Depth = 34> <FIFO>
+ST_1 : Operation 65 [1/1] (0.99ns)   --->   "%xor_ln62_45 = xor i8 %RoundKey143_read, i8 %p_read_276" [../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73]   --->   Operation 65 'xor' 'xor_ln62_45' <Predicate = true> <Delay = 0.99> <CoreInst = "LogicGate">   --->   Core 74 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 66 [1/1] (0.00ns)   --->   "%mrv = insertvalue i128 <undef>, i8 %xor_ln62" [../src/AES_encrypt.cpp:73]   --->   Operation 66 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 67 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i128 %mrv, i8 %xor_ln62_31" [../src/AES_encrypt.cpp:73]   --->   Operation 67 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 68 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i128 %mrv_1, i8 %xor_ln62_32" [../src/AES_encrypt.cpp:73]   --->   Operation 68 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 69 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i128 %mrv_2, i8 %xor_ln62_33" [../src/AES_encrypt.cpp:73]   --->   Operation 69 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 70 [1/1] (0.00ns)   --->   "%mrv_4 = insertvalue i128 %mrv_3, i8 %xor_ln62_34" [../src/AES_encrypt.cpp:73]   --->   Operation 70 'insertvalue' 'mrv_4' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 71 [1/1] (0.00ns)   --->   "%mrv_5 = insertvalue i128 %mrv_4, i8 %xor_ln62_35" [../src/AES_encrypt.cpp:73]   --->   Operation 71 'insertvalue' 'mrv_5' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 72 [1/1] (0.00ns)   --->   "%mrv_6 = insertvalue i128 %mrv_5, i8 %xor_ln62_36" [../src/AES_encrypt.cpp:73]   --->   Operation 72 'insertvalue' 'mrv_6' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 73 [1/1] (0.00ns)   --->   "%mrv_7 = insertvalue i128 %mrv_6, i8 %xor_ln62_37" [../src/AES_encrypt.cpp:73]   --->   Operation 73 'insertvalue' 'mrv_7' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 74 [1/1] (0.00ns)   --->   "%mrv_8 = insertvalue i128 %mrv_7, i8 %xor_ln62_38" [../src/AES_encrypt.cpp:73]   --->   Operation 74 'insertvalue' 'mrv_8' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 75 [1/1] (0.00ns)   --->   "%mrv_9 = insertvalue i128 %mrv_8, i8 %xor_ln62_39" [../src/AES_encrypt.cpp:73]   --->   Operation 75 'insertvalue' 'mrv_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 76 [1/1] (0.00ns)   --->   "%mrv_10 = insertvalue i128 %mrv_9, i8 %xor_ln62_40" [../src/AES_encrypt.cpp:73]   --->   Operation 76 'insertvalue' 'mrv_10' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 77 [1/1] (0.00ns)   --->   "%mrv_11 = insertvalue i128 %mrv_10, i8 %xor_ln62_41" [../src/AES_encrypt.cpp:73]   --->   Operation 77 'insertvalue' 'mrv_11' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 78 [1/1] (0.00ns)   --->   "%mrv_12 = insertvalue i128 %mrv_11, i8 %xor_ln62_42" [../src/AES_encrypt.cpp:73]   --->   Operation 78 'insertvalue' 'mrv_12' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 79 [1/1] (0.00ns)   --->   "%mrv_13 = insertvalue i128 %mrv_12, i8 %xor_ln62_43" [../src/AES_encrypt.cpp:73]   --->   Operation 79 'insertvalue' 'mrv_13' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 80 [1/1] (0.00ns)   --->   "%mrv_14 = insertvalue i128 %mrv_13, i8 %xor_ln62_44" [../src/AES_encrypt.cpp:73]   --->   Operation 80 'insertvalue' 'mrv_14' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 81 [1/1] (0.00ns)   --->   "%mrv_s = insertvalue i128 %mrv_14, i8 %xor_ln62_45" [../src/AES_encrypt.cpp:73]   --->   Operation 81 'insertvalue' 'mrv_s' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 82 [1/1] (0.00ns)   --->   "%ret_ln73 = ret i128 %mrv_s" [../src/AES_encrypt.cpp:73]   --->   Operation 82 'ret' 'ret_ln73' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 2.7ns.
+
+ <State 1>: 4.64ns
+The critical path consists of the following:
+	fifo read on port 'RoundKey128' (../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73) [65]  (3.65 ns)
+	'xor' operation ('out[0]', ../src/AES_common.cpp:62->../src/AES_encrypt.cpp:73) [66]  (0.99 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

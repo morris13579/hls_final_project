@@ -23,20 +23,20 @@ struct ShiftRows : public sc_module {
     sc_in< sc_logic > ap_continue;
     sc_out< sc_logic > ap_idle;
     sc_out< sc_logic > ap_ready;
-    sc_out< sc_lv<4> > in_r_address0;
-    sc_out< sc_logic > in_r_ce0;
-    sc_in< sc_lv<8> > in_r_q0;
-    sc_out< sc_lv<4> > in_r_address1;
-    sc_out< sc_logic > in_r_ce1;
-    sc_in< sc_lv<8> > in_r_q1;
-    sc_out< sc_lv<4> > out_r_address0;
-    sc_out< sc_logic > out_r_ce0;
-    sc_out< sc_logic > out_r_we0;
-    sc_out< sc_lv<8> > out_r_d0;
-    sc_out< sc_lv<4> > out_r_address1;
-    sc_out< sc_logic > out_r_ce1;
-    sc_out< sc_logic > out_r_we1;
-    sc_out< sc_lv<8> > out_r_d1;
+    sc_out< sc_lv<4> > in_V_address0;
+    sc_out< sc_logic > in_V_ce0;
+    sc_in< sc_lv<8> > in_V_q0;
+    sc_out< sc_lv<4> > in_V_address1;
+    sc_out< sc_logic > in_V_ce1;
+    sc_in< sc_lv<8> > in_V_q1;
+    sc_out< sc_lv<4> > out_V_address0;
+    sc_out< sc_logic > out_V_ce0;
+    sc_out< sc_logic > out_V_we0;
+    sc_out< sc_lv<8> > out_V_d0;
+    sc_out< sc_lv<4> > out_V_address1;
+    sc_out< sc_logic > out_V_ce1;
+    sc_out< sc_logic > out_V_we1;
+    sc_out< sc_lv<8> > out_V_d1;
 
 
     // Module declarations
@@ -112,18 +112,18 @@ struct ShiftRows : public sc_module {
     void thread_ap_done();
     void thread_ap_idle();
     void thread_ap_ready();
-    void thread_in_r_address0();
-    void thread_in_r_address1();
-    void thread_in_r_ce0();
-    void thread_in_r_ce1();
-    void thread_out_r_address0();
-    void thread_out_r_address1();
-    void thread_out_r_ce0();
-    void thread_out_r_ce1();
-    void thread_out_r_d0();
-    void thread_out_r_d1();
-    void thread_out_r_we0();
-    void thread_out_r_we1();
+    void thread_in_V_address0();
+    void thread_in_V_address1();
+    void thread_in_V_ce0();
+    void thread_in_V_ce1();
+    void thread_out_V_address0();
+    void thread_out_V_address1();
+    void thread_out_V_ce0();
+    void thread_out_V_ce1();
+    void thread_out_V_d0();
+    void thread_out_V_d1();
+    void thread_out_V_we0();
+    void thread_out_V_we1();
     void thread_ap_NS_fsm();
 };
 

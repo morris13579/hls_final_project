@@ -18,10 +18,10 @@ module Cipher_Loop_2_proc (
         state_40_address0,
         state_40_ce0,
         state_40_q0,
-        encrypt_address0,
-        encrypt_ce0,
-        encrypt_we0,
-        encrypt_d0
+        encrypt_V_address0,
+        encrypt_V_ce0,
+        encrypt_V_we0,
+        encrypt_V_d0
 );
 
 parameter    ap_ST_fsm_state1 = 3'd1;
@@ -38,28 +38,28 @@ output   ap_ready;
 output  [3:0] state_40_address0;
 output   state_40_ce0;
 input  [7:0] state_40_q0;
-output  [3:0] encrypt_address0;
-output   encrypt_ce0;
-output   encrypt_we0;
-output  [7:0] encrypt_d0;
+output  [3:0] encrypt_V_address0;
+output   encrypt_V_ce0;
+output   encrypt_V_we0;
+output  [7:0] encrypt_V_d0;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
 reg state_40_ce0;
-reg encrypt_ce0;
-reg encrypt_we0;
+reg encrypt_V_ce0;
+reg encrypt_V_we0;
 
 reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [2:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [4:0] i_fu_60_p2;
-reg   [4:0] i_reg_74;
+wire   [4:0] i_V_fu_60_p2;
+reg   [4:0] i_V_reg_74;
 wire    ap_CS_fsm_state2;
-wire   [63:0] tmp_32_fu_66_p1;
-reg   [63:0] tmp_32_reg_79;
-wire   [0:0] tmp_s_fu_54_p2;
-reg   [4:0] i1_reg_43;
+wire   [63:0] tmp_2_fu_66_p1;
+reg   [63:0] tmp_2_reg_79;
+wire   [0:0] tmp_1_fu_54_p2;
+reg   [4:0] t_V_reg_43;
 reg    ap_block_state1;
 wire    ap_CS_fsm_state3;
 reg   [2:0] ap_NS_fsm;
@@ -84,7 +84,7 @@ always @ (posedge ap_clk) begin
     end else begin
         if ((ap_continue == 1'b1)) begin
             ap_done_reg <= 1'b0;
-        end else if (((tmp_s_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+        end else if (((tmp_1_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
             ap_done_reg <= 1'b1;
         end
     end
@@ -92,26 +92,26 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        i1_reg_43 <= i_reg_74;
+        t_V_reg_43 <= i_V_reg_74;
     end else if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
-        i1_reg_43 <= 5'd0;
+        t_V_reg_43 <= 5'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        i_reg_74 <= i_fu_60_p2;
+        i_V_reg_74 <= i_V_fu_60_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
-    if (((tmp_s_fu_54_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
-        tmp_32_reg_79[4 : 0] <= tmp_32_fu_66_p1[4 : 0];
+    if (((tmp_1_fu_54_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
+        tmp_2_reg_79[4 : 0] <= tmp_2_fu_66_p1[4 : 0];
     end
 end
 
 always @ (*) begin
-    if (((tmp_s_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((tmp_1_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_done = 1'b1;
     end else begin
         ap_done = ap_done_reg;
@@ -127,7 +127,7 @@ always @ (*) begin
 end
 
 always @ (*) begin
-    if (((tmp_s_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+    if (((tmp_1_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
         ap_ready = 1'b1;
     end else begin
         ap_ready = 1'b0;
@@ -136,17 +136,17 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        encrypt_ce0 = 1'b1;
+        encrypt_V_ce0 = 1'b1;
     end else begin
-        encrypt_ce0 = 1'b0;
+        encrypt_V_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        encrypt_we0 = 1'b1;
+        encrypt_V_we0 = 1'b1;
     end else begin
-        encrypt_we0 = 1'b0;
+        encrypt_V_we0 = 1'b0;
     end
 end
 
@@ -168,7 +168,7 @@ always @ (*) begin
             end
         end
         ap_ST_fsm_state2 : begin
-            if (((tmp_s_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
+            if (((tmp_1_fu_54_p2 == 1'd1) & (1'b1 == ap_CS_fsm_state2))) begin
                 ap_NS_fsm = ap_ST_fsm_state1;
             end else begin
                 ap_NS_fsm = ap_ST_fsm_state3;
@@ -193,20 +193,20 @@ always @ (*) begin
     ap_block_state1 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
 end
 
-assign encrypt_address0 = tmp_32_reg_79;
+assign encrypt_V_address0 = tmp_2_reg_79;
 
-assign encrypt_d0 = state_40_q0;
+assign encrypt_V_d0 = state_40_q0;
 
-assign i_fu_60_p2 = (i1_reg_43 + 5'd1);
+assign i_V_fu_60_p2 = (t_V_reg_43 + 5'd1);
 
-assign state_40_address0 = tmp_32_fu_66_p1;
+assign state_40_address0 = tmp_2_fu_66_p1;
 
-assign tmp_32_fu_66_p1 = i1_reg_43;
+assign tmp_1_fu_54_p2 = ((t_V_reg_43 == 5'd16) ? 1'b1 : 1'b0);
 
-assign tmp_s_fu_54_p2 = ((i1_reg_43 == 5'd16) ? 1'b1 : 1'b0);
+assign tmp_2_fu_66_p1 = t_V_reg_43;
 
 always @ (posedge ap_clk) begin
-    tmp_32_reg_79[63:5] <= 59'b00000000000000000000000000000000000000000000000000000000000;
+    tmp_2_reg_79[63:5] <= 59'b00000000000000000000000000000000000000000000000000000000000;
 end
 
 endmodule //Cipher_Loop_2_proc

@@ -15,13 +15,13 @@ module SubBytes (
         ap_continue,
         ap_idle,
         ap_ready,
-        in_r_address0,
-        in_r_ce0,
-        in_r_q0,
-        out_r_address0,
-        out_r_ce0,
-        out_r_we0,
-        out_r_d0
+        in_V_address0,
+        in_V_ce0,
+        in_V_q0,
+        out_V_address0,
+        out_V_ce0,
+        out_V_we0,
+        out_V_d0
 );
 
 parameter    ap_ST_fsm_state1 = 4'd1;
@@ -36,38 +36,38 @@ output   ap_done;
 input   ap_continue;
 output   ap_idle;
 output   ap_ready;
-output  [3:0] in_r_address0;
-output   in_r_ce0;
-input  [7:0] in_r_q0;
-output  [3:0] out_r_address0;
-output   out_r_ce0;
-output   out_r_we0;
-output  [7:0] out_r_d0;
+output  [3:0] in_V_address0;
+output   in_V_ce0;
+input  [7:0] in_V_q0;
+output  [3:0] out_V_address0;
+output   out_V_ce0;
+output   out_V_we0;
+output  [7:0] out_V_d0;
 
 reg ap_done;
 reg ap_idle;
 reg ap_ready;
-reg in_r_ce0;
-reg out_r_ce0;
-reg out_r_we0;
+reg in_V_ce0;
+reg out_V_ce0;
+reg out_V_we0;
 
 reg    ap_done_reg;
 (* fsm_encoding = "none" *) reg   [3:0] ap_CS_fsm;
 wire    ap_CS_fsm_state1;
-wire   [7:0] sbox64_address0;
-reg    sbox64_ce0;
-wire   [7:0] sbox64_q0;
-wire   [4:0] i_1_fu_75_p2;
-reg   [4:0] i_1_reg_94;
+wire   [7:0] sbox_V89_address0;
+reg    sbox_V89_ce0;
+wire   [7:0] sbox_V89_q0;
+wire   [4:0] i_V_fu_75_p2;
+reg   [4:0] i_V_reg_94;
 wire    ap_CS_fsm_state2;
-wire   [63:0] tmp_4_fu_81_p1;
-reg   [63:0] tmp_4_reg_99;
+wire   [63:0] tmp_1_fu_81_p1;
+reg   [63:0] tmp_1_reg_99;
 wire   [0:0] tmp_fu_69_p2;
 wire    ap_CS_fsm_state3;
-reg   [4:0] i_reg_58;
+reg   [4:0] t_V_reg_58;
 reg    ap_block_state1;
 wire    ap_CS_fsm_state4;
-wire   [63:0] tmp_5_fu_86_p1;
+wire   [63:0] tmp_2_fu_86_p1;
 reg   [3:0] ap_NS_fsm;
 
 // power-on initialization
@@ -76,16 +76,16 @@ initial begin
 #0 ap_CS_fsm = 4'd1;
 end
 
-SubBytes20_sbox63 #(
+SubBytes46_sbox_V88 #(
     .DataWidth( 8 ),
     .AddressRange( 256 ),
     .AddressWidth( 8 ))
-sbox64_U(
+sbox_V89_U(
     .clk(ap_clk),
     .reset(ap_rst),
-    .address0(sbox64_address0),
-    .ce0(sbox64_ce0),
-    .q0(sbox64_q0)
+    .address0(sbox_V89_address0),
+    .ce0(sbox_V89_ce0),
+    .q0(sbox_V89_q0)
 );
 
 always @ (posedge ap_clk) begin
@@ -110,21 +110,21 @@ end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state4)) begin
-        i_reg_58 <= i_1_reg_94;
+        t_V_reg_58 <= i_V_reg_94;
     end else if ((~((ap_start == 1'b0) | (ap_done_reg == 1'b1)) & (1'b1 == ap_CS_fsm_state1))) begin
-        i_reg_58 <= 5'd0;
+        t_V_reg_58 <= 5'd0;
     end
 end
 
 always @ (posedge ap_clk) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        i_1_reg_94 <= i_1_fu_75_p2;
+        i_V_reg_94 <= i_V_fu_75_p2;
     end
 end
 
 always @ (posedge ap_clk) begin
     if (((tmp_fu_69_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state2))) begin
-        tmp_4_reg_99[4 : 0] <= tmp_4_fu_81_p1[4 : 0];
+        tmp_1_reg_99[4 : 0] <= tmp_1_fu_81_p1[4 : 0];
     end
 end
 
@@ -154,33 +154,33 @@ end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state2)) begin
-        in_r_ce0 = 1'b1;
+        in_V_ce0 = 1'b1;
     end else begin
-        in_r_ce0 = 1'b0;
+        in_V_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state4)) begin
-        out_r_ce0 = 1'b1;
+        out_V_ce0 = 1'b1;
     end else begin
-        out_r_ce0 = 1'b0;
+        out_V_ce0 = 1'b0;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state4)) begin
-        out_r_we0 = 1'b1;
+        out_V_we0 = 1'b1;
     end else begin
-        out_r_we0 = 1'b0;
+        out_V_we0 = 1'b0;
     end
 end
 
 always @ (*) begin
     if ((1'b1 == ap_CS_fsm_state3)) begin
-        sbox64_ce0 = 1'b1;
+        sbox_V89_ce0 = 1'b1;
     end else begin
-        sbox64_ce0 = 1'b0;
+        sbox_V89_ce0 = 1'b0;
     end
 end
 
@@ -224,24 +224,24 @@ always @ (*) begin
     ap_block_state1 = ((ap_start == 1'b0) | (ap_done_reg == 1'b1));
 end
 
-assign i_1_fu_75_p2 = (i_reg_58 + 5'd1);
+assign i_V_fu_75_p2 = (t_V_reg_58 + 5'd1);
 
-assign in_r_address0 = tmp_4_fu_81_p1;
+assign in_V_address0 = tmp_1_fu_81_p1;
 
-assign out_r_address0 = tmp_4_reg_99;
+assign out_V_address0 = tmp_1_reg_99;
 
-assign out_r_d0 = sbox64_q0;
+assign out_V_d0 = sbox_V89_q0;
 
-assign sbox64_address0 = tmp_5_fu_86_p1;
+assign sbox_V89_address0 = tmp_2_fu_86_p1;
 
-assign tmp_4_fu_81_p1 = i_reg_58;
+assign tmp_1_fu_81_p1 = t_V_reg_58;
 
-assign tmp_5_fu_86_p1 = in_r_q0;
+assign tmp_2_fu_86_p1 = in_V_q0;
 
-assign tmp_fu_69_p2 = ((i_reg_58 == 5'd16) ? 1'b1 : 1'b0);
+assign tmp_fu_69_p2 = ((t_V_reg_58 == 5'd16) ? 1'b1 : 1'b0);
 
 always @ (posedge ap_clk) begin
-    tmp_4_reg_99[63:5] <= 59'b00000000000000000000000000000000000000000000000000000000000;
+    tmp_1_reg_99[63:5] <= 59'b00000000000000000000000000000000000000000000000000000000000;
 end
 
 endmodule //SubBytes

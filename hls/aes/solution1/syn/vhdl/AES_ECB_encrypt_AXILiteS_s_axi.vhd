@@ -1,5 +1,5 @@
 -- ==============================================================
--- File generated on Fri Dec 31 12:21:33 +0800 2021
+-- File generated on Sun Jan 02 16:00:03 +0800 2022
 -- Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 -- SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 -- IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity AES_ECB_encrypt_AXILiteS_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 8;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     -- axi4 lite slave signals
@@ -41,10 +41,40 @@ port (
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
     ap_idle               :in   STD_LOGIC;
-    key_address0          :in   STD_LOGIC_VECTOR(3 downto 0);
-    key_ce0               :in   STD_LOGIC;
-    key_q0                :out  STD_LOGIC_VECTOR(7 downto 0);
-    length_r              :out  STD_LOGIC_VECTOR(31 downto 0)
+    key_0_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_0_V_ce0           :in   STD_LOGIC;
+    key_0_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_1_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_1_V_ce0           :in   STD_LOGIC;
+    key_1_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_2_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_2_V_ce0           :in   STD_LOGIC;
+    key_2_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_3_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_3_V_ce0           :in   STD_LOGIC;
+    key_3_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_4_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_4_V_ce0           :in   STD_LOGIC;
+    key_4_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_5_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_5_V_ce0           :in   STD_LOGIC;
+    key_5_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_6_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_6_V_ce0           :in   STD_LOGIC;
+    key_6_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_7_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_7_V_ce0           :in   STD_LOGIC;
+    key_7_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_8_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_8_V_ce0           :in   STD_LOGIC;
+    key_8_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_9_V_address0      :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_9_V_ce0           :in   STD_LOGIC;
+    key_9_V_q0            :out  STD_LOGIC_VECTOR(7 downto 0);
+    key_10_V_address0     :in   STD_LOGIC_VECTOR(3 downto 0);
+    key_10_V_ce0          :in   STD_LOGIC;
+    key_10_V_q0           :out  STD_LOGIC_VECTOR(7 downto 0);
+    len                   :out  STD_LOGIC_VECTOR(31 downto 0)
 );
 end entity AES_ECB_encrypt_AXILiteS_s_axi;
 
@@ -67,15 +97,75 @@ end entity AES_ECB_encrypt_AXILiteS_s_axi;
 --        bit 0  - Channel 0 (ap_done)
 --        bit 1  - Channel 1 (ap_ready)
 --        others - reserved
--- 0x20 : Data signal of length_r
---        bit 31~0 - length_r[31:0] (Read/Write)
--- 0x24 : reserved
+-- 0xc0 : Data signal of len
+--        bit 31~0 - len[31:0] (Read/Write)
+-- 0xc4 : reserved
 -- 0x10 ~
--- 0x1f : Memory 'key' (16 * 8b)
---        Word n : bit [ 7: 0] - key[4n]
---                 bit [15: 8] - key[4n+1]
---                 bit [23:16] - key[4n+2]
---                 bit [31:24] - key[4n+3]
+-- 0x1f : Memory 'key_0_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_0_V[4n]
+--                 bit [15: 8] - key_0_V[4n+1]
+--                 bit [23:16] - key_0_V[4n+2]
+--                 bit [31:24] - key_0_V[4n+3]
+-- 0x20 ~
+-- 0x2f : Memory 'key_1_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_1_V[4n]
+--                 bit [15: 8] - key_1_V[4n+1]
+--                 bit [23:16] - key_1_V[4n+2]
+--                 bit [31:24] - key_1_V[4n+3]
+-- 0x30 ~
+-- 0x3f : Memory 'key_2_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_2_V[4n]
+--                 bit [15: 8] - key_2_V[4n+1]
+--                 bit [23:16] - key_2_V[4n+2]
+--                 bit [31:24] - key_2_V[4n+3]
+-- 0x40 ~
+-- 0x4f : Memory 'key_3_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_3_V[4n]
+--                 bit [15: 8] - key_3_V[4n+1]
+--                 bit [23:16] - key_3_V[4n+2]
+--                 bit [31:24] - key_3_V[4n+3]
+-- 0x50 ~
+-- 0x5f : Memory 'key_4_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_4_V[4n]
+--                 bit [15: 8] - key_4_V[4n+1]
+--                 bit [23:16] - key_4_V[4n+2]
+--                 bit [31:24] - key_4_V[4n+3]
+-- 0x60 ~
+-- 0x6f : Memory 'key_5_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_5_V[4n]
+--                 bit [15: 8] - key_5_V[4n+1]
+--                 bit [23:16] - key_5_V[4n+2]
+--                 bit [31:24] - key_5_V[4n+3]
+-- 0x70 ~
+-- 0x7f : Memory 'key_6_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_6_V[4n]
+--                 bit [15: 8] - key_6_V[4n+1]
+--                 bit [23:16] - key_6_V[4n+2]
+--                 bit [31:24] - key_6_V[4n+3]
+-- 0x80 ~
+-- 0x8f : Memory 'key_7_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_7_V[4n]
+--                 bit [15: 8] - key_7_V[4n+1]
+--                 bit [23:16] - key_7_V[4n+2]
+--                 bit [31:24] - key_7_V[4n+3]
+-- 0x90 ~
+-- 0x9f : Memory 'key_8_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_8_V[4n]
+--                 bit [15: 8] - key_8_V[4n+1]
+--                 bit [23:16] - key_8_V[4n+2]
+--                 bit [31:24] - key_8_V[4n+3]
+-- 0xa0 ~
+-- 0xaf : Memory 'key_9_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_9_V[4n]
+--                 bit [15: 8] - key_9_V[4n+1]
+--                 bit [23:16] - key_9_V[4n+2]
+--                 bit [31:24] - key_9_V[4n+3]
+-- 0xb0 ~
+-- 0xbf : Memory 'key_10_V' (16 * 8b)
+--        Word n : bit [ 7: 0] - key_10_V[4n]
+--                 bit [15: 8] - key_10_V[4n+1]
+--                 bit [23:16] - key_10_V[4n+2]
+--                 bit [31:24] - key_10_V[4n+3]
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of AES_ECB_encrypt_AXILiteS_s_axi is
@@ -83,15 +173,35 @@ architecture behave of AES_ECB_encrypt_AXILiteS_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL         : INTEGER := 16#00#;
-    constant ADDR_GIE             : INTEGER := 16#04#;
-    constant ADDR_IER             : INTEGER := 16#08#;
-    constant ADDR_ISR             : INTEGER := 16#0c#;
-    constant ADDR_LENGTH_R_DATA_0 : INTEGER := 16#20#;
-    constant ADDR_LENGTH_R_CTRL   : INTEGER := 16#24#;
-    constant ADDR_KEY_BASE        : INTEGER := 16#10#;
-    constant ADDR_KEY_HIGH        : INTEGER := 16#1f#;
-    constant ADDR_BITS         : INTEGER := 6;
+    constant ADDR_AP_CTRL       : INTEGER := 16#00#;
+    constant ADDR_GIE           : INTEGER := 16#04#;
+    constant ADDR_IER           : INTEGER := 16#08#;
+    constant ADDR_ISR           : INTEGER := 16#0c#;
+    constant ADDR_LEN_DATA_0    : INTEGER := 16#c0#;
+    constant ADDR_LEN_CTRL      : INTEGER := 16#c4#;
+    constant ADDR_KEY_0_V_BASE  : INTEGER := 16#10#;
+    constant ADDR_KEY_0_V_HIGH  : INTEGER := 16#1f#;
+    constant ADDR_KEY_1_V_BASE  : INTEGER := 16#20#;
+    constant ADDR_KEY_1_V_HIGH  : INTEGER := 16#2f#;
+    constant ADDR_KEY_2_V_BASE  : INTEGER := 16#30#;
+    constant ADDR_KEY_2_V_HIGH  : INTEGER := 16#3f#;
+    constant ADDR_KEY_3_V_BASE  : INTEGER := 16#40#;
+    constant ADDR_KEY_3_V_HIGH  : INTEGER := 16#4f#;
+    constant ADDR_KEY_4_V_BASE  : INTEGER := 16#50#;
+    constant ADDR_KEY_4_V_HIGH  : INTEGER := 16#5f#;
+    constant ADDR_KEY_5_V_BASE  : INTEGER := 16#60#;
+    constant ADDR_KEY_5_V_HIGH  : INTEGER := 16#6f#;
+    constant ADDR_KEY_6_V_BASE  : INTEGER := 16#70#;
+    constant ADDR_KEY_6_V_HIGH  : INTEGER := 16#7f#;
+    constant ADDR_KEY_7_V_BASE  : INTEGER := 16#80#;
+    constant ADDR_KEY_7_V_HIGH  : INTEGER := 16#8f#;
+    constant ADDR_KEY_8_V_BASE  : INTEGER := 16#90#;
+    constant ADDR_KEY_8_V_HIGH  : INTEGER := 16#9f#;
+    constant ADDR_KEY_9_V_BASE  : INTEGER := 16#a0#;
+    constant ADDR_KEY_9_V_HIGH  : INTEGER := 16#af#;
+    constant ADDR_KEY_10_V_BASE : INTEGER := 16#b0#;
+    constant ADDR_KEY_10_V_HIGH : INTEGER := 16#bf#;
+    constant ADDR_BITS         : INTEGER := 8;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(31 downto 0);
@@ -113,23 +223,173 @@ architecture behave of AES_ECB_encrypt_AXILiteS_s_axi is
     signal int_gie             : STD_LOGIC := '0';
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
-    signal int_length_r        : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_len             : UNSIGNED(31 downto 0) := (others => '0');
     -- memory signals
-    signal int_key_address0    : UNSIGNED(1 downto 0);
-    signal int_key_ce0         : STD_LOGIC;
-    signal int_key_we0         : STD_LOGIC;
-    signal int_key_be0         : UNSIGNED(3 downto 0);
-    signal int_key_d0          : UNSIGNED(31 downto 0);
-    signal int_key_q0          : UNSIGNED(31 downto 0);
-    signal int_key_address1    : UNSIGNED(1 downto 0);
-    signal int_key_ce1         : STD_LOGIC;
-    signal int_key_we1         : STD_LOGIC;
-    signal int_key_be1         : UNSIGNED(3 downto 0);
-    signal int_key_d1          : UNSIGNED(31 downto 0);
-    signal int_key_q1          : UNSIGNED(31 downto 0);
-    signal int_key_read        : STD_LOGIC;
-    signal int_key_write       : STD_LOGIC;
-    signal int_key_shift       : UNSIGNED(1 downto 0);
+    signal int_key_0_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_0_V_ce0     : STD_LOGIC;
+    signal int_key_0_V_we0     : STD_LOGIC;
+    signal int_key_0_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_0_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_0_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_0_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_0_V_ce1     : STD_LOGIC;
+    signal int_key_0_V_we1     : STD_LOGIC;
+    signal int_key_0_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_0_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_0_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_0_V_read    : STD_LOGIC;
+    signal int_key_0_V_write   : STD_LOGIC;
+    signal int_key_0_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_1_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_1_V_ce0     : STD_LOGIC;
+    signal int_key_1_V_we0     : STD_LOGIC;
+    signal int_key_1_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_1_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_1_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_1_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_1_V_ce1     : STD_LOGIC;
+    signal int_key_1_V_we1     : STD_LOGIC;
+    signal int_key_1_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_1_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_1_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_1_V_read    : STD_LOGIC;
+    signal int_key_1_V_write   : STD_LOGIC;
+    signal int_key_1_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_2_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_2_V_ce0     : STD_LOGIC;
+    signal int_key_2_V_we0     : STD_LOGIC;
+    signal int_key_2_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_2_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_2_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_2_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_2_V_ce1     : STD_LOGIC;
+    signal int_key_2_V_we1     : STD_LOGIC;
+    signal int_key_2_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_2_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_2_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_2_V_read    : STD_LOGIC;
+    signal int_key_2_V_write   : STD_LOGIC;
+    signal int_key_2_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_3_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_3_V_ce0     : STD_LOGIC;
+    signal int_key_3_V_we0     : STD_LOGIC;
+    signal int_key_3_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_3_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_3_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_3_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_3_V_ce1     : STD_LOGIC;
+    signal int_key_3_V_we1     : STD_LOGIC;
+    signal int_key_3_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_3_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_3_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_3_V_read    : STD_LOGIC;
+    signal int_key_3_V_write   : STD_LOGIC;
+    signal int_key_3_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_4_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_4_V_ce0     : STD_LOGIC;
+    signal int_key_4_V_we0     : STD_LOGIC;
+    signal int_key_4_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_4_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_4_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_4_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_4_V_ce1     : STD_LOGIC;
+    signal int_key_4_V_we1     : STD_LOGIC;
+    signal int_key_4_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_4_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_4_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_4_V_read    : STD_LOGIC;
+    signal int_key_4_V_write   : STD_LOGIC;
+    signal int_key_4_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_5_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_5_V_ce0     : STD_LOGIC;
+    signal int_key_5_V_we0     : STD_LOGIC;
+    signal int_key_5_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_5_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_5_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_5_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_5_V_ce1     : STD_LOGIC;
+    signal int_key_5_V_we1     : STD_LOGIC;
+    signal int_key_5_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_5_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_5_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_5_V_read    : STD_LOGIC;
+    signal int_key_5_V_write   : STD_LOGIC;
+    signal int_key_5_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_6_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_6_V_ce0     : STD_LOGIC;
+    signal int_key_6_V_we0     : STD_LOGIC;
+    signal int_key_6_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_6_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_6_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_6_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_6_V_ce1     : STD_LOGIC;
+    signal int_key_6_V_we1     : STD_LOGIC;
+    signal int_key_6_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_6_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_6_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_6_V_read    : STD_LOGIC;
+    signal int_key_6_V_write   : STD_LOGIC;
+    signal int_key_6_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_7_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_7_V_ce0     : STD_LOGIC;
+    signal int_key_7_V_we0     : STD_LOGIC;
+    signal int_key_7_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_7_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_7_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_7_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_7_V_ce1     : STD_LOGIC;
+    signal int_key_7_V_we1     : STD_LOGIC;
+    signal int_key_7_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_7_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_7_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_7_V_read    : STD_LOGIC;
+    signal int_key_7_V_write   : STD_LOGIC;
+    signal int_key_7_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_8_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_8_V_ce0     : STD_LOGIC;
+    signal int_key_8_V_we0     : STD_LOGIC;
+    signal int_key_8_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_8_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_8_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_8_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_8_V_ce1     : STD_LOGIC;
+    signal int_key_8_V_we1     : STD_LOGIC;
+    signal int_key_8_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_8_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_8_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_8_V_read    : STD_LOGIC;
+    signal int_key_8_V_write   : STD_LOGIC;
+    signal int_key_8_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_9_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_9_V_ce0     : STD_LOGIC;
+    signal int_key_9_V_we0     : STD_LOGIC;
+    signal int_key_9_V_be0     : UNSIGNED(3 downto 0);
+    signal int_key_9_V_d0      : UNSIGNED(31 downto 0);
+    signal int_key_9_V_q0      : UNSIGNED(31 downto 0);
+    signal int_key_9_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_9_V_ce1     : STD_LOGIC;
+    signal int_key_9_V_we1     : STD_LOGIC;
+    signal int_key_9_V_be1     : UNSIGNED(3 downto 0);
+    signal int_key_9_V_d1      : UNSIGNED(31 downto 0);
+    signal int_key_9_V_q1      : UNSIGNED(31 downto 0);
+    signal int_key_9_V_read    : STD_LOGIC;
+    signal int_key_9_V_write   : STD_LOGIC;
+    signal int_key_9_V_shift   : UNSIGNED(1 downto 0);
+    signal int_key_10_V_address0 : UNSIGNED(1 downto 0);
+    signal int_key_10_V_ce0    : STD_LOGIC;
+    signal int_key_10_V_we0    : STD_LOGIC;
+    signal int_key_10_V_be0    : UNSIGNED(3 downto 0);
+    signal int_key_10_V_d0     : UNSIGNED(31 downto 0);
+    signal int_key_10_V_q0     : UNSIGNED(31 downto 0);
+    signal int_key_10_V_address1 : UNSIGNED(1 downto 0);
+    signal int_key_10_V_ce1    : STD_LOGIC;
+    signal int_key_10_V_we1    : STD_LOGIC;
+    signal int_key_10_V_be1    : UNSIGNED(3 downto 0);
+    signal int_key_10_V_d1     : UNSIGNED(31 downto 0);
+    signal int_key_10_V_q1     : UNSIGNED(31 downto 0);
+    signal int_key_10_V_read   : STD_LOGIC;
+    signal int_key_10_V_write  : STD_LOGIC;
+    signal int_key_10_V_shift  : UNSIGNED(1 downto 0);
 
     component AES_ECB_encrypt_AXILiteS_s_axi_ram is
         generic (
@@ -167,27 +427,237 @@ architecture behave of AES_ECB_encrypt_AXILiteS_s_axi is
 
 begin
 -- ----------------------- Instantiation------------------
--- int_key
-int_key : AES_ECB_encrypt_AXILiteS_s_axi_ram
+-- int_key_0_V
+int_key_0_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
 generic map (
      BYTES    => 4,
      DEPTH    => 4,
      AWIDTH   => log2(4))
 port map (
      clk0     => ACLK,
-     address0 => int_key_address0,
-     ce0      => int_key_ce0,
-     we0      => int_key_we0,
-     be0      => int_key_be0,
-     d0       => int_key_d0,
-     q0       => int_key_q0,
+     address0 => int_key_0_V_address0,
+     ce0      => int_key_0_V_ce0,
+     we0      => int_key_0_V_we0,
+     be0      => int_key_0_V_be0,
+     d0       => int_key_0_V_d0,
+     q0       => int_key_0_V_q0,
      clk1     => ACLK,
-     address1 => int_key_address1,
-     ce1      => int_key_ce1,
-     we1      => int_key_we1,
-     be1      => int_key_be1,
-     d1       => int_key_d1,
-     q1       => int_key_q1);
+     address1 => int_key_0_V_address1,
+     ce1      => int_key_0_V_ce1,
+     we1      => int_key_0_V_we1,
+     be1      => int_key_0_V_be1,
+     d1       => int_key_0_V_d1,
+     q1       => int_key_0_V_q1);
+-- int_key_1_V
+int_key_1_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_1_V_address0,
+     ce0      => int_key_1_V_ce0,
+     we0      => int_key_1_V_we0,
+     be0      => int_key_1_V_be0,
+     d0       => int_key_1_V_d0,
+     q0       => int_key_1_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_1_V_address1,
+     ce1      => int_key_1_V_ce1,
+     we1      => int_key_1_V_we1,
+     be1      => int_key_1_V_be1,
+     d1       => int_key_1_V_d1,
+     q1       => int_key_1_V_q1);
+-- int_key_2_V
+int_key_2_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_2_V_address0,
+     ce0      => int_key_2_V_ce0,
+     we0      => int_key_2_V_we0,
+     be0      => int_key_2_V_be0,
+     d0       => int_key_2_V_d0,
+     q0       => int_key_2_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_2_V_address1,
+     ce1      => int_key_2_V_ce1,
+     we1      => int_key_2_V_we1,
+     be1      => int_key_2_V_be1,
+     d1       => int_key_2_V_d1,
+     q1       => int_key_2_V_q1);
+-- int_key_3_V
+int_key_3_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_3_V_address0,
+     ce0      => int_key_3_V_ce0,
+     we0      => int_key_3_V_we0,
+     be0      => int_key_3_V_be0,
+     d0       => int_key_3_V_d0,
+     q0       => int_key_3_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_3_V_address1,
+     ce1      => int_key_3_V_ce1,
+     we1      => int_key_3_V_we1,
+     be1      => int_key_3_V_be1,
+     d1       => int_key_3_V_d1,
+     q1       => int_key_3_V_q1);
+-- int_key_4_V
+int_key_4_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_4_V_address0,
+     ce0      => int_key_4_V_ce0,
+     we0      => int_key_4_V_we0,
+     be0      => int_key_4_V_be0,
+     d0       => int_key_4_V_d0,
+     q0       => int_key_4_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_4_V_address1,
+     ce1      => int_key_4_V_ce1,
+     we1      => int_key_4_V_we1,
+     be1      => int_key_4_V_be1,
+     d1       => int_key_4_V_d1,
+     q1       => int_key_4_V_q1);
+-- int_key_5_V
+int_key_5_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_5_V_address0,
+     ce0      => int_key_5_V_ce0,
+     we0      => int_key_5_V_we0,
+     be0      => int_key_5_V_be0,
+     d0       => int_key_5_V_d0,
+     q0       => int_key_5_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_5_V_address1,
+     ce1      => int_key_5_V_ce1,
+     we1      => int_key_5_V_we1,
+     be1      => int_key_5_V_be1,
+     d1       => int_key_5_V_d1,
+     q1       => int_key_5_V_q1);
+-- int_key_6_V
+int_key_6_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_6_V_address0,
+     ce0      => int_key_6_V_ce0,
+     we0      => int_key_6_V_we0,
+     be0      => int_key_6_V_be0,
+     d0       => int_key_6_V_d0,
+     q0       => int_key_6_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_6_V_address1,
+     ce1      => int_key_6_V_ce1,
+     we1      => int_key_6_V_we1,
+     be1      => int_key_6_V_be1,
+     d1       => int_key_6_V_d1,
+     q1       => int_key_6_V_q1);
+-- int_key_7_V
+int_key_7_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_7_V_address0,
+     ce0      => int_key_7_V_ce0,
+     we0      => int_key_7_V_we0,
+     be0      => int_key_7_V_be0,
+     d0       => int_key_7_V_d0,
+     q0       => int_key_7_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_7_V_address1,
+     ce1      => int_key_7_V_ce1,
+     we1      => int_key_7_V_we1,
+     be1      => int_key_7_V_be1,
+     d1       => int_key_7_V_d1,
+     q1       => int_key_7_V_q1);
+-- int_key_8_V
+int_key_8_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_8_V_address0,
+     ce0      => int_key_8_V_ce0,
+     we0      => int_key_8_V_we0,
+     be0      => int_key_8_V_be0,
+     d0       => int_key_8_V_d0,
+     q0       => int_key_8_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_8_V_address1,
+     ce1      => int_key_8_V_ce1,
+     we1      => int_key_8_V_we1,
+     be1      => int_key_8_V_be1,
+     d1       => int_key_8_V_d1,
+     q1       => int_key_8_V_q1);
+-- int_key_9_V
+int_key_9_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_9_V_address0,
+     ce0      => int_key_9_V_ce0,
+     we0      => int_key_9_V_we0,
+     be0      => int_key_9_V_be0,
+     d0       => int_key_9_V_d0,
+     q0       => int_key_9_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_9_V_address1,
+     ce1      => int_key_9_V_ce1,
+     we1      => int_key_9_V_we1,
+     be1      => int_key_9_V_be1,
+     d1       => int_key_9_V_d1,
+     q1       => int_key_9_V_q1);
+-- int_key_10_V
+int_key_10_V : AES_ECB_encrypt_AXILiteS_s_axi_ram
+generic map (
+     BYTES    => 4,
+     DEPTH    => 4,
+     AWIDTH   => log2(4))
+port map (
+     clk0     => ACLK,
+     address0 => int_key_10_V_address0,
+     ce0      => int_key_10_V_ce0,
+     we0      => int_key_10_V_we0,
+     be0      => int_key_10_V_be0,
+     d0       => int_key_10_V_d0,
+     q0       => int_key_10_V_q0,
+     clk1     => ACLK,
+     address1 => int_key_10_V_address1,
+     ce1      => int_key_10_V_ce1,
+     we1      => int_key_10_V_we1,
+     be1      => int_key_10_V_be1,
+     d1       => int_key_10_V_d1,
+     q1       => int_key_10_V_q1);
 
 -- ----------------------- AXI WRITE ---------------------
     AWREADY_t <=  '1' when wstate = wridle else '0';
@@ -254,7 +724,7 @@ port map (
     ARREADY <= ARREADY_t;
     RDATA   <= STD_LOGIC_VECTOR(rdata_data);
     RRESP   <= "00";  -- OKAY
-    RVALID_t  <= '1' when (rstate = rddata) and (int_key_read = '0') else '0';
+    RVALID_t  <= '1' when (rstate = rddata) and (int_key_0_V_read = '0') and (int_key_1_V_read = '0') and (int_key_2_V_read = '0') and (int_key_3_V_read = '0') and (int_key_4_V_read = '0') and (int_key_5_V_read = '0') and (int_key_6_V_read = '0') and (int_key_7_V_read = '0') and (int_key_8_V_read = '0') and (int_key_9_V_read = '0') and (int_key_10_V_read = '0') else '0';
     RVALID    <= RVALID_t;
     ar_hs   <= ARVALID and ARREADY_t;
     raddr   <= UNSIGNED(ARADDR(ADDR_BITS-1 downto 0));
@@ -305,13 +775,33 @@ port map (
                         rdata_data <= (1 => int_ier(1), 0 => int_ier(0), others => '0');
                     when ADDR_ISR =>
                         rdata_data <= (1 => int_isr(1), 0 => int_isr(0), others => '0');
-                    when ADDR_LENGTH_R_DATA_0 =>
-                        rdata_data <= RESIZE(int_length_r(31 downto 0), 32);
+                    when ADDR_LEN_DATA_0 =>
+                        rdata_data <= RESIZE(int_len(31 downto 0), 32);
                     when others =>
                         rdata_data <= (others => '0');
                     end case;
-                elsif (int_key_read = '1') then
-                    rdata_data <= int_key_q1;
+                elsif (int_key_0_V_read = '1') then
+                    rdata_data <= int_key_0_V_q1;
+                elsif (int_key_1_V_read = '1') then
+                    rdata_data <= int_key_1_V_q1;
+                elsif (int_key_2_V_read = '1') then
+                    rdata_data <= int_key_2_V_q1;
+                elsif (int_key_3_V_read = '1') then
+                    rdata_data <= int_key_3_V_q1;
+                elsif (int_key_4_V_read = '1') then
+                    rdata_data <= int_key_4_V_q1;
+                elsif (int_key_5_V_read = '1') then
+                    rdata_data <= int_key_5_V_q1;
+                elsif (int_key_6_V_read = '1') then
+                    rdata_data <= int_key_6_V_q1;
+                elsif (int_key_7_V_read = '1') then
+                    rdata_data <= int_key_7_V_q1;
+                elsif (int_key_8_V_read = '1') then
+                    rdata_data <= int_key_8_V_q1;
+                elsif (int_key_9_V_read = '1') then
+                    rdata_data <= int_key_9_V_q1;
+                elsif (int_key_10_V_read = '1') then
+                    rdata_data <= int_key_10_V_q1;
                 end if;
             end if;
         end if;
@@ -320,7 +810,7 @@ port map (
 -- ----------------------- Register logic ----------------
     interrupt            <= int_gie and (int_isr(0) or int_isr(1));
     ap_start             <= int_ap_start;
-    length_r             <= STD_LOGIC_VECTOR(int_length_r);
+    len                  <= STD_LOGIC_VECTOR(int_len);
 
     process (ACLK)
     begin
@@ -451,8 +941,8 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (w_hs = '1' and waddr = ADDR_LENGTH_R_DATA_0) then
-                    int_length_r(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_length_r(31 downto 0));
+                if (w_hs = '1' and waddr = ADDR_LEN_DATA_0) then
+                    int_len(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_len(31 downto 0));
                 end if;
             end if;
         end if;
@@ -460,29 +950,149 @@ port map (
 
 
 -- ----------------------- Memory logic ------------------
-    -- key
-    int_key_address0     <= SHIFT_RIGHT(UNSIGNED(key_address0), 2)(1 downto 0);
-    int_key_ce0          <= key_ce0;
-    int_key_we0          <= '0';
-    int_key_be0          <= (others => '0');
-    int_key_d0           <= (others => '0');
-    key_q0               <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_q0, TO_INTEGER(int_key_shift) * 8)(7 downto 0));
-    int_key_address1     <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
-    int_key_ce1          <= '1' when ar_hs = '1' or (int_key_write = '1' and WVALID  = '1') else '0';
-    int_key_we1          <= '1' when int_key_write = '1' and WVALID = '1' else '0';
-    int_key_be1          <= UNSIGNED(WSTRB);
-    int_key_d1           <= UNSIGNED(WDATA);
+    -- key_0_V
+    int_key_0_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_0_V_address0), 2)(1 downto 0);
+    int_key_0_V_ce0      <= key_0_V_ce0;
+    int_key_0_V_we0      <= '0';
+    int_key_0_V_be0      <= (others => '0');
+    int_key_0_V_d0       <= (others => '0');
+    key_0_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_0_V_q0, TO_INTEGER(int_key_0_V_shift) * 8)(7 downto 0));
+    int_key_0_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_0_V_ce1      <= '1' when ar_hs = '1' or (int_key_0_V_write = '1' and WVALID  = '1') else '0';
+    int_key_0_V_we1      <= '1' when int_key_0_V_write = '1' and WVALID = '1' else '0';
+    int_key_0_V_be1      <= UNSIGNED(WSTRB);
+    int_key_0_V_d1       <= UNSIGNED(WDATA);
+    -- key_1_V
+    int_key_1_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_1_V_address0), 2)(1 downto 0);
+    int_key_1_V_ce0      <= key_1_V_ce0;
+    int_key_1_V_we0      <= '0';
+    int_key_1_V_be0      <= (others => '0');
+    int_key_1_V_d0       <= (others => '0');
+    key_1_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_1_V_q0, TO_INTEGER(int_key_1_V_shift) * 8)(7 downto 0));
+    int_key_1_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_1_V_ce1      <= '1' when ar_hs = '1' or (int_key_1_V_write = '1' and WVALID  = '1') else '0';
+    int_key_1_V_we1      <= '1' when int_key_1_V_write = '1' and WVALID = '1' else '0';
+    int_key_1_V_be1      <= UNSIGNED(WSTRB);
+    int_key_1_V_d1       <= UNSIGNED(WDATA);
+    -- key_2_V
+    int_key_2_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_2_V_address0), 2)(1 downto 0);
+    int_key_2_V_ce0      <= key_2_V_ce0;
+    int_key_2_V_we0      <= '0';
+    int_key_2_V_be0      <= (others => '0');
+    int_key_2_V_d0       <= (others => '0');
+    key_2_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_2_V_q0, TO_INTEGER(int_key_2_V_shift) * 8)(7 downto 0));
+    int_key_2_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_2_V_ce1      <= '1' when ar_hs = '1' or (int_key_2_V_write = '1' and WVALID  = '1') else '0';
+    int_key_2_V_we1      <= '1' when int_key_2_V_write = '1' and WVALID = '1' else '0';
+    int_key_2_V_be1      <= UNSIGNED(WSTRB);
+    int_key_2_V_d1       <= UNSIGNED(WDATA);
+    -- key_3_V
+    int_key_3_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_3_V_address0), 2)(1 downto 0);
+    int_key_3_V_ce0      <= key_3_V_ce0;
+    int_key_3_V_we0      <= '0';
+    int_key_3_V_be0      <= (others => '0');
+    int_key_3_V_d0       <= (others => '0');
+    key_3_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_3_V_q0, TO_INTEGER(int_key_3_V_shift) * 8)(7 downto 0));
+    int_key_3_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_3_V_ce1      <= '1' when ar_hs = '1' or (int_key_3_V_write = '1' and WVALID  = '1') else '0';
+    int_key_3_V_we1      <= '1' when int_key_3_V_write = '1' and WVALID = '1' else '0';
+    int_key_3_V_be1      <= UNSIGNED(WSTRB);
+    int_key_3_V_d1       <= UNSIGNED(WDATA);
+    -- key_4_V
+    int_key_4_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_4_V_address0), 2)(1 downto 0);
+    int_key_4_V_ce0      <= key_4_V_ce0;
+    int_key_4_V_we0      <= '0';
+    int_key_4_V_be0      <= (others => '0');
+    int_key_4_V_d0       <= (others => '0');
+    key_4_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_4_V_q0, TO_INTEGER(int_key_4_V_shift) * 8)(7 downto 0));
+    int_key_4_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_4_V_ce1      <= '1' when ar_hs = '1' or (int_key_4_V_write = '1' and WVALID  = '1') else '0';
+    int_key_4_V_we1      <= '1' when int_key_4_V_write = '1' and WVALID = '1' else '0';
+    int_key_4_V_be1      <= UNSIGNED(WSTRB);
+    int_key_4_V_d1       <= UNSIGNED(WDATA);
+    -- key_5_V
+    int_key_5_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_5_V_address0), 2)(1 downto 0);
+    int_key_5_V_ce0      <= key_5_V_ce0;
+    int_key_5_V_we0      <= '0';
+    int_key_5_V_be0      <= (others => '0');
+    int_key_5_V_d0       <= (others => '0');
+    key_5_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_5_V_q0, TO_INTEGER(int_key_5_V_shift) * 8)(7 downto 0));
+    int_key_5_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_5_V_ce1      <= '1' when ar_hs = '1' or (int_key_5_V_write = '1' and WVALID  = '1') else '0';
+    int_key_5_V_we1      <= '1' when int_key_5_V_write = '1' and WVALID = '1' else '0';
+    int_key_5_V_be1      <= UNSIGNED(WSTRB);
+    int_key_5_V_d1       <= UNSIGNED(WDATA);
+    -- key_6_V
+    int_key_6_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_6_V_address0), 2)(1 downto 0);
+    int_key_6_V_ce0      <= key_6_V_ce0;
+    int_key_6_V_we0      <= '0';
+    int_key_6_V_be0      <= (others => '0');
+    int_key_6_V_d0       <= (others => '0');
+    key_6_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_6_V_q0, TO_INTEGER(int_key_6_V_shift) * 8)(7 downto 0));
+    int_key_6_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_6_V_ce1      <= '1' when ar_hs = '1' or (int_key_6_V_write = '1' and WVALID  = '1') else '0';
+    int_key_6_V_we1      <= '1' when int_key_6_V_write = '1' and WVALID = '1' else '0';
+    int_key_6_V_be1      <= UNSIGNED(WSTRB);
+    int_key_6_V_d1       <= UNSIGNED(WDATA);
+    -- key_7_V
+    int_key_7_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_7_V_address0), 2)(1 downto 0);
+    int_key_7_V_ce0      <= key_7_V_ce0;
+    int_key_7_V_we0      <= '0';
+    int_key_7_V_be0      <= (others => '0');
+    int_key_7_V_d0       <= (others => '0');
+    key_7_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_7_V_q0, TO_INTEGER(int_key_7_V_shift) * 8)(7 downto 0));
+    int_key_7_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_7_V_ce1      <= '1' when ar_hs = '1' or (int_key_7_V_write = '1' and WVALID  = '1') else '0';
+    int_key_7_V_we1      <= '1' when int_key_7_V_write = '1' and WVALID = '1' else '0';
+    int_key_7_V_be1      <= UNSIGNED(WSTRB);
+    int_key_7_V_d1       <= UNSIGNED(WDATA);
+    -- key_8_V
+    int_key_8_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_8_V_address0), 2)(1 downto 0);
+    int_key_8_V_ce0      <= key_8_V_ce0;
+    int_key_8_V_we0      <= '0';
+    int_key_8_V_be0      <= (others => '0');
+    int_key_8_V_d0       <= (others => '0');
+    key_8_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_8_V_q0, TO_INTEGER(int_key_8_V_shift) * 8)(7 downto 0));
+    int_key_8_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_8_V_ce1      <= '1' when ar_hs = '1' or (int_key_8_V_write = '1' and WVALID  = '1') else '0';
+    int_key_8_V_we1      <= '1' when int_key_8_V_write = '1' and WVALID = '1' else '0';
+    int_key_8_V_be1      <= UNSIGNED(WSTRB);
+    int_key_8_V_d1       <= UNSIGNED(WDATA);
+    -- key_9_V
+    int_key_9_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_9_V_address0), 2)(1 downto 0);
+    int_key_9_V_ce0      <= key_9_V_ce0;
+    int_key_9_V_we0      <= '0';
+    int_key_9_V_be0      <= (others => '0');
+    int_key_9_V_d0       <= (others => '0');
+    key_9_V_q0           <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_9_V_q0, TO_INTEGER(int_key_9_V_shift) * 8)(7 downto 0));
+    int_key_9_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_9_V_ce1      <= '1' when ar_hs = '1' or (int_key_9_V_write = '1' and WVALID  = '1') else '0';
+    int_key_9_V_we1      <= '1' when int_key_9_V_write = '1' and WVALID = '1' else '0';
+    int_key_9_V_be1      <= UNSIGNED(WSTRB);
+    int_key_9_V_d1       <= UNSIGNED(WDATA);
+    -- key_10_V
+    int_key_10_V_address0 <= SHIFT_RIGHT(UNSIGNED(key_10_V_address0), 2)(1 downto 0);
+    int_key_10_V_ce0     <= key_10_V_ce0;
+    int_key_10_V_we0     <= '0';
+    int_key_10_V_be0     <= (others => '0');
+    int_key_10_V_d0      <= (others => '0');
+    key_10_V_q0          <= STD_LOGIC_VECTOR(SHIFT_RIGHT(int_key_10_V_q0, TO_INTEGER(int_key_10_V_shift) * 8)(7 downto 0));
+    int_key_10_V_address1 <= raddr(3 downto 2) when ar_hs = '1' else waddr(3 downto 2);
+    int_key_10_V_ce1     <= '1' when ar_hs = '1' or (int_key_10_V_write = '1' and WVALID  = '1') else '0';
+    int_key_10_V_we1     <= '1' when int_key_10_V_write = '1' and WVALID = '1' else '0';
+    int_key_10_V_be1     <= UNSIGNED(WSTRB);
+    int_key_10_V_d1      <= UNSIGNED(WDATA);
 
     process (ACLK)
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_key_read <= '0';
+                int_key_0_V_read <= '0';
             elsif (ACLK_EN = '1') then
-                if (ar_hs = '1' and raddr >= ADDR_KEY_BASE and raddr <= ADDR_KEY_HIGH) then
-                    int_key_read <= '1';
+                if (ar_hs = '1' and raddr >= ADDR_KEY_0_V_BASE and raddr <= ADDR_KEY_0_V_HIGH) then
+                    int_key_0_V_read <= '1';
                 else
-                    int_key_read <= '0';
+                    int_key_0_V_read <= '0';
                 end if;
             end if;
         end if;
@@ -492,12 +1102,12 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
-                int_key_write <= '0';
+                int_key_0_V_write <= '0';
             elsif (ACLK_EN = '1') then
-                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_HIGH) then
-                    int_key_write <= '1';
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_0_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_0_V_HIGH) then
+                    int_key_0_V_write <= '1';
                 elsif (WVALID = '1') then
-                    int_key_write <= '0';
+                    int_key_0_V_write <= '0';
                 end if;
             end if;
         end if;
@@ -507,8 +1117,418 @@ port map (
     begin
         if (ACLK'event and ACLK = '1') then
             if (ACLK_EN = '1') then
-                if (key_ce0 = '1') then
-                    int_key_shift <= UNSIGNED(key_address0(1 downto 0));
+                if (key_0_V_ce0 = '1') then
+                    int_key_0_V_shift <= UNSIGNED(key_0_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_1_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_1_V_BASE and raddr <= ADDR_KEY_1_V_HIGH) then
+                    int_key_1_V_read <= '1';
+                else
+                    int_key_1_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_1_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_1_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_1_V_HIGH) then
+                    int_key_1_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_1_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_1_V_ce0 = '1') then
+                    int_key_1_V_shift <= UNSIGNED(key_1_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_2_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_2_V_BASE and raddr <= ADDR_KEY_2_V_HIGH) then
+                    int_key_2_V_read <= '1';
+                else
+                    int_key_2_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_2_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_2_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_2_V_HIGH) then
+                    int_key_2_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_2_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_2_V_ce0 = '1') then
+                    int_key_2_V_shift <= UNSIGNED(key_2_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_3_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_3_V_BASE and raddr <= ADDR_KEY_3_V_HIGH) then
+                    int_key_3_V_read <= '1';
+                else
+                    int_key_3_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_3_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_3_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_3_V_HIGH) then
+                    int_key_3_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_3_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_3_V_ce0 = '1') then
+                    int_key_3_V_shift <= UNSIGNED(key_3_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_4_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_4_V_BASE and raddr <= ADDR_KEY_4_V_HIGH) then
+                    int_key_4_V_read <= '1';
+                else
+                    int_key_4_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_4_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_4_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_4_V_HIGH) then
+                    int_key_4_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_4_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_4_V_ce0 = '1') then
+                    int_key_4_V_shift <= UNSIGNED(key_4_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_5_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_5_V_BASE and raddr <= ADDR_KEY_5_V_HIGH) then
+                    int_key_5_V_read <= '1';
+                else
+                    int_key_5_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_5_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_5_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_5_V_HIGH) then
+                    int_key_5_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_5_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_5_V_ce0 = '1') then
+                    int_key_5_V_shift <= UNSIGNED(key_5_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_6_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_6_V_BASE and raddr <= ADDR_KEY_6_V_HIGH) then
+                    int_key_6_V_read <= '1';
+                else
+                    int_key_6_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_6_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_6_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_6_V_HIGH) then
+                    int_key_6_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_6_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_6_V_ce0 = '1') then
+                    int_key_6_V_shift <= UNSIGNED(key_6_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_7_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_7_V_BASE and raddr <= ADDR_KEY_7_V_HIGH) then
+                    int_key_7_V_read <= '1';
+                else
+                    int_key_7_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_7_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_7_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_7_V_HIGH) then
+                    int_key_7_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_7_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_7_V_ce0 = '1') then
+                    int_key_7_V_shift <= UNSIGNED(key_7_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_8_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_8_V_BASE and raddr <= ADDR_KEY_8_V_HIGH) then
+                    int_key_8_V_read <= '1';
+                else
+                    int_key_8_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_8_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_8_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_8_V_HIGH) then
+                    int_key_8_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_8_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_8_V_ce0 = '1') then
+                    int_key_8_V_shift <= UNSIGNED(key_8_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_9_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_9_V_BASE and raddr <= ADDR_KEY_9_V_HIGH) then
+                    int_key_9_V_read <= '1';
+                else
+                    int_key_9_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_9_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_9_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_9_V_HIGH) then
+                    int_key_9_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_9_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_9_V_ce0 = '1') then
+                    int_key_9_V_shift <= UNSIGNED(key_9_V_address0(1 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_10_V_read <= '0';
+            elsif (ACLK_EN = '1') then
+                if (ar_hs = '1' and raddr >= ADDR_KEY_10_V_BASE and raddr <= ADDR_KEY_10_V_HIGH) then
+                    int_key_10_V_read <= '1';
+                else
+                    int_key_10_V_read <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_key_10_V_write <= '0';
+            elsif (ACLK_EN = '1') then
+                if (aw_hs = '1' and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) >= ADDR_KEY_10_V_BASE and UNSIGNED(AWADDR(ADDR_BITS-1 downto 0)) <= ADDR_KEY_10_V_HIGH) then
+                    int_key_10_V_write <= '1';
+                elsif (WVALID = '1') then
+                    int_key_10_V_write <= '0';
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ACLK_EN = '1') then
+                if (key_10_V_ce0 = '1') then
+                    int_key_10_V_shift <= UNSIGNED(key_10_V_address0(1 downto 0));
                 end if;
             end if;
         end if;

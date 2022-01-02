@@ -1,0 +1,204 @@
+
+
+================================================================
+== Vitis HLS Report for 'ShiftRows59'
+================================================================
+* Date:           Sat Jan  1 23:30:02 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        aes
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|      0 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|      2|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    153|    -|
+|Register         |        -|    -|     130|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     130|    155|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------+----------+----+---+----+------------+------------+
+    |  Variable Name  | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |ap_block_state1  |        or|   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+    |Total            |          |   0|  0|   2|           1|           1|
+    +-----------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +---------+----+-----------+-----+-----------+
+    |   Name  | LUT| Input Size| Bits| Total Bits|
+    +---------+----+-----------+-----+-----------+
+    |ap_done  |   9|          2|    1|          2|
+    |out_0    |   9|          2|    8|         16|
+    |out_1    |   9|          2|    8|         16|
+    |out_10   |   9|          2|    8|         16|
+    |out_11   |   9|          2|    8|         16|
+    |out_12   |   9|          2|    8|         16|
+    |out_13   |   9|          2|    8|         16|
+    |out_14   |   9|          2|    8|         16|
+    |out_15   |   9|          2|    8|         16|
+    |out_2    |   9|          2|    8|         16|
+    |out_3    |   9|          2|    8|         16|
+    |out_4    |   9|          2|    8|         16|
+    |out_5    |   9|          2|    8|         16|
+    |out_6    |   9|          2|    8|         16|
+    |out_7    |   9|          2|    8|         16|
+    |out_8    |   9|          2|    8|         16|
+    |out_9    |   9|          2|    8|         16|
+    +---------+----+-----------+-----+-----------+
+    |Total    | 153|         34|  129|        258|
+    +---------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------+---+----+-----+-----------+
+    |     Name    | FF| LUT| Bits| Const Bits|
+    +-------------+---+----+-----+-----------+
+    |ap_CS_fsm    |  1|   0|    1|          0|
+    |ap_done_reg  |  1|   0|    1|          0|
+    |out_0_preg   |  8|   0|    8|          0|
+    |out_10_preg  |  8|   0|    8|          0|
+    |out_11_preg  |  8|   0|    8|          0|
+    |out_12_preg  |  8|   0|    8|          0|
+    |out_13_preg  |  8|   0|    8|          0|
+    |out_14_preg  |  8|   0|    8|          0|
+    |out_15_preg  |  8|   0|    8|          0|
+    |out_1_preg   |  8|   0|    8|          0|
+    |out_2_preg   |  8|   0|    8|          0|
+    |out_3_preg   |  8|   0|    8|          0|
+    |out_4_preg   |  8|   0|    8|          0|
+    |out_5_preg   |  8|   0|    8|          0|
+    |out_6_preg   |  8|   0|    8|          0|
+    |out_7_preg   |  8|   0|    8|          0|
+    |out_8_preg   |  8|   0|    8|          0|
+    |out_9_preg   |  8|   0|    8|          0|
+    +-------------+---+----+-----+-----------+
+    |Total        |130|   0|  130|          0|
+    +-------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------+-----+-----+------------+--------------+--------------+
+|ap_clk         |   in|    1|  ap_ctrl_hs|   ShiftRows59|  return value|
+|ap_rst         |   in|    1|  ap_ctrl_hs|   ShiftRows59|  return value|
+|ap_start       |   in|    1|  ap_ctrl_hs|   ShiftRows59|  return value|
+|ap_done        |  out|    1|  ap_ctrl_hs|   ShiftRows59|  return value|
+|ap_continue    |   in|    1|  ap_ctrl_hs|   ShiftRows59|  return value|
+|ap_idle        |  out|    1|  ap_ctrl_hs|   ShiftRows59|  return value|
+|ap_ready       |  out|    1|  ap_ctrl_hs|   ShiftRows59|  return value|
+|in_0           |   in|    8|     ap_none|          in_0|       pointer|
+|in_1           |   in|    8|     ap_none|          in_1|       pointer|
+|in_2           |   in|    8|     ap_none|          in_2|       pointer|
+|in_3           |   in|    8|     ap_none|          in_3|       pointer|
+|in_4           |   in|    8|     ap_none|          in_4|       pointer|
+|in_5           |   in|    8|     ap_none|          in_5|       pointer|
+|in_6           |   in|    8|     ap_none|          in_6|       pointer|
+|in_7           |   in|    8|     ap_none|          in_7|       pointer|
+|in_8           |   in|    8|     ap_none|          in_8|       pointer|
+|in_9           |   in|    8|     ap_none|          in_9|       pointer|
+|in_10          |   in|    8|     ap_none|         in_10|       pointer|
+|in_11          |   in|    8|     ap_none|         in_11|       pointer|
+|in_12          |   in|    8|     ap_none|         in_12|       pointer|
+|in_13          |   in|    8|     ap_none|         in_13|       pointer|
+|in_14          |   in|    8|     ap_none|         in_14|       pointer|
+|in_15          |   in|    8|     ap_none|         in_15|       pointer|
+|out_0          |  out|    8|      ap_vld|         out_0|       pointer|
+|out_0_ap_vld   |  out|    1|      ap_vld|         out_0|       pointer|
+|out_1          |  out|    8|      ap_vld|         out_1|       pointer|
+|out_1_ap_vld   |  out|    1|      ap_vld|         out_1|       pointer|
+|out_2          |  out|    8|      ap_vld|         out_2|       pointer|
+|out_2_ap_vld   |  out|    1|      ap_vld|         out_2|       pointer|
+|out_3          |  out|    8|      ap_vld|         out_3|       pointer|
+|out_3_ap_vld   |  out|    1|      ap_vld|         out_3|       pointer|
+|out_4          |  out|    8|      ap_vld|         out_4|       pointer|
+|out_4_ap_vld   |  out|    1|      ap_vld|         out_4|       pointer|
+|out_5          |  out|    8|      ap_vld|         out_5|       pointer|
+|out_5_ap_vld   |  out|    1|      ap_vld|         out_5|       pointer|
+|out_6          |  out|    8|      ap_vld|         out_6|       pointer|
+|out_6_ap_vld   |  out|    1|      ap_vld|         out_6|       pointer|
+|out_7          |  out|    8|      ap_vld|         out_7|       pointer|
+|out_7_ap_vld   |  out|    1|      ap_vld|         out_7|       pointer|
+|out_8          |  out|    8|      ap_vld|         out_8|       pointer|
+|out_8_ap_vld   |  out|    1|      ap_vld|         out_8|       pointer|
+|out_9          |  out|    8|      ap_vld|         out_9|       pointer|
+|out_9_ap_vld   |  out|    1|      ap_vld|         out_9|       pointer|
+|out_10         |  out|    8|      ap_vld|        out_10|       pointer|
+|out_10_ap_vld  |  out|    1|      ap_vld|        out_10|       pointer|
+|out_11         |  out|    8|      ap_vld|        out_11|       pointer|
+|out_11_ap_vld  |  out|    1|      ap_vld|        out_11|       pointer|
+|out_12         |  out|    8|      ap_vld|        out_12|       pointer|
+|out_12_ap_vld  |  out|    1|      ap_vld|        out_12|       pointer|
+|out_13         |  out|    8|      ap_vld|        out_13|       pointer|
+|out_13_ap_vld  |  out|    1|      ap_vld|        out_13|       pointer|
+|out_14         |  out|    8|      ap_vld|        out_14|       pointer|
+|out_14_ap_vld  |  out|    1|      ap_vld|        out_14|       pointer|
+|out_15         |  out|    8|      ap_vld|        out_15|       pointer|
+|out_15_ap_vld  |  out|    1|      ap_vld|        out_15|       pointer|
++---------------+-----+-----+------------+--------------+--------------+
+

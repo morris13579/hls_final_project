@@ -3,7 +3,7 @@
 	"modules": {
 		"AES_ECB_encrypt": {
 			"proto_instances": {
-				"grp_Cipher_fu_183/AddRoundKey19_U0/AddRoundKey19_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey45_U0/AddRoundKey45_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -14,7 +14,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey23_U0/AddRoundKey23_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey49_U0/AddRoundKey49_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -25,7 +25,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey27_U0/AddRoundKey27_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey53_U0/AddRoundKey53_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -36,7 +36,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey31_U0/AddRoundKey31_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey57_U0/AddRoundKey57_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -47,7 +47,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey35_U0/AddRoundKey35_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey61_U0/AddRoundKey61_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -58,7 +58,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey39_U0/AddRoundKey39_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey65_U0/AddRoundKey65_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -69,7 +69,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey43_U0/AddRoundKey43_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey69_U0/AddRoundKey69_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -80,7 +80,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey47_U0/AddRoundKey47_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey73_U0/AddRoundKey73_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -91,7 +91,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey51_U0/AddRoundKey51_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey77_U0/AddRoundKey77_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -102,7 +102,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey54_U0/AddRoundKey54_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey80_U0/AddRoundKey80_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -113,7 +113,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/AddRoundKey55_U0/AddRoundKey55_U0_activity": {
+				"grp_Cipher_fu_187/AddRoundKey_U0/AddRoundKey_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -124,7 +124,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/Cipher_Loop_1_proc65_U0/Cipher_Loop_1_proc65_U0_activity": {
+				"grp_Cipher_fu_187/Cipher_Loop_1_proc_U0/Cipher_Loop_1_proc_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -135,7 +135,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/Cipher_Loop_2_proc_U0/Cipher_Loop_2_proc_U0_activity": {
+				"grp_Cipher_fu_187/Cipher_Loop_2_proc_U0/Cipher_Loop_2_proc_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -146,7 +146,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns22_U0/MixColumns22_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns48_U0/MixColumns48_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -157,7 +157,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns26_U0/MixColumns26_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns52_U0/MixColumns52_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -168,7 +168,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns30_U0/MixColumns30_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns56_U0/MixColumns56_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -179,7 +179,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns34_U0/MixColumns34_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns60_U0/MixColumns60_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -190,7 +190,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns38_U0/MixColumns38_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns64_U0/MixColumns64_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -201,7 +201,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns42_U0/MixColumns42_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns68_U0/MixColumns68_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -212,7 +212,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns46_U0/MixColumns46_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns72_U0/MixColumns72_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -223,7 +223,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns50_U0/MixColumns50_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns76_U0/MixColumns76_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -234,7 +234,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/MixColumns_U0/MixColumns_U0_activity": {
+				"grp_Cipher_fu_187/MixColumns_U0/MixColumns_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -245,7 +245,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows21_U0/ShiftRows21_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows47_U0/ShiftRows47_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -256,7 +256,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows25_U0/ShiftRows25_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows51_U0/ShiftRows51_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -267,7 +267,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows29_U0/ShiftRows29_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows55_U0/ShiftRows55_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -278,7 +278,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows33_U0/ShiftRows33_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows59_U0/ShiftRows59_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -289,7 +289,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows37_U0/ShiftRows37_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows63_U0/ShiftRows63_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -300,7 +300,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows41_U0/ShiftRows41_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows67_U0/ShiftRows67_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -311,7 +311,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows45_U0/ShiftRows45_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows71_U0/ShiftRows71_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -322,7 +322,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows49_U0/ShiftRows49_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows75_U0/ShiftRows75_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -333,7 +333,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows53_U0/ShiftRows53_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows79_U0/ShiftRows79_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -344,7 +344,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/ShiftRows_U0/ShiftRows_U0_activity": {
+				"grp_Cipher_fu_187/ShiftRows_U0/ShiftRows_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -355,7 +355,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes20_U0/SubBytes20_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes46_U0/SubBytes46_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -366,7 +366,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes24_U0/SubBytes24_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes50_U0/SubBytes50_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -377,7 +377,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes28_U0/SubBytes28_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes54_U0/SubBytes54_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -388,7 +388,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes32_U0/SubBytes32_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes58_U0/SubBytes58_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -399,7 +399,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes36_U0/SubBytes36_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes62_U0/SubBytes62_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -410,7 +410,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes40_U0/SubBytes40_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes66_U0/SubBytes66_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -421,7 +421,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes44_U0/SubBytes44_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes70_U0/SubBytes70_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -432,7 +432,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes48_U0/SubBytes48_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes74_U0/SubBytes74_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -443,7 +443,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes52_U0/SubBytes52_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes78_U0/SubBytes78_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -454,7 +454,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_Cipher_fu_183/SubBytes_U0/SubBytes_U0_activity": {
+				"grp_Cipher_fu_187/SubBytes_U0/SubBytes_U0_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

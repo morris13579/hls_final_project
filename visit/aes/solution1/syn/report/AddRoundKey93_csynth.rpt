@@ -1,0 +1,268 @@
+
+
+================================================================
+== Vitis HLS Report for 'AddRoundKey93'
+================================================================
+* Date:           Sat Jan  1 23:30:26 2022
+
+* Version:        2020.2 (Build 3064766 on Wed Nov 18 09:12:45 MST 2020)
+* Project:        aes
+* Solution:       solution1 (Vivado IP Flow Target)
+* Product family: zynq
+* Target device:  xc7z020-clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  4.640 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    0|    0|     none|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-----+--------+-------+-----+
+|       Name      | BRAM_18K| DSP |   FF   |  LUT  | URAM|
++-----------------+---------+-----+--------+-------+-----+
+|DSP              |        -|    -|       -|      -|    -|
+|Expression       |        -|    -|       0|    130|    -|
+|FIFO             |        -|    -|       -|      -|    -|
+|Instance         |        -|    -|       -|      -|    -|
+|Memory           |        -|    -|       -|      -|    -|
+|Multiplexer      |        -|    -|       -|    297|    -|
+|Register         |        -|    -|     130|      -|    -|
++-----------------+---------+-----+--------+-------+-----+
+|Total            |        0|    0|     130|    427|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Available        |      280|  220|  106400|  53200|    0|
++-----------------+---------+-----+--------+-------+-----+
+|Utilization (%)  |        0|    0|      ~0|     ~0|    0|
++-----------------+---------+-----+--------+-------+-----+
+
++ Detail: 
+    * Instance: 
+    N/A
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |ap_block_state1        |        or|   0|  0|   2|           1|           1|
+    |xor_ln62_10_fu_336_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_11_fu_342_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_12_fu_348_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_13_fu_354_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_14_fu_360_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_15_fu_366_p2  |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_1_fu_282_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_2_fu_288_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_3_fu_294_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_4_fu_300_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_5_fu_306_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_6_fu_312_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_7_fu_318_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_8_fu_324_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_9_fu_330_p2   |       xor|   0|  0|   8|           8|           8|
+    |xor_ln62_fu_276_p2     |       xor|   0|  0|   8|           8|           8|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0| 130|         129|         129|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-------------------+----+-----------+-----+-----------+
+    |        Name       | LUT| Input Size| Bits| Total Bits|
+    +-------------------+----+-----------+-----+-----------+
+    |RoundKey160_blk_n  |   9|          2|    1|          2|
+    |RoundKey161_blk_n  |   9|          2|    1|          2|
+    |RoundKey162_blk_n  |   9|          2|    1|          2|
+    |RoundKey163_blk_n  |   9|          2|    1|          2|
+    |RoundKey164_blk_n  |   9|          2|    1|          2|
+    |RoundKey165_blk_n  |   9|          2|    1|          2|
+    |RoundKey166_blk_n  |   9|          2|    1|          2|
+    |RoundKey167_blk_n  |   9|          2|    1|          2|
+    |RoundKey168_blk_n  |   9|          2|    1|          2|
+    |RoundKey169_blk_n  |   9|          2|    1|          2|
+    |RoundKey170_blk_n  |   9|          2|    1|          2|
+    |RoundKey171_blk_n  |   9|          2|    1|          2|
+    |RoundKey172_blk_n  |   9|          2|    1|          2|
+    |RoundKey173_blk_n  |   9|          2|    1|          2|
+    |RoundKey174_blk_n  |   9|          2|    1|          2|
+    |RoundKey175_blk_n  |   9|          2|    1|          2|
+    |ap_done            |   9|          2|    1|          2|
+    |ap_return_0        |   9|          2|    8|         16|
+    |ap_return_1        |   9|          2|    8|         16|
+    |ap_return_10       |   9|          2|    8|         16|
+    |ap_return_11       |   9|          2|    8|         16|
+    |ap_return_12       |   9|          2|    8|         16|
+    |ap_return_13       |   9|          2|    8|         16|
+    |ap_return_14       |   9|          2|    8|         16|
+    |ap_return_15       |   9|          2|    8|         16|
+    |ap_return_2        |   9|          2|    8|         16|
+    |ap_return_3        |   9|          2|    8|         16|
+    |ap_return_4        |   9|          2|    8|         16|
+    |ap_return_5        |   9|          2|    8|         16|
+    |ap_return_6        |   9|          2|    8|         16|
+    |ap_return_7        |   9|          2|    8|         16|
+    |ap_return_8        |   9|          2|    8|         16|
+    |ap_return_9        |   9|          2|    8|         16|
+    +-------------------+----+-----------+-----+-----------+
+    |Total              | 297|         66|  145|        290|
+    +-------------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-------------------+---+----+-----+-----------+
+    |        Name       | FF| LUT| Bits| Const Bits|
+    +-------------------+---+----+-----+-----------+
+    |ap_CS_fsm          |  1|   0|    1|          0|
+    |ap_done_reg        |  1|   0|    1|          0|
+    |ap_return_0_preg   |  8|   0|    8|          0|
+    |ap_return_10_preg  |  8|   0|    8|          0|
+    |ap_return_11_preg  |  8|   0|    8|          0|
+    |ap_return_12_preg  |  8|   0|    8|          0|
+    |ap_return_13_preg  |  8|   0|    8|          0|
+    |ap_return_14_preg  |  8|   0|    8|          0|
+    |ap_return_15_preg  |  8|   0|    8|          0|
+    |ap_return_1_preg   |  8|   0|    8|          0|
+    |ap_return_2_preg   |  8|   0|    8|          0|
+    |ap_return_3_preg   |  8|   0|    8|          0|
+    |ap_return_4_preg   |  8|   0|    8|          0|
+    |ap_return_5_preg   |  8|   0|    8|          0|
+    |ap_return_6_preg   |  8|   0|    8|          0|
+    |ap_return_7_preg   |  8|   0|    8|          0|
+    |ap_return_8_preg   |  8|   0|    8|          0|
+    |ap_return_9_preg   |  8|   0|    8|          0|
+    +-------------------+---+----+-----+-----------+
+    |Total              |130|   0|  130|          0|
+    +-------------------+---+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------------+-----+-----+------------+---------------+--------------+
+|      RTL Ports      | Dir | Bits|  Protocol  | Source Object |    C Type    |
++---------------------+-----+-----+------------+---------------+--------------+
+|ap_clk               |   in|    1|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_rst               |   in|    1|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_start             |   in|    1|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_done              |  out|    1|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_continue          |   in|    1|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_idle              |  out|    1|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_ready             |  out|    1|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_0          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_1          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_2          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_3          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_4          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_5          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_6          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_7          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_8          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_9          |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_10         |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_11         |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_12         |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_13         |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_14         |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|ap_return_15         |  out|    8|  ap_ctrl_hs|  AddRoundKey93|  return value|
+|in_0                 |   in|    8|     ap_none|           in_0|       pointer|
+|in_1                 |   in|    8|     ap_none|           in_1|       pointer|
+|in_2                 |   in|    8|     ap_none|           in_2|       pointer|
+|in_3                 |   in|    8|     ap_none|           in_3|       pointer|
+|in_4                 |   in|    8|     ap_none|           in_4|       pointer|
+|in_5                 |   in|    8|     ap_none|           in_5|       pointer|
+|in_6                 |   in|    8|     ap_none|           in_6|       pointer|
+|in_7                 |   in|    8|     ap_none|           in_7|       pointer|
+|in_8                 |   in|    8|     ap_none|           in_8|       pointer|
+|in_9                 |   in|    8|     ap_none|           in_9|       pointer|
+|in_10                |   in|    8|     ap_none|          in_10|       pointer|
+|in_11                |   in|    8|     ap_none|          in_11|       pointer|
+|in_12                |   in|    8|     ap_none|          in_12|       pointer|
+|in_13                |   in|    8|     ap_none|          in_13|       pointer|
+|in_14                |   in|    8|     ap_none|          in_14|       pointer|
+|in_15                |   in|    8|     ap_none|          in_15|       pointer|
+|RoundKey160_dout     |   in|    8|     ap_fifo|    RoundKey160|       pointer|
+|RoundKey160_empty_n  |   in|    1|     ap_fifo|    RoundKey160|       pointer|
+|RoundKey160_read     |  out|    1|     ap_fifo|    RoundKey160|       pointer|
+|RoundKey161_dout     |   in|    8|     ap_fifo|    RoundKey161|       pointer|
+|RoundKey161_empty_n  |   in|    1|     ap_fifo|    RoundKey161|       pointer|
+|RoundKey161_read     |  out|    1|     ap_fifo|    RoundKey161|       pointer|
+|RoundKey162_dout     |   in|    8|     ap_fifo|    RoundKey162|       pointer|
+|RoundKey162_empty_n  |   in|    1|     ap_fifo|    RoundKey162|       pointer|
+|RoundKey162_read     |  out|    1|     ap_fifo|    RoundKey162|       pointer|
+|RoundKey163_dout     |   in|    8|     ap_fifo|    RoundKey163|       pointer|
+|RoundKey163_empty_n  |   in|    1|     ap_fifo|    RoundKey163|       pointer|
+|RoundKey163_read     |  out|    1|     ap_fifo|    RoundKey163|       pointer|
+|RoundKey164_dout     |   in|    8|     ap_fifo|    RoundKey164|       pointer|
+|RoundKey164_empty_n  |   in|    1|     ap_fifo|    RoundKey164|       pointer|
+|RoundKey164_read     |  out|    1|     ap_fifo|    RoundKey164|       pointer|
+|RoundKey165_dout     |   in|    8|     ap_fifo|    RoundKey165|       pointer|
+|RoundKey165_empty_n  |   in|    1|     ap_fifo|    RoundKey165|       pointer|
+|RoundKey165_read     |  out|    1|     ap_fifo|    RoundKey165|       pointer|
+|RoundKey166_dout     |   in|    8|     ap_fifo|    RoundKey166|       pointer|
+|RoundKey166_empty_n  |   in|    1|     ap_fifo|    RoundKey166|       pointer|
+|RoundKey166_read     |  out|    1|     ap_fifo|    RoundKey166|       pointer|
+|RoundKey167_dout     |   in|    8|     ap_fifo|    RoundKey167|       pointer|
+|RoundKey167_empty_n  |   in|    1|     ap_fifo|    RoundKey167|       pointer|
+|RoundKey167_read     |  out|    1|     ap_fifo|    RoundKey167|       pointer|
+|RoundKey168_dout     |   in|    8|     ap_fifo|    RoundKey168|       pointer|
+|RoundKey168_empty_n  |   in|    1|     ap_fifo|    RoundKey168|       pointer|
+|RoundKey168_read     |  out|    1|     ap_fifo|    RoundKey168|       pointer|
+|RoundKey169_dout     |   in|    8|     ap_fifo|    RoundKey169|       pointer|
+|RoundKey169_empty_n  |   in|    1|     ap_fifo|    RoundKey169|       pointer|
+|RoundKey169_read     |  out|    1|     ap_fifo|    RoundKey169|       pointer|
+|RoundKey170_dout     |   in|    8|     ap_fifo|    RoundKey170|       pointer|
+|RoundKey170_empty_n  |   in|    1|     ap_fifo|    RoundKey170|       pointer|
+|RoundKey170_read     |  out|    1|     ap_fifo|    RoundKey170|       pointer|
+|RoundKey171_dout     |   in|    8|     ap_fifo|    RoundKey171|       pointer|
+|RoundKey171_empty_n  |   in|    1|     ap_fifo|    RoundKey171|       pointer|
+|RoundKey171_read     |  out|    1|     ap_fifo|    RoundKey171|       pointer|
+|RoundKey172_dout     |   in|    8|     ap_fifo|    RoundKey172|       pointer|
+|RoundKey172_empty_n  |   in|    1|     ap_fifo|    RoundKey172|       pointer|
+|RoundKey172_read     |  out|    1|     ap_fifo|    RoundKey172|       pointer|
+|RoundKey173_dout     |   in|    8|     ap_fifo|    RoundKey173|       pointer|
+|RoundKey173_empty_n  |   in|    1|     ap_fifo|    RoundKey173|       pointer|
+|RoundKey173_read     |  out|    1|     ap_fifo|    RoundKey173|       pointer|
+|RoundKey174_dout     |   in|    8|     ap_fifo|    RoundKey174|       pointer|
+|RoundKey174_empty_n  |   in|    1|     ap_fifo|    RoundKey174|       pointer|
+|RoundKey174_read     |  out|    1|     ap_fifo|    RoundKey174|       pointer|
+|RoundKey175_dout     |   in|    8|     ap_fifo|    RoundKey175|       pointer|
+|RoundKey175_empty_n  |   in|    1|     ap_fifo|    RoundKey175|       pointer|
+|RoundKey175_read     |  out|    1|     ap_fifo|    RoundKey175|       pointer|
++---------------------+-----+-----+------------+---------------+--------------+
+

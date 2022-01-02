@@ -26,10 +26,10 @@ struct Cipher_Loop_2_proc : public sc_module {
     sc_out< sc_lv<4> > state_40_address0;
     sc_out< sc_logic > state_40_ce0;
     sc_in< sc_lv<8> > state_40_q0;
-    sc_out< sc_lv<4> > encrypt_address0;
-    sc_out< sc_logic > encrypt_ce0;
-    sc_out< sc_logic > encrypt_we0;
-    sc_out< sc_lv<8> > encrypt_d0;
+    sc_out< sc_lv<4> > encrypt_V_address0;
+    sc_out< sc_logic > encrypt_V_ce0;
+    sc_out< sc_logic > encrypt_V_we0;
+    sc_out< sc_lv<8> > encrypt_V_d0;
 
 
     // Module declarations
@@ -43,13 +43,13 @@ struct Cipher_Loop_2_proc : public sc_module {
     sc_signal< sc_logic > ap_done_reg;
     sc_signal< sc_lv<3> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
-    sc_signal< sc_lv<5> > i_fu_60_p2;
-    sc_signal< sc_lv<5> > i_reg_74;
+    sc_signal< sc_lv<5> > i_V_fu_60_p2;
+    sc_signal< sc_lv<5> > i_V_reg_74;
     sc_signal< sc_logic > ap_CS_fsm_state2;
-    sc_signal< sc_lv<64> > tmp_32_fu_66_p1;
-    sc_signal< sc_lv<64> > tmp_32_reg_79;
-    sc_signal< sc_lv<1> > tmp_s_fu_54_p2;
-    sc_signal< sc_lv<5> > i1_reg_43;
+    sc_signal< sc_lv<64> > tmp_2_fu_66_p1;
+    sc_signal< sc_lv<64> > tmp_2_reg_79;
+    sc_signal< sc_lv<1> > tmp_1_fu_54_p2;
+    sc_signal< sc_lv<5> > t_V_reg_43;
     sc_signal< bool > ap_block_state1;
     sc_signal< sc_logic > ap_CS_fsm_state3;
     sc_signal< sc_lv<3> > ap_NS_fsm;
@@ -76,15 +76,15 @@ struct Cipher_Loop_2_proc : public sc_module {
     void thread_ap_done();
     void thread_ap_idle();
     void thread_ap_ready();
-    void thread_encrypt_address0();
-    void thread_encrypt_ce0();
-    void thread_encrypt_d0();
-    void thread_encrypt_we0();
-    void thread_i_fu_60_p2();
+    void thread_encrypt_V_address0();
+    void thread_encrypt_V_ce0();
+    void thread_encrypt_V_d0();
+    void thread_encrypt_V_we0();
+    void thread_i_V_fu_60_p2();
     void thread_state_40_address0();
     void thread_state_40_ce0();
-    void thread_tmp_32_fu_66_p1();
-    void thread_tmp_s_fu_54_p2();
+    void thread_tmp_1_fu_54_p2();
+    void thread_tmp_2_fu_66_p1();
     void thread_ap_NS_fsm();
 };
 

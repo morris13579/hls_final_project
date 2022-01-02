@@ -11,7 +11,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4346 \
+    id 95 \
     name state_40 \
     reset_level 1 \
     sync_rst true \
@@ -30,17 +30,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 4347 \
-    name encrypt \
+    id 96 \
+    name encrypt_V \
     reset_level 1 \
     sync_rst true \
     dir O \
-    corename encrypt \
+    corename encrypt_V \
     op interface \
-    ports { encrypt_address0 { O 4 vector } encrypt_ce0 { O 1 bit } encrypt_we0 { O 1 bit } encrypt_d0 { O 8 vector } } \
+    ports { encrypt_V_address0 { O 4 vector } encrypt_V_ce0 { O 1 bit } encrypt_V_we0 { O 1 bit } encrypt_V_d0 { O 8 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'encrypt'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'encrypt_V'"
 }
 }
 

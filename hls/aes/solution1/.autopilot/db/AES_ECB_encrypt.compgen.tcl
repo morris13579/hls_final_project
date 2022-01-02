@@ -1,9 +1,9 @@
 # This script segment is generated automatically by AutoPilot
 
 # Memory (RAM/ROM)  definition:
-set ID 6466
+set ID 114
 set hasByteEnable 0
-set MemName AES_ECB_encrypt_in
+set MemName AES_ECB_encrypt_ibkb
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
 set DataWd 8
@@ -97,7 +97,7 @@ ap_start { }
 ap_done { }
 ap_ready { }
 ap_idle { }
-key { 
+key_0_V { 
 	dir I
 	width 8
 	depth 16
@@ -105,13 +105,93 @@ key {
 	offset 16
 	offset_end 31
 }
-length_r { 
+key_1_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 32
+	offset_end 47
+}
+key_2_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 48
+	offset_end 63
+}
+key_3_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 64
+	offset_end 79
+}
+key_4_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 80
+	offset_end 95
+}
+key_5_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 96
+	offset_end 111
+}
+key_6_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 112
+	offset_end 127
+}
+key_7_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 128
+	offset_end 143
+}
+key_8_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 144
+	offset_end 159
+}
+key_9_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 160
+	offset_end 175
+}
+key_10_V { 
+	dir I
+	width 8
+	depth 16
+	mode ap_memory
+	offset 176
+	offset_end 191
+}
+len { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 32
-	offset_end 39
+	offset 192
+	offset_end 199
 }
 }
 
@@ -120,7 +200,7 @@ length_r {
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 6467 \
+			id 115 \
 			corename AES_ECB_encrypt_AXILiteS_axilite \
 			name AES_ECB_encrypt_AXILiteS_s_axi \
 			ports {$port_AXILiteS} \
@@ -140,17 +220,17 @@ if {${::AESL::PGuard_rtl_comp_handler}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 6468 \
-    name plain_V \
+    id 116 \
+    name plain_V_V \
     reset_level 0 \
     sync_rst true \
     corename {} \
     metadata {  } \
     op interface \
-    ports { plain_V_TDATA { I 8 vector } plain_V_TVALID { I 1 bit } plain_V_TREADY { O 1 bit } } \
+    ports { plain_V_V_TDATA { I 8 vector } plain_V_V_TVALID { I 1 bit } plain_V_V_TREADY { O 1 bit } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'plain_V'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'plain_V_V'"
 }
 }
 
@@ -159,17 +239,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
 eval "::AESL_LIB_XILADAPTER::native_axis_add { \
-    id 6469 \
-    name encrypt_V \
+    id 117 \
+    name encrypt_V_V \
     reset_level 0 \
     sync_rst true \
     corename {} \
     metadata {  } \
     op interface \
-    ports { encrypt_V_TDATA { O 8 vector } encrypt_V_TVALID { O 1 bit } encrypt_V_TREADY { I 1 bit } } \
+    ports { encrypt_V_V_TDATA { O 8 vector } encrypt_V_V_TVALID { O 1 bit } encrypt_V_V_TREADY { I 1 bit } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'encrypt_V'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'encrypt_V_V'"
 }
 }
 

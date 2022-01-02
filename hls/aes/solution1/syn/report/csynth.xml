@@ -17,7 +17,7 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>8.028</EstimatedClockPeriod>
+<EstimatedClockPeriod>7.812</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -48,9 +48,9 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>33</BRAM_18K>
-<FF>31573</FF>
-<LUT>281467</LUT>
+<BRAM_18K>51</BRAM_18K>
+<FF>2635</FF>
+<LUT>8615</LUT>
 <DSP48E>0</DSP48E>
 </Resources>
 <AvailableResources>
@@ -96,7 +96,7 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -187,7 +187,7 @@
 <IOProtocol>s_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>8</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -317,8 +317,8 @@
 <Attribute>unknown</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>plain_V_TDATA</name>
-<Object>plain_V</Object>
+<name>plain_V_V_TDATA</name>
+<Object>plain_V_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -329,8 +329,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>plain_V_TVALID</name>
-<Object>plain_V</Object>
+<name>plain_V_V_TVALID</name>
+<Object>plain_V_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -341,8 +341,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>plain_V_TREADY</name>
-<Object>plain_V</Object>
+<name>plain_V_V_TREADY</name>
+<Object>plain_V_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -353,8 +353,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>encrypt_V_TDATA</name>
-<Object>encrypt_V</Object>
+<name>encrypt_V_V_TDATA</name>
+<Object>encrypt_V_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -365,8 +365,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>encrypt_V_TVALID</name>
-<Object>encrypt_V</Object>
+<name>encrypt_V_V_TVALID</name>
+<Object>encrypt_V_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>
@@ -377,8 +377,8 @@
 <CType>int</CType>
 </RtlPorts>
 <RtlPorts>
-<name>encrypt_V_TREADY</name>
-<Object>encrypt_V</Object>
+<name>encrypt_V_V_TREADY</name>
+<Object>encrypt_V_V</Object>
 <Type>pointer</Type>
 <Scope></Scope>
 <IOProtocol>axis</IOProtocol>

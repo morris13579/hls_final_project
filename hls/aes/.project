@@ -52,11 +52,6 @@
 			<location>C:/Users/Morris/Desktop/HighLevelSynthesis_AES/src/AES_common.cpp</location>
 		</link>
 		<link>
-			<name>source/AES_decrypt.cpp</name>
-			<type>1</type>
-			<location>C:/Users/Morris/Desktop/HighLevelSynthesis_AES/src/AES_decrypt.cpp</location>
-		</link>
-		<link>
 			<name>source/AES_encrypt.cpp</name>
 			<type>1</type>
 			<location>C:/Users/Morris/Desktop/HighLevelSynthesis_AES/src/AES_encrypt.cpp</location>

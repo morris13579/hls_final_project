@@ -1,0 +1,19 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Sat Jan  1 23:33:58 2022
+# Process ID: 19776
+# Current directory: C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes/solution1/impl/ip
+# Command line: vivado.exe -notrace -mode batch -source run_ippack.tcl
+# Log file: C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes/solution1/impl/ip/vivado.log
+# Journal file: C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes/solution1/impl/ip\vivado.jou
+#-----------------------------------------------------------
+source run_ippack.tcl -notrace
+bad lexical cast: source type value could not be interpreted as target
+    while executing
+"rdi::set_property core_revision 2201012333 {component component_1}"
+    invoked from within
+"set_property core_revision $Revision $core"
+    (file "run_ippack.tcl" line 1770)
+INFO: [Common 17-206] Exiting Vivado at Sat Jan  1 23:34:02 2022...

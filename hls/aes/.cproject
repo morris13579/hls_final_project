@@ -53,8 +53,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="C:/Users/Morris/Desktop/HighLevelSynthesis_AES/hls"/>
-                                    									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/include/etc"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/auto_cc/include"/>
@@ -88,8 +86,6 @@
                                 <option id="gnu.c.compiler.option.include.paths.316814055" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="C:/Users/Morris/Desktop/HighLevelSynthesis_AES/hls"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/include/etc"/>
                                     									
@@ -255,8 +251,6 @@
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
                                     									
-                                    <listOptionValue builtIn="false" value="C:/Users/Morris/Desktop/HighLevelSynthesis_AES/hls"/>
-                                    									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/include/etc"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/auto_cc/include"/>
@@ -280,8 +274,6 @@
                                 <option id="gnu.c.compiler.option.include.paths.1647354899" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/win64/tools/systemc/include"/>
-                                    									
-                                    <listOptionValue builtIn="false" value="C:/Users/Morris/Desktop/HighLevelSynthesis_AES/hls"/>
                                     									
                                     <listOptionValue builtIn="false" value="D:/Xilinx/Vivado/2018.3/include/etc"/>
                                     									
@@ -426,5 +418,7 @@
     </storageModule>
     	
     <storageModule moduleId="org.eclipse.cdt.core.LanguageSettingsProviders"/>
+    	
+    <storageModule moduleId="refreshScope"/>
     
 </cproject>

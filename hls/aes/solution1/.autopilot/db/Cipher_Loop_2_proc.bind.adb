@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>encrypt</name>
+						<name>encrypt_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -78,7 +78,7 @@
 						<name></name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>174</lineNumber>
+						<lineNumber>176</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -93,7 +93,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>174</second>
+										<second>176</second>
 									</item>
 								</second>
 							</item>
@@ -123,7 +123,7 @@
 					<Obj>
 						<type>0</type>
 						<id>5</id>
-						<name>i1</name>
+						<name>t_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -132,7 +132,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>i</originalName>
+						<originalName>i.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -160,10 +160,10 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>tmp_s</name>
+						<name>tmp_1</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>174</lineNumber>
+						<lineNumber>176</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -178,7 +178,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>174</second>
+										<second>176</second>
 									</item>
 								</second>
 							</item>
@@ -209,10 +209,10 @@
 					<Obj>
 						<type>0</type>
 						<id>8</id>
-						<name>i</name>
+						<name>i_V</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>174</lineNumber>
+						<lineNumber>176</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -227,12 +227,12 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>174</second>
+										<second>176</second>
 									</item>
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>i</originalName>
+						<originalName>i.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -261,7 +261,7 @@
 						<name></name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>174</lineNumber>
+						<lineNumber>176</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -276,7 +276,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>174</second>
+										<second>176</second>
 									</item>
 								</second>
 							</item>
@@ -308,10 +308,10 @@
 					<Obj>
 						<type>0</type>
 						<id>11</id>
-						<name>tmp_32</name>
+						<name>tmp_2</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>175</lineNumber>
+						<lineNumber>177</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -326,7 +326,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>175</second>
+										<second>177</second>
 									</item>
 								</second>
 							</item>
@@ -359,7 +359,7 @@
 						<name>state_40_addr</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>175</lineNumber>
+						<lineNumber>177</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -374,7 +374,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>175</second>
+										<second>177</second>
 									</item>
 								</second>
 							</item>
@@ -409,7 +409,7 @@
 						<name>state_40_load</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>175</lineNumber>
+						<lineNumber>177</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -424,7 +424,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>175</second>
+										<second>177</second>
 									</item>
 								</second>
 							</item>
@@ -454,10 +454,10 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>encrypt_addr</name>
+						<name>encrypt_V_addr</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>175</lineNumber>
+						<lineNumber>177</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -472,7 +472,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>175</second>
+										<second>177</second>
 									</item>
 								</second>
 							</item>
@@ -507,7 +507,7 @@
 						<name></name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>175</lineNumber>
+						<lineNumber>177</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -522,7 +522,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>175</second>
+										<second>177</second>
 									</item>
 								</second>
 							</item>
@@ -556,7 +556,7 @@
 						<name></name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
-						<lineNumber>174</lineNumber>
+						<lineNumber>176</lineNumber>
 						<contextFuncName>Cipher</contextFuncName>
 						<inlineStackInfo>
 							<count>1</count>
@@ -571,7 +571,7 @@
 											<first>../src/AES_encrypt.cpp</first>
 											<second>Cipher</second>
 										</first>
-										<second>174</second>
+										<second>176</second>
 									</item>
 								</second>
 							</item>
@@ -1470,7 +1470,7 @@
 		<count>6</count>
 		<item_version>0</item_version>
 		<item class_id="48" tracking_level="0" version="0">
-			<first>encrypt_addr_gep_fu_29</first>
+			<first>encrypt_V_addr_gep_fu_29</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -1478,15 +1478,7 @@
 			</second>
 		</item>
 		<item>
-			<first>i1_phi_fu_47</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>5</item>
-			</second>
-		</item>
-		<item>
-			<first>i_fu_60</first>
+			<first>i_V_fu_60</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -1502,19 +1494,27 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_32_fu_66</first>
+			<first>t_V_phi_fu_47</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
-				<item>11</item>
+				<item>5</item>
 			</second>
 		</item>
 		<item>
-			<first>tmp_s_fu_54</first>
+			<first>tmp_1_fu_54</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
 				<item>6</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_2_fu_66</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>11</item>
 			</second>
 		</item>
 	</dp_fu_nodes_expression>
@@ -1535,7 +1535,7 @@
 		<item_version>0</item_version>
 		<item class_id="50" tracking_level="0" version="0">
 			<first class_id="51" tracking_level="0" version="0">
-				<first>encrypt</first>
+				<first>encrypt_V</first>
 				<second>0</second>
 			</first>
 			<second>
@@ -1597,15 +1597,7 @@
 		<count>4</count>
 		<item_version>0</item_version>
 		<item>
-			<first>i1_reg_43</first>
-			<second>
-				<count>1</count>
-				<item_version>0</item_version>
-				<item>5</item>
-			</second>
-		</item>
-		<item>
-			<first>i_reg_74</first>
+			<first>i_V_reg_74</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -1621,7 +1613,15 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_32_reg_79</first>
+			<first>t_V_reg_43</first>
+			<second>
+				<count>1</count>
+				<item_version>0</item_version>
+				<item>5</item>
+			</second>
+		</item>
+		<item>
+			<first>tmp_2_reg_79</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -1645,7 +1645,7 @@
 		<count>1</count>
 		<item_version>0</item_version>
 		<item>
-			<first>i1_reg_43</first>
+			<first>t_V_reg_43</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -1657,7 +1657,7 @@
 		<count>2</count>
 		<item_version>0</item_version>
 		<item class_id="53" tracking_level="0" version="0">
-			<first>encrypt(p0)</first>
+			<first>encrypt_V(p0)</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

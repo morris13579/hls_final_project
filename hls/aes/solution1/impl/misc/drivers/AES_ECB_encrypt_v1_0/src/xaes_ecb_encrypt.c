@@ -1,5 +1,5 @@
 // ==============================================================
-// File generated on Fri Dec 31 12:21:33 +0800 2021
+// File generated on Sun Jan 02 16:00:03 +0800 2022
 // Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 // SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 // IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -76,114 +76,1064 @@ void XAes_ecb_encrypt_DisableAutoRestart(XAes_ecb_encrypt *InstancePtr) {
     XAes_ecb_encrypt_WriteReg(InstancePtr->Axilites_BaseAddress, XAES_ECB_ENCRYPT_AXILITES_ADDR_AP_CTRL, 0);
 }
 
-void XAes_ecb_encrypt_Set_length_r(XAes_ecb_encrypt *InstancePtr, u32 Data) {
+void XAes_ecb_encrypt_Set_len(XAes_ecb_encrypt *InstancePtr, u32 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    XAes_ecb_encrypt_WriteReg(InstancePtr->Axilites_BaseAddress, XAES_ECB_ENCRYPT_AXILITES_ADDR_LENGTH_R_DATA, Data);
+    XAes_ecb_encrypt_WriteReg(InstancePtr->Axilites_BaseAddress, XAES_ECB_ENCRYPT_AXILITES_ADDR_LEN_DATA, Data);
 }
 
-u32 XAes_ecb_encrypt_Get_length_r(XAes_ecb_encrypt *InstancePtr) {
+u32 XAes_ecb_encrypt_Get_len(XAes_ecb_encrypt *InstancePtr) {
     u32 Data;
 
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    Data = XAes_ecb_encrypt_ReadReg(InstancePtr->Axilites_BaseAddress, XAES_ECB_ENCRYPT_AXILITES_ADDR_LENGTH_R_DATA);
+    Data = XAes_ecb_encrypt_ReadReg(InstancePtr->Axilites_BaseAddress, XAES_ECB_ENCRYPT_AXILITES_ADDR_LEN_DATA);
     return Data;
 }
 
-u32 XAes_ecb_encrypt_Get_key_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+u32 XAes_ecb_encrypt_Get_key_0_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE);
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE);
 }
 
-u32 XAes_ecb_encrypt_Get_key_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+u32 XAes_ecb_encrypt_Get_key_0_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_HIGH);
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_HIGH);
 }
 
-u32 XAes_ecb_encrypt_Get_key_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+u32 XAes_ecb_encrypt_Get_key_0_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + 1);
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + 1);
 }
 
-u32 XAes_ecb_encrypt_Get_key_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+u32 XAes_ecb_encrypt_Get_key_0_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY;
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_0_V;
 }
 
-u32 XAes_ecb_encrypt_Get_key_Depth(XAes_ecb_encrypt *InstancePtr) {
+u32 XAes_ecb_encrypt_Get_key_0_V_Depth(XAes_ecb_encrypt *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
-    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY;
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_0_V;
 }
 
-u32 XAes_ecb_encrypt_Write_key_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+u32 XAes_ecb_encrypt_Write_key_0_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
 
     int i;
 
-    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + 1))
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + (offset + i)*4) = *(data + i);
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + (offset + i)*4) = *(data + i);
     }
     return length;
 }
 
-u32 XAes_ecb_encrypt_Read_key_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+u32 XAes_ecb_encrypt_Read_key_0_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
 
     int i;
 
-    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + 1))
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + (offset + i)*4);
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + (offset + i)*4);
     }
     return length;
 }
 
-u32 XAes_ecb_encrypt_Write_key_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+u32 XAes_ecb_encrypt_Write_key_0_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
 
     int i;
 
-    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + 1))
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + offset + i) = *(data + i);
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + offset + i) = *(data + i);
     }
     return length;
 }
 
-u32 XAes_ecb_encrypt_Read_key_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+u32 XAes_ecb_encrypt_Read_key_0_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
     Xil_AssertNonvoid(InstancePtr != NULL);
     Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
 
     int i;
 
-    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + 1))
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + 1))
         return 0;
 
     for (i = 0; i < length; i++) {
-        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_BASE + offset + i);
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_0_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_1_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_1_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_1_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_1_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_1_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_1_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_1_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_1_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_1_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_1_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_1_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_1_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_2_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_2_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_2_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_2_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_2_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_2_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_2_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_2_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_2_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_2_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_2_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_2_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_3_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_3_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_3_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_3_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_3_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_3_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_3_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_3_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_3_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_3_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_3_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_3_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_4_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_4_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_4_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_4_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_4_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_4_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_4_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_4_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_4_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_4_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_4_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_4_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_5_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_5_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_5_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_5_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_5_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_5_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_5_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_5_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_5_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_5_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_5_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_5_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_6_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_6_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_6_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_6_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_6_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_6_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_6_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_6_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_6_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_6_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_6_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_6_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_7_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_7_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_7_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_7_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_7_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_7_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_7_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_7_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_7_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_7_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_7_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_7_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_8_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_8_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_8_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_8_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_8_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_8_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_8_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_8_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_8_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_8_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_8_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_8_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_9_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_9_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_9_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_9_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_9_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_9_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_9_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_9_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_9_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_9_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_9_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_9_V_BASE + offset + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Get_key_10_V_BaseAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE);
+}
+
+u32 XAes_ecb_encrypt_Get_key_10_V_HighAddress(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_HIGH);
+}
+
+u32 XAes_ecb_encrypt_Get_key_10_V_TotalBytes(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + 1);
+}
+
+u32 XAes_ecb_encrypt_Get_key_10_V_BitWidth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_WIDTH_KEY_10_V;
+}
+
+u32 XAes_ecb_encrypt_Get_key_10_V_Depth(XAes_ecb_encrypt *InstancePtr) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    return XAES_ECB_ENCRYPT_AXILITES_DEPTH_KEY_10_V;
+}
+
+u32 XAes_ecb_encrypt_Write_key_10_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + (offset + i)*4) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_10_V_Words(XAes_ecb_encrypt *InstancePtr, int offset, int *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length)*4 > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(int *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + (offset + i)*4);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Write_key_10_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + offset + i) = *(data + i);
+    }
+    return length;
+}
+
+u32 XAes_ecb_encrypt_Read_key_10_V_Bytes(XAes_ecb_encrypt *InstancePtr, int offset, char *data, int length) {
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr -> IsReady == XIL_COMPONENT_IS_READY);
+
+    int i;
+
+    if ((offset + length) > (XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_HIGH - XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + 1))
+        return 0;
+
+    for (i = 0; i < length; i++) {
+        *(data + i) = *(char *)(InstancePtr->Axilites_BaseAddress + XAES_ECB_ENCRYPT_AXILITES_ADDR_KEY_10_V_BASE + offset + i);
     }
     return length;
 }

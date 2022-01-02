@@ -1,5 +1,5 @@
 # ==============================================================
-# File generated on Thu Dec 30 22:44:35 +0800 2021
+# File generated on Sun Jan 02 15:59:07 +0800 2022
 # Vivado(TM) HLS - High-Level Synthesis from C, C++ and SystemC v2018.3 (64-bit)
 # SW Build 2405991 on Thu Dec  6 23:38:27 MST 2018
 # IP Build 2404404 on Fri Dec  7 01:43:56 MST 2018
@@ -21,7 +21,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../../src/AEW_test.cpp ../../../../../src/AES_encrypt.cpp ../../../../../src/AES_decrypt.cpp ../../../../../src/AES_common.cpp
+HLS_SOURCES = ../../../../../src/AEW_test.cpp ../../../../../src/AES_common.cpp ../../../../../src/AES_encrypt.cpp
 
 TARGET := csim.exe
 
@@ -80,20 +80,14 @@ $(ObjDir)/AEW_test.o: ../../../../../src/AEW_test.cpp $(ObjDir)/.dir
 
 -include $(ObjDir)/AEW_test.d
 
-$(ObjDir)/AES_encrypt.o: ../../../../../src/AES_encrypt.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../../src/AES_encrypt.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/AES_encrypt.d
-
-$(ObjDir)/AES_decrypt.o: ../../../../../src/AES_decrypt.cpp $(ObjDir)/.dir
-	$(Echo) "   Compiling ../../../../../src/AES_decrypt.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/AES_decrypt.d
-
 $(ObjDir)/AES_common.o: ../../../../../src/AES_common.cpp $(ObjDir)/.dir
 	$(Echo) "   Compiling ../../../../../src/AES_common.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/AES_common.d
+
+$(ObjDir)/AES_encrypt.o: ../../../../../src/AES_encrypt.cpp $(ObjDir)/.dir
+	$(Echo) "   Compiling ../../../../../src/AES_encrypt.cpp in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(CC) ${CCFLAG} -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/AES_encrypt.d

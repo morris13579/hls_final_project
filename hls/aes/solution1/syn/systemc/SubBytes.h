@@ -11,7 +11,7 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "SubBytes20_sbox63.h"
+#include "SubBytes46_sbox_V88.h"
 
 namespace ap_rtl {
 
@@ -24,13 +24,13 @@ struct SubBytes : public sc_module {
     sc_in< sc_logic > ap_continue;
     sc_out< sc_logic > ap_idle;
     sc_out< sc_logic > ap_ready;
-    sc_out< sc_lv<4> > in_r_address0;
-    sc_out< sc_logic > in_r_ce0;
-    sc_in< sc_lv<8> > in_r_q0;
-    sc_out< sc_lv<4> > out_r_address0;
-    sc_out< sc_logic > out_r_ce0;
-    sc_out< sc_logic > out_r_we0;
-    sc_out< sc_lv<8> > out_r_d0;
+    sc_out< sc_lv<4> > in_V_address0;
+    sc_out< sc_logic > in_V_ce0;
+    sc_in< sc_lv<8> > in_V_q0;
+    sc_out< sc_lv<4> > out_V_address0;
+    sc_out< sc_logic > out_V_ce0;
+    sc_out< sc_logic > out_V_we0;
+    sc_out< sc_lv<8> > out_V_d0;
 
 
     // Module declarations
@@ -41,24 +41,24 @@ struct SubBytes : public sc_module {
 
     sc_trace_file* mVcdFile;
 
-    SubBytes20_sbox63* sbox64_U;
+    SubBytes46_sbox_V88* sbox_V89_U;
     sc_signal< sc_logic > ap_done_reg;
     sc_signal< sc_lv<4> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
-    sc_signal< sc_lv<8> > sbox64_address0;
-    sc_signal< sc_logic > sbox64_ce0;
-    sc_signal< sc_lv<8> > sbox64_q0;
-    sc_signal< sc_lv<5> > i_1_fu_75_p2;
-    sc_signal< sc_lv<5> > i_1_reg_94;
+    sc_signal< sc_lv<8> > sbox_V89_address0;
+    sc_signal< sc_logic > sbox_V89_ce0;
+    sc_signal< sc_lv<8> > sbox_V89_q0;
+    sc_signal< sc_lv<5> > i_V_fu_75_p2;
+    sc_signal< sc_lv<5> > i_V_reg_94;
     sc_signal< sc_logic > ap_CS_fsm_state2;
-    sc_signal< sc_lv<64> > tmp_4_fu_81_p1;
-    sc_signal< sc_lv<64> > tmp_4_reg_99;
+    sc_signal< sc_lv<64> > tmp_1_fu_81_p1;
+    sc_signal< sc_lv<64> > tmp_1_reg_99;
     sc_signal< sc_lv<1> > tmp_fu_69_p2;
     sc_signal< sc_logic > ap_CS_fsm_state3;
-    sc_signal< sc_lv<5> > i_reg_58;
+    sc_signal< sc_lv<5> > t_V_reg_58;
     sc_signal< bool > ap_block_state1;
     sc_signal< sc_logic > ap_CS_fsm_state4;
-    sc_signal< sc_lv<64> > tmp_5_fu_86_p1;
+    sc_signal< sc_lv<64> > tmp_2_fu_86_p1;
     sc_signal< sc_lv<4> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
     static const sc_logic ap_const_logic_0;
@@ -86,17 +86,17 @@ struct SubBytes : public sc_module {
     void thread_ap_done();
     void thread_ap_idle();
     void thread_ap_ready();
-    void thread_i_1_fu_75_p2();
-    void thread_in_r_address0();
-    void thread_in_r_ce0();
-    void thread_out_r_address0();
-    void thread_out_r_ce0();
-    void thread_out_r_d0();
-    void thread_out_r_we0();
-    void thread_sbox64_address0();
-    void thread_sbox64_ce0();
-    void thread_tmp_4_fu_81_p1();
-    void thread_tmp_5_fu_86_p1();
+    void thread_i_V_fu_75_p2();
+    void thread_in_V_address0();
+    void thread_in_V_ce0();
+    void thread_out_V_address0();
+    void thread_out_V_ce0();
+    void thread_out_V_d0();
+    void thread_out_V_we0();
+    void thread_sbox_V89_address0();
+    void thread_sbox_V89_ce0();
+    void thread_tmp_1_fu_81_p1();
+    void thread_tmp_2_fu_86_p1();
     void thread_tmp_fu_69_p2();
     void thread_ap_NS_fsm();
 };

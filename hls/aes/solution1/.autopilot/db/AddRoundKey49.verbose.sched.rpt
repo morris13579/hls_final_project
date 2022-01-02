@@ -1,0 +1,151 @@
+
+
+================================================================
+== Vivado HLS Report for 'AddRoundKey49'
+================================================================
+* Date:           Sun Jan  2 15:59:36 2022
+
+* Version:        2018.3 (Build 2405991 on Thu Dec 06 23:56:15 MST 2018)
+* Project:        aes
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020clg484-1
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     5.634|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |   33|   33|   33|   33|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |   32|   32|         2|          -|          -|    16|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 2
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 3
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / (!tmp)
+3 --> 
+	2  / true
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.76>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecMemCore([16 x i8]* %RoundKey_V, [1 x i8]* @p_str, [7 x i8]* @RAM_1P_str, [1 x i8]* @p_str, i32 -1, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str, [1 x i8]* @p_str)"   --->   Operation 4 'specmemcore' 'empty' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (1.76ns)   --->   "br label %1" [../src/AES_common.cpp:61]   --->   Operation 5 'br' <Predicate = true> <Delay = 1.76>
+
+State 2 <SV = 1> <Delay = 2.32>
+ST_2 : Operation 6 [1/1] (0.00ns)   --->   "%t_V = phi i5 [ 0, %0 ], [ %i_V, %branch0 ]"   --->   Operation 6 'phi' 't_V' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 7 [1/1] (1.36ns)   --->   "%tmp = icmp eq i5 %t_V, -16" [../src/AES_common.cpp:61]   --->   Operation 7 'icmp' 'tmp' <Predicate = true> <Delay = 1.36> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.36> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 8 [1/1] (0.00ns)   --->   "%empty_28 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 16, i64 16, i64 16)"   --->   Operation 8 'speclooptripcount' 'empty_28' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 9 [1/1] (1.78ns)   --->   "%i_V = add i5 %t_V, 1" [../src/AES_common.cpp:61]   --->   Operation 9 'add' 'i_V' <Predicate = true> <Delay = 1.78> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.78> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 10 [1/1] (0.00ns)   --->   "br i1 %tmp, label %2, label %branch0" [../src/AES_common.cpp:61]   --->   Operation 10 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 11 [1/1] (0.00ns)   --->   "%tmp_s = zext i5 %t_V to i64" [../src/AES_common.cpp:62]   --->   Operation 11 'zext' 'tmp_s' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 12 [1/1] (0.00ns)   --->   "%in_V_addr = getelementptr [16 x i8]* %in_V, i64 0, i64 %tmp_s" [../src/AES_common.cpp:62]   --->   Operation 12 'getelementptr' 'in_V_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 13 [2/2] (2.32ns)   --->   "%lhs_V = load i8* %in_V_addr, align 1" [../src/AES_common.cpp:62]   --->   Operation 13 'load' 'lhs_V' <Predicate = (!tmp)> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 14 [1/1] (0.00ns)   --->   "%RoundKey_V_addr = getelementptr [16 x i8]* %RoundKey_V, i64 0, i64 %tmp_s" [../src/AES_common.cpp:62]   --->   Operation 14 'getelementptr' 'RoundKey_V_addr' <Predicate = (!tmp)> <Delay = 0.00>
+ST_2 : Operation 15 [2/2] (2.32ns)   --->   "%rhs_V = load i8* %RoundKey_V_addr, align 1" [../src/AES_common.cpp:62]   --->   Operation 15 'load' 'rhs_V' <Predicate = (!tmp)> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_2 : Operation 16 [1/1] (0.00ns)   --->   "ret void" [../src/AES_common.cpp:64]   --->   Operation 16 'ret' <Predicate = (tmp)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 5.63>
+ST_3 : Operation 17 [1/2] (2.32ns)   --->   "%lhs_V = load i8* %in_V_addr, align 1" [../src/AES_common.cpp:62]   --->   Operation 17 'load' 'lhs_V' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 18 [1/2] (2.32ns)   --->   "%rhs_V = load i8* %RoundKey_V_addr, align 1" [../src/AES_common.cpp:62]   --->   Operation 18 'load' 'rhs_V' <Predicate = true> <Delay = 2.32> <Core = "RAM_1P">   --->   Core 44 'RAM_1P' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 1> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 19 [1/1] (0.99ns)   --->   "%ret_V = xor i8 %rhs_V, %lhs_V" [../src/AES_common.cpp:62]   --->   Operation 19 'xor' 'ret_V' <Predicate = true> <Delay = 0.99> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.99> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 20 [1/1] (0.00ns)   --->   "%out_V_addr = getelementptr [16 x i8]* %out_V, i64 0, i64 %tmp_s" [../src/AES_common.cpp:62]   --->   Operation 20 'getelementptr' 'out_V_addr' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 21 [1/1] (2.32ns)   --->   "store i8 %ret_V, i8* %out_V_addr, align 1" [../src/AES_common.cpp:62]   --->   Operation 21 'store' <Predicate = true> <Delay = 2.32> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.32> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 8> <Depth = 16> <RAM>
+ST_3 : Operation 22 [1/1] (0.00ns)   --->   "br label %1" [../src/AES_common.cpp:61]   --->   Operation 22 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.77ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('i.V') with incoming values : ('i.V', ../src/AES_common.cpp:61) [7]  (1.77 ns)
+
+ <State 2>: 2.32ns
+The critical path consists of the following:
+	'phi' operation ('i.V') with incoming values : ('i.V', ../src/AES_common.cpp:61) [7]  (0 ns)
+	'getelementptr' operation ('in_V_addr', ../src/AES_common.cpp:62) [14]  (0 ns)
+	'load' operation ('lhs.V', ../src/AES_common.cpp:62) on array 'in_V' [15]  (2.32 ns)
+
+ <State 3>: 5.63ns
+The critical path consists of the following:
+	'load' operation ('lhs.V', ../src/AES_common.cpp:62) on array 'in_V' [15]  (2.32 ns)
+	'xor' operation ('ret.V', ../src/AES_common.cpp:62) [18]  (0.99 ns)
+	'store' operation (../src/AES_common.cpp:62) of variable 'ret.V', ../src/AES_common.cpp:62 on array 'out_V' [20]  (2.32 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

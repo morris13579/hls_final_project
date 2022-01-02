@@ -3,78 +3,32 @@
   <errorLogs>
     <logs>
       <synLog/>
-      <simLog/>
-      <mgLog/>
-      <packageLog/>
-      <csimLog/>
+      <packageLog>
+        <logs message="ERROR: [IMPL 213-28] Failed to generate IP.&#xD;&#xA;command 'ap_source' returned error code&#xD;&#xA;    while executing&#xD;&#xA;&quot;source C:/Users/Morris/Desktop/HighLevelSynthesis_AES/hls/aes/solution1/export.tcl&quot;&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls::main C:/Users/Morris/Desktop/HighLevelSynthesis_AES/hls/aes/solution1/export.tcl&quot;&#xD;&#xA;    (&quot;uplevel&quot; body line 1)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;uplevel 1 hls::main {*}$args&quot;&#xD;&#xA;    (procedure &quot;hls_proc&quot; line 5)&#xD;&#xA;    invoked from within&#xD;&#xA;&quot;hls_proc $argv&quot;&#xD;&#xA;" projectName="aes" solutionName="solution1" date="2022-01-02T16:00:23.956+0800"/>
+      </packageLog>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
       <synLog>
-        <logs message="WARNING: [SYN 201-107] Renaming port name 'AES_ECB_encrypt/length' to 'AES_ECB_encrypt/length_r' to avoid the conflict with HDL keywords or other object names." projectName="aes" solutionName="solution1" date="2021-12-31T12:12:24.940+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:12:19.567+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.589+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.584+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.577+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.571+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.561+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.557+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.545+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.541+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.520+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.515+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.506+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.501+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.492+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.487+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.478+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.468+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.459+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.450+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.443+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.438+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.431+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out' (../src/AES_encrypt.cpp:17)." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.428+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in' (../src/AES_encrypt.cpp:17)." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.352+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.348+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.343+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.337+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.333+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.329+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.324+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.319+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.314+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.310+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.304+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.300+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.295+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.290+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.285+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.279+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.275+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.271+0800" type="Warning"/>
-        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in'." projectName="aes" solutionName="solution1" date="2021-12-31T12:10:53.266+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_39' should be updated in process function 'ShiftRows', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:24.846+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_35' should be updated in process function 'ShiftRows53', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.763+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_31' should be updated in process function 'ShiftRows49', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.751+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_27' should be updated in process function 'ShiftRows45', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.745+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_23' should be updated in process function 'ShiftRows41', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.735+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_19' should be updated in process function 'ShiftRows37', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.730+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_15' should be updated in process function 'ShiftRows33', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.720+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_11' should be updated in process function 'ShiftRows29', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.713+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_7' should be updated in process function 'ShiftRows25', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.708+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-713] All the elements of global array 'state_3' should be updated in process function 'ShiftRows21', otherwise it may not be synthesized correctly." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:22.704+0800" type="Warning"/>
-        <logs message="WARNING: [XFORM 203-104] Completely partitioning array 'RoundKey' (../src/AES_encrypt.cpp:186) accessed through non-constant indices on dimension 1 (../src/AES_common.cpp:58:3), which may result in long runtime and suboptimal QoR due to large multiplexers. Please consider wrapping the array access into a function or using a register file core instead." projectName="aes" solutionName="solution1" date="2021-12-31T12:08:21.420+0800" type="Warning"/>
-        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file ../src/AES_decrypt.cpp" projectName="aes" solutionName="solution1" date="2021-12-31T12:08:14.281+0800" type="Warning"/>
-        <logs message="WARNING: [HLS 214-114] Only function calls and local variable declarations are allowed in a dataflow region: ../src/AES_decrypt.cpp:111:2" projectName="aes" solutionName="solution1" date="2021-12-31T12:08:12.033+0800" type="Warning"/>
-        <logs message="WARNING: [HLS 200-471] Dataflow form checks found 1 issue(s) in file ../src/AES_encrypt.cpp" projectName="aes" solutionName="solution1" date="2021-12-31T12:08:09.374+0800" type="Warning"/>
-        <logs message="WARNING: [HLS 214-114] Only function calls and local variable declarations are allowed in a dataflow region: ../src/AES_encrypt.cpp:117:2" projectName="aes" solutionName="solution1" date="2021-12-31T12:08:06.694+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V' (../src/AES_encrypt.cpp:17)." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:36.315+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V' (../src/AES_encrypt.cpp:17)." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.427+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.424+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.422+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.420+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.418+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.415+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.412+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.410+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.408+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.405+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.403+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.401+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.399+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'out.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.397+0800" type="Warning"/>
+        <logs message="WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'in.V'." projectName="aes" solutionName="solution1" date="2022-01-02T15:59:35.394+0800" type="Warning"/>
       </synLog>
-      <simLog/>
-      <mgLog/>
       <packageLog/>
-      <csimLog/>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

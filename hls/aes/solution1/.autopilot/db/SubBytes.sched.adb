@@ -15,7 +15,7 @@
 					<Obj class_id="5" tracking_level="0" version="0">
 						<type>1</type>
 						<id>1</id>
-						<name>in_r</name>
+						<name>in_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -24,7 +24,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>in</originalName>
+						<originalName>in.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -43,7 +43,7 @@
 					<Obj>
 						<type>1</type>
 						<id>2</id>
-						<name>out_r</name>
+						<name>out_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -52,7 +52,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>out</originalName>
+						<originalName>out.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -123,7 +123,7 @@
 					<Obj>
 						<type>0</type>
 						<id>6</id>
-						<name>i</name>
+						<name>t_V</name>
 						<fileName></fileName>
 						<fileDirectory></fileDirectory>
 						<lineNumber>0</lineNumber>
@@ -132,7 +132,7 @@
 							<count>0</count>
 							<item_version>0</item_version>
 						</inlineStackInfo>
-						<originalName>i</originalName>
+						<originalName>i.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -209,7 +209,7 @@
 					<Obj>
 						<type>0</type>
 						<id>9</id>
-						<name>i_1</name>
+						<name>i_V</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>9</lineNumber>
@@ -232,7 +232,7 @@
 								</second>
 							</item>
 						</inlineStackInfo>
-						<originalName>i</originalName>
+						<originalName>i.V</originalName>
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
@@ -308,7 +308,7 @@
 					<Obj>
 						<type>0</type>
 						<id>12</id>
-						<name>tmp_4</name>
+						<name>tmp_1</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>10</lineNumber>
@@ -356,7 +356,7 @@
 					<Obj>
 						<type>0</type>
 						<id>13</id>
-						<name>in_addr</name>
+						<name>in_V_addr</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>10</lineNumber>
@@ -406,7 +406,7 @@
 					<Obj>
 						<type>0</type>
 						<id>14</id>
-						<name>in_load</name>
+						<name>in_V_load</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>10</lineNumber>
@@ -454,7 +454,7 @@
 					<Obj>
 						<type>0</type>
 						<id>15</id>
-						<name>tmp_5</name>
+						<name>tmp_2</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>10</lineNumber>
@@ -502,7 +502,7 @@
 					<Obj>
 						<type>0</type>
 						<id>16</id>
-						<name>sbox64_addr</name>
+						<name>sbox_V89_addr</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>10</lineNumber>
@@ -552,7 +552,7 @@
 					<Obj>
 						<type>0</type>
 						<id>17</id>
-						<name>sbox64_load</name>
+						<name>sbox_V89_load</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>10</lineNumber>
@@ -600,7 +600,7 @@
 					<Obj>
 						<type>0</type>
 						<id>18</id>
-						<name>out_addr</name>
+						<name>out_V_addr</name>
 						<fileName>../src/AES_encrypt.cpp</fileName>
 						<fileDirectory>C:\Users\Morris\Desktop\HighLevelSynthesis_AES\hls</fileDirectory>
 						<lineNumber>10</lineNumber>

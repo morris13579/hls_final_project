@@ -1,0 +1,56 @@
+INFO: [HLS 200-10] Running 'D:/Xilinx/Vitis_HLS/2020.2/bin/unwrapped/win64.o/vitis_hls.exe'
+INFO: [HLS 200-10] For user 'Morris' on host 'morris' (Windows NT_amd64 version 6.2) on Sat Jan 01 23:33:24 +0800 2022
+INFO: [HLS 200-10] In directory 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit'
+Sourcing Tcl script 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes/solution1/export.tcl'
+INFO: [HLS 200-1510] Running: open_project aes 
+INFO: [HLS 200-10] Opening project 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes'.
+INFO: [HLS 200-1510] Running: set_top AES_ECB_encrypt 
+INFO: [HLS 200-1510] Running: add_files ../src/AES_common.cpp 
+INFO: [HLS 200-10] Adding design file '../src/AES_common.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files ../src/AES_decrypt.cpp 
+INFO: [HLS 200-10] Adding design file '../src/AES_decrypt.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files ../src/AES_encrypt.cpp 
+INFO: [HLS 200-10] Adding design file '../src/AES_encrypt.cpp' to the project
+INFO: [HLS 200-1510] Running: add_files -tb ../src/AEW_test.cpp 
+INFO: [HLS 200-10] Adding test bench file '../src/AEW_test.cpp' to the project
+INFO: [HLS 200-1510] Running: open_solution solution1 -flow_target vivado 
+INFO: [HLS 200-10] Opening solution 'C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes/solution1'.
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-10] Setting target device to 'xc7z020-clg484-1'
+INFO: [HLS 200-1505] Using flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see www.xilinx.com/cgi-bin/docs/rdoc?v=2020.2;t=hls+guidance;d=200-1505.html
+INFO: [HLS 200-1464] Running solution command: config_export -format=ip_catalog
+INFO: [HLS 200-1464] Running solution command: config_export -rtl=verilog
+INFO: [HLS 200-1510] Running: set_part xc7z020clg484-1 
+INFO: [HLS 200-1510] Running: create_clock -period 10 -name default 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
+INFO: [HLS 200-1510] Running: config_export -format ip_catalog -rtl verilog 
+INFO: [HLS 200-1510] Running: export_design -rtl verilog -format ip_catalog 
+INFO: [IMPL 213-8] Exporting RTL as a Vivado IP.
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source run_ippack.tcl -notrace
+bad lexical cast: source type value could not be interpreted as target
+    while executing
+"rdi::set_property core_revision 2201012333 {component component_1}"
+    invoked from within
+"set_property core_revision $Revision $core"
+    (file "run_ippack.tcl" line 1770)
+INFO: [Common 17-206] Exiting Vivado at Sat Jan  1 23:34:02 2022...
+ERROR: [IMPL 213-28] Failed to generate IP.
+INFO: [HLS 200-111] Finished Command export_design CPU user time: 20 seconds. CPU system time: 12 seconds. Elapsed time: 36.929 seconds; current allocated memory: 117.645 MB.
+command 'ap_source' returned error code
+    while executing
+"source C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes/solution1/export.tcl"
+    invoked from within
+"hls::main C:/Users/Morris/Desktop/HighLevelSynthesis_AES/visit/aes/solution1/export.tcl"
+    ("uplevel" body line 1)
+    invoked from within
+"uplevel 1 hls::main {*}$newargs"
+    (procedure "hls_proc" line 16)
+    invoked from within
+"hls_proc [info nameofexecutable] $argv"

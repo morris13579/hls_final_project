@@ -17,26 +17,36 @@ int main(){
 	for(int i = 0;i<length;i++){
 		plain_stream.write(plain[i]);
 	}
+	BYTE RoundKey[AES_keyExpSize];
+	BYTE RoundKey_reshape[11][16];
+	KeyExpansion(RoundKey, key);
 
-	AES_ECB_encrypt(&plain_stream,&encrypt_stream1,key,length);
+	for(int i =0;i<11;i++){
+		for(int j =0;j<16;j++){
+			RoundKey_reshape[i][j] = RoundKey[i*16+j];
+		}
+	}
+
+
+	AES_ECB_encrypt(&plain_stream,&encrypt_stream1,RoundKey_reshape,length);
 	printf("key\n");
 	for(int i=0;i<16;i++){
-		printf("0x%x ",key[i]);
+		printf("0x%x ",(unsigned char)key[i]);
 	}
 	printf("\n");
 	printf("plain\n");
 	for(int i=0;i<16;i++){
-		printf("0x%x ",plain[i]);
+		printf("0x%x ",(unsigned char)plain[i]);
 	}
 	printf("\n");
 	printf("encrypt\n");
 	for(int i=0;i<16;i++){
 		BYTE b = encrypt_stream1.read();
-		printf("0x%x ",b);
+		printf("0x%x ",(unsigned char)b);
 		encrypt_stream2.write(b);
 	}
 	printf("\n");
-
+/*
 	AES_ECB_decrypt(&encrypt_stream2,&recovery_stream,key,length);
 	for(int i = 0;i<length;i++){
 		recovery[i] = recovery_stream.read();
@@ -46,6 +56,6 @@ int main(){
 		printf("0x%x ",recovery[i]);
 	}
 	printf("\n");
-
+*/
 	return 0;
 }

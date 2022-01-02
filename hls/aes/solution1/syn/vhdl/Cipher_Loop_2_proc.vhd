@@ -21,10 +21,10 @@ port (
     state_40_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
     state_40_ce0 : OUT STD_LOGIC;
     state_40_q0 : IN STD_LOGIC_VECTOR (7 downto 0);
-    encrypt_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
-    encrypt_ce0 : OUT STD_LOGIC;
-    encrypt_we0 : OUT STD_LOGIC;
-    encrypt_d0 : OUT STD_LOGIC_VECTOR (7 downto 0) );
+    encrypt_V_address0 : OUT STD_LOGIC_VECTOR (3 downto 0);
+    encrypt_V_ce0 : OUT STD_LOGIC;
+    encrypt_V_we0 : OUT STD_LOGIC;
+    encrypt_V_d0 : OUT STD_LOGIC_VECTOR (7 downto 0) );
 end;
 
 
@@ -50,14 +50,14 @@ architecture behav of Cipher_Loop_2_proc is
     attribute fsm_encoding of ap_CS_fsm : signal is "none";
     signal ap_CS_fsm_state1 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state1 : signal is "none";
-    signal i_fu_60_p2 : STD_LOGIC_VECTOR (4 downto 0);
-    signal i_reg_74 : STD_LOGIC_VECTOR (4 downto 0);
+    signal i_V_fu_60_p2 : STD_LOGIC_VECTOR (4 downto 0);
+    signal i_V_reg_74 : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_CS_fsm_state2 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state2 : signal is "none";
-    signal tmp_32_fu_66_p1 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_32_reg_79 : STD_LOGIC_VECTOR (63 downto 0);
-    signal tmp_s_fu_54_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal i1_reg_43 : STD_LOGIC_VECTOR (4 downto 0);
+    signal tmp_2_fu_66_p1 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_2_reg_79 : STD_LOGIC_VECTOR (63 downto 0);
+    signal tmp_1_fu_54_p2 : STD_LOGIC_VECTOR (0 downto 0);
+    signal t_V_reg_43 : STD_LOGIC_VECTOR (4 downto 0);
     signal ap_block_state1 : BOOLEAN;
     signal ap_CS_fsm_state3 : STD_LOGIC;
     attribute fsm_encoding of ap_CS_fsm_state3 : signal is "none";
@@ -89,7 +89,7 @@ begin
             else
                 if ((ap_continue = ap_const_logic_1)) then 
                     ap_done_reg <= ap_const_logic_0;
-                elsif (((tmp_s_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+                elsif (((tmp_1_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
                     ap_done_reg <= ap_const_logic_1;
                 end if; 
             end if;
@@ -97,13 +97,13 @@ begin
     end process;
 
 
-    i1_reg_43_assign_proc : process (ap_clk)
+    t_V_reg_43_assign_proc : process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-                i1_reg_43 <= i_reg_74;
+                t_V_reg_43 <= i_V_reg_74;
             elsif ((not(((ap_start = ap_const_logic_0) or (ap_done_reg = ap_const_logic_1))) and (ap_const_logic_1 = ap_CS_fsm_state1))) then 
-                i1_reg_43 <= ap_const_lv5_0;
+                t_V_reg_43 <= ap_const_lv5_0;
             end if; 
         end if;
     end process;
@@ -111,21 +111,21 @@ begin
     begin
         if (ap_clk'event and ap_clk = '1') then
             if ((ap_const_logic_1 = ap_CS_fsm_state2)) then
-                i_reg_74 <= i_fu_60_p2;
+                i_V_reg_74 <= i_V_fu_60_p2;
             end if;
         end if;
     end process;
     process (ap_clk)
     begin
         if (ap_clk'event and ap_clk = '1') then
-            if (((tmp_s_fu_54_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
-                    tmp_32_reg_79(4 downto 0) <= tmp_32_fu_66_p1(4 downto 0);
+            if (((tmp_1_fu_54_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
+                    tmp_2_reg_79(4 downto 0) <= tmp_2_fu_66_p1(4 downto 0);
             end if;
         end if;
     end process;
-    tmp_32_reg_79(63 downto 5) <= "00000000000000000000000000000000000000000000000000000000000";
+    tmp_2_reg_79(63 downto 5) <= "00000000000000000000000000000000000000000000000000000000000";
 
-    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, tmp_s_fu_54_p2)
+    ap_NS_fsm_assign_proc : process (ap_start, ap_done_reg, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, tmp_1_fu_54_p2)
     begin
         case ap_CS_fsm is
             when ap_ST_fsm_state1 => 
@@ -135,7 +135,7 @@ begin
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 end if;
             when ap_ST_fsm_state2 => 
-                if (((tmp_s_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
+                if (((tmp_1_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then
                     ap_NS_fsm <= ap_ST_fsm_state1;
                 else
                     ap_NS_fsm <= ap_ST_fsm_state3;
@@ -156,9 +156,9 @@ begin
     end process;
 
 
-    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state2, tmp_s_fu_54_p2)
+    ap_done_assign_proc : process(ap_done_reg, ap_CS_fsm_state2, tmp_1_fu_54_p2)
     begin
-        if (((tmp_s_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if (((tmp_1_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_done <= ap_const_logic_1;
         else 
             ap_done <= ap_done_reg;
@@ -176,39 +176,39 @@ begin
     end process;
 
 
-    ap_ready_assign_proc : process(ap_CS_fsm_state2, tmp_s_fu_54_p2)
+    ap_ready_assign_proc : process(ap_CS_fsm_state2, tmp_1_fu_54_p2)
     begin
-        if (((tmp_s_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
+        if (((tmp_1_fu_54_p2 = ap_const_lv1_1) and (ap_const_logic_1 = ap_CS_fsm_state2))) then 
             ap_ready <= ap_const_logic_1;
         else 
             ap_ready <= ap_const_logic_0;
         end if; 
     end process;
 
-    encrypt_address0 <= tmp_32_reg_79(4 - 1 downto 0);
+    encrypt_V_address0 <= tmp_2_reg_79(4 - 1 downto 0);
 
-    encrypt_ce0_assign_proc : process(ap_CS_fsm_state3)
+    encrypt_V_ce0_assign_proc : process(ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            encrypt_ce0 <= ap_const_logic_1;
+            encrypt_V_ce0 <= ap_const_logic_1;
         else 
-            encrypt_ce0 <= ap_const_logic_0;
+            encrypt_V_ce0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    encrypt_d0 <= state_40_q0;
+    encrypt_V_d0 <= state_40_q0;
 
-    encrypt_we0_assign_proc : process(ap_CS_fsm_state3)
+    encrypt_V_we0_assign_proc : process(ap_CS_fsm_state3)
     begin
         if ((ap_const_logic_1 = ap_CS_fsm_state3)) then 
-            encrypt_we0 <= ap_const_logic_1;
+            encrypt_V_we0 <= ap_const_logic_1;
         else 
-            encrypt_we0 <= ap_const_logic_0;
+            encrypt_V_we0 <= ap_const_logic_0;
         end if; 
     end process;
 
-    i_fu_60_p2 <= std_logic_vector(unsigned(i1_reg_43) + unsigned(ap_const_lv5_1));
-    state_40_address0 <= tmp_32_fu_66_p1(4 - 1 downto 0);
+    i_V_fu_60_p2 <= std_logic_vector(unsigned(t_V_reg_43) + unsigned(ap_const_lv5_1));
+    state_40_address0 <= tmp_2_fu_66_p1(4 - 1 downto 0);
 
     state_40_ce0_assign_proc : process(ap_CS_fsm_state2)
     begin
@@ -219,6 +219,6 @@ begin
         end if; 
     end process;
 
-    tmp_32_fu_66_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(i1_reg_43),64));
-    tmp_s_fu_54_p2 <= "1" when (i1_reg_43 = ap_const_lv5_10) else "0";
+    tmp_1_fu_54_p2 <= "1" when (t_V_reg_43 = ap_const_lv5_10) else "0";
+    tmp_2_fu_66_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(t_V_reg_43),64));
 end behav;

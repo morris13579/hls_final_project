@@ -18,4 +18,6 @@ obj/AEW_test.o: ../../../../../src/AEW_test.cpp \
  D:/Xilinx/Vivado/2018.3/include/ap_fixed.h \
  D:/Xilinx/Vivado/2018.3/include/ap_fixed_base.h \
  D:/Xilinx/Vivado/2018.3/include/ap_fixed_ref.h \
- D:/Xilinx/Vivado/2018.3/include/ap_fixed_special.h
+ D:/Xilinx/Vivado/2018.3/include/ap_fixed_special.h \
+ D:/Xilinx/Vivado/2018.3/include/ap_axi_sdata.h \
+ D:/Xilinx/Vivado/2018.3/include/ap_int.h

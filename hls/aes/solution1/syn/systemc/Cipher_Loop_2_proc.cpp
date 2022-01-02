@@ -49,7 +49,7 @@ Cipher_Loop_2_proc::Cipher_Loop_2_proc(sc_module_name name) : sc_module(name), m
     SC_METHOD(thread_ap_done);
     sensitive << ( ap_done_reg );
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( tmp_s_fu_54_p2 );
+    sensitive << ( tmp_1_fu_54_p2 );
 
     SC_METHOD(thread_ap_idle);
     sensitive << ( ap_start );
@@ -57,38 +57,38 @@ Cipher_Loop_2_proc::Cipher_Loop_2_proc(sc_module_name name) : sc_module(name), m
 
     SC_METHOD(thread_ap_ready);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( tmp_s_fu_54_p2 );
+    sensitive << ( tmp_1_fu_54_p2 );
 
-    SC_METHOD(thread_encrypt_address0);
-    sensitive << ( tmp_32_reg_79 );
+    SC_METHOD(thread_encrypt_V_address0);
+    sensitive << ( tmp_2_reg_79 );
     sensitive << ( ap_CS_fsm_state3 );
 
-    SC_METHOD(thread_encrypt_ce0);
+    SC_METHOD(thread_encrypt_V_ce0);
     sensitive << ( ap_CS_fsm_state3 );
 
-    SC_METHOD(thread_encrypt_d0);
+    SC_METHOD(thread_encrypt_V_d0);
     sensitive << ( state_40_q0 );
     sensitive << ( ap_CS_fsm_state3 );
 
-    SC_METHOD(thread_encrypt_we0);
+    SC_METHOD(thread_encrypt_V_we0);
     sensitive << ( ap_CS_fsm_state3 );
 
-    SC_METHOD(thread_i_fu_60_p2);
-    sensitive << ( i1_reg_43 );
+    SC_METHOD(thread_i_V_fu_60_p2);
+    sensitive << ( t_V_reg_43 );
 
     SC_METHOD(thread_state_40_address0);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( tmp_32_fu_66_p1 );
+    sensitive << ( tmp_2_fu_66_p1 );
 
     SC_METHOD(thread_state_40_ce0);
     sensitive << ( ap_CS_fsm_state2 );
 
-    SC_METHOD(thread_tmp_32_fu_66_p1);
-    sensitive << ( i1_reg_43 );
-
-    SC_METHOD(thread_tmp_s_fu_54_p2);
+    SC_METHOD(thread_tmp_1_fu_54_p2);
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( i1_reg_43 );
+    sensitive << ( t_V_reg_43 );
+
+    SC_METHOD(thread_tmp_2_fu_66_p1);
+    sensitive << ( t_V_reg_43 );
 
     SC_METHOD(thread_ap_NS_fsm);
     sensitive << ( ap_start );
@@ -96,7 +96,7 @@ Cipher_Loop_2_proc::Cipher_Loop_2_proc(sc_module_name name) : sc_module(name), m
     sensitive << ( ap_CS_fsm );
     sensitive << ( ap_CS_fsm_state1 );
     sensitive << ( ap_CS_fsm_state2 );
-    sensitive << ( tmp_s_fu_54_p2 );
+    sensitive << ( tmp_1_fu_54_p2 );
 
     ap_done_reg = SC_LOGIC_0;
     ap_CS_fsm = "001";
@@ -118,22 +118,22 @@ Cipher_Loop_2_proc::Cipher_Loop_2_proc(sc_module_name name) : sc_module(name), m
     sc_trace(mVcdFile, state_40_address0, "(port)state_40_address0");
     sc_trace(mVcdFile, state_40_ce0, "(port)state_40_ce0");
     sc_trace(mVcdFile, state_40_q0, "(port)state_40_q0");
-    sc_trace(mVcdFile, encrypt_address0, "(port)encrypt_address0");
-    sc_trace(mVcdFile, encrypt_ce0, "(port)encrypt_ce0");
-    sc_trace(mVcdFile, encrypt_we0, "(port)encrypt_we0");
-    sc_trace(mVcdFile, encrypt_d0, "(port)encrypt_d0");
+    sc_trace(mVcdFile, encrypt_V_address0, "(port)encrypt_V_address0");
+    sc_trace(mVcdFile, encrypt_V_ce0, "(port)encrypt_V_ce0");
+    sc_trace(mVcdFile, encrypt_V_we0, "(port)encrypt_V_we0");
+    sc_trace(mVcdFile, encrypt_V_d0, "(port)encrypt_V_d0");
 #endif
 #ifdef __HLS_TRACE_LEVEL_INT__
     sc_trace(mVcdFile, ap_done_reg, "ap_done_reg");
     sc_trace(mVcdFile, ap_CS_fsm, "ap_CS_fsm");
     sc_trace(mVcdFile, ap_CS_fsm_state1, "ap_CS_fsm_state1");
-    sc_trace(mVcdFile, i_fu_60_p2, "i_fu_60_p2");
-    sc_trace(mVcdFile, i_reg_74, "i_reg_74");
+    sc_trace(mVcdFile, i_V_fu_60_p2, "i_V_fu_60_p2");
+    sc_trace(mVcdFile, i_V_reg_74, "i_V_reg_74");
     sc_trace(mVcdFile, ap_CS_fsm_state2, "ap_CS_fsm_state2");
-    sc_trace(mVcdFile, tmp_32_fu_66_p1, "tmp_32_fu_66_p1");
-    sc_trace(mVcdFile, tmp_32_reg_79, "tmp_32_reg_79");
-    sc_trace(mVcdFile, tmp_s_fu_54_p2, "tmp_s_fu_54_p2");
-    sc_trace(mVcdFile, i1_reg_43, "i1_reg_43");
+    sc_trace(mVcdFile, tmp_2_fu_66_p1, "tmp_2_fu_66_p1");
+    sc_trace(mVcdFile, tmp_2_reg_79, "tmp_2_reg_79");
+    sc_trace(mVcdFile, tmp_1_fu_54_p2, "tmp_1_fu_54_p2");
+    sc_trace(mVcdFile, t_V_reg_43, "t_V_reg_43");
     sc_trace(mVcdFile, ap_block_state1, "ap_block_state1");
     sc_trace(mVcdFile, ap_CS_fsm_state3, "ap_CS_fsm_state3");
     sc_trace(mVcdFile, ap_NS_fsm, "ap_NS_fsm");
@@ -160,21 +160,21 @@ void Cipher_Loop_2_proc::thread_ap_clk_no_reset_() {
         if (esl_seteq<1,1,1>(ap_const_logic_1, ap_continue.read())) {
             ap_done_reg = ap_const_logic_0;
         } else if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && 
-                    esl_seteq<1,1,1>(tmp_s_fu_54_p2.read(), ap_const_lv1_1))) {
+                    esl_seteq<1,1,1>(tmp_1_fu_54_p2.read(), ap_const_lv1_1))) {
             ap_done_reg = ap_const_logic_1;
         }
     }
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state3.read())) {
-        i1_reg_43 = i_reg_74.read();
+        t_V_reg_43 = i_V_reg_74.read();
     } else if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state1.read()) && 
                 !(esl_seteq<1,1,1>(ap_const_logic_0, ap_start.read()) || esl_seteq<1,1,1>(ap_done_reg.read(), ap_const_logic_1)))) {
-        i1_reg_43 = ap_const_lv5_0;
+        t_V_reg_43 = ap_const_lv5_0;
     }
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read())) {
-        i_reg_74 = i_fu_60_p2.read();
+        i_V_reg_74 = i_V_fu_60_p2.read();
     }
-    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && esl_seteq<1,1,1>(tmp_s_fu_54_p2.read(), ap_const_lv1_0))) {
-        tmp_32_reg_79 = tmp_32_fu_66_p1.read();
+    if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && esl_seteq<1,1,1>(tmp_1_fu_54_p2.read(), ap_const_lv1_0))) {
+        tmp_2_reg_79 = tmp_2_fu_66_p1.read();
     }
 }
 
@@ -196,7 +196,7 @@ void Cipher_Loop_2_proc::thread_ap_block_state1() {
 
 void Cipher_Loop_2_proc::thread_ap_done() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && 
-         esl_seteq<1,1,1>(tmp_s_fu_54_p2.read(), ap_const_lv1_1))) {
+         esl_seteq<1,1,1>(tmp_1_fu_54_p2.read(), ap_const_lv1_1))) {
         ap_done = ap_const_logic_1;
     } else {
         ap_done = ap_done_reg.read();
@@ -214,43 +214,43 @@ void Cipher_Loop_2_proc::thread_ap_idle() {
 
 void Cipher_Loop_2_proc::thread_ap_ready() {
     if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && 
-         esl_seteq<1,1,1>(tmp_s_fu_54_p2.read(), ap_const_lv1_1))) {
+         esl_seteq<1,1,1>(tmp_1_fu_54_p2.read(), ap_const_lv1_1))) {
         ap_ready = ap_const_logic_1;
     } else {
         ap_ready = ap_const_logic_0;
     }
 }
 
-void Cipher_Loop_2_proc::thread_encrypt_address0() {
-    encrypt_address0 =  (sc_lv<4>) (tmp_32_reg_79.read());
+void Cipher_Loop_2_proc::thread_encrypt_V_address0() {
+    encrypt_V_address0 =  (sc_lv<4>) (tmp_2_reg_79.read());
 }
 
-void Cipher_Loop_2_proc::thread_encrypt_ce0() {
+void Cipher_Loop_2_proc::thread_encrypt_V_ce0() {
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state3.read())) {
-        encrypt_ce0 = ap_const_logic_1;
+        encrypt_V_ce0 = ap_const_logic_1;
     } else {
-        encrypt_ce0 = ap_const_logic_0;
+        encrypt_V_ce0 = ap_const_logic_0;
     }
 }
 
-void Cipher_Loop_2_proc::thread_encrypt_d0() {
-    encrypt_d0 = state_40_q0.read();
+void Cipher_Loop_2_proc::thread_encrypt_V_d0() {
+    encrypt_V_d0 = state_40_q0.read();
 }
 
-void Cipher_Loop_2_proc::thread_encrypt_we0() {
+void Cipher_Loop_2_proc::thread_encrypt_V_we0() {
     if (esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state3.read())) {
-        encrypt_we0 = ap_const_logic_1;
+        encrypt_V_we0 = ap_const_logic_1;
     } else {
-        encrypt_we0 = ap_const_logic_0;
+        encrypt_V_we0 = ap_const_logic_0;
     }
 }
 
-void Cipher_Loop_2_proc::thread_i_fu_60_p2() {
-    i_fu_60_p2 = (!i1_reg_43.read().is_01() || !ap_const_lv5_1.is_01())? sc_lv<5>(): (sc_biguint<5>(i1_reg_43.read()) + sc_biguint<5>(ap_const_lv5_1));
+void Cipher_Loop_2_proc::thread_i_V_fu_60_p2() {
+    i_V_fu_60_p2 = (!t_V_reg_43.read().is_01() || !ap_const_lv5_1.is_01())? sc_lv<5>(): (sc_biguint<5>(t_V_reg_43.read()) + sc_biguint<5>(ap_const_lv5_1));
 }
 
 void Cipher_Loop_2_proc::thread_state_40_address0() {
-    state_40_address0 =  (sc_lv<4>) (tmp_32_fu_66_p1.read());
+    state_40_address0 =  (sc_lv<4>) (tmp_2_fu_66_p1.read());
 }
 
 void Cipher_Loop_2_proc::thread_state_40_ce0() {
@@ -261,12 +261,12 @@ void Cipher_Loop_2_proc::thread_state_40_ce0() {
     }
 }
 
-void Cipher_Loop_2_proc::thread_tmp_32_fu_66_p1() {
-    tmp_32_fu_66_p1 = esl_zext<64,5>(i1_reg_43.read());
+void Cipher_Loop_2_proc::thread_tmp_1_fu_54_p2() {
+    tmp_1_fu_54_p2 = (!t_V_reg_43.read().is_01() || !ap_const_lv5_10.is_01())? sc_lv<1>(): sc_lv<1>(t_V_reg_43.read() == ap_const_lv5_10);
 }
 
-void Cipher_Loop_2_proc::thread_tmp_s_fu_54_p2() {
-    tmp_s_fu_54_p2 = (!i1_reg_43.read().is_01() || !ap_const_lv5_10.is_01())? sc_lv<1>(): sc_lv<1>(i1_reg_43.read() == ap_const_lv5_10);
+void Cipher_Loop_2_proc::thread_tmp_2_fu_66_p1() {
+    tmp_2_fu_66_p1 = esl_zext<64,5>(t_V_reg_43.read());
 }
 
 void Cipher_Loop_2_proc::thread_ap_NS_fsm() {
@@ -279,7 +279,7 @@ void Cipher_Loop_2_proc::thread_ap_NS_fsm() {
             }
             break;
         case 2 : 
-            if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && esl_seteq<1,1,1>(tmp_s_fu_54_p2.read(), ap_const_lv1_1))) {
+            if ((esl_seteq<1,1,1>(ap_const_logic_1, ap_CS_fsm_state2.read()) && esl_seteq<1,1,1>(tmp_1_fu_54_p2.read(), ap_const_lv1_1))) {
                 ap_NS_fsm = ap_ST_fsm_state1;
             } else {
                 ap_NS_fsm = ap_ST_fsm_state3;

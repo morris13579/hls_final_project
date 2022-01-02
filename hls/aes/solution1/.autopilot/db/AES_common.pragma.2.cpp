@@ -6956,13 +6956,84 @@ class stream
 
 }
 # 8 "../src/aes.h" 2
+# 1 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_axi_sdata.h" 1
+# 86 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_axi_sdata.h"
+# 1 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_int.h" 1
+# 87 "D:/Xilinx/Vivado/2018.3/common/technology/autopilot\\ap_axi_sdata.h" 2
 
-typedef unsigned char BYTE;
-# 43 "../src/aes.h"
+template<int D,int U,int TI,int TD>
+  struct ap_axis{
+    ap_int<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<U> user;
+    ap_uint<1> last;
+    ap_uint<TI> id;
+    ap_uint<TD> dest;
+  };
+
+template<int D>
+  struct ap_axis <D, 0, 0, 0>{
+    ap_int<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<1> last;
+  };
+
+template<int D,int U,int TI,int TD>
+  struct ap_axiu{
+    ap_uint<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<U> user;
+    ap_uint<1> last;
+    ap_uint<TI> id;
+    ap_uint<TD> dest;
+  };
+
+template<int D>
+  struct ap_axiu <D, 0, 0, 0>{
+    ap_uint<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<(D+7)/8> strb;
+    ap_uint<1> last;
+  };
+
+
+template<int D,int U,int TI,int TD> struct qdma_axis;
+
+template<int D>
+  struct qdma_axis <D, 0, 0, 0>{
+
+    ap_uint<D> data;
+    ap_uint<(D+7)/8> keep;
+    ap_uint<1> last;
+
+    ap_uint<D> get_data() const { return data; }
+    ap_uint<(D+7)/8> get_keep() const { return keep; }
+    ap_uint<1> get_last() const { return last; }
+
+    void set_data(const ap_uint<D> &d) { data = d; }
+    void set_keep(const ap_uint<(D+7)/8> &k) { keep = k; }
+    void set_last(const ap_uint<1> &l) { last = l; }
+    void keep_all() {
+       ap_uint<(D+7)/8> k = 0;
+       keep = ~k;
+     }
+
+    qdma_axis(ap_uint<D> d = ap_uint<D>(), ap_uint<(D+7)/8> k = ap_uint<(D+7)/8>(), ap_uint<1> l = ap_uint<1>()) : data(d), keep(k), last(l) {}
+    qdma_axis(const qdma_axis<D, 0, 0, 0> &d) : data(d.data), keep(d.keep), last(d.last) {}
+  };
+# 9 "../src/aes.h" 2
+
+typedef ap_uint<8> BYTE;
+typedef ap_axiu<8,1,1,1> STREAM_BYTE;
+# 45 "../src/aes.h"
 void KeyExpansion(BYTE RoundKey[176], BYTE Key[16]);
 void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]);
-void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt , BYTE key[16] , unsigned long length);
-void AES_ECB_decrypt(hls::stream<BYTE>* encrypt ,hls::stream<BYTE>* plain , BYTE key[16] , unsigned long length);
+
+void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt , BYTE key[11][16] , unsigned long len);
+
 BYTE xtime(BYTE x);
 
 
@@ -7009,46 +7080,40 @@ const uint8_t Rcon[11] = {
 
 void KeyExpansion(BYTE RoundKey[176], BYTE Key[16]){_ssdm_SpecArrayDimSize(RoundKey, 176);_ssdm_SpecArrayDimSize(Key, 16);
  unsigned i, j, k;
- uint8_t tempa[4];
+ BYTE tempa[4];
 
 
- for (i = 0; i < 4; ++i){
-  RoundKey[(i * 4) + 0] = Key[(i * 4) + 0];
-  RoundKey[(i * 4) + 1] = Key[(i * 4) + 1];
-  RoundKey[(i * 4) + 2] = Key[(i * 4) + 2];
-  RoundKey[(i * 4) + 3] = Key[(i * 4) + 3];
+ for (i = 0; i < 16; i++){
+  RoundKey[i] = Key[i];
  }
 
 
- for (i = 4; i < 4 * (10 + 1); ++i){
+ for (i = 4; i < 4 * (10 + 1); i++){
   k = (i - 1) * 4;
   tempa[0]=RoundKey[k + 0];
   tempa[1]=RoundKey[k + 1];
   tempa[2]=RoundKey[k + 2];
   tempa[3]=RoundKey[k + 3];
 
-  if (i % 4 == 0){
+  if ( (i & 0x3) == 0){
 
 
 
 
-   const uint8_t u8tmp = tempa[0];
-   tempa[0] = tempa[1];
-   tempa[1] = tempa[2];
-   tempa[2] = tempa[3];
-   tempa[3] = u8tmp;
+   uint8_t u8tmp = tempa[0];
 
 
 
-   tempa[0] = sbox [ tempa[0] ] ;
-   tempa[1] = sbox [ tempa[1] ] ;
-   tempa[2] = sbox [ tempa[2] ] ;
-   tempa[3] = sbox [ tempa[3] ] ;
+   tempa[0] = sbox [ tempa[1] ] ;
+   tempa[1] = sbox [ tempa[2] ] ;
+   tempa[2] = sbox [ tempa[3] ] ;
+   tempa[3] = sbox [ u8tmp ] ;
 
    tempa[0] = tempa[0] ^ Rcon[i/4];
   }
-# 54 "../src/AES_common.cpp"
-  j = i * 4; k=(i - 4) * 4;
+# 47 "../src/AES_common.cpp"
+  j = i << 2;
+  k= (i << 2) - (4 * 4);
   RoundKey[j + 0] = RoundKey[k + 0] ^ tempa[0];
   RoundKey[j + 1] = RoundKey[k + 1] ^ tempa[1];
   RoundKey[j + 2] = RoundKey[k + 2] ^ tempa[2];
@@ -7059,8 +7124,8 @@ void KeyExpansion(BYTE RoundKey[176], BYTE Key[16]){_ssdm_SpecArrayDimSize(Round
 
 
 void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]){_ssdm_SpecArrayDimSize(in, 16);_ssdm_SpecArrayDimSize(out, 16);_ssdm_SpecArrayDimSize(RoundKey, 16);
-_ssdm_SpecDependence( in, 0, 0, -1, 0, 1);
-_ssdm_SpecDependence( out, 0, 0, -1, 0, 1);
+
+
  for(BYTE i = 0;i<16;i++){
   out[i] = in[i] ^ RoundKey[i];
  }
