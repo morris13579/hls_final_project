@@ -190,6 +190,7 @@ void AES_ECB_encrypt(hls::stream<STREAM_BYTE>* plain ,hls::stream<STREAM_BYTE>* 
 	//KeyExpansion(RoundKey, key);
 	STREAM_BYTE value[16];
 	for(int i = 0 ;i<len;i+=16){
+#pragma HLS PIPELINE
 #pragma HLS loop_tripcount min=1 max=1 avg=1
 		BYTE in[16],out[16];
 		for(int j =0;j<16;j++){

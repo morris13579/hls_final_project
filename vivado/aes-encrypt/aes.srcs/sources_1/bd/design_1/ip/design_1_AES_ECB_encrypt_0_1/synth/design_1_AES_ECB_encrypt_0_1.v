@@ -48,11 +48,11 @@
 
 
 // IP VLNV: xilinx.com:hls:AES_ECB_encrypt:1.0
-// IP Revision: 2112301008
+// IP Revision: 2112301136
 
 (* X_CORE_INFO = "AES_ECB_encrypt,Vivado 2018.3" *)
 (* CHECK_LICENSE_TYPE = "design_1_AES_ECB_encrypt_0_1,AES_ECB_encrypt,{}" *)
-(* CORE_GENERATION_INFO = "design_1_AES_ECB_encrypt_0_1,AES_ECB_encrypt,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=AES_ECB_encrypt,x_ipVersion=1.0,x_ipCoreRevision=2112301008,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_AXILITES_ADDR_WIDTH=8,C_S_AXI_AXILITES_DATA_WIDTH=32}" *)
+(* CORE_GENERATION_INFO = "design_1_AES_ECB_encrypt_0_1,AES_ECB_encrypt,{x_ipProduct=Vivado 2018.3,x_ipVendor=xilinx.com,x_ipLibrary=hls,x_ipName=AES_ECB_encrypt,x_ipVersion=1.0,x_ipCoreRevision=2112301136,x_ipLanguage=VERILOG,x_ipSimLanguage=MIXED,C_S_AXI_AXILITES_ADDR_WIDTH=8,C_S_AXI_AXILITES_DATA_WIDTH=32}" *)
 (* IP_DEFINITION_SOURCE = "HLS" *)
 (* DowngradeIPIdentifiedWarnings = "yes" *)
 module design_1_AES_ECB_encrypt_0_1 (

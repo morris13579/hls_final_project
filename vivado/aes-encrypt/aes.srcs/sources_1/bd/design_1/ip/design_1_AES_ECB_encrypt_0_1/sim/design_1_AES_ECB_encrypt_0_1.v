@@ -48,7 +48,7 @@
 
 
 // IP VLNV: xilinx.com:hls:AES_ECB_encrypt:1.0
-// IP Revision: 2112301008
+// IP Revision: 2112301136
 
 `timescale 1ns/1ps
 
