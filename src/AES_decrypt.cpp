@@ -65,11 +65,9 @@ void InvShiftRows(BYTE in[16],BYTE out[16])
 }
 
 
-void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[11][16])
+void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[AES_ExpLen][16])
 {
 #pragma HLS ARRAY_PARTITION variable=key complete dim=1
-	BYTE state_0[16];
-	BYTE state_1[16];
 	BYTE state_2[16];
 	BYTE state_3[16];
 	BYTE state_4[16];
@@ -108,14 +106,66 @@ void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[11][16])
 	BYTE state_37[16];
 	BYTE state_38[16];
 	BYTE state_39[16];
-	BYTE state_40[16];
-	for(BYTE i = 0 ;i<16;i++){
-		state_0[i] = encrypt[i];
-	}
-#pragma HLS DATAFLOW
-	AddRoundKey(state_0,state_1,key[10]);
+	BYTE state_s[16];
+#if defined(AES256) && (AES256 == 1)
+	BYTE state_f1[16];
+	BYTE state_f2[16];
+	BYTE state_f3[16];
+	BYTE state_f4[16];
+	BYTE state_f5[16];
+	BYTE state_f6[16];
+	BYTE state_f7[16];
+	BYTE state_f8[16];
+#endif
+#if defined(AES192) && (AES192 == 1) || defined(AES256) && (AES256 == 1)
+	BYTE state_f9[16];
+	BYTE state_f10[16];
+	BYTE state_f11[16];
+	BYTE state_f12[16];
+	BYTE state_f13[16];
+	BYTE state_f14[16];
+	BYTE state_f15[16];
+	BYTE state_f16[16];
+#endif
 
-	InvShiftRows(state_1,state_2);
+
+#pragma HLS DATAFLOW
+#if defined(AES128) && (AES128 == 1)
+	AddRoundKey(encrypt,state_s,key[Nr]);
+#else
+	AddRoundKey(encrypt,state_f1,key[Nr]);
+#endif
+
+#if defined(AES256) && (AES256 == 1)
+	InvShiftRows(state_f1,state_f2);
+	InvSubBytes(state_f2,state_f3);
+	AddRoundKey(state_f3,state_f4,key[13]);
+	InvMixColumns(state_f4,state_f5);
+
+	InvShiftRows(state_f5,state_f6);
+	InvSubBytes(state_f6,state_f7);
+	AddRoundKey(state_f7,state_f8,key[12]);
+	InvMixColumns(state_f8,state_f9);
+#endif
+
+#if defined(AES192) && (AES192 == 1)
+	#if defined(AES256) && (AES256 == 1)
+		InvShiftRows(state_f9,state_f10);
+	#else
+		InvShiftRows(state_f1,state_f10);
+	#endif
+	InvSubBytes(state_f10,state_f11);
+	AddRoundKey(state_f11,state_f12,key[11]);
+	InvMixColumns(state_f12,state_f13);
+
+	InvShiftRows(state_f13,state_f14);
+	InvSubBytes(state_f14,state_f15);
+	AddRoundKey(state_f15,state_f16,key[10]);
+	InvMixColumns(state_f16,state_s);
+
+#endif
+
+	InvShiftRows(state_s,state_2);
 	InvSubBytes(state_2,state_3);
 	AddRoundKey(state_3,state_4,key[9]);
 	InvMixColumns(state_4,state_5);
@@ -153,15 +203,12 @@ void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[11][16])
 	InvMixColumns(state_36,state_37);
 	InvShiftRows(state_37,state_38);
 	InvSubBytes(state_38,state_39);
-	AddRoundKey(state_39,state_40,key[0]);
+	AddRoundKey(state_39,plain,key[0]);
 
-	for(BYTE i = 0 ;i<16;i++){
-		plain[i] = state_40[i];
-	}
 }
 
 
-void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[11][16] , unsigned long len){
+void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[AES_ExpLen][16] , unsigned long len){
 #pragma HLS INTERFACE s_axilite port=key
 #pragma HLS INTERFACE s_axilite port=len
 #pragma HLS INTERFACE axis register both port=plain

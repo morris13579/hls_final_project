@@ -70,12 +70,10 @@ void MixColumns(BYTE in[16],BYTE out[16]){
 
 
 
-void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[11][16])
+void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[AES_ExpLen][16])
 {
 //#pragma HLS ARRAY_PARTITION variable=RoundKey factor=16
 #pragma HLS ARRAY_PARTITION variable=key complete dim=1
-
-	BYTE state_0[16];
 	BYTE state_1[16];
 	BYTE state_2[16];
 	BYTE state_3[16];
@@ -112,20 +110,37 @@ void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[11][16])
 	BYTE state_34[16];
 	BYTE state_35[16];
 	BYTE state_36[16];
+#if defined(AES192) && (AES192 == 1) || defined(AES256) && (AES256 == 1)
 	BYTE state_37[16];
 	BYTE state_38[16];
 	BYTE state_39[16];
 	BYTE state_40[16];
-	for(BYTE i = 0 ;i<16;i++){
-		state_0[i] = plain[i];
-	}
-#pragma HLS DATAFLOW
-	AddRoundKey(state_0,state_1,key[0]);
+	BYTE state_41[16];
+	BYTE state_42[16];
+	BYTE state_43[16];
+	BYTE state_44[16];
+#endif
+#if defined(AES256) && (AES256 == 1)
+	BYTE state_45[16];
+	BYTE state_46[16];
+	BYTE state_47[16];
+	BYTE state_48[16];
+	BYTE state_49[16];
+	BYTE state_50[16];
+	BYTE state_51[16];
+	BYTE state_52[16];
+#endif
+	BYTE state_f1[16];
+	BYTE state_f2[16];
+	BYTE state_f3[16];
 
+#pragma HLS DATAFLOW
+	AddRoundKey(plain,state_1,key[0]);
 	SubBytes(state_1,state_2);
 	ShiftRows(state_2,state_3);
 	MixColumns(state_3,state_4);
 	AddRoundKey(state_4,state_5,key[1]);
+
 	SubBytes(state_5,state_6);
 	ShiftRows(state_6,state_7);
 	MixColumns(state_7,state_8);
@@ -157,30 +172,47 @@ void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[11][16])
 	SubBytes(state_33,state_34);
 	ShiftRows(state_34,state_35);
 	MixColumns(state_35,state_36);
+#if defined(AES128) && (AES128 == 1)
+	AddRoundKey(state_36,state_f1,key[9]);
+#else
 	AddRoundKey(state_36,state_37,key[9]);
+#endif
 
+#if defined(AES192) && (AES192 == 1) || defined(AES256) && (AES256 == 1)
 	SubBytes(state_37,state_38);
 	ShiftRows(state_38,state_39);
-	AddRoundKey(state_39,state_40,key[10]);
+	MixColumns(state_39,state_40);
+	AddRoundKey(state_40,state_41,key[10]);
 
-/*
-	for(int i = 0 ;i<16;i++){
-		printf("0x%x ",state_3[i]);
-	}
-	printf("\n");
-	for(int i = 0 ;i<16;i++){
-		printf("0x%x ",state_4[i]);
-	}
-	printf("\n");
-*/
-	for(BYTE i = 0 ;i<16;i++){
-		encrypt[i] = state_40[i];
-	}
+	SubBytes(state_41,state_42);
+	ShiftRows(state_42,state_43);
+	MixColumns(state_43,state_44);
+	#if defined(AES256) && (AES256 == 1)
+		AddRoundKey(state_44,state_45,key[11]);
+	#else
+		AddRoundKey(state_44,state_f1,key[11]);
+	#endif
+#endif
+
+#if defined(AES256) && (AES256 == 1)
+	SubBytes(state_45,state_46);
+	ShiftRows(state_46,state_47);
+	MixColumns(state_47,state_48);
+	AddRoundKey(state_48,state_49,key[12]);
+
+	SubBytes(state_49,state_50);
+	ShiftRows(state_50,state_51);
+	MixColumns(state_51,state_52);
+	AddRoundKey(state_52,state_f1,key[13]);
+#endif
+
+	SubBytes(state_f1,state_f2);
+	ShiftRows(state_f2,state_f3);
+	AddRoundKey(state_f3,encrypt,key[Nr]);
+
 }
 
-
-//void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[16] , unsigned long len)
-void AES_ECB_encrypt(hls::stream<STREAM_BYTE>* plain ,hls::stream<STREAM_BYTE>* encrypt ,  BYTE key[11][16] , unsigned long len){
+void AES_ECB_encrypt(STREAM* plain ,STREAM* encrypt ,  BYTE key[AES_ExpLen][16] , unsigned long len){
 #pragma HLS INTERFACE s_axilite port=key
 #pragma HLS INTERFACE s_axilite port=len
 #pragma HLS INTERFACE axis register both port=plain

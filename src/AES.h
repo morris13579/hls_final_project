@@ -9,22 +9,27 @@
 
 typedef ap_uint<8> BYTE;
 typedef ap_axiu<8,1,1,1> STREAM_BYTE;
+typedef hls::stream<STREAM_BYTE> STREAM;
 
-#define AES128 1
+
+//#define AES128 1
 //#define AES192 1
-//#define AES256 1
+#define AES256 1
 
 #define AES_BLOCKLEN 16 // Block length in bytes - AES is 128b block only
 
 #if defined(AES256) && (AES256 == 1)
     #define AES_KEYLEN 32
     #define AES_keyExpSize 240
+	#define AES_ExpLen  AES_keyExpSize / 16
 #elif defined(AES192) && (AES192 == 1)
     #define AES_KEYLEN 24
     #define AES_keyExpSize 208
+	#define AES_ExpLen  AES_keyExpSize / 16
 #else
     #define AES_KEYLEN 16   // Key length in bytes
     #define AES_keyExpSize 176
+	#define AES_ExpLen  AES_keyExpSize / 16
 #endif
 
 
@@ -45,8 +50,8 @@ typedef ap_axiu<8,1,1,1> STREAM_BYTE;
 void KeyExpansion(BYTE RoundKey[AES_keyExpSize], BYTE Key[16]);
 void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]);
 //void AES_ECB_encrypt(hls::stream<BYTE>* plain ,hls::stream<BYTE>* encrypt ,  BYTE key[16] , unsigned long length);
-void AES_ECB_encrypt(hls::stream<STREAM_BYTE>* plain ,hls::stream<STREAM_BYTE>* encrypt ,  BYTE key[11][16] , unsigned long len);
-void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>* plain ,  BYTE key[11][16] , unsigned long len);
+void AES_ECB_encrypt(STREAM* plain ,STREAM* encrypt ,  BYTE key[AES_ExpLen][16] , unsigned long len);
+void AES_ECB_decrypt(STREAM* encrypt ,STREAM* plain ,  BYTE key[AES_ExpLen][16] , unsigned long len);
 BYTE xtime(BYTE x);
 
 

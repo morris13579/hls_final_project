@@ -34,7 +34,7 @@
     "ClockPeriod": "5",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "57",
+    "Latency": "40",
     "Uncertainty": "0.625"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 5.000 [get_ports ap_clk]"]},
@@ -51,105 +51,101 @@
   },
   "Files": {
     "CSource": [
-      "..\/..\/..\/src\/AES_encrypt.cpp",
+      "..\/..\/..\/src\/AES_common.cpp",
       "..\/..\/..\/src\/AES_decrypt.cpp",
-      "..\/..\/..\/src\/AES_common.cpp"
+      "..\/..\/..\/src\/AES_encrypt.cpp"
     ],
     "Vhdl": [
-      "impl\/vhdl\/AddRoundKey100.vhd",
-      "impl\/vhdl\/AddRoundKey104.vhd",
-      "impl\/vhdl\/AddRoundKey108.vhd",
-      "impl\/vhdl\/AddRoundKey112.vhd",
-      "impl\/vhdl\/AddRoundKey116.vhd",
-      "impl\/vhdl\/AddRoundKey120.vhd",
-      "impl\/vhdl\/AddRoundKey124.vhd",
+      "impl\/vhdl\/AddRoundKey93.vhd",
+      "impl\/vhdl\/AddRoundKey97.vhd",
+      "impl\/vhdl\/AddRoundKey101.vhd",
+      "impl\/vhdl\/AddRoundKey105.vhd",
+      "impl\/vhdl\/AddRoundKey109.vhd",
+      "impl\/vhdl\/AddRoundKey113.vhd",
+      "impl\/vhdl\/AddRoundKey117.vhd",
+      "impl\/vhdl\/AddRoundKey121.vhd",
+      "impl\/vhdl\/AddRoundKey125.vhd",
       "impl\/vhdl\/AddRoundKey128.vhd",
-      "impl\/vhdl\/AddRoundKey132.vhd",
-      "impl\/vhdl\/AddRoundKey135.vhd",
       "impl\/vhdl\/AES_ECB_encrypt_AXILiteS_s_axi.vhd",
       "impl\/vhdl\/Cipher.vhd",
-      "impl\/vhdl\/Cipher_Block_arrayct.vhd",
-      "impl\/vhdl\/Cipher_Block_arrayct_1.vhd",
+      "impl\/vhdl\/Cipher_entry151.vhd",
       "impl\/vhdl\/fifo_w8_d2_A.vhd",
       "impl\/vhdl\/MixColumns.vhd",
-      "impl\/vhdl\/MixColumns103.vhd",
-      "impl\/vhdl\/MixColumns107.vhd",
-      "impl\/vhdl\/MixColumns111.vhd",
-      "impl\/vhdl\/MixColumns115.vhd",
-      "impl\/vhdl\/MixColumns119.vhd",
-      "impl\/vhdl\/MixColumns123.vhd",
-      "impl\/vhdl\/MixColumns127.vhd",
-      "impl\/vhdl\/MixColumns131.vhd",
-      "impl\/vhdl\/ShiftRows.vhd",
-      "impl\/vhdl\/ShiftRows102.vhd",
-      "impl\/vhdl\/ShiftRows106.vhd",
-      "impl\/vhdl\/ShiftRows110.vhd",
-      "impl\/vhdl\/ShiftRows114.vhd",
-      "impl\/vhdl\/ShiftRows118.vhd",
-      "impl\/vhdl\/ShiftRows122.vhd",
-      "impl\/vhdl\/ShiftRows126.vhd",
-      "impl\/vhdl\/ShiftRows130.vhd",
-      "impl\/vhdl\/ShiftRows134.vhd",
+      "impl\/vhdl\/MixColumns96.vhd",
+      "impl\/vhdl\/MixColumns100.vhd",
+      "impl\/vhdl\/MixColumns104.vhd",
+      "impl\/vhdl\/MixColumns108.vhd",
+      "impl\/vhdl\/MixColumns112.vhd",
+      "impl\/vhdl\/MixColumns116.vhd",
+      "impl\/vhdl\/MixColumns120.vhd",
+      "impl\/vhdl\/MixColumns124.vhd",
+      "impl\/vhdl\/ShiftRows95.vhd",
+      "impl\/vhdl\/ShiftRows99.vhd",
+      "impl\/vhdl\/ShiftRows103.vhd",
+      "impl\/vhdl\/ShiftRows107.vhd",
+      "impl\/vhdl\/ShiftRows111.vhd",
+      "impl\/vhdl\/ShiftRows115.vhd",
+      "impl\/vhdl\/ShiftRows119.vhd",
+      "impl\/vhdl\/ShiftRows123.vhd",
+      "impl\/vhdl\/ShiftRows127.vhd",
       "impl\/vhdl\/SubBytes.vhd",
-      "impl\/vhdl\/SubBytes101.vhd",
-      "impl\/vhdl\/SubBytes101_sbox_bkb.vhd",
-      "impl\/vhdl\/SubBytes105.vhd",
-      "impl\/vhdl\/SubBytes109.vhd",
-      "impl\/vhdl\/SubBytes113.vhd",
-      "impl\/vhdl\/SubBytes117.vhd",
-      "impl\/vhdl\/SubBytes121.vhd",
-      "impl\/vhdl\/SubBytes125.vhd",
-      "impl\/vhdl\/SubBytes129.vhd",
-      "impl\/vhdl\/SubBytes133.vhd",
+      "impl\/vhdl\/SubBytes94.vhd",
+      "impl\/vhdl\/SubBytes94_sbox_Vbkb.vhd",
+      "impl\/vhdl\/SubBytes98.vhd",
+      "impl\/vhdl\/SubBytes102.vhd",
+      "impl\/vhdl\/SubBytes106.vhd",
+      "impl\/vhdl\/SubBytes110.vhd",
+      "impl\/vhdl\/SubBytes114.vhd",
+      "impl\/vhdl\/SubBytes118.vhd",
+      "impl\/vhdl\/SubBytes122.vhd",
+      "impl\/vhdl\/SubBytes126.vhd",
       "impl\/vhdl\/AES_ECB_encrypt.vhd"
     ],
     "Verilog": [
-      "impl\/verilog\/AddRoundKey100.v",
-      "impl\/verilog\/AddRoundKey104.v",
-      "impl\/verilog\/AddRoundKey108.v",
-      "impl\/verilog\/AddRoundKey112.v",
-      "impl\/verilog\/AddRoundKey116.v",
-      "impl\/verilog\/AddRoundKey120.v",
-      "impl\/verilog\/AddRoundKey124.v",
+      "impl\/verilog\/AddRoundKey93.v",
+      "impl\/verilog\/AddRoundKey97.v",
+      "impl\/verilog\/AddRoundKey101.v",
+      "impl\/verilog\/AddRoundKey105.v",
+      "impl\/verilog\/AddRoundKey109.v",
+      "impl\/verilog\/AddRoundKey113.v",
+      "impl\/verilog\/AddRoundKey117.v",
+      "impl\/verilog\/AddRoundKey121.v",
+      "impl\/verilog\/AddRoundKey125.v",
       "impl\/verilog\/AddRoundKey128.v",
-      "impl\/verilog\/AddRoundKey132.v",
-      "impl\/verilog\/AddRoundKey135.v",
       "impl\/verilog\/AES_ECB_encrypt_AXILiteS_s_axi.v",
       "impl\/verilog\/Cipher.v",
-      "impl\/verilog\/Cipher_Block_arrayct.v",
-      "impl\/verilog\/Cipher_Block_arrayct_1.v",
+      "impl\/verilog\/Cipher_entry151.v",
       "impl\/verilog\/fifo_w8_d2_A.v",
       "impl\/verilog\/MixColumns.v",
-      "impl\/verilog\/MixColumns103.v",
-      "impl\/verilog\/MixColumns107.v",
-      "impl\/verilog\/MixColumns111.v",
-      "impl\/verilog\/MixColumns115.v",
-      "impl\/verilog\/MixColumns119.v",
-      "impl\/verilog\/MixColumns123.v",
-      "impl\/verilog\/MixColumns127.v",
-      "impl\/verilog\/MixColumns131.v",
-      "impl\/verilog\/ShiftRows.v",
-      "impl\/verilog\/ShiftRows102.v",
-      "impl\/verilog\/ShiftRows106.v",
-      "impl\/verilog\/ShiftRows110.v",
-      "impl\/verilog\/ShiftRows114.v",
-      "impl\/verilog\/ShiftRows118.v",
-      "impl\/verilog\/ShiftRows122.v",
-      "impl\/verilog\/ShiftRows126.v",
-      "impl\/verilog\/ShiftRows130.v",
-      "impl\/verilog\/ShiftRows134.v",
+      "impl\/verilog\/MixColumns96.v",
+      "impl\/verilog\/MixColumns100.v",
+      "impl\/verilog\/MixColumns104.v",
+      "impl\/verilog\/MixColumns108.v",
+      "impl\/verilog\/MixColumns112.v",
+      "impl\/verilog\/MixColumns116.v",
+      "impl\/verilog\/MixColumns120.v",
+      "impl\/verilog\/MixColumns124.v",
+      "impl\/verilog\/ShiftRows95.v",
+      "impl\/verilog\/ShiftRows99.v",
+      "impl\/verilog\/ShiftRows103.v",
+      "impl\/verilog\/ShiftRows107.v",
+      "impl\/verilog\/ShiftRows111.v",
+      "impl\/verilog\/ShiftRows115.v",
+      "impl\/verilog\/ShiftRows119.v",
+      "impl\/verilog\/ShiftRows123.v",
+      "impl\/verilog\/ShiftRows127.v",
       "impl\/verilog\/SubBytes.v",
-      "impl\/verilog\/SubBytes101.v",
-      "impl\/verilog\/SubBytes101_sbox_bkb.v",
-      "impl\/verilog\/SubBytes101_sbox_bkb_rom.dat",
-      "impl\/verilog\/SubBytes105.v",
-      "impl\/verilog\/SubBytes109.v",
-      "impl\/verilog\/SubBytes113.v",
-      "impl\/verilog\/SubBytes117.v",
-      "impl\/verilog\/SubBytes121.v",
-      "impl\/verilog\/SubBytes125.v",
-      "impl\/verilog\/SubBytes129.v",
-      "impl\/verilog\/SubBytes133.v",
+      "impl\/verilog\/SubBytes94.v",
+      "impl\/verilog\/SubBytes94_sbox_Vbkb.v",
+      "impl\/verilog\/SubBytes94_sbox_Vbkb_rom.dat",
+      "impl\/verilog\/SubBytes98.v",
+      "impl\/verilog\/SubBytes102.v",
+      "impl\/verilog\/SubBytes106.v",
+      "impl\/verilog\/SubBytes110.v",
+      "impl\/verilog\/SubBytes114.v",
+      "impl\/verilog\/SubBytes118.v",
+      "impl\/verilog\/SubBytes122.v",
+      "impl\/verilog\/SubBytes126.v",
       "impl\/verilog\/AES_ECB_encrypt.v"
     ],
     "SwDriver": [
@@ -800,37 +796,37 @@
     "encrypt_V_data_V": {
       "interfaceRef": "encrypt",
       "dir": "out",
-      "firstOutLatency": "18"
+      "firstOutLatency": "1"
     },
     "encrypt_V_dest_V": {
       "interfaceRef": "encrypt",
       "dir": "out",
-      "firstOutLatency": "18"
+      "firstOutLatency": "1"
     },
     "encrypt_V_keep_V": {
       "interfaceRef": "encrypt",
       "dir": "out",
-      "firstOutLatency": "18"
+      "firstOutLatency": "1"
     },
     "encrypt_V_strb_V": {
       "interfaceRef": "encrypt",
       "dir": "out",
-      "firstOutLatency": "18"
+      "firstOutLatency": "1"
     },
     "encrypt_V_user_V": {
       "interfaceRef": "encrypt",
       "dir": "out",
-      "firstOutLatency": "18"
+      "firstOutLatency": "1"
     },
     "encrypt_V_last_V": {
       "interfaceRef": "encrypt",
       "dir": "out",
-      "firstOutLatency": "18"
+      "firstOutLatency": "1"
     },
     "encrypt_V_id_V": {
       "interfaceRef": "encrypt",
       "dir": "out",
-      "firstOutLatency": "18"
+      "firstOutLatency": "1"
     }
   },
   "ModuleInfo": {
@@ -838,177 +834,169 @@
       "ModuleName": "AES_ECB_encrypt",
       "Instances": [{
           "ModuleName": "Cipher",
-          "InstanceName": "grp_Cipher_fu_244",
+          "InstanceName": "grp_Cipher_fu_181",
           "Instances": [
             {
-              "ModuleName": "MixColumns103",
-              "InstanceName": "MixColumns103_U0"
+              "ModuleName": "MixColumns96",
+              "InstanceName": "MixColumns96_U0"
             },
             {
-              "ModuleName": "MixColumns107",
-              "InstanceName": "MixColumns107_U0"
+              "ModuleName": "MixColumns100",
+              "InstanceName": "MixColumns100_U0"
             },
             {
-              "ModuleName": "MixColumns111",
-              "InstanceName": "MixColumns111_U0"
+              "ModuleName": "MixColumns104",
+              "InstanceName": "MixColumns104_U0"
             },
             {
-              "ModuleName": "MixColumns115",
-              "InstanceName": "MixColumns115_U0"
+              "ModuleName": "MixColumns108",
+              "InstanceName": "MixColumns108_U0"
             },
             {
-              "ModuleName": "MixColumns119",
-              "InstanceName": "MixColumns119_U0"
+              "ModuleName": "MixColumns112",
+              "InstanceName": "MixColumns112_U0"
             },
             {
-              "ModuleName": "MixColumns123",
-              "InstanceName": "MixColumns123_U0"
+              "ModuleName": "MixColumns116",
+              "InstanceName": "MixColumns116_U0"
             },
             {
-              "ModuleName": "MixColumns127",
-              "InstanceName": "MixColumns127_U0"
+              "ModuleName": "MixColumns120",
+              "InstanceName": "MixColumns120_U0"
             },
             {
-              "ModuleName": "MixColumns131",
-              "InstanceName": "MixColumns131_U0"
+              "ModuleName": "MixColumns124",
+              "InstanceName": "MixColumns124_U0"
             },
             {
               "ModuleName": "MixColumns",
               "InstanceName": "MixColumns_U0"
             },
             {
-              "ModuleName": "AddRoundKey100",
-              "InstanceName": "AddRoundKey100_U0"
+              "ModuleName": "AddRoundKey93",
+              "InstanceName": "AddRoundKey93_U0"
             },
             {
-              "ModuleName": "AddRoundKey104",
-              "InstanceName": "AddRoundKey104_U0"
+              "ModuleName": "AddRoundKey97",
+              "InstanceName": "AddRoundKey97_U0"
             },
             {
-              "ModuleName": "AddRoundKey108",
-              "InstanceName": "AddRoundKey108_U0"
+              "ModuleName": "AddRoundKey101",
+              "InstanceName": "AddRoundKey101_U0"
             },
             {
-              "ModuleName": "AddRoundKey112",
-              "InstanceName": "AddRoundKey112_U0"
+              "ModuleName": "AddRoundKey105",
+              "InstanceName": "AddRoundKey105_U0"
             },
             {
-              "ModuleName": "AddRoundKey116",
-              "InstanceName": "AddRoundKey116_U0"
+              "ModuleName": "AddRoundKey109",
+              "InstanceName": "AddRoundKey109_U0"
             },
             {
-              "ModuleName": "AddRoundKey120",
-              "InstanceName": "AddRoundKey120_U0"
+              "ModuleName": "AddRoundKey113",
+              "InstanceName": "AddRoundKey113_U0"
             },
             {
-              "ModuleName": "AddRoundKey124",
-              "InstanceName": "AddRoundKey124_U0"
+              "ModuleName": "AddRoundKey117",
+              "InstanceName": "AddRoundKey117_U0"
+            },
+            {
+              "ModuleName": "AddRoundKey121",
+              "InstanceName": "AddRoundKey121_U0"
+            },
+            {
+              "ModuleName": "AddRoundKey125",
+              "InstanceName": "AddRoundKey125_U0"
             },
             {
               "ModuleName": "AddRoundKey128",
               "InstanceName": "AddRoundKey128_U0"
             },
             {
-              "ModuleName": "AddRoundKey132",
-              "InstanceName": "AddRoundKey132_U0"
+              "ModuleName": "SubBytes94",
+              "InstanceName": "SubBytes94_U0"
             },
             {
-              "ModuleName": "AddRoundKey135",
-              "InstanceName": "AddRoundKey135_U0"
+              "ModuleName": "SubBytes98",
+              "InstanceName": "SubBytes98_U0"
             },
             {
-              "ModuleName": "Cipher_Block_arrayct_1",
-              "InstanceName": "Cipher_Block_arrayct_1_U0"
+              "ModuleName": "SubBytes102",
+              "InstanceName": "SubBytes102_U0"
             },
             {
-              "ModuleName": "SubBytes101",
-              "InstanceName": "SubBytes101_U0"
+              "ModuleName": "SubBytes106",
+              "InstanceName": "SubBytes106_U0"
             },
             {
-              "ModuleName": "SubBytes105",
-              "InstanceName": "SubBytes105_U0"
+              "ModuleName": "SubBytes110",
+              "InstanceName": "SubBytes110_U0"
             },
             {
-              "ModuleName": "SubBytes109",
-              "InstanceName": "SubBytes109_U0"
+              "ModuleName": "SubBytes114",
+              "InstanceName": "SubBytes114_U0"
             },
             {
-              "ModuleName": "SubBytes113",
-              "InstanceName": "SubBytes113_U0"
+              "ModuleName": "SubBytes118",
+              "InstanceName": "SubBytes118_U0"
             },
             {
-              "ModuleName": "SubBytes117",
-              "InstanceName": "SubBytes117_U0"
+              "ModuleName": "SubBytes122",
+              "InstanceName": "SubBytes122_U0"
             },
             {
-              "ModuleName": "SubBytes121",
-              "InstanceName": "SubBytes121_U0"
-            },
-            {
-              "ModuleName": "SubBytes125",
-              "InstanceName": "SubBytes125_U0"
-            },
-            {
-              "ModuleName": "SubBytes129",
-              "InstanceName": "SubBytes129_U0"
-            },
-            {
-              "ModuleName": "SubBytes133",
-              "InstanceName": "SubBytes133_U0"
+              "ModuleName": "SubBytes126",
+              "InstanceName": "SubBytes126_U0"
             },
             {
               "ModuleName": "SubBytes",
               "InstanceName": "SubBytes_U0"
             },
             {
-              "ModuleName": "ShiftRows102",
-              "InstanceName": "ShiftRows102_U0"
+              "ModuleName": "Cipher_entry151",
+              "InstanceName": "Cipher_entry151_U0"
             },
             {
-              "ModuleName": "ShiftRows106",
-              "InstanceName": "ShiftRows106_U0"
+              "ModuleName": "ShiftRows95",
+              "InstanceName": "ShiftRows95_U0"
             },
             {
-              "ModuleName": "ShiftRows110",
-              "InstanceName": "ShiftRows110_U0"
+              "ModuleName": "ShiftRows99",
+              "InstanceName": "ShiftRows99_U0"
             },
             {
-              "ModuleName": "ShiftRows114",
-              "InstanceName": "ShiftRows114_U0"
+              "ModuleName": "ShiftRows103",
+              "InstanceName": "ShiftRows103_U0"
             },
             {
-              "ModuleName": "ShiftRows118",
-              "InstanceName": "ShiftRows118_U0"
+              "ModuleName": "ShiftRows107",
+              "InstanceName": "ShiftRows107_U0"
             },
             {
-              "ModuleName": "ShiftRows122",
-              "InstanceName": "ShiftRows122_U0"
+              "ModuleName": "ShiftRows111",
+              "InstanceName": "ShiftRows111_U0"
             },
             {
-              "ModuleName": "ShiftRows126",
-              "InstanceName": "ShiftRows126_U0"
+              "ModuleName": "ShiftRows115",
+              "InstanceName": "ShiftRows115_U0"
             },
             {
-              "ModuleName": "ShiftRows130",
-              "InstanceName": "ShiftRows130_U0"
+              "ModuleName": "ShiftRows119",
+              "InstanceName": "ShiftRows119_U0"
             },
             {
-              "ModuleName": "ShiftRows134",
-              "InstanceName": "ShiftRows134_U0"
+              "ModuleName": "ShiftRows123",
+              "InstanceName": "ShiftRows123_U0"
             },
             {
-              "ModuleName": "ShiftRows",
-              "InstanceName": "ShiftRows_U0"
-            },
-            {
-              "ModuleName": "Cipher_Block_arrayct",
-              "InstanceName": "Cipher_Block_arrayct_U0"
+              "ModuleName": "ShiftRows127",
+              "InstanceName": "ShiftRows127_U0"
             }
           ]
         }]
     },
     "Metrics": {
-      "Cipher_Block_arrayct": {
+      "Cipher_entry151": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1020,16 +1008,16 @@
         "Timing": {
           "Target": "5.00",
           "Uncertainty": "0.62",
-          "Estimate": "0.000"
+          "Estimate": "2.188"
         },
         "Area": {
-          "FF": "130",
+          "FF": "2",
           "LUT": "155",
           "BRAM_18K": "0",
           "DSP48E": "0"
         }
       },
-      "AddRoundKey100": {
+      "AddRoundKey93": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1045,12 +1033,12 @@
         },
         "Area": {
           "FF": "266",
-          "LUT": "457",
+          "LUT": "603",
           "BRAM_18K": "0",
           "DSP48E": "0"
         }
       },
-      "SubBytes101": {
+      "SubBytes94": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1071,7 +1059,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows102": {
+      "ShiftRows95": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1092,7 +1080,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns103": {
+      "MixColumns96": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1113,7 +1101,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey104": {
+      "AddRoundKey97": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1134,7 +1122,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes105": {
+      "SubBytes98": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1155,7 +1143,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows106": {
+      "ShiftRows99": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1176,7 +1164,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns107": {
+      "MixColumns100": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1197,7 +1185,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey108": {
+      "AddRoundKey101": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1218,7 +1206,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes109": {
+      "SubBytes102": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1239,7 +1227,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows110": {
+      "ShiftRows103": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1260,7 +1248,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns111": {
+      "MixColumns104": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1281,7 +1269,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey112": {
+      "AddRoundKey105": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1302,7 +1290,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes113": {
+      "SubBytes106": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1323,7 +1311,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows114": {
+      "ShiftRows107": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1344,7 +1332,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns115": {
+      "MixColumns108": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1365,7 +1353,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey116": {
+      "AddRoundKey109": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1386,7 +1374,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes117": {
+      "SubBytes110": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1407,7 +1395,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows118": {
+      "ShiftRows111": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1428,7 +1416,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns119": {
+      "MixColumns112": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1449,7 +1437,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey120": {
+      "AddRoundKey113": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1470,7 +1458,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes121": {
+      "SubBytes114": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1491,7 +1479,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows122": {
+      "ShiftRows115": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1512,7 +1500,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns123": {
+      "MixColumns116": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1533,7 +1521,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey124": {
+      "AddRoundKey117": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1554,7 +1542,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes125": {
+      "SubBytes118": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1575,7 +1563,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows126": {
+      "ShiftRows119": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1596,7 +1584,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns127": {
+      "MixColumns120": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1617,7 +1605,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey128": {
+      "AddRoundKey121": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1638,7 +1626,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes129": {
+      "SubBytes122": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1659,7 +1647,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows130": {
+      "ShiftRows123": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1680,7 +1668,7 @@
           "DSP48E": "0"
         }
       },
-      "MixColumns131": {
+      "MixColumns124": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1701,7 +1689,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey132": {
+      "AddRoundKey125": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1722,7 +1710,7 @@
           "DSP48E": "0"
         }
       },
-      "SubBytes133": {
+      "SubBytes126": {
         "Latency": {
           "LatencyBest": "1",
           "LatencyAvg": "1",
@@ -1743,7 +1731,7 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows134": {
+      "ShiftRows127": {
         "Latency": {
           "LatencyBest": "0",
           "LatencyAvg": "0",
@@ -1785,7 +1773,7 @@
           "DSP48E": "0"
         }
       },
-      "AddRoundKey135": {
+      "AddRoundKey128": {
         "Latency": {
           "LatencyBest": "16",
           "LatencyAvg": "16",
@@ -1827,48 +1815,6 @@
           "DSP48E": "0"
         }
       },
-      "ShiftRows": {
-        "Latency": {
-          "LatencyBest": "0",
-          "LatencyAvg": "0",
-          "LatencyWorst": "0",
-          "PipelineII": "0",
-          "PipelineDepth": "",
-          "PipelineType": "none"
-        },
-        "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "0.000"
-        },
-        "Area": {
-          "FF": "130",
-          "LUT": "155",
-          "BRAM_18K": "0",
-          "DSP48E": "0"
-        }
-      },
-      "Cipher_Block_arrayct_1": {
-        "Latency": {
-          "LatencyBest": "16",
-          "LatencyAvg": "16",
-          "LatencyWorst": "16",
-          "PipelineII": "16",
-          "PipelineDepth": "",
-          "PipelineType": "none"
-        },
-        "Timing": {
-          "Target": "5.00",
-          "Uncertainty": "0.62",
-          "Estimate": "3.312"
-        },
-        "Area": {
-          "FF": "146",
-          "LUT": "457",
-          "BRAM_18K": "0",
-          "DSP48E": "0"
-        }
-      },
       "Cipher": {
         "Latency": {
           "LatencyBest": "22",
@@ -1885,17 +1831,17 @@
         },
         "Area": {
           "BRAM_18K": "80",
-          "FF": "9312",
-          "LUT": "35649",
+          "FF": "8697",
+          "LUT": "33881",
           "DSP48E": "0"
         }
       },
       "AES_ECB_encrypt": {
         "Latency": {
-          "LatencyBest": "57",
-          "LatencyAvg": "57",
-          "LatencyWorst": "57",
-          "PipelineII": "58",
+          "LatencyBest": "40",
+          "LatencyAvg": "40",
+          "LatencyWorst": "40",
+          "PipelineII": "41",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
@@ -1907,14 +1853,14 @@
         "Loops": [{
             "Name": "Loop 1",
             "TripCount": "1",
-            "Latency": "56",
+            "Latency": "39",
             "PipelineII": "",
-            "PipelineDepth": "56"
+            "PipelineDepth": "39"
           }],
         "Area": {
           "BRAM_18K": "102",
-          "FF": "10864",
-          "LUT": "37873",
+          "FF": "9991",
+          "LUT": "35423",
           "DSP48E": "0"
         }
       }
@@ -1930,7 +1876,7 @@
   },
   "GenData": {
     "DataVersion": "0.1",
-    "Time": "2021-12-30 11:32:48 +0800",
+    "Time": "2022-01-04 14:05:06 +0800",
     "ToolName": "vivado_hls",
     "ToolVersion": "2018.3"
   }
