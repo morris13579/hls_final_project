@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Thu Dec 30 10:10:19 2021
+-- Date        : Wed Jan  5 21:34:23 2022
 -- Host        : Morris running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_rst_ps7_0_50M_0 -prefix
 --               design_1_rst_ps7_0_50M_0_ design_1_rst_ps7_0_50M_0_stub.vhdl

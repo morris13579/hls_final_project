@@ -16,8 +16,8 @@ void SubBytes(BYTE in[16],BYTE out[16])
 // Offset = Row number. So the first row is not shifted.
 void ShiftRows(BYTE in[16],BYTE out[16])
 {
-#pragma HLS dependence variable=in inter false
-#pragma HLS dependence variable=out inter false
+//#pragma HLS dependence variable=in inter false
+//#pragma HLS dependence variable=out inter false
 	// Rotate first row 1 columns to left
 	out[13] = in[1];
 	out[1] = in[5];
@@ -226,11 +226,13 @@ void AES_ECB_encrypt(STREAM* plain ,STREAM* encrypt ,  BYTE key[AES_ExpLen][16] 
 #pragma HLS loop_tripcount min=1 max=1 avg=1
 		BYTE in[16],out[16];
 		for(int j =0;j<16;j++){
+#pragma HLS PIPELINE
 			value[j] = plain->read();
 			in[j] = value[j].data;
 		}
 		Cipher(in , out , key);
 		for(int j =0;j<16;j++){
+#pragma HLS PIPELINE
 			value[j].data = out[j];
 			encrypt->write(value[j]);
 		}

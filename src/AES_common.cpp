@@ -56,8 +56,8 @@ void KeyExpansion(BYTE RoundKey[AES_keyExpSize], BYTE Key[16]){
 // This function adds the round key to state.
 // The round key is added to the state by an XOR function.
 void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]){
-//#pragma HLS dependence variable=in inter false
-//#pragma HLS dependence variable=out inter false
+#pragma HLS dependence variable=in inter false
+#pragma HLS dependence variable=out inter false
 	for(BYTE i = 0;i<16;i++){
 		out[i] = in[i] ^ RoundKey[i];
 	}
