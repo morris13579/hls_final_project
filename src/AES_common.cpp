@@ -65,5 +65,6 @@ void AddRoundKey(BYTE in[16],BYTE out[16] , BYTE RoundKey[16]){
 
 
 BYTE xtime(BYTE x){
-	return ((x<<1) ^ (((x>>7) & 1) * 0x1b));
+	//return ((x<<1) ^ (((x>>7) & 1) * 0x1b));
+	return ((x<<1) ^ (  (x & 0x80) ? 0x1b : 0 ));
 }

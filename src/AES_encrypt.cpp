@@ -47,7 +47,10 @@ void ShiftRows(BYTE in[16],BYTE out[16])
 void MixColumns(BYTE in[16],BYTE out[16]){
 	BYTE i;
 	BYTE Tmp, Tm, t;
+#pragma HLS dependence variable=in inter false
+#pragma HLS dependence variable=out inter false
 	for(BYTE i = 0;i<16;i+=4){
+		/*
 		t = in[i];
 		Tmp = in[i] ^ in[i+1] ^ in[i+2] ^ in[i+3];
 		Tm  = in[i] ^ in[i+1] ;
@@ -65,6 +68,22 @@ void MixColumns(BYTE in[16],BYTE out[16]){
 		Tm  = in[i+3] ^ t ;
 		Tm = xtime(Tm);
 		out[i+3] = in[i+3] ^ Tm ^ Tmp ;
+		*/
+		Tm  = in[i] ^ in[i+1] ;
+		Tm = xtime(Tm);
+		out[i] = Tm ^ in[i+1] ^ in[i+2] ^ in[i+3];
+
+		Tm  = in[i+1] ^ in[i+2] ;
+		Tm = xtime(Tm);
+		out[i+1] = in[i] ^ Tm ^ in[i+2] ^ in[i+3];
+
+		Tm  = in[i+2] ^ in[i+3] ;
+		Tm = xtime(Tm);
+		out[i+2] = in[i] ^ in[i+1] ^ Tm ^ in[i+3];
+
+		Tm  = in[i+3] ^ in[i] ;
+		Tm = xtime(Tm);
+		out[i+3] = in[i] ^ in[i+1] ^ in[i+2] ^ Tm;
 	}
 }
 
@@ -74,6 +93,9 @@ void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[AES_ExpLen][16])
 {
 //#pragma HLS ARRAY_PARTITION variable=RoundKey factor=16
 #pragma HLS ARRAY_PARTITION variable=key complete dim=1
+
+
+/*
 	BYTE state_1[16];
 	BYTE state_2[16];
 	BYTE state_3[16];
@@ -209,6 +231,24 @@ void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[AES_ExpLen][16])
 	SubBytes(state_f1,state_f2);
 	ShiftRows(state_f2,state_f3);
 	AddRoundKey(state_f3,encrypt,key[Nr]);
+*/
+
+	BYTE state1[16];
+	BYTE state2[16];
+	BYTE state3[16];
+	BYTE state4[16];
+	AddRoundKey(plain, state1, key[0]);
+	for (BYTE i = 1; i < Nr; i++)
+	{
+#pragma HLS PIPELINE
+		SubBytes(state1,state2);
+		ShiftRows(state2,state3);
+		MixColumns(state3,state4);
+		AddRoundKey(state4, state1, key[i]);
+	}
+	SubBytes(state1,state2);
+	ShiftRows(state2,state3);
+	AddRoundKey(state3, encrypt, key[Nr]);
 
 }
 

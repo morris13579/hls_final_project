@@ -1,10 +1,10 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Wed Jan  5 21:49:52 2022
+-- Date        : Thu Jan  6 16:53:20 2022
 -- Host        : Morris running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_axi_dma_1_0 -prefix
---               design_1_axi_dma_1_0_ design_1_axi_dma_1_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub
+--               C:/Users/Morris/Desktop/hls_final_project-master/vivado/aes-encrypt/aes.srcs/sources_1/bd/design_1/ip/design_1_axi_dma_1_0_1/design_1_axi_dma_1_0_stub.vhdl
 -- Design      : design_1_axi_dma_1_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg484-1

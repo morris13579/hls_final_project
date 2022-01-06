@@ -37,6 +37,11 @@
 			<location>C:/Users/Morris/Desktop/hls_final_project-master/hls/aes-encrypt/.apc/.tb</location>
 		</link>
 		<link>
+			<name>.reference/AES.h</name>
+			<type>1</type>
+			<location>C:/Users/Morris/Desktop/hls_final_project-master/src/AES.h</location>
+		</link>
+		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
 			<location>C:/Users/Morris/Desktop/hls_final_project-master/hls/aes-encrypt/solution1/.tcls</location>
