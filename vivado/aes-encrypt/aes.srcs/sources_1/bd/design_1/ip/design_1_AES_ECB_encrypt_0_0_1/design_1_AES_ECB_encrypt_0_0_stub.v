@@ -1,7 +1,7 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Thu Jan  6 08:56:04 2022
+// Date        : Thu Jan  6 11:31:12 2022
 // Host        : Morris running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               C:/Users/Morris/Desktop/hls_final_project-master/vivado/aes-encrypt/aes.srcs/sources_1/bd/design_1/ip/design_1_AES_ECB_encrypt_0_0_1/design_1_AES_ECB_encrypt_0_0_stub.v

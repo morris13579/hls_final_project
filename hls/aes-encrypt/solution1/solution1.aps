@@ -2,6 +2,9 @@
     <checksum>
         <value string="false"/>
     </checksum>
+    <downStreamTool>
+        <DownStreamTool name="vivado"/>
+    </downStreamTool>
     <config>
         <schedule model="AES_ECB_encrypt"/>
         <config_compile blackbox="" no_signed_zeros="0" unsafe_math_optimizations="0"/>
@@ -68,9 +71,6 @@
         <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
         <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
     </libraryList>
-    <downStreamTool>
-        <DownStreamTool name="vivado"/>
-    </downStreamTool>
     <clockList>
         <clock name="default" default="false" uncertainty="12.5%" period="5"/>
     </clockList>

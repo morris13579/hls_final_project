@@ -2,33 +2,45 @@
    "ExpandedHierarchyInLayout":"",
    "guistr":"# # String gsaved with Nlview 6.8.11  2018-08-07 bk=1.4403 VDI=40 GEI=35 GUI=JA:9.0 non-TLS
 #  -string -flagsOSRD
-preplace port DDR -pg 1 -y 480 -defaultsOSRD
-preplace port FIXED_IO -pg 1 -y 500 -defaultsOSRD
-preplace inst AES_ECB_encrypt -pg 1 -lvl 2 -y 450 -defaultsOSRD
-preplace inst axi_dma_write -pg 1 -lvl 1 -y 380 -defaultsOSRD
-preplace inst rst_ps7_0_200M -pg 1 -lvl 5 -y 250 -defaultsOSRD
-preplace inst axi_interconnect_0 -pg 1 -lvl 4 -y 510 -defaultsOSRD
-preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -y 180 -defaultsOSRD
-preplace inst axi_dma_read -pg 1 -lvl 3 -y 510 -defaultsOSRD
-preplace inst processing_system7_0 -pg 1 -lvl 5 -y 520 -defaultsOSRD
-preplace netloc processing_system7_0_DDR 1 5 1 NJ
-preplace netloc ps7_0_axi_periph_M02_AXI 1 2 3 730 350 N 350 1460
-preplace netloc AES_ECB_encrypt_0_encrypt 1 2 1 N
-preplace netloc axi_dma_write_M_AXI_MM2S 1 1 3 NJ 350 720 340 1130
-preplace netloc processing_system7_0_M_AXI_GP0 1 3 3 1160J 360 NJ 360 1950
-preplace netloc axi_dma_write_M_AXIS_MM2S 1 1 1 370
-preplace netloc processing_system7_0_FCLK_RESET0_N 1 4 2 1490J 150 1960
-preplace netloc ps7_0_axi_periph_M01_AXI 1 1 4 390 20 NJ 20 NJ 20 1460
-preplace netloc processing_system7_0_FIXED_IO 1 5 1 NJ
-preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 6 30 480 380 540 710 660 1140 340 1470 350 1950
-preplace netloc S01_AXI_1 1 3 1 1160
-preplace netloc axi_interconnect_0_M00_AXI 1 4 1 N
-preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 20 470 380 360 720 360 1150 660 1480 620 1950
-preplace netloc ps7_0_axi_periph_M00_AXI 1 0 5 20 10 NJ 10 NJ 10 NJ 10 1480
-levelinfo -pg 1 0 200 550 930 1310 1720 1980 -top 0 -bot 670
+preplace port DDR -pg 1 -y 800 -defaultsOSRD
+preplace port FIXED_IO -pg 1 -y 820 -defaultsOSRD
+preplace inst axi_dma_read_1 -pg 1 -lvl 3 -y 1120 -defaultsOSRD
+preplace inst AES_ECB_encrypt_0 -pg 1 -lvl 2 -y 870 -defaultsOSRD
+preplace inst AES_ECB_encrypt_1 -pg 1 -lvl 2 -y 1110 -defaultsOSRD
+preplace inst rst_ps7_0_200M -pg 1 -lvl 5 -y 650 -defaultsOSRD
+preplace inst axi_interconnect_0 -pg 1 -lvl 4 -y 570 -defaultsOSRD
+preplace inst ps7_0_axi_periph -pg 1 -lvl 4 -y 220 -defaultsOSRD
+preplace inst axi_interconnect_1 -pg 1 -lvl 4 -y 850 -defaultsOSRD
+preplace inst axi_dma_write_0 -pg 1 -lvl 1 -y 870 -defaultsOSRD
+preplace inst axi_dma_write_1 -pg 1 -lvl 1 -y 1100 -defaultsOSRD
+preplace inst processing_system7_0 -pg 1 -lvl 5 -y 850 -defaultsOSRD
+preplace inst axi_dma_read_0 -pg 1 -lvl 3 -y 860 -defaultsOSRD
+preplace netloc processing_system7_0_DDR 1 5 1 1990J
+preplace netloc ps7_0_axi_periph_M02_AXI 1 2 3 720 1020 N 1020 1440
+preplace netloc AES_ECB_encrypt_0_encrypt 1 2 1 680
+preplace netloc axi_dma_write_M_AXI_MM2S 1 1 3 390J 750 680 480 N
+preplace netloc processing_system7_0_M_AXI_GP0 1 3 3 1110J 1040 NJ 1040 1970
+preplace netloc axi_dma_write_M_AXIS_MM2S 1 1 1 N
+preplace netloc processing_system7_0_FCLK_RESET0_N 1 4 2 1490J 970 1950
+preplace netloc ps7_0_axi_periph_M03_AXI 1 0 5 40 990 NJ 990 NJ 990 1060J 1030 1430
+preplace netloc ps7_0_axi_periph_M01_AXI 1 1 4 420 1010 NJ 1010 NJ 1010 1450
+preplace netloc axi_dma_write_1_M_AXIS_MM2S 1 1 1 390
+preplace netloc AES_ECB_encrypt_1_encrypt 1 2 1 N
+preplace netloc S00_AXI_1 1 3 1 1100
+preplace netloc processing_system7_0_FIXED_IO 1 5 1 1990J
+preplace netloc rst_ps7_0_50M_peripheral_aresetn 1 0 6 20 780 380 780 710 760 1080 1060 N 1060 1980
+preplace netloc S01_AXI_1 1 3 1 1060
+preplace netloc axi_interconnect_0_M00_AXI 1 4 1 1470
+preplace netloc ps7_0_axi_periph_M05_AXI 1 2 3 720 1230 NJ 1230 1410
+preplace netloc ps7_0_axi_periph_M04_AXI 1 1 4 420 1220 NJ 1220 NJ 1220 1420
+preplace netloc S01_AXI_2 1 1 3 410J 760 690J 750 1090
+preplace netloc processing_system7_0_FCLK_CLK0 1 0 6 10 770 400 770 700 740 1070 1050 1480 980 1960
+preplace netloc axi_interconnect_1_M00_AXI 1 4 1 N
+preplace netloc ps7_0_axi_periph_M00_AXI 1 0 5 30J 1000 NJ 1000 NJ 1000 NJ 1000 1460
+levelinfo -pg 1 -10 210 550 890 1260 1720 2010 -top 0 -bot 1240
 "
 }
 {
    "da_axi4_cnt":"2",
-   "da_clkrst_cnt":"1"
+   "da_clkrst_cnt":"8"
 }
