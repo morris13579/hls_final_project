@@ -238,8 +238,7 @@ void Cipher(BYTE plain[16], BYTE encrypt[16],BYTE key[AES_ExpLen][16])
 	BYTE state3[16];
 	BYTE state4[16];
 	AddRoundKey(plain, state1, key[0]);
-	for (BYTE i = 1; i < Nr; i++)
-	{
+	for (BYTE i = 1; i < Nr; i++){
 #pragma HLS PIPELINE
 		SubBytes(state1,state2);
 		ShiftRows(state2,state3);
