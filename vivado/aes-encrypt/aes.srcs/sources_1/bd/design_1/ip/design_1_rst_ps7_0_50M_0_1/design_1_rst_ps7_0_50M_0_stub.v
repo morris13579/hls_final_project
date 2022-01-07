@@ -1,10 +1,10 @@
 // Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
-// Date        : Thu Jan  6 19:38:00 2022
+// Date        : Thu Jan  6 14:21:42 2022
 // Host        : Morris running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               C:/Users/Morris/Desktop/hls_final_project-master/vivado/aes-encrypt/aes.srcs/sources_1/bd/design_1/ip/design_1_rst_ps7_0_50M_0_1/design_1_rst_ps7_0_50M_0_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top design_1_rst_ps7_0_50M_0 -prefix
+//               design_1_rst_ps7_0_50M_0_ design_1_rst_ps7_0_50M_0_stub.v
 // Design      : design_1_rst_ps7_0_50M_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg484-1

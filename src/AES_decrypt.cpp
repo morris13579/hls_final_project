@@ -68,6 +68,7 @@ void InvShiftRows(BYTE in[16],BYTE out[16])
 void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[AES_ExpLen][16])
 {
 #pragma HLS ARRAY_PARTITION variable=key complete dim=1
+	/*
 	BYTE state_2[16];
 	BYTE state_3[16];
 	BYTE state_4[16];
@@ -204,7 +205,22 @@ void InvCipher(BYTE encrypt[16] ,BYTE plain[16], BYTE key[AES_ExpLen][16])
 	InvShiftRows(state_37,state_38);
 	InvSubBytes(state_38,state_39);
 	AddRoundKey(state_39,plain,key[0]);
-
+*/
+	BYTE state1[16];
+	BYTE state2[16];
+	BYTE state3[16];
+	BYTE state4[16];
+	AddRoundKey(encrypt, state1, key[Nr]);
+	for (BYTE i = (Nr - 1); i > 0; i--){
+#pragma HLS PIPELINE
+		InvShiftRows(state1,state2);
+		InvSubBytes(state2,state3);
+		AddRoundKey(state3, state4, key[i]);
+		InvMixColumns(state4,state1);
+	}
+	InvShiftRows(state1,state2);
+	InvSubBytes(state2,state3);
+	AddRoundKey(state3, plain, key[0]);
 }
 
 
@@ -218,14 +234,17 @@ void AES_ECB_decrypt(hls::stream<STREAM_BYTE>* encrypt ,hls::stream<STREAM_BYTE>
 	//KeyExpansion(RoundKey, key);
 	STREAM_BYTE value[16];
 	for(int i = 0 ;i<len;i+=16){
+#pragma HLS PIPELINE
 #pragma HLS loop_tripcount min=1 max=1 avg=1
 		BYTE in[16],out[16];
 		for(int j =0;j<16;j++){
+#pragma HLS PIPELINE
 			value[j] = encrypt->read();
 			in[j] = value[j].data;
 		}
 		InvCipher(in , out, key);
 		for(int j =0;j<16;j++){
+#pragma HLS PIPELINE
 			value[j].data = out[j];
 			plain->write(value[j]);
 		}

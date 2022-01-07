@@ -1,7 +1,7 @@
 -- Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2018.3 (win64) Build 2405991 Thu Dec  6 23:38:27 MST 2018
--- Date        : Thu Jan  6 19:39:12 2022
+-- Date        : Thu Jan  6 14:22:52 2022
 -- Host        : Morris running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top design_1_auto_pc_0 -prefix
 --               design_1_auto_pc_0_ design_1_auto_pc_0_stub.vhdl
